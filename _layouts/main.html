@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="icon" type="image/png" href="{{ site.baseurl}}/assets/favicon.png"/>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}政府設計系統元件</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="header pt4 mh4">
+    <a href="/" class="logo no-underline bw1 color-inherit inline-flex items-center pv3 ph4 br3 b--black-10 ba">
+      <div class="w2 h2 mr3">{% include components.svg %}</div>
+      <h1>政府設計系統元件</h1>
+    </a>
+  </header>
+  <main class="flex flex-wrap content-start pa4">
+    <nav aria-label="主要" class="w-100 w5-l mt2">
+      <a class="db mb3" {% if page.url == "/pages/digital-info/" %}aria-current="page"{% endif %} href="/pages/digital-info">數位名片</a>
+      <a class="db mb3" {% if page.url == "/pages/skip-to/" %}aria-current="page"{% endif %} href="/pages/skip-to">跳至主要內容區</a>  
+    </nav>
+    <div id="main" class="ml4-l flex-auto">
+      {% if page.wip %}
+        <div class="f6 fw6 o-50">
+          本頁尚在施工中。
+        </div>
+      {% endif %}
+      {% assign filetype = page.name | split:'.' | last %}
+      {% if filetype == 'md' %}
+        <article class="mw6 nested-copy-separator">{{ content }}</article>
+      {% else %}
+        {{ content }}
+      {% endif %}
+    </div>
+  </main>
+  <footer class="footer f6 pa4 flex items-stretch">
+    <div class="bg-black-10 w3 mr4 br2"></div>
+    <div class="mw5">
+      <a class="db color-inherit mb2" href="https://pdis.nat.gov.tw">行政院公共數位創新空間</a>
+      <a class="db color-inherit" href="https://www.nics.nat.gov.tw/">國家資通安全研究院</a>
+    </div>
+  </footer>
+</body>
+</html>

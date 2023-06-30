@@ -1,0 +1,76 @@
+---
+---
+
+@import "variables.css";
+@import "tachyons.css";
+@import "reset.css";
+
+body,
+button,
+textarea,
+input {
+  font-family: system-ui, sans-serif;
+  color: var(--textColor);
+}
+
+body, a {
+  line-height: 1.7em;
+}
+
+main {
+  min-height: 90vh;
+}
+
+.footer {
+  background: var(--subtleBackgroundColor);
+}
+
+a {
+  color: var(--linkColor);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-position: from-font;
+  
+  &:hover {
+    border-radius: 6px;
+    text-decoration-thickness: 2px;
+  }
+}
+
+nav a {
+  position: relative;
+
+  &[aria-current="page"] {
+    text-decoration: none;
+
+    &:before {
+      display: inline-block;
+      vertical-align: text-bottom;
+      content: "";
+      width: 0.3em;
+      height: 1.2em;
+      border-radius: 2em;
+      margin-left: -0.7em;
+      margin-right: 0.4em;
+      background-color: var(--linkColor);
+    }
+  }
+}
+
+.logo {
+  &:not(:hover) path, &:not(:hover) circle {
+    fill: var(--borderColor);
+  }
+  
+  path, circle  {
+    transition: all 0.6s ease-in-out;
+  }
+
+  .circle {
+    transition-delay: 0.2s;
+  }
+  .triangle {
+    transition-delay: 0.4s;
+  }
+}
+

@@ -1,0 +1,4 @@
+sass:
+  sass_dir: assets
+  style: :compressed
+timezone: Asia/Taipei

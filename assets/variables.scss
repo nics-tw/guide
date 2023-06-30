@@ -1,0 +1,28 @@
+---
+---
+
+:root {
+  --backgroundColor: #fdfdfd;
+  --textColor: #1a1a1a;
+  --secondaryTextColor: #404040;
+  --mutedTextColor: #707070;
+  --subtleBackgroundColor: #f0eeed;
+  --linkColor: #004ecc;
+  --borderColor: #ccc;
+  --secondaryColor: #00CC5E;
+  --thirdColor: #CC3100;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --backgroundColor: #151615;
+    --textColor: #dbdfdf;
+    --secondaryTextColor: #cfd5d5;
+    --mutedTextColor: #b4b6b8;
+    --subtleBackgroundColor: #1e1e1e;
+    --linkColor: #6eb8ff;
+    --borderColor: #414141;
+    --secondaryColor: #00CC5E;
+    --thirdColor: #CC3100;
+  }
+}
