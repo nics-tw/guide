@@ -1,5 +1,6 @@
 ---
 layout: main
+iframe: /pages/skip-to/skip-to.html
 ---
 
 ## 跳至主要內容區

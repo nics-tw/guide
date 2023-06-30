@@ -28,7 +28,12 @@
       {% endif %}
       {% assign filetype = page.name | split:'.' | last %}
       {% if filetype == 'md' %}
-        <article class="mw6 nested-copy-separator">{{ content }}</article>
+        <article class="mw6 nested-copy-separator">
+          {{ content }}
+          {% if page.iframe %}
+            <iframe class="ba br2 b--black-10 w-100" src="{{ page.iframe }}"></iframe>
+          {% endif %}
+        </article>
       {% else %}
         {{ content }}
       {% endif %}
