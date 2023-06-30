@@ -26,3 +26,14 @@
     --thirdColor: #CC3100;
   }
 }
+
+body, .plain {
+  background-color: var(--backgroundColor);
+  border-color: var(--borderColor);
+  color: var(--textColor);
+}
+
+.inverted {
+  color: var(--backgroundColor);
+  background-color: var(--textColor);
+}

@@ -24,6 +24,10 @@ main {
 
 .footer {
   background: var(--subtleBackgroundColor);
+  
+  .circle, .triangle, .square {
+    fill: var(--secondaryTextColor);
+  }
 }
 
 a {
@@ -59,6 +63,9 @@ nav a {
 }
 
 .logo {
+  background-color: var(--backgroundColor);
+  border-color: var(--borderColor);
+
   &:not(:hover) path, &:not(:hover) circle {
     fill: var(--borderColor);
   }
