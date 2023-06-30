@@ -1,0 +1,104 @@
+---
+layout: main
+---
+
+<article>
+
+  <h2 class="f4 mt2">製作數位名片</h2>
+
+<p>由人力資源部門製作後，將數位名片 HTML 檔案上傳後，並將網址產生 QR code，印至於名片上。</p>
+
+<!--（補充無障礙 QR code 宣告作法 @jedi） -->
+
+</article>
+
+<div class="flex flex-wrap flex-nowrap-l gap4">
+  <form class="w-50" data-generate-digital-info>
+    <div class="form-set">
+      <label>單位 （必要欄位）</label>
+      <input type="text" name="organization" value="國家資通安全研究院" required>
+    </div>
+    
+    <div class="form-set">
+      <label>姓名 （必要欄位）</label>
+      <input type="text" name="full-name" value="王小明" required>
+    </div>
+    
+    <div class="form-set">
+      <label>職稱 （必要欄位）</label>
+      <input type="text" name="title" value="主秘書" required>
+    </div>
+    
+    <div class="form-set">
+      <label>聯絡電話</label>
+      <input type="tel" name="phone" value="0900-000-000">
+    </div>
+    
+    <div class="form-set">
+      <label>電子信箱</label>
+      <input type="email" name="email" value="tester@nics.nat.gov.tw">
+    </div>
+    
+    <div class="form-set">
+      <label>地址</label>
+      <input type="text" name="address" value="臺北市中正區延平南路 143 號">
+    </div>
+    
+    <div class="mt4 flex justify-between">
+      <button>確認</button>
+      <button type="reset">重新設定</button>
+    </div>
+  </form>
+  <div class="w-50">
+    <div data-preview data-default>
+      <div class="ba br3 b--black-10 overflow-hidden center mw6 mv4">
+        <div class="pa4 bg-black white">
+          <div data-field data-organization>國家資通安全研究院</div>
+        </div>
+        <div class="pa4">
+          <h1 class="f3 mb2" data-field data-full-name>王小明</h1>
+          <h2 class="mb4 black-70" data-field data-title>設計制度總顧問</h2>
+          <h3 data-phone-label class="f6">聯絡電話</h3>
+          <div data-field data-phone>0900-000-000</div>
+          <h3 data-email-label class="f6">電子信箱</h3>
+          <div data-field data-email>tester@nics.moda.gov.tw</div>
+          <h3 data-address-label class="f6">地址</h3>
+          <div data-field data-address>臺北市中正區延平南路 143 號</div>
+        </div>
+        <a href class="button mh4 mb4" hidden data-vcard>下載 VCard (.vcf) 檔案</a>
+      </div>
+    </div>
+    <div class="mt3 flex justify-between">
+      <a href class="button" data-export hidden download="digital-info.html">輸出 HTML</a>
+    </div>
+  </div>
+</div>
+
+<script src="/pages/digital-info/main.js" defer></script>
+<style>
+  [data-default] {
+    opacity: 0.6;
+  }
+
+  [data-default] [data-field] {
+    position: relative;
+    color: transparent;
+  }
+
+  [data-default] [data-field]:before {
+    position: absolute;
+    content: "";
+    background: rgba(0, 0, 0, .1);
+    border-radius: 3px;
+    display: inline-block;
+    height: 1.2em;
+    vertical-align: text-bottom;
+  }
+
+  [data-default] [data-organization]:before { background: #222; width: 148px; }
+  [data-default] [data-full-name]:before { width: 62px; }
+  [data-default] [data-title]:before { width: 124px; }
+  [data-default] [data-phone]:before { width: 124px; }
+  [data-default] [data-email]:before { width: 265px; }
+  [data-default] [data-address]:before { width: 322px; }
+</style>
