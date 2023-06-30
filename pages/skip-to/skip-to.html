@@ -4,42 +4,8 @@ layout: iframe
 
 點選此區域，並按下 <kbd>Tab</kbd> 鍵，即可看到「跳至主要內容區」連結，並跳至主要內容區。
 
-<style>
-  skip-to {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  skip-to a {
-    display: block;
-    background: #0c0d09;
-    color: #fff;
-    text-decoration: none;
-    padding: 1em;
-    font-size: 16px;  
-    border: 3px solid transparent;
-    border-radius: 5px;
-  }
-
-  skip-to a:focus {
-    border-color: #fcf81d;
-    outline: none;
-  }
-
-  skip-to a:not(:focus) {
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-</style>
+<link rel="stylesheet" href="/assets/components/skip-to.css">
 <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
-
 
 <style>
   main {
