@@ -88,14 +88,14 @@ layout: main
   [data-default] [data-field]:before {
     position: absolute;
     content: "";
-    background: rgba(0, 0, 0, .1);
+    background: var(--subtleBackgroundColor);
     border-radius: 3px;
     display: inline-block;
     height: 1.2em;
     vertical-align: text-bottom;
   }
 
-  [data-default] [data-organization]:before { background: #222; width: 148px; }
+  [data-default] [data-organization]:before { background: var(--borderColor); width: 148px; }
   [data-default] [data-full-name]:before { width: 62px; }
   [data-default] [data-title]:before { width: 124px; }
   [data-default] [data-phone]:before { width: 124px; }

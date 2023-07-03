@@ -19,7 +19,7 @@
     --textColor: #dbdfdf;
     --secondaryTextColor: #cfd5d5;
     --mutedTextColor: #b4b6b8;
-    --subtleBackgroundColor: #1e1e1e;
+    --subtleBackgroundColor: #272727;
     --linkColor: #6eb8ff;
     --borderColor: #414141;
     --secondaryColor: #00CC5E;
@@ -36,4 +36,16 @@ body, .plain {
 .inverted {
   color: var(--backgroundColor);
   background-color: var(--textColor);
+}
+
+.bg-subtle { background-color: var(--subtleBackgroundColor) }
+.fg-subtle { background-color: var(--mutedTextColor) }
+
+textarea, input {
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+}
+
+* {
+  border-color: inherit;
 }
