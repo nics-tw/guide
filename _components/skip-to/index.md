@@ -10,5 +10,5 @@ iframe_page: ""
 
 此為符合無障礙規範 A 等級所需要的元件。
 
-{% capture path %}{% link _components/skip-to/skip-to.html %}{% endcapture %}
+{% capture path %}{{ site.baseurl }}{% link _components/skip-to/skip-to.html %}{% endcapture %}
 {% include iframe.html src=path %}

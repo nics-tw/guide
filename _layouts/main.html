@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  <link rel="icon" type="image/png" href="{{ "/assets/favicon.png" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/main.css" | absolute_url }}">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon.png" | absolute_url }}">
   <title>{% if page.title %}{{ page.title }} | {% endif %}政府設計系統元件</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
 <body>
   <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
   <header class="header pt4 mh4">
-    <a href="{{ "/" | relative_url}}" class="logo no-underline bw1 color-inherit inline-flex items-center pv3 ph4 br3 b--black-10 ba">
+    <a href="{{ "/" | absolute_url}}" class="logo no-underline bw1 color-inherit inline-flex items-center pv3 ph4 br3 b--black-10 ba">
       <div class="w2 h2 mr3">{% include components.svg %}</div>
       <h1>政府設計系統元件</h1>
     </a>
@@ -26,7 +26,7 @@
           {% assign doc = collection.docs | where: "path", filepath | first %}
           {% capture tag %}{% if doc %}a{% else %}spans{% endif %}{% endcapture %}
 
-          <{{ tag }} class="pa2 mb2" {% if doc %}href="{{ doc.url | relative_url }}"{% endif %}>
+          <{{ tag }} class="pa2 mb2" {% if doc %}href="{{ doc.url | absolute_url }}"{% endif %}>
             {{ collection.name }}
           </{{ tag }}>
         </summary>
@@ -34,7 +34,7 @@
           {% assign level = doc.path | split: "/" | size %}
           {% if level < 3 %}{% continue %}{% endif %}
           {% unless doc.path contains "index.md" %}{% continue %}{% endunless %}
-          <a class="db mb3" {% if doc.url == page.url %}aria-current="page"{% endif %} href="{{ doc.url }}">{{ doc.title }}</a>  
+          <a class="db mb3" {% if doc.url == page.url %}aria-current="page"{% endif %} href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>  
         {% endfor %}
         </details>
       {% endfor %}
