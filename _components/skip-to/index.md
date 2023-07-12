@@ -1,7 +1,7 @@
 ---
 layout: main
 title: 跳至主要內容區
-iframe_page: pages/components/skip-to/skip-to.html
+iframe_page: ""
 ---
 
 ## 跳至主要內容區
@@ -10,3 +10,5 @@ iframe_page: pages/components/skip-to/skip-to.html
 
 此為符合無障礙規範 A 等級所需要的元件。
 
+{% capture path %}{% link _components/skip-to/skip-to.html %}{% endcapture %}
+{% include iframe.html src=path %}
