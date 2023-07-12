@@ -1,6 +1,7 @@
 ---
 layout: main
-iframe: /pages/skip-to/skip-to.html
+title: 跳至主要內容區
+iframe_page: pages/components/skip-to/skip-to.html
 ---
 
 ## 跳至主要內容區

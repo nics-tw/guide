@@ -2,3 +2,10 @@ sass:
   sass_dir: assets
   style: :compressed
 timezone: Asia/Taipei
+collections:
+  components:
+    name: "元件"
+    output: true
+  technology:
+    name: "技術"
+    output: true

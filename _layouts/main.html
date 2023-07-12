@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <link rel="stylesheet" href="{{ site.baseurl}}/assets/main.css">
-  <link rel="icon" type="image/png" href="{{ site.baseurl}}/assets/favicon.png"/>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon.png" | relative_url }}">
   <title>{% if page.title %}{{ page.title }} | {% endif %}政府設計系統元件</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,15 +11,33 @@
 <body>
   <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
   <header class="header pt4 mh4">
-    <a href="{{ site.baseurl}}/" class="logo no-underline bw1 color-inherit inline-flex items-center pv3 ph4 br3 b--black-10 ba">
+    <a href="{{ "/" | relative_url}}" class="logo no-underline bw1 color-inherit inline-flex items-center pv3 ph4 br3 b--black-10 ba">
       <div class="w2 h2 mr3">{% include components.svg %}</div>
       <h1>政府設計系統元件</h1>
     </a>
   </header>
   <main class="flex flex-wrap content-start pa4">
     <nav aria-label="主要" class="w-100 w5-l mt2">
-      <a class="db mb3" {% if page.url == "/pages/digital-info/" %}aria-current="page"{% endif %} href="/pages/digital-info">數位名片</a>
-      <a class="db mb3" {% if page.url == "/pages/skip-to/" %}aria-current="page"{% endif %} href="/pages/skip-to">跳至主要內容區</a>  
+      {% for collection in site.collections %}
+        {% if collection.docs.size == 0 %}{% continue %}{% endif %}
+        <details {% if page.path contains collection.label %}open{% endif %}>
+        <summary class="pointer mb3">
+          {% assign filepath = collection.relative_directory | append: "/index.md" %}
+          {% assign doc = collection.docs | where: "path", filepath | first %}
+          {% capture tag %}{% if doc %}a{% else %}spans{% endif %}{% endcapture %}
+
+          <{{ tag }} class="pa2 mb2" {% if doc %}href="{{ doc.url | relative_url }}"{% endif %}>
+            {{ collection.name }}
+          </{{ tag }}>
+        </summary>
+        {% for doc in collection.docs %}
+          {% assign level = doc.path | split: "/" | size %}
+          {% if level < 3 %}{% continue %}{% endif %}
+          {% unless doc.path contains "index.md" %}{% continue %}{% endunless %}
+          <a class="db mb3" {% if doc.url == page.url %}aria-current="page"{% endif %} href="{{ doc.url }}">{{ doc.title }}</a>  
+        {% endfor %}
+        </details>
+      {% endfor %}
     </nav>
     <div id="main" class="ml4-l flex-auto">
       {% if page.wip %}
@@ -32,7 +50,7 @@
         <article class="mw6 nested-copy-separator">
           {{ content }}
           {% if page.iframe %}
-            <iframe class="ba br3 w-100" src="{{ page.iframe }}"></iframe>
+            <iframe class="ba br3 w-100" src="{% link page.iframe_page %}"></iframe>
           {% endif %}
         </article>
       {% else %}
