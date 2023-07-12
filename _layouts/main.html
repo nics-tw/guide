@@ -16,8 +16,8 @@
       <h1>政府設計系統元件</h1>
     </a>
   </header>
-  <main class="flex flex-wrap content-start pa4">
-    <nav aria-label="主要" class="w-100 w5-l mt2">
+  <main class="flex flex-wrap flex-nowrap-l content-start pa4">
+    <nav aria-label="主要" class="w-100 w5-l mt2 flex-shrink-0">
       {% for collection in site.collections %}
         {% if collection.docs.size == 0 %}{% continue %}{% endif %}
         <details {% if page.path contains collection.label %}open{% endif %}>
@@ -45,7 +45,7 @@
           本頁尚在施工中。
         </div>
       {% endif %}
-      {% assign filetype = page.name | split:'.' | last %}
+      {% assign filetype = page.path | split:'.' | last %}
       {% if filetype == 'md' %}
         <article class="mw6 nested-copy-separator">
           {{ content }}
