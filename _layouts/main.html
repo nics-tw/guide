@@ -34,7 +34,7 @@
           {% assign level = doc.path | split: "/" | size %}
           {% if level < 3 %}{% continue %}{% endif %}
           {% unless doc.path contains "index.md" %}{% continue %}{% endunless %}
-          <a class="db nav-link" {% if doc.url == page.url %}aria-current="page"{% endif %} href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>  
+          <a class="nav-link" {% if doc.url == page.url %}aria-current="page"{% endif %} href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>  
         {% endfor %}
         </details>
       {% endfor %}
