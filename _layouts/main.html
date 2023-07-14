@@ -10,7 +10,7 @@
 </head>
 <body>
   <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
-  <header class="header pt4 mh4">
+  <header class="header ph4 pv3 bb">
     <a href="{{ "/" | absolute_url}}" class="logo no-underline bw1 color-inherit inline-flex items-center">
       <div class="w2 h2 mr3">{% include components.svg %}</div>
       <h1>政府網站設計原則</h1>
@@ -20,7 +20,7 @@
     <nav aria-label="主要" class="w-100 w5-l mt2 flex-shrink-0">
       {% for collection in site.collections %}
         {% if collection.docs.size == 0 %}{% continue %}{% endif %}
-        <details {% if page.path contains collection.label %}open{% endif %}>
+        <details class="mb3" {% if page.path contains collection.label %}open{% endif %}>
         <summary class="pointer mb3">
           {% assign filepath = collection.relative_directory | append: "/index.md" %}
           {% assign doc = collection.docs | where: "path", filepath | first %}
@@ -34,7 +34,7 @@
           {% assign level = doc.path | split: "/" | size %}
           {% if level < 3 %}{% continue %}{% endif %}
           {% unless doc.path contains "index.md" %}{% continue %}{% endunless %}
-          <a class="db mb3" {% if doc.url == page.url %}aria-current="page"{% endif %} href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>  
+          <a class="db nav-link" {% if doc.url == page.url %}aria-current="page"{% endif %} href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>  
         {% endfor %}
         </details>
       {% endfor %}

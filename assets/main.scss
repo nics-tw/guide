@@ -42,21 +42,13 @@ a {
   }
 }
 
-nav a {
+nav .nav-link {
   position: relative;
+  padding: 0.6em 1.4em;
 
   &[aria-current="page"] {
     text-decoration: none;
-
-    &:before {
-      display: inline-block;
-      vertical-align: text-bottom;
-      content: "";
-      width: 0.2em;
-      height: 1.2em;
-      margin-right: 1em;
-      background-color: var(--linkColor);
-    }
+    background-color: var(--subtleBackgroundColor);
   }
 }
 
