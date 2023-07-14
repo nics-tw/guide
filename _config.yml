@@ -4,8 +4,8 @@ sass:
 timezone: Asia/Taipei
 collections:
   components:
-    name: "元件"
+    name: "共用元件"
     output: true
   technology:
-    name: "技術"
+    name: "技術文件"
     output: true
