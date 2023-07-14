@@ -52,11 +52,9 @@ nav a {
       display: inline-block;
       vertical-align: text-bottom;
       content: "";
-      width: 0.3em;
+      width: 0.2em;
       height: 1.2em;
-      border-radius: 2em;
-      margin-left: -0.7em;
-      margin-right: 0.4em;
+      margin-right: 1em;
       background-color: var(--linkColor);
     }
   }
