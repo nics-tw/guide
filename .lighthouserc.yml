@@ -1,0 +1,15 @@
+ci:
+  collect:
+    numberOfRuns: 5
+    startServerCommand: rails server -e production
+    url:
+      - https://muan.github.io/pdis-components/
+  assert:
+    preset: lighthouse:recommended
+    assertions:
+      offscreen-images: 'off'
+      uses-webp-images: 'off'
+      color-contrast: 'off'
+      categories:accessibility:
+        - error
+        - minScore: 1
