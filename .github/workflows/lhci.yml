@@ -9,4 +9,4 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g @lhci/cli@0.11.x
-      - run: lhci healthcheck
+      - run: lhci assert --url=https://muan.github.io/pdis-components/

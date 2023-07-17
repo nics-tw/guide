@@ -41,7 +41,9 @@
     </nav>
     <div id="main" class="ml4-l flex-auto">
       {% if page.wip %}
-        本頁尚在施工中。
+        <div class="f6 fw6 o-80">
+          本頁尚在施工中。
+        </div>
       {% endif %}
       {% assign filetype = page.path | split:'.' | last %}
       {% if filetype == 'md' %}
