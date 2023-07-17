@@ -1,16 +1,13 @@
 name: CI
-on: [push]
+on: [page_build]
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@1
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm install && npm install -g @lhci/cli@0.11.x
       - run: gem install github-pages
-      - run: jekyll serve --baseurl=/manual
-      - run: lhci autorun --url http://localhost:4000/manual
-
+      - run: lhci autorun --url http://muan.github.io/manual/
