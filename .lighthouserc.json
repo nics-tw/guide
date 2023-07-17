@@ -1,6 +1,6 @@
 {
   "ci": {
-    "sddr":{
+    "collect":{
       "numberOfRuns": 1,
       "settings": {
         "preset": "desktop"
