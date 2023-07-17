@@ -8,6 +8,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm install && npm install -g @lhci/cli@0.11.x
-      - run: gem install github-pages
+      - run: npm install -g @lhci/cli@0.11.x
       - run: lhci autorun --url http://muan.github.io/manual/
