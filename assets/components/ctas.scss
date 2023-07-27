@@ -1,0 +1,32 @@
+a.link-block {
+  display: inline-block;
+  padding: 0.7em 1.2em 0.8em;
+  color: var(--linkColor);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-position: from-font;
+  
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+button.button {
+  display: inline-block;
+  padding: 0.7em 1.2em 0.8em;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--subtleBackgroundColor);
+  color: var(--textColor);
+  cursor: pointer;
+  font-weight: 600;
+  
+  &:hover {
+    box-shadow: inset 0px 10em 0 0 rgba(0, 0, 0, 0.03);
+  }
+
+  &.button-primary {
+    background-color: var(--linkColor);
+    color: var(--backgroundColor)
+  }
+}

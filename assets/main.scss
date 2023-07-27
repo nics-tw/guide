@@ -4,7 +4,9 @@
 @import "variables.css";
 @import "tachyons.css";
 @import "reset.css";
+@import "components/ctas.scss";
 @import "components/skip-to.css";
+@import "components/form.scss";
 
 body,
 button,
@@ -37,7 +39,6 @@ a {
   text-underline-position: from-font;
   
   &:hover {
-    border-radius: 6px;
     text-decoration-thickness: 2px;
   }
 }
@@ -118,20 +119,5 @@ input[type="password"] {
   form:has(:focus) &:invalid {
     box-shadow: inset 0 0 0 1px #f00;
     border-color: #f00;
-  }
-}
-
-button, .button {
-  display: inline-block;
-  padding: 0.7em 1.2em 0.8em;
-  border: 0;
-  border-radius: 4px;
-  background-color: var(--subtleBackgroundColor);
-  color: var(--textColor);
-  cursor: pointer;
-  font-weight: 600;
-  
-  &:hover {
-    box-shadow: inset 0px 10em 0 0 rgba(0, 0, 0, 0.03);
   }
 }

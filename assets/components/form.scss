@@ -1,0 +1,27 @@
+.fields {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  .field-label {
+    font-weight: 600;
+  }
+  
+  .field-description {
+    font-size: 0.9em;
+
+  }
+  @media not all and (hover: hover) {
+    .field-input {
+      // Ensure there's no zoom on mobile when focusing on the field.
+      font-size: 16px;
+    }
+  }
+}
