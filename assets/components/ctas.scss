@@ -12,21 +12,30 @@ a.link-block {
 }
 
 button.button {
+  --buttonBackgroundColor: var(--subtleBackgroundColor);
   display: inline-block;
   padding: 0.7em 1.2em 0.8em;
-  border: 0;
+  border: 0.1em solid transparent;
   border-radius: 4px;
-  background-color: var(--subtleBackgroundColor);
+  background-color: var(--buttonBackgroundColor);
   color: var(--textColor);
   cursor: pointer;
   font-weight: 600;
   
   &:hover {
-    box-shadow: inset 0px 10em 0 0 rgba(0, 0, 0, 0.03);
+    box-shadow: 
+      inset 0px 10em 0 0 rgba(0, 0, 0, 0.05),
+      0 0 0 2px var(--backgroundColor),
+      0 0 0 3px var(--buttonBackgroundColor);;
+  }
+
+  &:active {
+    box-shadow: 
+      inset 0px 10em 0 0 rgba(0, 0, 0, 0.15);
   }
 
   &.button-primary {
-    background-color: var(--linkColor);
+    --buttonBackgroundColor: var(--linkColor);
     color: var(--backgroundColor)
   }
 }
