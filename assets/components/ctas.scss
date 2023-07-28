@@ -14,9 +14,9 @@ a.link-block {
 button.button {
   --buttonBackgroundColor: var(--subtleBackgroundColor);
   display: inline-block;
-  padding: 0.7em 1.2em 0.8em;
+  padding: 0.6em 1.2em;
   border: 0.1em solid transparent;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   background-color: var(--buttonBackgroundColor);
   color: var(--textColor);
   cursor: pointer;

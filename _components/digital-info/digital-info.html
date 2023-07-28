@@ -13,41 +13,41 @@ layout: main
 </article>
 
 <div class="flex flex-wrap flex-nowrap-l gap4">
-  <form class="w-50-l w-100" data-generate-digital-info>
-    <div class="form-set">
-      <label for="organization">單位 （必要欄位）</label>
-      <input type="text" id="organization" name="organization" placeholder="國家資通安全研究院" required>
-    </div>
+  <form class="w-50-l w-100 fields" data-generate-digital-info>
+    <fieldset class="fieldset">
+      <label class="field-label" for="organization">單位 （必要欄位）</label>
+      <input class="field-input" type="text" id="organization" name="organization" placeholder="國家資通安全研究院" required>
+    </fieldset>
     
-    <div class="form-set">
-      <label for="full-name">姓名 （必要欄位）</label>
-      <input type="text" id="full-name" name="full-name" placeholder="王小明" required>
-    </div>
+    <fieldset class="fieldset">
+      <label class="field-label" for="full-name">姓名 （必要欄位）</label>
+      <input class="field-input" type="text" id="full-name" name="full-name" placeholder="王小明" required>
+    </fieldset>
     
-    <div class="form-set">
-      <label for="title">職稱 （必要欄位）</label>
-      <input type="text" id="title" name="title" placeholder="主秘書" required>
-    </div>
+    <fieldset class="fieldset">
+      <label class="field-label" for="title">職稱 （必要欄位）</label>
+      <input class="field-input" type="text" id="title" name="title" placeholder="主秘書" required>
+    </fieldset>
     
-    <div class="form-set">
-      <label for="phone">聯絡電話</label>
-      <input type="tel" id="phone" name="phone" placeholder="0900-000-000">
-    </div>
+    <fieldset class="fieldset">
+      <label class="field-label" for="phone">聯絡電話</label>
+      <input class="field-input" type="tel" id="phone" name="phone" placeholder="0900-000-000">
+    </fieldset>
     
-    <div class="form-set">
-      <label for="email">電子信箱</label>
-      <input type="email" id="email" name="email" placeholder="tester@nics.nat.gov.tw">
-    </div>
+    <fieldset class="fieldset">
+      <label class="field-label" for="email">電子信箱</label>
+      <input class="field-input" type="email" id="email" name="email" placeholder="tester@nics.nat.gov.tw">
+    </fieldset>
     
-    <div class="form-set">
-      <label for="address">地址</label>
-      <input type="text" id="address" name="address" placeholder="臺北市中正區延平南路 143 號">
-    </div>
+    <fieldset class="fieldset">
+      <label class="field-label" for="address">地址</label>
+      <input class="field-input" type="text" id="address" name="address" placeholder="臺北市中正區延平南路 143 號">
+    </fieldset>
     
-    <div class="mt4 flex justify-between">
-      <button>確認</button>
-      <button type="reset">重新設定</button>
-    </div>
+    <fieldset class="bn gap4 flex flex-row">
+      <button type="submit" class="button button-primary">確認</button>
+      <button type="reset" class="button">重新設定</button>
+    </fieldset>
   </form>
   <div class="w-50-l w-100">
     <div data-preview data-default>
