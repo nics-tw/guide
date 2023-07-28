@@ -18,7 +18,10 @@ iframe_page: ""
 - `.fieldset`：作為單獨表單項目的容器。
 - `.field-label`：作為單獨表單項目的 `<label>`。
 - `.field-description`：作為單獨表單項目說明文字。
-- `.field-input`：作為單獨表單項目說明文字。
+- `.field-input`：作為輸入欄位。
+- `.field-input-fix`：作為輸入欄位 prefix 及 suffix 的容器。
+- `.field-input-prefix`：作為 prefix 文字。
+- `.field-input-suffix`：作為 suffix 文字。
 
 ### 親和力
 
