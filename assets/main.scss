@@ -132,3 +132,9 @@ input[type="password"] {
   white-space: nowrap;
   border: 0;
 }
+
+code {
+  font-size: 0.8em;
+  background-color: var(--subtleBackgroundColor);
+  padding: 0 0.4rem;
+}
