@@ -1,11 +1,12 @@
 .fields {
-  gap: 2rem;
+  gap: 1.2rem;
   display: flex;
   flex-direction: column;
 }
 
-.field {
-  gap: 1rem;
+.fieldset {
+  border: none;
+  gap: 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -23,5 +24,33 @@
       // Ensure there's no zoom on mobile when focusing on the field.
       font-size: 16px;
     }
+  }
+}
+
+.field-input-fix {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--subtleBackgroundColor);
+  // border: 1px solid var(--borderColor);
+  border-radius: 4px;
+  overflow: hidden;
+  
+  .field-input {
+    flex: 1 1 auto;
+    margin: .4rem;
+  }
+
+  &:has(.field-input-prefix) .field-input {
+    margin-left: 0;
+  }
+
+  &:has(.field-input-suffix) .field-input {
+    margin-right: 0;
+  }
+
+  .field-input-prefix,
+  .field-input-suffix {
+    padding: 0 0.8rem;
   }
 }

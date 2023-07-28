@@ -15,7 +15,7 @@ iframe_page: ""
 ### 元素
 
 - `.fields`：作為全部 `.field` 的容器。
-- `.field`：作為單獨表單項目的容器。
+- `.fieldset`：作為單獨表單項目的容器。
 - `.field-label`：作為單獨表單項目的 `<label>`。
 - `.field-description`：作為單獨表單項目說明文字。
 - `.field-input`：作為單獨表單項目說明文字。
