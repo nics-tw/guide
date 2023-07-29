@@ -1,12 +1,13 @@
 a.link-block {
   display: inline-block;
-  padding: 0.7em 1.2em 0.8em;
+  padding: 0.6em 1.2em;
   color: var(--linkColor);
   font-weight: 600;
   text-decoration-thickness: 1px;
   text-underline-position: from-font;
+  border: 1px solid var(--subtleBackgroundColor);
   
-  &:hover {
+  &:hover, &:focus {
     text-decoration-thickness: 2px;
   }
 }
@@ -38,6 +39,12 @@ button.button {
   &.button-primary {
     --buttonBackgroundColor: var(--linkColor);
     --focusColor: var(--linkColor);
+    color: var(--backgroundColor)
+  }
+
+  &.button-danger {
+    --buttonBackgroundColor: var(--dangerColor);
+    --focusColor: var(--dangerColor);
     color: var(--backgroundColor)
   }
 }
