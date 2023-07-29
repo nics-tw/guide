@@ -8,7 +8,8 @@ iframe_page: ""
 
 ### 簡易欄位
 
-{% include form/field.html %}
+{% capture button %}{% include form/field.html %}{% endcapture %}
+{% include example.html content=button %}
 
 #### CSS
 
@@ -25,7 +26,8 @@ iframe_page: ""
 
 ### 欄位加上頭尾文字
 
-{% include form/field-fixes.html %}
+{% capture button %}{% include form/field-fixes.html %}{% endcapture %}
+{% include example.html content=button %}
 
 #### CSS
 

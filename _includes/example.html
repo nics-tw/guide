@@ -1,0 +1,9 @@
+<div class="ba br3 w-100 relative overflow-hidden">
+  <div class="pa4">{{ include.content }}</div>
+  <details class="mt3">
+    <summary class="absolute left-0 nt4 ph3 f7 pointer">原始碼</summary>
+    <div class="">
+      {% include example-html.html content=include.content %}
+    </div>
+  </details>
+</div>

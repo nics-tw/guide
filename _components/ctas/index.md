@@ -6,7 +6,8 @@ iframe_page: ""
 
 ### 按鈕
 
-{% include ctas/button.html %}
+{% capture button %}{% include ctas/button.html %}{% endcapture %}
+{% include example.html content=button %}
 
 #### CSS
 
@@ -15,7 +16,8 @@ iframe_page: ""
 
 ### 連結
 
-{% include ctas/link.html %}
+{% capture button %}{% include ctas/link.html %}{% endcapture %}
+{% include example.html content=button %}
 
 #### CSS
 

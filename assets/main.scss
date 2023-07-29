@@ -138,3 +138,14 @@ code {
   background-color: var(--subtleBackgroundColor);
   padding: 0 0.4rem;
 }
+
+.highlight {
+  margin: 0;
+  line-height: 1.6;
+
+  pre {
+    margin: 0;
+
+    code { padding: 0; }
+  }
+}
