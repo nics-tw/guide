@@ -14,18 +14,18 @@ a.link-block {
 
 button.button,
 summary.button {
-  --buttonColor: var(--secondaryTextColor);
-  font-size: 1rem;
+  --buttonColor: var(--borderColor);
+  font-size: 0.9rem;
   padding: 0.6rem 1.2rem;
   border: 1px solid var(--borderColor);
   border-radius: 0.4em;
-  color: var(--buttonColor);
+  color: var(--textColor);
   background: var(--backgroundColor);
-  
   cursor: pointer;
   
   &:hover, &:focus {
     box-shadow: 
+      inset 0 0 1000px rgba(0, 0, 0, 0.05),
       0 0 0 2px var(--backgroundColor),
       0 0 0 3px var(--buttonColor);
   }
@@ -56,7 +56,7 @@ summary.button {
   }
 
   &.button-small {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     padding: 0.4rem 0.8rem;
   }
 
