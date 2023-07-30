@@ -10,9 +10,9 @@
   --backgroundColorLayer2: #e3e1df;
   --linkColor: #004ecc;
   --borderColor: #ccc;
-  --successColor: #a6e2ba;
-  --dangerColor: #f7bdbd;
-  --warningColor: #ffca1b;
+    --successColor: #006f3b;
+    --dangerColor: #CC3100;
+    --warningColor: #d6ae2c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,8 +25,8 @@
     --backgroundColorLayer2: #292928;
     --linkColor: #43a4ff;
     --borderColor: #414141;
-    --successColor: #006f3b;
-    --dangerColor: #CC3100;
+    --successColor: #00bf65;
+    --dangerColor: #f14813;
     --warningColor: #d6ae2c;
   }
 }
