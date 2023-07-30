@@ -15,10 +15,9 @@ a.link-block {
 button.button,
 summary.button {
   --buttonColor: var(--secondaryTextColor);
-  --focusColor: var(--borderColor);
   font-size: 1rem;
   padding: 0.6rem 1.2rem;
-  border: 0.1em solid;
+  border: 0.1em solid var(--borderColor);
   border-radius: 0.4em;
   color: var(--buttonColor);
   background: var(--backgroundColor);
@@ -28,21 +27,27 @@ summary.button {
   &:hover, &:focus {
     box-shadow: 
       0 0 0 2px var(--backgroundColor),
-      0 0 0 3px var(--focusColor);
+      0 0 0 3px var(--buttonColor);
   }
 
   &:active {
     transform: translateY(1px);
   }
+  
+  
+  &.button-danger,
+  &.button-primary {
+    color: var(--backgroundColor);
+    background: var(--buttonColor);
+    border-color: var(--buttonColor);
+  }
 
   &.button-primary {
-    --buttonColor: var(--successColor);
-    --focusColor: var(--successColor);
+    --buttonColor: var(--primaryColor);
   }
 
   &.button-danger {
     --buttonColor: var(--dangerColor);
-    --focusColor: var(--dangerColor);
   }
 
   &.button-mini {
