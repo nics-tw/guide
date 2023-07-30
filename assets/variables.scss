@@ -10,9 +10,9 @@
   --backgroundColorLayer2: #e3e1df;
   --linkColor: #004ecc;
   --borderColor: #ccc;
-    --successColor: #006f3b;
-    --dangerColor: #CC3100;
-    --warningColor: #d6ae2c;
+  --successColor: #006f3b;
+  --dangerColor: #CC3100;
+  --warningColor: #d6ae2c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,7 +21,7 @@
     --textColor: #dbdfdf;
     --secondaryTextColor: #cfd5d5;
     --mutedTextColor: #b4b6b8;
-    --backgroundColorLayer1: #1f1e1e;
+    --backgroundColorLayer1: #222121;
     --backgroundColorLayer2: #292928;
     --linkColor: #43a4ff;
     --borderColor: #414141;
