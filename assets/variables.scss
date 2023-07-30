@@ -6,11 +6,13 @@
   --textColor: #1a1a1a;
   --secondaryTextColor: #404040;
   --mutedTextColor: #707070;
-  --subtleBackgroundColor: #f0eeed;
+  --backgroundColorLayer1: #f0eeed;
+  --backgroundColorLayer2: #e3e1df;
   --linkColor: #004ecc;
   --borderColor: #ccc;
-  --secondaryColor: #00CC5E;
-  --dangerColor: #CC3100;
+  --successColor: #a6e2ba;
+  --dangerColor: #f7bdbd;
+  --warningColor: #ffca1b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,11 +21,13 @@
     --textColor: #dbdfdf;
     --secondaryTextColor: #cfd5d5;
     --mutedTextColor: #b4b6b8;
-    --subtleBackgroundColor: #272727;
+    --backgroundColorLayer1: #1f1e1e;
+    --backgroundColorLayer2: #292928;
     --linkColor: #43a4ff;
     --borderColor: #414141;
-    --secondaryColor: #00CC5E;
+    --successColor: #006f3b;
     --dangerColor: #CC3100;
+    --warningColor: #d6ae2c;
   }
 }
 
@@ -38,7 +42,7 @@ body, .plain {
   background-color: var(--textColor);
 }
 
-.bg-subtle { background-color: var(--subtleBackgroundColor) }
+.bg-subtle { background-color: var(--backgroundColorLayer1) }
 .fg-subtle { background-color: var(--mutedTextColor) }
 
 textarea, input {

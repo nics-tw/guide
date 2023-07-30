@@ -4,20 +4,31 @@ title: 按鈕及連結
 iframe_page: ""
 ---
 
-### 按鈕
+### 按鈕類別
 
-{% capture button %}{% include ctas/button.html %}{% endcapture %}
-{% include example.html content=button %}
+{% capture html %}{% include ctas/button.html %}{% endcapture %}
+{% include example.html content=html %}
 
 #### CSS
 
 - `.button`：作為全部按鈕的基底。
 - `.button-primary`：作為主要或正面的動作視覺傳達。
 
+### 按鈕尺寸
+
+{% capture html %}{% include ctas/button-size.html %}{% endcapture %}
+{% include example.html content=html %}
+
+#### CSS
+
+- `.button-large`：大按鈕。
+- `.button-small`：小按鈕。
+- `.button-tiny`：迷你按鈕。
+
 ### 連結
 
-{% capture button %}{% include ctas/link.html %}{% endcapture %}
-{% include example.html content=button %}
+{% capture html %}{% include ctas/link.html %}{% endcapture %}
+{% include example.html content=html %}
 
 #### CSS
 
