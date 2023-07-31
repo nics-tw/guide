@@ -13,6 +13,7 @@ iframe_page: ""
 
 - `.button`：作為全部按鈕的基底。
 - `.button-primary`：作為主要或正面的動作視覺傳達。
+- `.button-danger`：作為有破壞性（如刪除資料）或負面的動作視覺傳達。
 
 ### 按鈕尺寸
 
@@ -23,7 +24,7 @@ iframe_page: ""
 
 - `.button-large`：大按鈕。
 - `.button-small`：小按鈕。
-- `.button-tiny`：迷你按鈕。
+- `.button-mini`：迷你按鈕。
 
 ### 連結
 
