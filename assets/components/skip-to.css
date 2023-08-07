@@ -1,26 +1,28 @@
 ---
 ---
 
+body:has(skip-to:focus-within) {
+  border-top: 3em solid transparent;
+}
+
 skip-to {
   position: absolute;
   top: 0;
-  left: 0;
-  z-index: 2147483647;
+  left: 0; right: 0;
 }
 
 skip-to a {
   display: block;
-  background: #0c0d09;
+  background: var(--linkColor);
   color: #fff;
   text-decoration: none;
   padding: 1em;
-  font-size: 16px;  
-  border: 3px solid transparent;
-  border-radius: 5px;
+  line-height: 1;
+  font-size: 14px;
 }
 
 skip-to a:focus {
-  border-color: #fcf81d;
+  box-shadow: 0 0 0 3px var(--subtleBackgroundColor);
   outline: none;
 }
 
