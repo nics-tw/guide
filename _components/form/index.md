@@ -38,3 +38,7 @@ iframe_page: ""
 #### 親和力
 
 - 使用 `.field-input-prefix` 或 `.field-input-suffix` 時，必要使用 `aria-describedby` 和 `id` 連結說明元件和 `<input>` 元件。
+
+## 參考資料
+
+- [Avoid Default Field Validation](https://adrianroselli.com/2019/02/avoid-default-field-validation.html).

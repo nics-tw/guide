@@ -119,11 +119,6 @@ input[type="password"] {
   padding: 0.4em;
   border: 1px solid var(--borderColor);
   border-radius: 4px;
-
-  form:has(:focus) &:invalid {
-    box-shadow: inset 0 0 0 1px #f00;
-    border-color: #f00;
-  }
 }
 
 .sr-only {
