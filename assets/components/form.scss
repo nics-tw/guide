@@ -11,6 +11,34 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  position: relative;
+  
+  &.fieldset-has-error {
+    &:before {
+      position: absolute;
+      right: 0;
+      content: "!";
+      flex-shrink: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><rect stroke="black" stroke-width="1" width="14" height="14" transform="rotate(45)" x="8" y="-8" rx="2" fill="orange"></rect></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      line-height: 2em;
+      letter-spacing: 0.1em;
+      font-size: inherit;
+      padding: 0 1em;
+      margin-right: 0.5em;
+      margin-top: 0.2em;
+      float: right;
+      
+      text-align: center;
+      font-weight: bold;
+      color: var(--textColor);
+    }
+
+    .field-description {
+      color: var(--dangerColor);
+    }
+  }
 
   .field-label {
     font-weight: 600;
@@ -18,8 +46,24 @@
   
   .field-description {
     font-size: 0.9em;
-
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+    
+    &:has(li + li) {
+      &:before {
+        content: "";
+        background-color: var(--warningColor);
+        display: block;
+        width: 0.5em;
+        margin-right: 1em;
+        height: 100%;
+        float: left;
+      }
+    }
   }
+
   @media not all and (hover: hover) {
     .field-input {
       // Ensure there's no zoom on mobile when focusing on the field.
