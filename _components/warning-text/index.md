@@ -11,4 +11,8 @@ iframe_page: ""
 
 #### CSS
 
-- `.warning-text`。
+- `.warning-text` 為警告段落。
+- `.warning-text-content` 為文字的容器。
+
+警告圖示的大小會隨著 CSS 字體設定的大小變動。
+
