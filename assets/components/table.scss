@@ -1,0 +1,68 @@
+.table {
+  text-align: left;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0.8em 0;
+  
+  .table-caption {
+    font-weight: 600;
+    padding-bottom: 0.4em;
+    font-size: 1.4em;
+  }
+  
+  .table-cell,
+  .table-head {
+    padding: 0.6em 1em;
+  }
+
+  .table-caption {
+    text-align: left;
+  }
+
+  .table-head {
+    color: var(--secondaryTextColor);
+  }
+
+  .table-header .table-head {
+    min-width: 3em;
+    border-top: 0;
+  }
+
+  .table-head,
+  .table-cell {
+    border-top: 1px solid var(--borderColor);
+    padding-left: 0;
+    vertical-align: top;
+  }
+
+  .table-row {
+    .table-head:first-of-type,
+    .table-cell:first-of-type {
+      padding-left: 0;
+    }
+
+    .table-head:last-of-type,
+    .table-cell:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  &.table-nested-list {
+    .list + .list {
+      margin-top: 1.5em;
+    }
+  }
+}
+
+.scroll-table-wrapper {
+  overflow: auto;
+
+  .table {
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .table-cell {
+    max-width: 24em;
+  }
+}

@@ -1,3 +1,5 @@
+@import 'list.scss';
+
 .fields {
   gap: 1.2rem;
   display: flex;
@@ -48,20 +50,8 @@
     font-size: 0.9em;
     margin-top: 0;
     margin-bottom: 0;
-    list-style: none;
     padding-left: 0;
-    
-    &:has(li + li) {
-      &:before {
-        content: "";
-        background-color: var(--warningColor);
-        display: block;
-        width: 0.5em;
-        margin-right: 1em;
-        height: 100%;
-        float: left;
-      }
-    }
+    @extend .list;
   }
 
   @media not all and (hover: hover) {
