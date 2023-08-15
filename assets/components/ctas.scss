@@ -18,7 +18,7 @@ summary.button {
   font-size: 0.9rem;
   padding: 0.6rem 1.2rem;
   border: 1px solid var(--borderColor);
-  border-radius: 0.4em;
+  border-radius: 0.2em;
   color: var(--textColor);
   background: var(--backgroundColor);
   cursor: pointer;
@@ -26,8 +26,8 @@ summary.button {
   &:hover, &:focus {
     box-shadow: 
       inset 0 0 1000px rgba(0, 0, 0, 0.05),
-      0 0 0 2px var(--backgroundColor),
-      0 0 0 3px var(--buttonColor);
+      0 0 0 2px rgba(0, 0, 0, 0.05);
+    border-color: var(--backgroundColor);
   }
 
   &:active {
@@ -40,6 +40,13 @@ summary.button {
     color: var(--backgroundColor);
     background: var(--buttonColor);
     border-color: var(--buttonColor);
+  
+    &:hover, &:focus {
+      box-shadow: 
+        inset 0 0 1000px rgba(0, 0, 0, 0.05),
+        0 0 0 1px var(--backgroundColor),
+        0 0 0 2px var(--buttonColor);
+    }
   }
 
   &.button-primary {
