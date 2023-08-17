@@ -14,7 +14,7 @@ a.link-block {
 
 button.button,
 summary.button {
-  --buttonColor: var(--borderColor);
+  --buttonColor: var(--backgroundColor);
   --buttonBorderColor: var(--borderColor);
   font-size: 0.9rem;
   padding: 0.6rem 1.2rem;
@@ -28,7 +28,7 @@ summary.button {
     box-shadow: 
       inset 0 0 1000px rgba(0, 0, 0, 0.05),
       0 0 0 2px rgba(0, 0, 0, 0.05);
-    border-color: var(--backgroundColor);
+    border-color: var(--buttonBorderColor);
   }                 
 
   &:active:not(:disabled):not(.button-disabled) {
@@ -61,10 +61,10 @@ summary.button {
 
   &[disabled], &.button-disabled {
     --buttonBorderColor: var(--backgroundColor);
-    border-radius: 0.3em;
     cursor: not-allowed;
     outline: 1px dashed var(--borderColor);
     border-width: 2px;
+    border-radius: 0.3em;
     opacity: 0.8;
     box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.05);
   }
