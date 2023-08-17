@@ -15,33 +15,33 @@ a.link-block {
 button.button,
 summary.button {
   --buttonColor: var(--borderColor);
+  --buttonBorderColor: var(--borderColor);
   font-size: 0.9rem;
   padding: 0.6rem 1.2rem;
-  border: 1px solid var(--borderColor);
+  border: 1px solid var(--buttonBorderColor);
   border-radius: 0.2em;
   color: var(--textColor);
   background: var(--backgroundColor);
   cursor: pointer;
   
-  &:hover, &:focus {
+  &:hover:not(.button-disabled):not(:disabled), &:focus {
     box-shadow: 
       inset 0 0 1000px rgba(0, 0, 0, 0.05),
       0 0 0 2px rgba(0, 0, 0, 0.05);
     border-color: var(--backgroundColor);
-  }
+  }                 
 
-  &:active {
+  &:active:not(:disabled):not(.button-disabled) {
     transform: translateY(1px);
   }
-  
   
   &.button-danger,
   &.button-primary {
     color: var(--backgroundColor);
     background: var(--buttonColor);
-    border-color: var(--buttonColor);
+    border-color: var(--buttonBorderColor);
   
-    &:hover, &:focus {
+    &:hover:not(:disabled):not(.button-disabled), &:focus {
       box-shadow: 
         inset 0 0 1000px rgba(0, 0, 0, 0.05),
         0 0 0 1px var(--backgroundColor),
@@ -51,12 +51,24 @@ summary.button {
 
   &.button-primary {
     --buttonColor: var(--primaryColor);
+    --buttonBorderColor: var(--primaryColor);
   }
 
   &.button-danger {
     --buttonColor: var(--dangerColor);
+    --buttonBorderColor: var(--dangerColor);
   }
 
+  &[disabled], &.button-disabled {
+    --buttonBorderColor: var(--backgroundColor);
+    border-radius: 0.3em;
+    cursor: not-allowed;
+    outline: 1px dashed var(--borderColor);
+    border-width: 2px;
+    opacity: 0.8;
+    box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.05);
+  }
+  
   &.button-mini {
     font-size: 0.8rem;
     padding: 0.3rem 0.6rem;

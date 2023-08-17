@@ -14,7 +14,26 @@ iframe_page: ""
 - `.button`：作為全部按鈕的基底。
 - `.button-primary`：作為主要或正面的動作視覺傳達。
 - `.button-danger`：作為有破壞性（如刪除資料）或負面的動作視覺傳達。
-- `.button-processing`：作為暫時無法點下的按鈕視覺傳達。
+
+## 按鈕類別
+
+{% capture html %}{% include ctas/button-disabled.html %}{% endcapture %}
+{% include example.html content=html %}
+
+### CSS
+
+- `[disabled]`, `.button-disabled`：作為不可用的按鈕視覺。
+
+### 親和力
+
+#### 可用於
+
+- 剛送出的表單按鈕，以用於避免二次送出。
+
+#### 不可用於
+
+- 驗證錯誤的表單按鈕。
+- 尚未填寫完的表單按鈕。
 
 ## 按鈕尺寸
 
