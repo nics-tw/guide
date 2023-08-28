@@ -1,5 +1,20 @@
 <div class="ba br3 w-100 relative">
-  <div class="pa4">{{ include.content }}</div>
+  <div class="pa4" data-example>
+    {{ include.content }}
+    {% if include.i18n %}
+      {% assign i18n = include.i18n | split: ';' %}
+      <select data-i18n-selector="{{ include.i18n_selector }}" class="absolute nt2 lh-solid pa1 right-0 mr4 top-0 f7 pointer br2">
+        <option value="default">預設語言</option>
+        {% for lang in i18n %}
+          {% assign parts = lang | split: ':' %}
+          {% assign name = parts[0] %}
+          <option data-phrases="{{ parts[1] }}">
+            {{ name }}
+          </option>
+        {% endfor %}
+      </select>
+    {% endif %}
+  </div>
   <details>
     <summary class="absolute nt3 lh-solid button button-mini right-0 mr4 f7 pointer br2">
       原始碼

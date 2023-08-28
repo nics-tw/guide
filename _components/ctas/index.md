@@ -7,7 +7,12 @@ iframe_page: ""
 ## 按鈕類別
 
 {% capture html %}{% include ctas/button.html %}{% endcapture %}
-{% include example.html content=html %}
+{% 
+  include example.html 
+  content=html 
+  i18n_selector="button" 
+  i18n="English:Submit,Delete,Cancel;日文:送信,削除,キャンセル;Tiếng Việt:Gửi,Xóa,Hủy;ไทย:ส่ง,ลบ,ยกเลิก"
+%}
 
 ### CSS
 
@@ -18,7 +23,12 @@ iframe_page: ""
 ## 不可用的按鈕
 
 {% capture html %}{% include ctas/button-disabled.html %}{% endcapture %}
-{% include example.html content=html %}
+{% 
+  include example.html 
+  content=html 
+  i18n_selector="button" 
+  i18n="English:Submit,Next;日文:送信,次へ;Tiếng Việt:Gửi,Kế tiếp;ไทย:ส่ง,ต่อไป"
+%}
 
 ### CSS
 
@@ -27,7 +37,12 @@ iframe_page: ""
 ## 按鈕尺寸
 
 {% capture html %}{% include ctas/button-size.html %}{% endcapture %}
-{% include example.html content=html %}
+{% 
+  include example.html 
+  content=html 
+  i18n_selector="button"
+  i18n="English:Submit;日文:送信;Tiếng Việt:Gửi;ไทย:ส่ง"
+%}
 
 ### CSS
 
