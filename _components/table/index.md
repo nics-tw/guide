@@ -17,3 +17,16 @@ title: 表格
 
 {% capture html %}{% include table/table-scrollable.html %}{% endcapture %}
 {% include example.html content=html %}
+
+#### CSS
+
+- `.scroll-table-wrapper`
+
+### 明顯分線表格
+
+{% capture html %}{% include table/table-cells.html %}{% endcapture %}
+{% include example.html content=html %}
+
+#### CSS
+
+- `.table-separator`
