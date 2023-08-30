@@ -13,6 +13,7 @@
   --primaryColor: #262927;
   --dangerColor: #CC3100;
   --warningColor: #ff6600;
+  --highlightColor: #ffff00;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +29,7 @@
     --primaryColor: #ffffff;
     --dangerColor: #ff7f7f;
     --warningColor: #ff6600;
+    --highlightColor: #ffff00;
   }
 }
 
@@ -44,6 +46,7 @@ body, .plain {
 
 .bg-subtle { background-color: var(--backgroundColorLayer1) }
 .fg-subtle { background-color: var(--mutedTextColor) }
+.b-main { border-color: var(--textColor); }
 
 textarea, input {
   background-color: var(--backgroundColor);
@@ -52,4 +55,8 @@ textarea, input {
 
 * {
   border-color: inherit;
+}
+
+mark {
+  background: var(--highlightColor);
 }
