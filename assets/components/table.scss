@@ -55,6 +55,7 @@
 }
 
 .scroll-table-wrapper {
+  container: scrollable-table / inline-size;
   overflow: auto;
 
   .table {
@@ -63,6 +64,6 @@
   }
 
   .table-cell {
-    max-width: 24em;
+    max-width: min(96cqw, 24em);
   }
 }
