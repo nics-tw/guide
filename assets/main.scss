@@ -121,6 +121,7 @@ input[type="password"] {
   width: 100%;
   padding: 0.4em;
   border: 1px solid var(--borderColor);
+  box-sizing: border-box;
   border-radius: 4px;
 }
 
@@ -150,4 +151,8 @@ code {
 
     code { padding: 0; }
   }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }

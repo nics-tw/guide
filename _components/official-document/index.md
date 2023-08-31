@@ -36,7 +36,7 @@ iframe_page: ""
 {% endcapture %}
 {% include example-html.html content=html %}
 
-### JS
+### Custom Element
 
 - 使用 [`<official-document>`](/assets/components/official-document-element.js)。
 

@@ -25,14 +25,17 @@
 
   .table-header .table-head {
     min-width: 3em;
-    border-top: 0;
   }
 
   .table-head,
   .table-cell {
-    border-top: 1px solid var(--borderColor);
+    border-bottom: 1px solid var(--borderColor);
     padding-left: 0;
     vertical-align: top;
+  }
+
+  .table-row:last-of-type .table-cell {
+    border-bottom: 0;
   }
 
   .table-row {
