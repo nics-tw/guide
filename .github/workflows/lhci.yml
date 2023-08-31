@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g @lhci/cli@0.11.x
-      - run: lhci collect --url=https://muan.github.io/pdis-components/
+      - run: lhci collect --url=https://guide.pdis.run/
       - name: Archive lighthouse results
         uses: actions/upload-artifact@v3
         with:
