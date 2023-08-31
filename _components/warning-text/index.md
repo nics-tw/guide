@@ -4,11 +4,11 @@ title: 警告文字
 iframe_page: ""
 ---
 
-### 警告文字
+## 警告文字
 
 {% capture html %}{% include warning-text/block.html %}{% endcapture %}
 {% include example.html content=html %}
 
-#### CSS
+### CSS
 
 - `.warning-text` 為警告段落。
