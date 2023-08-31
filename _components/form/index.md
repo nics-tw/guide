@@ -23,7 +23,18 @@ iframe_page: ""
 
 - 使用 `.field-label`，必要使用 `for` 和 `id` 連結 `<label>` 元件和 `<input>` 元件。
 - 若有使用 `ul.field-description`，必要使用 `aria-describedby` 和 `id` 連結說明元件和 `<input>` 元件。
+- 使用 [`[autocomplete]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values) 方便使用者快速填寫欄位。
+- 盡量使用 `input[type=text]`，倚賴後端驗證再於前端顯示錯誤內容。
+- 需要特定的輸入模式則使用 [`[inputmode]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) 做設定。
 
+### 必要欄位
+
+{% capture html %}{% include form/field-required.html %}{% endcapture %}
+{% include example.html content=html %}
+
+#### 親和力
+
+- 使用 `input[aria-required="true"]` 告知輔助科技。
 
 ### 欄位及驗證錯誤內容
 
@@ -58,3 +69,6 @@ iframe_page: ""
 
 - 沒有使用 [`aria-errormessage`](https://a11ysupport.io/tech/aria/aria-errormessage_attribute) 因為瀏覽器支援不足。
 - 沒有使用 [`aria-invalid`](https://a11ysupport.io/tech/aria/aria-invalid_attribute) 因為元件暫時不支援客戶端驗證。
+- [Why we think online HTML forms are usually better than document-based forms in government
+](https://gds.blog.gov.uk/2021/11/17/why-we-think-online-html-forms-are-usually-better-than-document-based-forms-in-government/)
+- [Why the GOV.UK Design System team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
