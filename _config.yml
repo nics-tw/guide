@@ -5,7 +5,7 @@ sass:
 timezone: Asia/Taipei
 collections:
   technology:
-    name: "技術文件"
+    name: "設計與技術原則"
     output: true
   components:
     name: "共用元件"

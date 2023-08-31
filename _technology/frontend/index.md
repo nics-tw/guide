@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 前端
+title: 前端技術
 text_only: 1
 ---
 
