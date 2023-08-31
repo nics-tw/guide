@@ -20,6 +20,7 @@ class OfficialDocumentElement extends HTMLElement {
       parsed = this.parsed()
       this.innerText = ''
       this.classList.add('parsed')
+      this.innerHTML = `<style>${this._css()}</style>`
       this.append(parsed)
     } catch {
       this.innerText = this.innerText.trim()
@@ -52,6 +53,64 @@ class OfficialDocumentElement extends HTMLElement {
   _dt(title, text) { 
     const splitTitle = title.split('').map(t => `<span>${t}</span>`).join('')
     return `<dt>${splitTitle}</dt><dd>${text}</dd>`
+  }
+
+  _css() {
+    return `official-document.parsed {
+  white-space: normal;
+  padding-left: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-left: 1px dashed var(--borderColor);
+}
+
+official-document .od-title {
+  font-size: 1.2em;
+}
+
+official-document .od-admin {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+official-document .od-title,
+official-document .od-admin {
+  font-weight: bold;
+}
+
+official-document .od-meta {
+  font-size: 0.9em;
+  margin-top: 0;
+  margin-bottom: 2em;
+  color: var(--secondaryTextColor)
+}
+
+official-document dl.od-list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1em;
+  row-gap: 0.6em;  
+}
+
+official-document dt {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0.2em;
+  position: relative;
+
+  &:after {
+    content: '：';
+    left: calc(100% + 2px);
+    position: absolute;
+  }
+}
+
+official-document dd {
+  margin-left: 0;
+  white-space: pre-wrap;
+}
+`
   }
 }
 
