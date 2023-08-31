@@ -1,6 +1,7 @@
 ---
 title: 共用元件
 layout: main
+text_only: 1
 ---
 
 ## 目標

@@ -1,6 +1,7 @@
 ---
 layout: main
 title: 前端
+text_only: 1
 ---
 
 ## 漸進增強

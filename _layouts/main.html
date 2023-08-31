@@ -42,8 +42,8 @@
     </nav>
     <div id="main" class="ml4-l flex-auto">
       {% if page.wip %}
-        <div class="f6 o-80">
-          <h2>歡迎來到政府網站設計原則</h2>
+        <div class="mt2 measure-wide">
+          <h2 class="f4">歡迎來到政府網站設計原則</h2>
           <p>感謝您選擇探索我們目前所呈現的內容。我們正在全力開創新的典範，以便為您提供有價值的知識及技術。</p>
           <p>我們的努力不會歇止，我們鼓勵您現在就開始運用這裡提供的資訊和設計。您的參與和意見對我們至關重要，這將有助於我們更進一步，讓政府網站設計原則更加完善。</p>
           <p>我們期待著您的回饋，並感謝您對我們的支持。讓我們攜手合作，共同見證政府網站設計原則的進步和成長。</p>
@@ -51,7 +51,7 @@
       {% endif %}
       {% assign filetype = page.path | split:'.' | last %}
       {% if filetype == 'md' %}
-        <article class="mw7 nested-copy-separator">
+        <article class="mw7 nested-copy-separator {% if page.text_only %}measure-wide{% endif %}">
           {{ content }}
         </article>
       {% else %}
