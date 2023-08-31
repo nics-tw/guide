@@ -8,7 +8,7 @@ document.addEventListener('change', (event) => {
   const parent = option.closest('[data-example]')
   const elements = parent.querySelectorAll(selector)
 
-  if (!langMap.get(select)) langMap.set(select, [...elements].map(e => e.textContent))
+  if (!langMap.get(select)) langMap.set(select, [...elements].map(e => getTextNode(e).data))
   let phrases
 
   if (option.value === 'default') {
@@ -18,7 +18,11 @@ document.addEventListener('change', (event) => {
   }
   
   for (let i = 0; i < elements.length; i++) {
-    console.log(phrases[i])
-    elements[i].textContent = phrases[i] || phrases[0]
+    const textNode = getTextNode(elements[i])
+    textNode.replaceWith(phrases[i] || phrases[0])
   }
 })
+
+function getTextNode(element) {
+  return [...element.childNodes].find(e => e.nodeType === Node.TEXT_NODE)
+}
