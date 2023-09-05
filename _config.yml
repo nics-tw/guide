@@ -5,7 +5,10 @@ sass:
 timezone: Asia/Taipei
 collections:
   technology:
-    name: "設計與技術原則"
+    name: "前端技術原則"
+    output: true
+  visual:
+    name: "視覺設計"
     output: true
   components:
     name: "共用元件"
