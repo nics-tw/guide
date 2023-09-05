@@ -44,6 +44,7 @@
       {% assign filetype = page.path | split:'.' | last %}
       {% if filetype == 'md' %}
         <article class="mw7 nested-copy-separator {% if page.text_only %}measure-wide{% endif %}">
+          <h2>{{ page.title }}</h2>
           {{ content }}
         </article>
       {% else %}
