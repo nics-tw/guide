@@ -4,8 +4,6 @@ title: 表單欄位
 iframe_page: ""
 ---
 
-## 表單欄位
-
 ### 簡易欄位
 
 {% capture html %}{% include form/field.html %}{% endcapture %}

@@ -4,13 +4,15 @@ title: 公文
 iframe_page: ""
 ---
 
-## 公文
-
 {% capture html %}{% include official-document/main.html %}{% endcapture %}
 {% 
   include example.html 
   content=html
 %}
+
+### Custom Element
+
+- 使用 [`<official-document>`](/assets/components/official-document-element.js)。
 
 ### 使用方式
 
@@ -35,9 +37,5 @@ iframe_page: ""
 <!-- 長官姓名 -->
 {% endcapture %}
 {% include example-html.html content=html %}
-
-### Custom Element
-
-- 使用 [`<official-document>`](/assets/components/official-document-element.js)。
 
 <script src="/assets/components/official-document-element.js" type="module">
