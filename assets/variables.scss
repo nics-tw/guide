@@ -44,8 +44,9 @@ body, .plain {
   background-color: var(--textColor);
 }
 
-.bg-subtle { background-color: var(--backgroundColorLayer1) }
-.fg-subtle { background-color: var(--mutedTextColor) }
+.bg-layer1 { background-color: var(--backgroundColorLayer1) }
+.bg-layer2 { background-color: var(--backgroundColorLayer2) }
+.fg-subtle { color: var(--mutedTextColor) }
 .b-main { border-color: var(--textColor); }
 
 textarea, input {

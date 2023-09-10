@@ -46,6 +46,11 @@ a {
   }
 }
 
+hr {
+  border-style: solid;
+  border-bottom: 0;
+}
+
 nav .nav-link {
   position: relative;
   padding: 0.6em 1.4em;
