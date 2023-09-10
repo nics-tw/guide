@@ -1,0 +1,43 @@
+<div class="fields">
+  <fieldset class="fieldset">
+    <label for="name" class="field-label">居住城市</label>
+    <select class="field-input">
+      <option>選擇</option>
+      <option>台北市</option>
+      <option>新北市</option>
+      <option>基隆市</option>
+    </select>
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="name" class="field-label">識別證件</label>
+    <label class="field-checkable">
+      <input type="radio" name="id" value="id" checked> 身份證
+    </label>
+    <label class="field-checkable">
+      <input type="radio" name="id" value="houseid"> 戶口名簿
+    </label>
+    <label class="field-checkable">
+      <input type="radio" name="id" value="passport"> 護照
+    </label>
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="name" class="field-label">姓名</label>
+    <input type="text" id="name" autocomplete="full-name" class="field-input">
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="desc" class="field-label">說明</label>
+    <textarea id="desc" class="field-input"></textarea>
+  </fieldset>
+  <fieldset class="fieldset fieldset-checkable-grid">
+    <label for="name" class="field-label">補辦項目</label>
+    <label class="field-checkable">
+      <input type="checkbox" name="item" value="id"> 身份證
+    </label>
+    <label class="field-checkable">
+      <input type="checkbox" name="item" value="healthcard"> 健保卡
+    </label>
+    <label class="field-checkable">
+      <input type="checkbox" name="item" value="healthcard"> 自然人憑證
+    </label>
+  </fieldset>
+</div>

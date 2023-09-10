@@ -121,13 +121,25 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="url"],
-input[type="password"] {
+input[type="password"],
+textarea {
   display: block;
   width: 100%;
   padding: 0.4em;
   border: 1px solid var(--borderColor);
   box-sizing: border-box;
   border-radius: 4px;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+}
+
+select {
+  padding: 0.4em;
+  border: 1px solid var(--borderColor);
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
 }
 
 .sr-only {

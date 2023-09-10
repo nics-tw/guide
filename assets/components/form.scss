@@ -78,3 +78,21 @@
     font-size: 0.95em;
   }
 }
+
+.field-checkable {
+  padding: 0.2em;
+
+  input[type="checkbox"],
+  input[type="radio"] {  
+    margin-right: 0.2em;  
+  }
+}
+
+.fieldset-checkable-grid {
+  display: grid;
+  // todo
+  
+  .field-checkable {
+    
+  }
+}

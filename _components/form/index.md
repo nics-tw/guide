@@ -6,7 +6,7 @@ iframe_page: ""
 
 ### 簡易欄位
 
-{% capture html %}{% include form/field.html %}{% endcapture %}
+{% capture html %}{% include form/form-elements.html %}{% endcapture %}
 {% include example.html 
   content=html
   i18n_selector="label,.field-description li" 
@@ -17,17 +17,35 @@ iframe_page: ""
 
 - `.fields`：作為全部 `.fieldset` 的容器。
 - `fieldset.fieldset`：作為單獨表單項目的容器。
+- `fieldset.field-checkable-grid`：作為包含多個 `<input type="radio/checkbox">` 並想要多選項並列同一行列的容器。
 - `label.field-label`：作為單獨表單項目的 `<label>`。
-- `ul.field-description`：作為單獨表單項目說明文字。
+- `label.field-checkable`：作為單獨 `<input type="radio/checkbox">` 的 `<label>`。
 - `.field-input`：作為輸入欄位。
 
 #### 親和力
 
 - 使用 `.field-label`，必要使用 `for` 和 `id` 連結 `<label>` 元件和 `<input>` 元件。
-- 若有使用 `ul.field-description`，必要使用 `aria-describedby` 和 `id` 連結說明元件和 `<input>` 元件。
 - 使用 [`[autocomplete]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values) 方便使用者快速填寫欄位。
 - 盡量使用 `input[type=text]`，倚賴伺服器端驗證再於瀏覽器端顯示錯誤內容。伺服器端的表格內容驗證比瀏覽器端的表格驗證更為重要。因為 HTML 的內建表格驗證存在許多親和力的疑慮（請參考 [Avoid Default Field Validation](https://adrianroselli.com/2019/02/avoid-default-field-validation.html).），建議非必要時，盡量仰賴伺服器端驗證，並正確地保留使用者輸入的內容且顯示錯誤。
 - 需要特定的輸入模式則使用 [`[inputmode]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) 做設定。
+
+
+### 欄位說明
+
+{% capture html %}{% include form/field.html %}{% endcapture %}
+{% include example.html 
+  content=html
+  i18n_selector="label,.field-description li" 
+  i18n="English:Email,Address must end with @pdis.nat.gov.tw.;"
+%}
+
+#### CSS
+
+- `ul.field-description`：作為單獨表單項目說明文字。
+
+#### 親和力
+
+- 使用 `ul.field-description`，必要使用 `aria-describedby` 和 `id` 連結說明元件和 `<input>` 元件。
 
 ### 必要欄位
 
