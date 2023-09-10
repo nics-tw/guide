@@ -4,8 +4,7 @@ layout: main
 text_only: 1
 ---
 
-> Engineers build things to code.
-> Standards and compliance need to be met for **public health, welfare, safety, accessibility, and security**.
+> Engineering has a direct and vital impact on the quality of life **for all people**. Accordingly, the services provided by engineers require honesty, impartiality, fairness, and equity, and must be dedicated to **the protection of the public health, safety, and welfare**.
 
 網頁工程相比於其他工程領域，例下產品工程、建築工程，都是還剛出生的寶寶。工程學的共同點都在於有嚴謹的約束和施工約束。
 
@@ -34,11 +33,11 @@ text_only: 1
 
 ### 規範
 
-- HTML validator
-- Best practices
-- Web Content Accessibility Guidelines
-- Accessible Rich Interact Application (ARIA) guidelines
+- [HTML validator](https://validator.w3.org/)
+- [Best practices](https://developer.chrome.com/en/docs/lighthouse/best-practices/)
+- [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
+- [WAI-ARIA standard](https://www.w3.org/TR/wai-aria/)
 
 ## 基礎要求
 
-以 [Lighthouse]() 偵測報告為例，建造政府網站時應在效能部分最低標要求 90 分以上，親和力部分最低標要求滿分，在最佳規範部分最低標要求 80 分以上，並且不違反「包含不安全的程式」規則。
+以 [Lighthouse](https://developer.chrome.com/en/docs/lighthouse/) 偵測報告為例，建造政府網站時應在效能部分最低標要求 90 分以上，親和力部分最低標要求滿分，在最佳規範部分最低標要求 80 分以上。
