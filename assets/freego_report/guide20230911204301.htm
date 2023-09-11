@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hant-tw">
+<head>   <meta charset="utf-8" />
+   <title>全網站無障礙網頁檢測報告</title>
+   <link rel="stylesheet" href="https://accessibility.moda.gov.tw/Content/mystyle2.css?v=20230911204217">
+   <style>   <!--
+body { max-width:80%; margin: 0px auto; line-height: 1.5; font-size: 0.95rem; }
+            #logo { display: block; margin: 0px auto; width:60%;  border:0; }
+            header h1 {font-size: 2.5rem; text-align: center; }
+            h2 { background-color: #DDDDDD; }
+            footer { display: block; text-align: center; }
+			ol.upper-roman { list-style-type: upper-roman; }
+			li.url { list-style-type: disc; font-weight: bold; }
+            span.codeErr { font-style: italic; background-color: #FFDDDD; font-size: 0.8rem; }
+            span.codeNotice { font-style: italic; background-color: #FFFFD0; font-size: 0.8rem; }   -->
+   </style></head>
+<body>
+    <header>
+        <div>
+            <a href="https://accessibility.moda.gov.tw" target="_blank" title="以新視窗開啟連結"><img id="logo" src="https://accessibility.moda.gov.tw/uploads/freego_banner.png" alt="無障礙網路空間服務軟體檢測標誌" /></a>
+        </div>
+        <h1>全網站無障礙網頁檢測報告</h1>
+        <h2>《檢測基本資料》</h2>
+	       <ul>
+	          <li>
+	              <strong>受測網址</strong>：<a href="https://guide.pdis.run/" target="_blank" title="以新視窗開啟受測網址">https://guide.pdis.run/</a>
+           </li>
+	          <li><strong>檢測範圍</strong>：全網站</li>
+	          <li><strong>檢測時間</strong>：Mon Sep 11 20:41:20 CST 2023</li>
+	          <li><strong>完成時間</strong>：Mon Sep 11 20:42:17 CST 2023</li>
+	          <li><strong>檢測等級</strong>：AA等級</li>
+	          <li><strong>受測網頁</strong>：此網站接受檢測共17個網頁，其中查得頁面逾時共0個</li>
+	          <li><strong>檢測工具</strong>：Freego Mar 13 2023無障礙檢測工具</li>
+	      </ul>
+	  </header>
+   <section>
+	      <h2>《軟體檢測結果》</h2>
+	  <p><strong>受測網頁尚未達到AA無障礙檢測標準</strong>，一個網頁必須通過AA等級的全部檢測要點才能達到這個等級的無障礙網頁標準。</p>
+	  <h2>《軟體檢測未通過項目》</h2>
+	  <p>以下項目是軟體檢測時發現未符合規範要求的網頁，請自行參考各項檢測碼說明並確實修正後再重新進行軟體檢測。</p>
+   <ol>
+       <li class="url">3.檢測網址https://guide.pdis.run/components/ctas/index.html</li>
+       <ol class="upper-roman">
+           <li>
+               <a href="https://accessibility.moda.gov.tw/Download/Detail/1512?Category=63" target="_blank" title="以新視窗開啟檢測碼網頁" >HM1130104C:可見的表單控制元件均需有對應的標籤&lt;label&gt;組件，或有標題(title)屬性，且其內容或值均不得為空字串或空白</a>(A)
+           </li>
+           <ul>
+              <li>表單中select控制元件，需有對應的label標籤組件。如為無法設置標籤組件，請以title屬性或aria-*屬性提供該控制元件的標題說明，以幫助螢幕報讀軟體識別。<br>&lt;select data-i18n-selector="button" class="field-select absolute nt2 lh-solid pa1 right-0 mr4 top-0 f7 pointer br2"&gt; &lt;option value="default"&gt;預設語言&lt;/option&gt; &lt;option data-phrases="Submit,Delete,Cancel"&gt; English &lt;/option&gt; &lt;option data-phrases="送信,削除,キャンセル"&gt; 日文 &lt;/option&gt; &lt;option data-phrases="Gửi,Xóa,Hủy
+              </li>
+           </ul>
+       </ol>
+       <li class="url">5.檢測網址https://guide.pdis.run/components/form/index.html</li>
+       <ol class="upper-roman">
+           <li>
+               <a href="https://accessibility.moda.gov.tw/Download/Detail/1509?Category=63" target="_blank" title="以新視窗開啟檢測碼網頁" >HM1130103C:表單控制元件組件需以欄位組&lt;fieldset&gt;組件來分群，並以說明&lt;legend&gt;組件來提供標題</a>(A)
+           </li>
+           <ul>
+              <li>fieldset元素區塊內的第一個子元素應為legend元素。<br>&lt;fieldset class="fieldset"&gt; <br> &lt;label for="name" class="field-label"&gt;居住城市&lt;/label&gt; <br> &lt;select class="field-input"&gt; &lt;option&gt;選擇&lt;/option&gt; &lt;option&gt;台北市&lt;/option&gt; &lt;option&gt;新北市&lt;/option&gt; &lt;option&gt;基隆市&lt;/option&gt; &lt;/select&gt; <br>&lt;/fieldset&gt;
+              </li>
+           </ul>
+           <li>
+               <a href="https://accessibility.moda.gov.tw/Download/Detail/1512?Category=63" target="_blank" title="以新視窗開啟檢測碼網頁" >HM1130104C:可見的表單控制元件均需有對應的標籤&lt;label&gt;組件，或有標題(title)屬性，且其內容或值均不得為空字串或空白</a>(A)
+           </li>
+           <ul>
+              <li>表單中select控制元件，需有對應的label標籤組件。如為無法設置標籤組件，請以title屬性或aria-*屬性提供該控制元件的標題說明，以幫助螢幕報讀軟體識別。<br>&lt;select class="field-input"&gt; &lt;option&gt;選擇&lt;/option&gt; &lt;option&gt;台北市&lt;/option&gt; &lt;option&gt;新北市&lt;/option&gt; &lt;option&gt;基隆市&lt;/option&gt; &lt;/select&gt;
+              </li>
+           </ul>
+       </ol>
+       <li class="url">7.檢測網址https://guide.pdis.run/components/skip-to/index.html</li>
+       <ol class="upper-roman">
+           <li>
+               <a href="https://accessibility.moda.gov.tw/Download/Detail/1526?Category=63" target="_blank" title="以新視窗開啟檢測碼網頁" >HM1410201C:頁框&lt;frame&gt;組件及內嵌式頁框&lt;iframe&gt;組件需有標題(title)屬性，且其值不得為空字串或空白</a>(A)
+           </li>
+           <ul>
+              <li>使用iframe元素嵌入其他網頁內容，應以title屬性提供該頁框名稱幫助辨識。<br>&lt;iframe class="ba br3 w-100" src="/components/skip-to/skip-to.html"&gt;&lt;/iframe&gt;
+              </li>
+           </ul>
+       </ol>
+       <li class="url">15.檢測網址https://guide.pdis.run/components/digital-info/digital-info.html</li>
+       <ol class="upper-roman">
+           <li>
+               <a href="https://accessibility.moda.gov.tw/Download/Detail/1509?Category=63" target="_blank" title="以新視窗開啟檢測碼網頁" >HM1130103C:表單控制元件組件需以欄位組&lt;fieldset&gt;組件來分群，並以說明&lt;legend&gt;組件來提供標題</a>(A)
+           </li>
+           <ul>
+              <li>fieldset元素區塊內的第一個子元素應為legend元素。<br>&lt;fieldset class="fieldset"&gt; <br> &lt;label class="field-label" for="organization"&gt;單位 （必要欄位）&lt;/label&gt; <br> &lt;input class="field-input" type="text" id="organization" name="organization" placeholder="國家資通安全研究院" required&gt; <br>&lt;/fieldset&gt;
+              </li>
+           </ul>
+       </ol>
+       <li class="url">16.檢測網址https://guide.pdis.run/cdn-cgi/l/email-protection</li>
+       <ol class="upper-roman">
+           <li>
+               <a href="https://accessibility.moda.gov.tw/Download/Detail/1528?Category=63" target="_blank" title="以新視窗開啟檢測碼網頁" >CS2140401C:任何CSS樣式規則均使用具名字型尺寸，或者使用百分比或em等相對字型尺寸單位</a>(AA)
+           </li>
+           <ul>
+              <li>外部CSS(https://guide.pdis.run/cdn-cgi/styles/cf.errors.css)中，樣式表宣告font-size屬性時，應以相對尺寸為計算單位，或使用具名字型如xx-small、x-small、small、medium、large、x-large、xx-large、smaller或larger。<br>font-size:15px!important;line-height
+              </li>
+           </ul>
+       </ol>
+       <li class="url">17.檢測網址https://guide.pdis.run/components/skip-to/skip-to.html</li>
+       <ol class="upper-roman">
+           <li>
+               <a href="https://accessibility.moda.gov.tw/Download/Detail/1506?Category=63" target="_blank" title="以新視窗開啟檢測碼網頁" >HM1130100C:網頁中的標頭組件必須要按照正確的巢狀層次結構來配置</a>(A)
+           </li>
+           <ul>
+              <li>網頁請使用標題組件提供螢幕報讀軟體使用者辨識網頁結構並有利操作
+              </li>
+           </ul>
+           <li>
+               <a href="https://accessibility.moda.gov.tw/Download/Detail/1528?Category=63" target="_blank" title="以新視窗開啟檢測碼網頁" >CS2140401C:任何CSS樣式規則均使用具名字型尺寸，或者使用百分比或em等相對字型尺寸單位</a>(AA)
+           </li>
+           <ul>
+              <li>外部CSS(https://guide.pdis.run/assets/components/skip-to.css)中，樣式表宣告font-size屬性時，應以相對尺寸為計算單位，或使用具名字型如xx-small、x-small、small、medium、large、x-large、xx-large、smaller或larger。<br>font-size: 14px;<br><br>  box-shadow
+              </li>
+           </ul>
+       </ol>
+   </ol>
+       <h2>《ME1320200C 清單》</h2>
+       <p>無</p>
+    </section>
+    <section>
+       <h2>《檢測設定紀錄》</h2>
+       <h3>瀏覽器類型</h3>
+       <p>Firefox</p>
+       <h3>Javascript狀態</h3>
+       <p>使用</p>
+       <h3>排除資料夾</h3>
+       <p>無</p>
+       <h3>排除特定網頁</h3>
+       <p>無</p>
+       <h3>排除檔案類型</h3>
+       <p>無</p>
+    </section>
+    <section>
+        <h2>《聯絡方式》</h2>
+        <p>如對報告內容有不瞭解之處，請利用以下方式與我們聯繫：</p>
+        <ul>
+            <li>電話：專線一：02-25502818、專線二：02-25533988#812、專線三：02-25533988#351</li>            <li>傳真：02-25531319</li>            <li>Email：accessibility@cisanet.org.tw</li>        </ul>
+    </section>
+    <footer>
+        <p>數位發展部 版權所有 ©2022 moda. All Rights Reserved.<br />
+    </footer>
+</body>
+</html>
+<!--
+       <h2>《檢測錯誤 List》</h2>
+       <p>無</p>
+-->
