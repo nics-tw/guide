@@ -2,7 +2,7 @@ const langMap = new WeakMap()
 
 document.addEventListener('change', (event) => {
   const select = event.target.closest('select')
-  if (!select.hasAttribute('data-i18n-selector')) return
+  if (!select || !select.hasAttribute('data-i18n-selector')) return
   const option = select.selectedOptions[0]
   const selector = select.getAttribute('data-i18n-selector')
   const parent = option.closest('[data-example]')
