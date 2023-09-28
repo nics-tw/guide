@@ -1,8 +1,48 @@
 <div class="fields">
-  <fieldset class="fieldset" data-character-count="意見文字上限兩百字。">
+  <fieldset class="fieldset" data-limit-phrase="尚餘 {remaining} 字，|內容上限 {total} 字。">
     <label for="comment" class="field-label">意見回覆</label>
     <ul class="field-description" id="textarea-description">
+      <li data-character-notice aria-live="polite" aria-atomic="true">內容上限 200 字。</li>
     </ul>
-    <textarea id="comment" data-character-limit="200" aria-describedby="textarea-description"></textarea>
+    <textarea id="comment" rows="4" data-character-limit="200" aria-describedby="textarea-description"></textarea>
   </fieldset>
 </div>
+
+<script>
+  for (const limitedCount of document.querySelectorAll('[data-limit-phrase]')) {
+    const textarea = limitedCount.querySelector('[data-character-limit]')
+    const total = Number(textarea.getAttribute('data-character-limit'))
+    const phrase = limitedCount.getAttribute('data-limit-phrase').replace('{total}', total)
+    const notice = limitedCount.querySelector('[data-character-notice]')
+    let lastRemaining = total
+    
+    textarea.addEventListener('input', (event) => {
+      const remaining = total - textarea.value.length
+      if (event.isComposing !== true) updateNotice()
+    })
+
+    textarea.addEventListener('keyup', (event) => {
+      if (event.isComposing !== true) textarea.value = textarea.value.substring(0, total)
+    })
+
+    textarea.addEventListener('compositionend', updateNotice)
+
+    function updateNotice() {
+      const remaining = total - textarea.value.length
+      lastRemaining = remaining
+      notice.textContent = phrase.replace('|', '').replace('{remaining}', Math.max(0, remaining))
+    }
+
+    function conditionallyPreventInput(event) {
+      const isReplacing = textarea.selectionStart !== textarea.selectionEnd
+    
+      if (lastRemaining <= 0 && event.isComposing !== true && !isReplacing) {
+        event.preventDefault()
+      }
+    }
+
+    textarea.addEventListener('drop', conditionallyPreventInput)
+    textarea.addEventListener('keypress', conditionallyPreventInput)
+    textarea.addEventListener('paste', conditionallyPreventInput)
+  }
+</script>
