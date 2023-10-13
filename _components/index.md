@@ -7,3 +7,33 @@ text_only: 1
 ### 目標
 
 本文件所規劃之系統元件係以具備相容性、符合網頁標準之目標進行設計規劃，並最大化地使用網頁標準中所提供的元件加以優化，可供各機關及資通系統承商直接採用及參考，減少對第三方元件及複雜前端開發框架的依賴，增加系統韌性、相容性及親和力。系統元件將會使用網頁標準元件作為根本基礎，因此即使個機關、廠商仍須使用前端開發框架，也不會有不相容的問題。
+
+### CSS 元件使用方式
+
+可直接[下載](/assets/components/)所需要的 CSS 檔案，並使用 [`@import`](https://developer.mozilla.org/en-US/docs/Web/CSS/@import) 語法彙整。
+
+請避免一切對原始碼的改動。使用設計系統的目的就在於一制性。若需要特殊的顯示方式，請另行撰寫 CSS，以免造成日後版本升級困難。
+
+### JavaScript 元件使用方式
+
+#### 文字輸入區塊
+
+下載 [character-count.js](/assets/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
+
+{% capture html %}<script src="../character-count.js" defer>{% endcapture %}
+{% include example-html.html content=html %}
+
+#### 公文元件
+
+下載 [official-document-element.js](/assets/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
+
+{% capture html %}<script src="../official-document-element.js" defer>{% endcapture %}
+{% include example-html.html content=html %}
+
+#### 互動資料表格
+
+下載 [interactive-table-element.js](/assets/components/interactive-table-element.js) 檔案並選擇性使用下方程式碼匯入：
+
+{% capture html %}<script src="../interactive-table-element.js" defer>{% endcapture %}
+{% include example-html.html content=html %}
+
