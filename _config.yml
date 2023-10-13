@@ -1,6 +1,6 @@
 url: "https://guide.pdis.run"
 sass:
-  sass_dir: assets
+  sass_dir: assets/css
   style: :compressed
 timezone: Asia/Taipei
 collections:

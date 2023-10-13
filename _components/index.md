@@ -10,7 +10,10 @@ text_only: 1
 
 ### CSS 元件使用方式
 
-可直接[下載](/assets/components/)所需要的 CSS 檔案，並使用 [`@import`](https://developer.mozilla.org/en-US/docs/Web/CSS/@import) 語法彙整。
+可直接[下載](/assets/css.zip)，並使用下方程式碼匯入：
+
+{% capture html %}<link rel="stylesheet" href="../main.css">{% endcapture %}
+{% include example-html.html content=html %}
 
 請避免一切對原始碼的改動。使用設計系統的目的就在於一制性。若需要特殊的顯示方式，請另行撰寫 CSS，以免造成日後版本升級困難。
 
