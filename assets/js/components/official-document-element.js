@@ -1,7 +1,7 @@
 const documentTemplate = document.createElement('template')
 documentTemplate.innerHTML = `
   <div class="od-title"></div>
-  <p class="od-meta"></p>
+  <div class="od-metadata"><span class="od-date"></span><span class="od-num"></span></div>
 
   <dl class="od-list">
   </dl>
@@ -42,7 +42,8 @@ class OfficialDocumentElement extends HTMLElement {
     const od = documentTemplate.content.cloneNode(true)
     
     od.querySelector('.od-title').textContent = department
-    od.querySelector('.od-meta').textContent = `${this._insertSpace(date)}　${this._insertSpace(documentMeta)}`
+    od.querySelector('.od-date').textContent = this._insertSpace(date)
+    od.querySelector('.od-num').textContent = this._insertSpace(documentMeta)
     const dl = od.querySelector('dl')
     dl.innerHTML = `${this._dt('主旨', title)}${this._dt('依據', dependency)}${this._dt('公告事項', items)}`
     od.querySelector('.od-admin').textContent = `${adminTitle}　${adminName}`
@@ -66,6 +67,7 @@ class OfficialDocumentElement extends HTMLElement {
   padding-top: 1em;
   padding-bottom: 1em;
   border-left: 1px dashed var(--borderColor);
+  overflow: auto;
 }
 
 official-document .od-title {
@@ -82,10 +84,15 @@ official-document .od-admin {
   font-weight: bold;
 }
 
-official-document .od-meta {
+official-document .od-metadata {
+  display: inline-flex;
+  flex-wrap: wrap;
+  column-gap: 1.5em;
+}
+
+official-document .od-num,
+official-document .od-date {
   font-size: 0.9em;
-  margin-top: 0;
-  margin-bottom: 2em;
   color: var(--secondaryTextColor);
   font-variant-numeric: tabular-nums;
 }
