@@ -9,8 +9,8 @@ iframe_page: ""
 {% capture html %}{% include form/form-elements.html %}{% endcapture %}
 {% include example.html 
   content=html
-  i18n_selector="label,.field-description li" 
-  i18n="English:Email,Address must end with @pdis.nat.gov.tw.;"
+  i18n_selector="[for=city],[for=id],[for=name],[for=desc],[for=items]" 
+  i18n="English:City of residence,ID type,Full name,Description,Applications"
 %}
 
 #### CSS
