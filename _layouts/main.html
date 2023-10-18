@@ -20,7 +20,7 @@
     </a>
   </header>
   <main class="flex flex-wrap flex-nowrap-l content-start pa4">
-    <nav aria-label="主要" class="w-100 w5-l mt2 flex-shrink-0">
+    <nav aria-label="主要" class="w-100 w5-l mt2 flex-shrink-0 overflow-auto h-auto-ns h4">
       {% for collection in site.collections %}
         {% if collection.docs.size == 0 %}{% continue %}{% endif %}
         <details class="mb3" {% if page.path contains collection.label %}open{% endif %}>
