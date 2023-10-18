@@ -12,7 +12,7 @@ iframe_page: ""
 
 ### Custom Element
 
-- 使用 [`<official-document>`](/assets/components/official-document-element.js)。
+- 使用 [`<official-document>`](/assets/js/components/official-document-element.js)。
 
 ### 使用方式
 
@@ -38,4 +38,4 @@ iframe_page: ""
 {% endcapture %}
 {% include example-html.html content=html %}
 
-<script src="/assets/components/official-document-element.js" type="module">
+<script src="/assets/js/components/official-document-element.js" type="module">

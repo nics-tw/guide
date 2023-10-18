@@ -21,14 +21,14 @@ text_only: 1
 
 #### 文字輸入區塊
 
-下載 [character-count.js](/assets/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [character-count.js](/assets/js/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
 
 {% capture html %}<script src="../character-count.js" defer>{% endcapture %}
 {% include example-html.html content=html %}
 
 #### 公文元件
 
-下載 [official-document-element.js](/assets/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [official-document-element.js](/assets/js/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
 
 {% capture html %}<script src="../official-document-element.js" defer>{% endcapture %}
 {% include example-html.html content=html %}

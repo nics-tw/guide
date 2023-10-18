@@ -38,7 +38,7 @@ title: 表格
 
 #### Custom Element
 
-- 使用 [`<interactive-table>`](/assets/components/interactive-table-element.js)。
+- 使用 [`<interactive-table>`](/assets/js/components/interactive-table-element.js)。
 - 可提供 `<th scope="col" data-filterable>` 作為可篩選的欄位，或將 `data-filterable` 加註於 `<table>` 上，即會篩選所有欄位。
 - 可提供 `<th scope="col" data-sortable>` 作為可排序的欄位。`data-sortable` 可接受值為 `date`（使用 `new Date()` 編譯）或 `numeric`（使用 `Number()` 編譯）。預設為純文字。
 - 可提供 `<interactive-table sortable-label="升降冪">` 作為排序按鈕的報讀名稱。預設為「排序」。
@@ -52,4 +52,4 @@ title: 表格
 
 - 語音識別系統（Dragon NaturallySpeaking, MacOS/iOS Voice Control）
 
-<script src="/assets/components/interactive-table-element.js" type="module">
+<script src="/assets/js/components/interactive-table-element.js" type="module">
