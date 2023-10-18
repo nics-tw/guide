@@ -1,4 +1,7 @@
-## <span class="basic-information website-name">政府網站設計原則</span>親和力宣告
+---
+layout: main
+title: 政府網站設計原則親和力宣告
+---
 
 這是一份由 <span class="basic-information organization-name">PDIS</span> 發表的親和力宣告。
 
@@ -60,4 +63,3 @@
 ### 日期
 
 本宣告係於 <span class="basic-information statement-created-date">2023 年 10 月 31 日</span>使用 <a href="https://www.w3.org/WAI/planning/statements/">W3C Accessibility Statement Generator Tool</a> 所產生。
-</p>
