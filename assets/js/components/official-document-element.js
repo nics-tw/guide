@@ -42,12 +42,16 @@ class OfficialDocumentElement extends HTMLElement {
     const od = documentTemplate.content.cloneNode(true)
     
     od.querySelector('.od-title').textContent = department
-    od.querySelector('.od-meta').textContent = `${date}　${documentMeta}`
+    od.querySelector('.od-meta').textContent = `${this._insertSpace(date)}　${this._insertSpace(documentMeta)}`
     const dl = od.querySelector('dl')
     dl.innerHTML = `${this._dt('主旨', title)}${this._dt('依據', dependency)}${this._dt('公告事項', items)}`
     od.querySelector('.od-admin').textContent = `${adminTitle}　${adminName}`
 
     return od
+  }
+
+  _insertSpace(text) {
+    return text.replace(/([^0-9a-z])([0-9a-z])/g, '$1 $2').replace(/([0-9a-z])([^0-9a-z])/g, '$1 $2')
   }
   
   _dt(title, text) { 
@@ -82,7 +86,8 @@ official-document .od-meta {
   font-size: 0.9em;
   margin-top: 0;
   margin-bottom: 2em;
-  color: var(--secondaryTextColor)
+  color: var(--secondaryTextColor);
+  font-variant-numeric: tabular-nums;
 }
 
 official-document dl.od-list {
