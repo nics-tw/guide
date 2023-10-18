@@ -19,7 +19,7 @@ summary.button {
   font-size: 0.9rem;
   padding: 0.6rem 1.2rem;
   border: 1px solid var(--buttonBorderColor);
-  border-radius: 0.2em;
+  border-radius: 0.25rem;
   color: var(--textColor);
   background: var(--backgroundColor);
   cursor: pointer;
@@ -64,7 +64,7 @@ summary.button {
     cursor: not-allowed;
     outline: 1px dashed var(--borderColor);
     border-width: 2px;
-    border-radius: 0.3em;
+    border-radius: 0.25rem;
     opacity: 0.8;
     box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.05);
   }

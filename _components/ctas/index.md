@@ -61,7 +61,7 @@ iframe_page: ""
 
 ### 親和力
 
-- 連結與文字必須用非顏色的方式做區分。一般網頁連結皆使用底線作為標注。見 Failure of [Success Criterion 1.4.1](https://w3c.github.io/wcag/understanding/use-of-color.html) due to [creating links that are not visually evident without color vision](https://www.w3.org/WAI/WCAG22/Techniques/failures/F73)
+- 連結與文字必須用非顏色的方式做區分。一般網頁連結皆使用底線作為標注。見 Failure of [Success Criterion 1.4.1](https://w3c.github.io/wcag/understanding/use-of-color.html) due to [creating links that are not visually evident without color vision](https://www.w3.org/WAI/WCAG22/Techniques/failures/F73).
 - 按鈕 CSS classes 不能使用在 `<a>` 上，因為 `<button>` 和 `<a>` 各有不同的使用、啟動方式，因此必須在視覺上做明顯的區分以便使用者分辨。
 - 不可用的按鈕注意事項：
   - **可用於**剛送出的表單按鈕，以用於避免二次送出。

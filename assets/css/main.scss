@@ -11,12 +11,20 @@
 @import "components/list.scss";
 @import "components/official-document.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Public+Sans:wght@400;700&display=swap');
+
 body,
 button,
 textarea,
 input {
-  font-family: system-ui, sans-serif;
+  font-family:  'Public Sans', 'Noto Sans TC', system-ui, sans-serif;
+  font-weight: 400;
   color: var(--textColor);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  transform: scale(1, 0.97);
 }
 
 body, a {
@@ -153,9 +161,10 @@ select {
 }
 
 code {
-  font-size: 0.8em;
+  font-size: 0.9em;
+  border-radius: 1em;
   background-color: var(--backgroundColorLayer1);
-  padding: 0 0.4rem;
+  padding: 0.1em 0.4em;
 }
 
 .highlight {
@@ -165,7 +174,10 @@ code {
   pre {
     margin: 0;
 
-    code { padding: 0; }
+    code {
+      padding: 0;
+      font-size: 1em;
+    }
   }
 }
 
