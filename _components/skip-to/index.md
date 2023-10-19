@@ -2,6 +2,7 @@
 layout: main
 title: 跳至主要內容區
 iframe_page: ""
+maturity: "alpha"
 ---
 
 此為符合無障礙規範 A 等級所需要的元件。

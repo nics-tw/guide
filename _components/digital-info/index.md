@@ -1,6 +1,7 @@
 ---
 layout: main
 title: 數位名片
+maturity: "alpha"
 ---
 
 - 由實體名片經 QR Code 連結至的線上數位版本（內容應涵蓋名片上的所有資訊）。

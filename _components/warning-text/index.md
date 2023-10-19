@@ -2,6 +2,7 @@
 layout: main
 title: 警告文字
 iframe_page: ""
+maturity: "alpha"
 ---
 
 {% capture html %}{% include warning-text/block.html %}{% endcapture %}

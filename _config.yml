@@ -13,3 +13,17 @@ collections:
   components:
     name: "共用元件"
     output: true
+i18n:
+  maturity:
+    new:
+      key: 新提案
+      desc: 未完成開發、請勿使用。
+    alpha:
+      key: 封閉測試
+      desc: 開發暫時性完成，可使用。可能仍有親和力或其他使用上問題待透過實測發現。
+    beta:
+      key: 公開測試
+      desc: 開發暫時性完成，歡迎使用。具有完整親和力報告。
+    production:
+      key: 已穩定
+      desc: 開發完成、歡迎使用。應無任何親和力或使用上問題。

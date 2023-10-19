@@ -1,6 +1,7 @@
 ---
 layout: main
 title: 文字輸入區塊
+maturity: "alpha"
 ---
 
 {% capture html %}{% include textarea/index.html %}{% endcapture %}

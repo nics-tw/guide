@@ -1,6 +1,7 @@
 ---
 layout: main
 title: 表格
+maturity: "alpha"
 ---
 
 ### 一般表格

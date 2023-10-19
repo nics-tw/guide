@@ -47,6 +47,9 @@
       {% if filetype == 'md' %}
         <article class="mw7 nested-copy-separator {% if page.text_only %}measure-wide{% endif %}">
           <h2>{{ page.title }}</h2>
+          {% if page.maturity %}
+            {% include maturity.html maturity=page.maturity %}
+          {% endif %}
           {{ content }}
         </article>
       {% else %}
