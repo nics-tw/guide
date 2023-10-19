@@ -1,7 +1,7 @@
 <div class="mb4">
-  <ul aria-label="成熟度說明" class="flex-auto f6 mv0 list flex ba br3 w-100 pa0 overflow-hidden">
+  <ul aria-label="成熟度說明" class="flex-auto f6 mv0 list flex br3 w-100 pa0 overflow-hidden bg-layer1">
     {% for maturity in site.i18n.maturity %}
-      <li id="maturity-{{ maturity[0] }}" class="tc pv2 flex-auto w-25 {% if include.maturity == maturity[0]%}fw8 bg-layer1{% else %}fg-subtle{% endif %}">
+      <li id="maturity-{{ maturity[0] }}" class="tc pv2 flex-auto w-25 {% if include.maturity == maturity[0]%}fw8 bg-layer2{% else %}fg-subtle{% endif %}">
         {{ maturity[1]["key"] }}
       </li>
     {% endfor %}
