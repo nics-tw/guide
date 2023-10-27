@@ -1,0 +1,22 @@
+.radio-wrapper-v,
+.radio-wrapper-h {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.radio-wrapper-v {
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  column-gap: 1em;
+
+  label {
+    flex: 1 0 auto;
+  }
+}
