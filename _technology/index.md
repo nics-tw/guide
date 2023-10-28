@@ -4,15 +4,17 @@ layout: main
 text_only: 1
 ---
 
-> Engineering has a direct and vital impact on the quality of life **for all people**. Accordingly, the services provided by engineers require honesty, impartiality, fairness, and equity, and must be dedicated to **the protection of the public health, safety, and welfare**.
+<blockquote lang="en">
+
+Engineering has a direct and vital impact on the quality of life <b>for all people</b>. Accordingly, the services provided by engineers require honesty, impartiality, fairness, and equity, and must be dedicated to <b>the protection of the public health, safety, and welfare</b>.
+
+</blockquote>
 
 網頁工程相比於產品工程、建築工程等其他工程領域，還只能算是剛出生的寶寶。工程學的共同點都在於有嚴謹的約束和施工約束。
 
 好比在設計一張椅子時不只有設計師發想、畫圖，之後還要建模、材料研究、材料選擇、材料測試、樣品測試、結構測試等等過程。在做網站的同時，我們也應該要考慮到一樣的步驟。設計的重要就在於它應該是在平衡工程和材料的限制後才作出的最後成品。
 
 以韌性為重，我們應將特別著重於建置網站時所使用的**技術和方法**。
-
-### 工程規範
 
 ### 技術
 
@@ -38,6 +40,6 @@ text_only: 1
 - [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
 - [WAI-ARIA standard](https://www.w3.org/TR/wai-aria/)
 
-## 基礎要求
+### 基礎要求
 
 以 [Lighthouse](https://developer.chrome.com/en/docs/lighthouse/) 偵測報告為例，建造政府網站時應在效能部分最低標要求 90 分以上，親和力部分最低標要求 100 分，在最佳規範部分最低標要求 80 分以上。

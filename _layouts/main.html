@@ -45,7 +45,7 @@
     <div id="main" class="ml4-l flex-auto">
       {% assign filetype = page.path | split:'.' | last %}
       {% if filetype == 'md' %}
-        <article class="mw7 nested-copy-separator {% if page.text_only %}measure-wide{% endif %}">
+        <article class="w-paragraph nested-copy-separator {% if page.text_only %}measure-wide{% endif %}">
           <h2>{{ page.title }}</h2>
           {% if page.maturity %}
             {% include maturity.html maturity=page.maturity %}
@@ -66,7 +66,7 @@
   <script src="{{ "/assets/js/main.js" | absolute_url }}" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@200;300;400;500;600&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
 
 </body>
 </html>

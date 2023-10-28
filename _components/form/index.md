@@ -89,7 +89,7 @@ maturity: "alpha"
 
 - 使用 `.field-input-prefix` 或 `.field-input-suffix` 時，必要使用 `aria-describedby` 和 `id` 連結說明元件和 `<input>` 元件。
 
-## 參考資料
+### 參考資料
 
 - 沒有使用 [`aria-errormessage`](https://a11ysupport.io/tech/aria/aria-errormessage_attribute) 因為瀏覽器支援不足。
 - 沒有使用 [`aria-invalid`](https://a11ysupport.io/tech/aria/aria-invalid_attribute) 因為元件暫時不支援客戶端驗證。
