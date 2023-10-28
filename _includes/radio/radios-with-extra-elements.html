@@ -1,9 +1,32 @@
-<label>
-  <input type="radio" name="identification" value="healthid"> 健保卡
-</label>
-<label>
-  <input type="radio" name="identification" value="moica"> 自然人憑證
-</label>
-<label>
-  <input type="radio" name="identification" value="phone"> 手機門號
-</label>
+<div class="radio-wrapper-v">
+  <div class="radio-item">
+    <input class="chcecked--extra-fields" type="radio" name="identification" id="v-healthid-input" value="healthid">
+    <label for="v-healthid-input">健保卡</label>
+    <div class="fields">
+      <fieldset class="fieldset">
+        <label for="healthid-required" class="field-label">健保卡卡號 <span class="field-required">必填</span></label>
+        <input type="text" id="healthid-required" inputmode="number" aria-required="true" class="field-input">
+      </fieldset>
+    </div>
+    
+  </div>
+  <div class="radio-item">
+    <input class="chcecked--extra-fields" type="radio" name="identification" id="v-moica-input" value="moica">
+    <label for="v-moica-input">自然人憑證</label>
+    <div class="fields">
+      <button type="button" class="button button-primary">行動自然人憑證驗證</button>
+    </div>
+    
+  </div>
+  <div class="radio-item">
+    <input class="chcecked--extra-fields" type="radio" name="identification" id="v-phone-input" value="phone">
+    <label for="v-phone-input">實名手機門號</label>
+    <div class="fields">
+      <fieldset class="fieldset">
+        <label for="phone-required" class="field-label">手機號碼 <span class="field-required">必填</span></label>
+        <input type="text" id="phone-required" inputmode="number" aria-required="true" class="field-input">
+      </fieldset>
+    </div>
+    
+  </div>
+</div>

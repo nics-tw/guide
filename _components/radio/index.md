@@ -27,6 +27,6 @@ maturity: "alpha"
 {% capture html %}{% include radio/radios-with-extra-elements.html %}{% endcapture %}
 {% include example.html 
   content=html
-  i18n_selector="[for=city],[for=id],[for=name],[for=desc],[for=items]" 
-  i18n="English:City of residence,ID type,Full name,Description,Applications"
+  i18n_selector="[for=v-healthid-input],[for=v-moica-input],[for=v-phone-input]" 
+  i18n="English:Health card ID,Digital Certificate,Cell phone"
 %}
