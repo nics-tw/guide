@@ -5,17 +5,17 @@ layout: main
 
 ### 大小
 
-<p class="heading6">標題六 <code>.f6</code></p>
+<p class="heading6">標題六</p>
 
-<p class="heading5">標題五 <code>.f5</code></p>
+<p class="heading5">標題五</p>
 
-<p class="heading4">標題四 <code>.f4</code></p>
+<p class="heading4">標題四</p>
 
-<p class="heading3">標題三 <code>.f3</code></p>
+<p class="heading3">標題三</p>
 
-<p class="heading2">標題二 <code>.f2</code></p>
+<p class="heading2">標題二</p>
 
-<p class="heading1">標題一 <code>.f1</code></p>
+<p class="heading1">標題一</p>
 
 ### 樣式
 
