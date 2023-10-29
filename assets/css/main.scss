@@ -26,20 +26,6 @@ u {
   text-underline-position: under;
 }
 
-mark {
-
-}
-
-a {
-  color: var(--linkColor);
-  text-decoration-thickness: 1px;
-  text-underline-position: under;
-  
-  &:hover {
-    text-decoration-thickness: 2px;
-  }
-}
-
 hr {
   border-style: solid;
   border-bottom: 0;

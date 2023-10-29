@@ -28,9 +28,27 @@
   --h1-font-weight: 600;
 }
 
+a {
+  color: var(--linkColor);
+  text-decoration-thickness: 1px;
+  text-underline-position: under;
+  
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
 b, strong {
   font-weight: 700;
 }
+
+mark {
+  color: var(--textColor);
+  background: none;
+  box-shadow: inset 0 -0.6em var(--highlightColor);
+  padding: 0 0.1em;
+}
+
 
 body, a {
   line-height: var(--body-line-height);

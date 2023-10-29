@@ -13,7 +13,7 @@
   --primaryColor: #262927;
   --dangerColor: #CC3100;
   --warningColor: #ff6600;
-  --highlightColor: #ffff00;
+  --highlightColor: rgba(255, 255, 0, 0.8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,7 +29,7 @@
     --primaryColor: #ffffff;
     --dangerColor: #ff7f7f;
     --warningColor: #ff6600;
-    --highlightColor: #ffff00;
+    --highlightColor: rgba(168, 168, 0, 0.6);
   }
 }
 
@@ -56,9 +56,4 @@ textarea, input {
 
 * {
   border-color: inherit;
-}
-
-mark {
-  background: var(--highlightColor);
-  color: var(--textColor);
 }
