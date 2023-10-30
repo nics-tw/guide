@@ -23,7 +23,16 @@ main {
   }
 }
 
+.logo-svg {
+  height: 2em;
+  width: 2em;
+  margin-right: 1em;
+}
+
 .logo {
+  color: inherit;
+  align-items: center;
+  display: inline-flex;
   background-color: var(--backgroundColor);
   border-color: var(--borderColor);
 

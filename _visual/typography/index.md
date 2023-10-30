@@ -31,10 +31,6 @@ layout: main
 * 中英夾雜時務必在中文與英文數字之間加上空格。    
   例如「手續費 30 元」而非「手續費30元」。
 
-### 字體
-
-WIP.
-
 ### 語言
 
 <div class="flex flex-wrap gap4 justify-start">

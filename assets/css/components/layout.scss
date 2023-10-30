@@ -1,0 +1,40 @@
+.site-header, .site-main, .site-footer {
+  max-width:calc(var(--paragraph-width) * 1.5);
+}
+
+.one-col {
+  .site-header, .site-main, .site-footer {
+    margin: 2em auto;
+  }
+
+  .site-header {
+    text-align: center;
+  }
+}
+
+.two-col,
+.three-col {
+  display: flex;
+  align-items: start;
+
+  & > * {
+    flex: 1 1 auto;
+  }
+}
+
+.three-col {
+  & > * {
+    flex: 1 1 auto;
+    width: 50;
+  }
+}
+.three-col {
+  & > * {
+    flex: 1 1 auto;
+    width: 33.333%;
+  }
+}
+
+.center {
+  margin: auto;
+}
