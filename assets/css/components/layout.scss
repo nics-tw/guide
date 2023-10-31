@@ -21,7 +21,9 @@
 .three-col {
   gap: 2rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: start;
+  justify-content: space-between;
 
   & > * {
     flex: 1 1 auto;
@@ -30,15 +32,21 @@
 
 .two-col {
   & > * {
-    flex: 1 1 auto;
-    width: 50%;
+    flex: 0 1 auto;
+    width: 48%;
   }
 }
 
 .three-col {
   & > * {
-    flex: 1 1 auto;
-    width: 33.333%;
+    flex: 0 1 auto;
+    width: 30%;
+  }
+
+  @media (max-width: 35em) {
+    & > * {
+      width: 100%;
+    }
   }
 }
 

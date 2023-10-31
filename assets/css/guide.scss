@@ -89,9 +89,26 @@ main {
 
 svg {
   max-width: 100%;
+  height: auto;
 }
 
 .maxh {
   max-height: 20em;
   overflow: auto;
+}
+
+.hero-h1 {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1em;
+  letter-spacing: 0.04em;
+  text-shadow: 
+    0.1 0.1em var(--backgroundColor) 
+    0.1 -0.1em var(--backgroundColor)  
+    -0.1 0.1em var(--backgroundColor) 
+    -0.1 -0.1em var(--backgroundColor);
+  font-size: max(min(1.8em, 6vw), 2cqw);
+  white-space: nowrap;
+  position: absolute;
 }

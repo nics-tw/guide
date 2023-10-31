@@ -19,10 +19,13 @@
     <header class="site-header">
       <a href="{{ "/" | absolute_url}}" class="logo">
         <div class="logo-svg mr3">{% include components.svg %}</div>
-        <h1>政府網站設計原則</h1>
       </a>
     </header>
     <main class="site-main" id="main">
+      <div class="relative tc">
+        <h1 class="hero-h1">政府網站設計原則</h1>
+        {% include /svgs/hero.svg %}
+      </div>
       <article class="w-paragraph center">
         <p>感謝您選擇探索我們目前所呈現的內容。我們正在全力開創新的典範，以便為您提供有價值的知識及技術。</p>
 
@@ -31,16 +34,16 @@
         <p>我們期待著您的回饋，並感謝您對我們的支持。讓我們攜手合作，共同見證政府網站設計原則的進步和成長。</p>
       </article>
 
-      <div class="three-col gap4">
+      <div class="three-col gap4 mt5">
         {% for collection in site.collections %}
           {% if collection.docs.size == 0 %}{% continue %}{% endif %}
           {% assign filepath = collection.relative_directory | append: "/index.md" %}
           {% assign doc = collection.docs | where: "path", filepath | first %}
-          <div>
-            <div class="bg-layer1" style="aspect-ratio: 1;"></div>
-
-            <a class="" {% if doc %}href="{{ doc.url | absolute_url }}"{% endif %}>
-              {{ collection.name }}
+          {% assign svg = collection.relative_directory | prepend: "svgs/feat" | append: ".svg" %}
+          <div class="ph2 tc w-100">
+            <a class="db" {% if doc %}href="{{ doc.url | absolute_url }}"{% endif %}>
+              <div class="w-70 center">{% include {{ svg }} %}</div>
+              <div class="mt3">{{ collection.name }}</div>
             </a>
           </div>
         {% endfor %}
