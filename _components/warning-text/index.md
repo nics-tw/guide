@@ -1,7 +1,6 @@
 ---
 layout: main
 title: 警告文字
-iframe_page: ""
 maturity: "alpha"
 ---
 

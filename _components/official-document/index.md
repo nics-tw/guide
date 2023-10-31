@@ -1,7 +1,6 @@
 ---
 layout: main
 title: 公文
-iframe_page: ""
 maturity: "alpha"
 ---
 

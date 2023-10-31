@@ -1,7 +1,6 @@
 ---
 layout: main
 title: 跳至主要內容區
-iframe_page: ""
 maturity: "alpha"
 ---
 
