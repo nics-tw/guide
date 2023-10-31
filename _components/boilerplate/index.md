@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 網頁範本
+title: 頁面地標架構
 maturity: "alpha"
 ---
 
