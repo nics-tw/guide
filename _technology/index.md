@@ -31,7 +31,9 @@ Engineering has a direct and vital impact on the quality of life <b>for all peop
 - 程式複雜度：是否可以讓下一個工程團隊輕鬆接手？使用的程式技術通用性高嗎？程式有可能簡化嗎？
 - 依賴外部程式：是否有必要依賴外部程式？是否可以輕鬆追蹤並控管外部程式的版本更新？
 
-在決定技術時，原則上以 Web API (HTML, CSS, JavaScript) 出發，再考慮實驗性的 Web API 及其 polyfill，最後再看是否有「必要」依賴外部程式庫。
+在決定技術時，原則上以 HTML 出發，建立出最基本的**可用**網站雛形，再加入 CSS、JavaScript，增進網頁的功能。在這之後，再考慮實驗性的 Web API 及其 polyfill。
+
+若要因某些原因**必要**考慮第三方<mark>框架</mark>，照以上原則，在網頁前端部分以 HTML 元件為基底，而非使用第三方<mark>元件庫</mark>。這部分可以參考[反面教材]({% link _technology/anti_patterns/index.md %})。
 
 ### 規範依據
 
