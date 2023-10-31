@@ -26,3 +26,13 @@ document.addEventListener('change', (event) => {
 function getTextNode(element) {
   return [...element.childNodes].find(e => e.nodeType === Node.TEXT_NODE)
 }
+
+async function setCode(el) {
+  const url = el.getAttribute('data-fetch-url')
+  const html = await (await fetch(url)).text()
+  el.textContent = html
+}
+
+for (const boilerplateTarget of document.querySelectorAll('[data-fetch-url]')) {
+  setCode(boilerplateTarget)
+}

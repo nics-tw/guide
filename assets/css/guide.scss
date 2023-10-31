@@ -52,14 +52,6 @@ main {
   }
 }
 
-.gap2 {
-  gap: 1em;
-}
-
-.gap4 {
-  gap: 2em;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -93,4 +85,13 @@ main {
 
 .wrap {
   word-wrap: break-word;
+}
+
+svg {
+  max-width: 100%;
+}
+
+.maxh {
+  max-height: 20em;
+  overflow: auto;
 }
