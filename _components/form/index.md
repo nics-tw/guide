@@ -17,9 +17,7 @@ maturity: "alpha"
 
 - `.fields`：作為全部 `.fieldset` 的容器。
 - `fieldset.fieldset`：作為單獨表單項目的容器。
-- `fieldset.field-checkable-grid`：作為包含多個 `<input type="radio/checkbox">` 並想要多選項並列同一行列的容器。
 - `label.field-label`：作為單獨表單項目的 `<label>`。
-- `label.field-checkable`：作為單獨 `<input type="radio/checkbox">` 的 `<label>`。
 - `.field-input`：作為輸入欄位。
 
 #### 親和力
@@ -29,6 +27,20 @@ maturity: "alpha"
 - 盡量使用 `input[type=text]`，倚賴伺服器端驗證再於瀏覽器端顯示錯誤內容。伺服器端的表格內容驗證比瀏覽器端的表格驗證更為重要。因為 HTML 的內建表格驗證存在許多親和力的疑慮（請參考 [Avoid Default Field Validation](https://adrianroselli.com/2019/02/avoid-default-field-validation.html).），建議非必要時，盡量仰賴伺服器端驗證，並正確地保留使用者輸入的內容且顯示錯誤。
 - 需要特定的輸入模式則使用 [`[inputmode]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) 做設定。
 
+### 選項欄位
+
+{% capture html %}{% include form/form-checkable.html %}{% endcapture %}
+{% include example.html 
+  content=html
+  i18n_selector="[for=city],[for=id],[for=name],[for=desc],[for=items]" 
+  i18n="English:City of residence,ID type,Full name,Description,Applications"
+%}
+
+#### CSS
+
+- `.checkable-wrapper-v`：用來包含直式的選項。
+- `.checkable-wrapper-h`：用來包含橫式的選項。
+- `.checkable-item`：用來包含單一選項，其中包含 `<input>` 以及 `<label>` 欄位。
 
 ### 欄位說明
 

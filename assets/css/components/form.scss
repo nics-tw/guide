@@ -80,20 +80,6 @@
   }
 }
 
-.field-checkable {
-  padding: 0.2em;
-  flex-direction: row;
-
-  .field-label {
-    flex: 1 0 100%;
-  }
-
-  input[type="checkbox"],
-  input[type="radio"] {  
-    margin-right: 0.2em;  
-  }
-}
-
 .checkable-wrapper-v,
 .checkable-wrapper-h {
   display: flex;
