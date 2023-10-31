@@ -17,6 +17,13 @@ text_only: 1
 
 請避免一切對原始碼的改動。使用設計系統的目的就在於一制性。若需要特殊的顯示方式，請另行撰寫 CSS，以免造成日後版本升級困難。
 
+<div class="warning-text">
+  <p>
+    本檔案暫時包含 <a href="https://tachyons.io/">Tachyons</a>，作為 Atomic CSS 的第三方程式。
+  </p>
+</div>
+
+
 ### JavaScript 元件使用方式
 
 #### 文字輸入區塊
