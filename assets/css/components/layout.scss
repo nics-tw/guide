@@ -1,5 +1,10 @@
 .site-header, .site-main, .site-footer {
   max-width:calc(var(--paragraph-width) * 1.5);
+  padding: 0 2rem;
+}
+
+.site-footer {
+  padding: 2rem;
 }
 
 .one-col {
@@ -14,6 +19,7 @@
 
 .two-col,
 .three-col {
+  gap: 2rem;
   display: flex;
   align-items: start;
 
@@ -22,12 +28,13 @@
   }
 }
 
-.three-col {
+.two-col {
   & > * {
     flex: 1 1 auto;
-    width: 50;
+    width: 50%;
   }
 }
+
 .three-col {
   & > * {
     flex: 1 1 auto;
