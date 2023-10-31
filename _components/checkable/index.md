@@ -4,7 +4,7 @@ title: 多重選擇及補充說明
 maturity: "alpha"
 ---
 
-### 單選選項與追加欄位
+### 追加欄位
 
 {% capture html %}{% include checkable/radios-with-extra-elements.html %}{% endcapture %}
 {% include example.html 
