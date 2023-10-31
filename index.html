@@ -27,14 +27,14 @@
         {% include /svgs/hero.svg %}
       </div>
       <article class="w-paragraph center">
-        <p>感謝您選擇探索我們目前所呈現的內容。我們正在全力開創新的典範，以便為您提供有價值的知識及技術。</p>
+        <p>讓政府網站設計原則更加完善，我們正在全力開創新的典範，以便為您提供有價值的知識及技術。</p>
 
-        <p>我們的努力不會歇止，我們鼓勵您現在就開始運用這裡提供的資訊和設計。您的參與和意見對我們至關重要，這將有助於我們更進一步，讓政府網站設計原則更加完善。</p>
-
-        <p>我們期待著您的回饋，並感謝您對我們的支持。讓我們攜手合作，共同見證政府網站設計原則的進步和成長。</p>
+        <p>讓我們攜手合作，共同見證政府網站設計原則的進步和成長。</p>
       </article>
 
-      <div class="three-col gap4 mt5">
+      <h2 class="heading3 tc mt5">設計制度內容</h2>
+      <p class="w-paragraph"></p>
+      <div class="three-col gap4 mv5">
         {% for collection in site.collections %}
           {% if collection.docs.size == 0 %}{% continue %}{% endif %}
           {% assign filepath = collection.relative_directory | append: "/index.md" %}
