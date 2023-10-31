@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=inter:wght@400;600;700&display=swap');
+
+[lang^="vn"] {
+  font-family: inter, system-ui, sans-serif;
+}

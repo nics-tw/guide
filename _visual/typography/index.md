@@ -33,31 +33,68 @@ layout: main
 
 ### 語言
 
-<div class="flex flex-wrap gap4 justify-start">
-  <div class="pa4 ba plain w-paragraph" lang="zh">
-    <h4>人權宣言</h4>
-    <p class="desc">《世界人權宣言》 是人權具有里程碑意義的文件。</p>
+#### 中文
 
-    人人皆得享有本宣言所載之一切權利與自由，不分種族、膚色、性別、語言、宗教、政治或其他主張、民族本源或社會階級、財產、出生或其他身分。也不得因一個人所屬的國家或地區（無論該地區是獨立、託管、非自治或受其他主權上之限制）的政治、行政或國際地位不同而有所區別。
-  </div>
+字體檔案（預設）：[`lang/zh.css`]({{ '/assets/css/lang/zh.css' | absolute_url }})
+<link href="{{ '/assets/css/lang/zh.css' | absolute_url }}" rel="stylesheet">
 
-  <div class="pa4 ba plain w-paragraph" lang="en">
-    <h4>Human Rights Declaration</h4>
-    <p class="desc">The Universal Declaration of Human Rights is a landmark document on human rights.</p>
+<!-- https://www.nhi.gov.tw/resource/Handbook/2020-2021/images/pdf/2020-2021_zh.pdf -->
+<div class="pa4 ba plain w-paragraph nested-copy-separator" lang="zh-hant">
+  <h4>什麼是全民健保？</h4>
+  <p class="desc">全民健保，保障您一生的醫療權益。</p>
 
-    Everyone is entitled to all the rights and freedoms set forth in this Declaration, without distinction of race, colour, sex, language, religion, political or other opinion, national origin or social class, property, birth or other status. Nor shall there be any distinction based on the political, administrative or international status of the country or region to which a person belongs (whether that region is independent, trusteeship, non-self-governing or subject to other limitations on sovereignty).
-  </div>
+  <p>「全民健保」是全體國民從出生開始都要參加的保險，它是一種全民互相幫助的制度，平時大家按照規定繳交保險費；萬一有人生病，政府就會利用收到的保險費，幫病人繳付部分醫藥費給醫療院所，這樣您我生病時就可以用比較少的錢，得到適當的醫療照護。</p>
+  <p>也就是說，您只要每個月都按時繳交全民健保的保險費，不但可以在您生病的時候幫助自己、同時也得到別人幫助；當其他人生病時也可以得到您的幫助！</p>
+</div>
 
-  <div class="pa4 ba plain w-paragraph" lang="ja">
-    すべての人は、人種、肌の色、性別、言語、宗教、政治的またはその他の意見、出身国または社会階級、財産、出生またはその他の身分の区別なく、この宣言に定められたすべての権利と自由を有する権利を有します。 また、個人が属する国または地域の政治的、行政的または国際的地位（その地域が独立しているか、信託統治であるか、非自治であるか、または主権に関するその他の制限を受けているかどうか）に基づく区別はありません。
-  </div>
+#### 英文
 
-  <div class="pa4 ba plain w-paragraph" lang="th">
-    ทุกคนมีสิทธิและเสรีภาพทั้งปวงที่กำหนดไว้ในปฏิญญานี้ โดยไม่แบ่งแยกเชื้อชาติ สีผิว เพศ ภาษา ศาสนา ความคิดเห็นทางการเมืองหรือความคิดเห็นอื่น ชาติกำเนิดหรือชนชั้นทางสังคม ทรัพย์สิน กำเนิด หรือสถานะอื่น ๆ และจะไม่มีความแตกต่างใด ๆ ตามสถานะทางการเมือง การบริหาร หรือระหว่างประเทศของประเทศหรือภูมิภาคที่บุคคลนั้นอยู่ (ไม่ว่าภูมิภาคนั้นจะมีความเป็นอิสระ อยู่ในผู้ดูแลผลประโยชน์ ไม่ปกครองตนเอง หรืออยู่ภายใต้ข้อจำกัดอื่น ๆ เกี่ยวกับอธิปไตย)
-  </div>
+<!-- https://www.nhi.gov.tw/resource/Handbook/2020-2021/images/pdf/2020-2021_en.pdf -->
+<div class="pa4 ba plain w-paragraph" lang="en">
+  <h4>What Is National Health Insurance?</h4>
+  <p class="desc">National Health Insurance: Protecting your rights to health care.</p>
 
-  <div class="pa4 ba plain w-paragraph" lang="vt">
-    Mọi người đều được hưởng tất cả các quyền và tự do nêu trong Tuyên ngôn này, không phân biệt chủng tộc, màu da, giới tính, ngôn ngữ, tôn giáo, quan điểm chính trị hoặc quan điểm khác, nguồn gốc quốc gia hoặc tầng lớp xã hội, tài sản, thành phần xuất thân hoặc địa vị khác. Cũng sẽ không có bất kỳ sự phân biệt nào dựa trên tình trạng chính trị, hành chính hoặc quốc tế của quốc gia hoặc khu vực mà một người thuộc về (cho dù khu vực đó là độc lập, được quản trị, không tự quản hay chịu các hạn chế khác về chủ quyền).
-  </div>
+  <p>The National Health Insurance program is compulsory for all citizens starting from birth. It is founded on the concept of mutual assistance and depends on the insured paying their premiums according to regulations. When people fall ill, the government uses the premiums it receives to help patients pay part of their medical and medication costs to contracted health care institutions. In this way, when we are ill, we can obtain appropriate medical care for a reasonable sum of money.</p>
+</div>
+
+#### 日文
+
+字體檔案：[`lang/ja.css`]({{ '/assets/css/lang/ja.css' | absolute_url }})
+<link href="{{ '/assets/css/lang/ja.css' | absolute_url }}" rel="stylesheet">
+
+<!-- https://www.nhi.gov.tw/resource/Handbook/2020-2021/images/pdf/2020-2021_ja.pdf -->
+<div class="pa4 ba plain w-paragraph" lang="ja">
+  <h4>全民健康保険とは？</h4>
+  <p class="desc">全民健康保険はあなたの医療権益を一生保障します。  </p>
+
+  <p>「全民健康保険」はすべての国民が生まれると同時に加入が義務付けられている保険で、全国民が互いに支えあう制度となっています。通常は規定に基づき保険料を納付します。誰かが病気になった場合、政府は受け取った保険料を利用し、診療費用と薬品費用の一部を保険医療機関に患者に代わって納めます。このように病気になった時でも少額で適切な医療を受けることができます。</p>
+</div>
+
+#### 泰文
+
+字體檔案：[`lang/th.css`]({{ '/assets/css/lang/th.css' | absolute_url }})
+<link href="{{ '/assets/css/lang/th.css' | absolute_url }}" rel="stylesheet">
+
+
+<!-- https://www.nhi.gov.tw/resource/Handbook/2020-2021/images/pdf/2020-2021_th.pdf -->
+<div class="pa4 ba plain w-paragraph" lang="th">
+  <h4>การประกันสุขภาพคืออะไร</h4>
+  <p class="desc">การประก ันสุขภาพคุ้มครองสทธิ ิการร ักษาตลอดชพี</p>
+
+  <p>การประกันสุขภาพ คือ ระบบประกันที่ประชาชนทุกคนต้องเข้าร่วม ตั ้งแต่แรกเกิด และเป็นระบบการช่วยเหลือซึ่งกันและกันอย่างหนึ่งของประชาชนทุกคน โดยปกติทุกคนจะต้องจ่ายเงินสมทบให้กับการประกันสุขภาพตามอัตราที่กฎหมายก�ำหนด เมื่อมีคนเจ็บป่ วยรัฐบาลจะน�ำเงินสมทบที่ได้รับ มาจ่ายเป็นค่ารักษาพยาบาลบางส่วนแทนผู้ป่ วยให้กับสถานพยาบาลนั ้นๆ ซึ่งช่วยให้ทุกคนสามารถได้รับบริการทางการแพทย์ที่เหมาะสมและมีสุขภาพดีขึ ้นอย่างรวดเร็วโดยเสียค่าใช้จ่ายน้อยลง </p>
+</div>
+
+#### 越南文
+
+字體檔案：[`lang/vn.css`]({{ '/assets/css/lang/vn.css' | absolute_url }})
+<link href="{{ '/assets/css/lang/vn.css' | absolute_url }}" rel="stylesheet">
+
+
+<!-- https://www.nhi.gov.tw/resource/Handbook/2020-2021/images/pdf/2020-2021_vn.pdf -->
+<div class="pa4 ba plain w-paragraph" lang="vn">
+  <h4>Bảo hiểm y tế toàn dân là gì?</h4>
+  <p class="desc">Bảo hiểm y tế toàn dân, đảm bảo quyền lợi khám chữa bệnh trọn đời của bạn.</p>
+
+  <p>“Bảo hiểm y tế toàn dân” là loại bảo hiểm mà bất cứ ai từ khi sinh ra đều phải tham gia. Nó là chế độ giúp đỡ tương trợ toàn dân. Thông thường mọi người đều đóng bảo hiểm theo quy định, nếu chẳng may có người bị bệnh, chính phủ sẽ tận dụng số tiền bảo hiểm thu được, giúp người bệnh đóng một phần chi phí cho bệnh viện. Làm như vậy khiến bất cứ ai trong chúng ta khi mắc bệnh có thể chi ít tiền hơn, mà được chăm sóc chữa trị thỏa đáng. </p>
 </div>
 

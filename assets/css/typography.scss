@@ -1,6 +1,23 @@
+@import 'lang/zh.css';
+
 :root {
+  &:lang(zh) {
+    --body-font-family: helvetica, 'Noto Sans TC', system-ui, sans-serif;
+  }
+  &:lang(en) {
+    --body-font-family: helvetica, system-ui, sans-serif;
+  }
+  &:lang(ja) {
+    --body-font-family: helvetica, 'Noto Sans JP', system-ui, sans-serif;
+  }
+  &:lang(th) {
+    --body-font-family: helvetica, 'Noto Sans Thai', system-ui, sans-serif;
+  }
+  &:lang(vn) {
+    --body-font-family: inter, system-ui, sans-serif;
+  }
+
   --body-line-height: 1.7;
-  --body-font-family: helvetica, 'Noto Sans TC', system-ui, sans-serif;
   --body-font-size: 16px;
 
   --description-font-size: 0.82em;
@@ -49,31 +66,13 @@ mark {
   padding: 0 0.1em;
 }
 
-
-body, a {
-  line-height: var(--body-line-height);
-  font-size: var(--body-font-size);
-  font-weight: var(--body-font-weight);
-  font-family: var(--body-font-family);
-}
-
-.desc {
-  font-size: var(--description-font-size);
-  font-weight: var(--description-font-weight);
-  letter-spacing: var(--description-letter-spacing);
-}
-
 .w-paragraph {
   max-width: var(--paragraph-width);
 }
 
-
-[lang^='en'] {
+:lang(en, vn) {
   --body-line-height: 1.45em;
   --body-font-family: Helvetica, Arial, sans-serif;
-
-  line-height: var(--body-line-height);
-  font-size: var(--body-font-size);
   --description-letter-spacing: 0.01em;
 }
 
@@ -114,4 +113,19 @@ h2, .heading2 {
 h1, .heading1 {
   font-size: var(--h1-font-size);
   font-weight: var(--h1-font-weight);
+}
+
+body, a, button, input, textarea, select {
+  font-family: var(--body-font-family);
+}
+
+body, a {
+  line-height: var(--body-line-height);
+  font-size: var(--body-font-size);
+}
+
+.desc {
+  font-size: var(--description-font-size);
+  font-weight: var(--description-font-weight);
+  letter-spacing: var(--description-letter-spacing);
 }
