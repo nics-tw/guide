@@ -44,7 +44,7 @@
     <div id="main" class="ml4-l flex-auto">
       {% assign filetype = page.path | split:'.' | last %}
       {% if filetype == 'md' %}
-        <article class="w-paragraph nested-copy-separator {% if page.text_only %}measure-wide{% endif %}">
+        <article class="w-paragraph nested-copy-separator {% if page.text_only %}measure-wide{% endif %} mt4 mt0-ns">
           <h2>{{ page.title }}</h2>
           {% if page.maturity %}
             {% include maturity.html maturity=page.maturity %}
