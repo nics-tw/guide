@@ -1,6 +1,7 @@
 ---
 title: 色彩
 layout: main
+maturity: "new"
 ---
 
 {% capture demo %}

@@ -1,6 +1,7 @@
 ---
 title: 多國語系支援
 layout: main
+maturity: "alpha"
 ---
 
 ### 中文

@@ -15,7 +15,7 @@
   <header class="header ph4 pv4">
     <a href="{{ "/" | absolute_url}}" class="logo no-underline bw1 color-inherit inline-flex items-center">
       <div class="logo-svg mr3">{% include components.svg %}</div>
-      <h1 class="heading6">政府網站設計原則</h1>
+      <h1 class="heading4">政府網站設計原則</h1>
     </a>
   </header>
   <main class="flex flex-wrap flex-nowrap-l content-start pa4 bt">
@@ -56,12 +56,15 @@
       {% endif %}
     </div>
   </main>
-  <footer class="footer f6 pa4 flex items-center gap4 bg-layer1">
+  <div class="one-column bg-layer1">
+    <footer class="site-footer f6 flex items-center gap4">
     <div class="lh-solid w2">{% include components.svg %}</div>
-    <div class="mw5">
-      <a href="/accessibility-statement">親和力宣告</a>
-    </div>
-  </footer>
+      <div class="mw5">
+        <a href="/accessibility-statement">親和力宣告</a>
+      </div>
+    </footer>
+  </div>
+
   <script src="{{ "/assets/js/main.js" | absolute_url }}" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
