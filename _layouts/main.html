@@ -12,13 +12,13 @@
 </head>
 <body class="one-column">
   <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
-  <header class="header ph4 pv3 bb">
+  <header class="header ph4 pv4">
     <a href="{{ "/" | absolute_url}}" class="logo no-underline bw1 color-inherit inline-flex items-center">
       <div class="logo-svg mr3">{% include components.svg %}</div>
-      <h1>政府網站設計原則</h1>
+      <h1 class="heading6">政府網站設計原則</h1>
     </a>
   </header>
-  <main class="flex flex-wrap flex-nowrap-l content-start pa4">
+  <main class="flex flex-wrap flex-nowrap-l content-start pa4 bt">
     <nav aria-label="主要" class="w-100 w5-l mt2 flex-shrink-0 overflow-auto h-auto-ns h4">
       {% for collection in site.collections %}
         {% if collection.docs.size == 0 %}{% continue %}{% endif %}

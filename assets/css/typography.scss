@@ -82,36 +82,51 @@ h6, h5, h4, h3, h2, h1,
   line-height: 1.5em;
 }
 
-h6, .heading6 {
+h6, .heading6, .f6 {
   font-size: var(--h6-font-size);
+}
+
+h6, .heading6 {
   font-weight: var(--h6-font-weight);
 }
 
-h5, .heading5 {
+h5, .heading5, .f5 {
   font-size: var(--h5-font-size);
-  font-weight: var(--h5-font-weight);
+}
 
+h5, .heading5 {
+  font-weight: var(--h5-font-weight);
+}
+
+h4, .heading4, .f4 {
+  font-size: var(--h4-font-size);
 }
 
 h4, .heading4 {
-  font-size: var(--h4-font-size);
   font-weight: var(--h4-font-weight);
-
 }
-h3, .heading3 {
-  font-size: var(--h3-font-size);
-  font-weight: var(--h3-font-weight);
 
+h3, .heading3, .f3 {
+  font-size: var(--h3-font-size);
+}
+
+h3, .heading3 {
+  font-weight: var(--h3-font-weight);
+}
+
+h2, .heading2, .f2 {
+  font-size: var(--h2-font-size);
 }
 
 h2, .heading2 {
-  font-size: var(--h2-font-size);
   font-weight: var(--h2-font-weight);
+}
 
+h1, .heading1, .f1 {
+  font-size: var(--h1-font-size);
 }
 
 h1, .heading1 {
-  font-size: var(--h1-font-size);
   font-weight: var(--h1-font-weight);
 }
 
@@ -119,7 +134,7 @@ body, a, button, input, textarea, select {
   font-family: var(--body-font-family);
 }
 
-body, a {
+body {
   line-height: var(--body-line-height);
   font-size: var(--body-font-size);
 }

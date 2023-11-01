@@ -23,24 +23,27 @@ text_only: 1
   </p>
 </div>
 
+#### 多國語系支援
+
+請依照[多國語系支援]({% link _visual/internationalization/index.md %})另外包含所需要的字體 CSS 檔案。
 
 ### JavaScript 元件使用方式
 
-#### 文字輸入區塊
+#### [文字輸入區塊]({% link _components/textarea/index.md %})
 
 下載 [character-count.js](/assets/js/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
 
 {% capture html %}<script src="../character-count.js" defer>{% endcapture %}
 {% include example-html.html content=html %}
 
-#### 公文元件
+#### [公文元件]({% link _components/official-document/index.md %})
 
 下載 [official-document-element.js](/assets/js/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
 
 {% capture html %}<script src="../official-document-element.js" defer>{% endcapture %}
 {% include example-html.html content=html %}
 
-#### 互動資料表格
+#### [互動資料表格]({% link _components/table/index.md %})
 
 下載 [interactive-table-element.js](/assets/components/interactive-table-element.js) 檔案並選擇性使用下方程式碼匯入：
 
