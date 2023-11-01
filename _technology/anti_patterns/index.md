@@ -10,20 +10,41 @@ text_only: 1
 
 過多或過於複雜的動畫，例如快速閃爍或不斷運動，可能對具有癲癇或前庭障礙的使用者造成癲癇或不適。應避免或可選擇這樣的動畫。或是最低標準應該使用 `prefer-reduced-motion` media query 去偵測系統偏好，並僅顯示動畫給**支援此系統偏好且關閉此篇好**的裝置。
 
+#### 延伸參考資料
+
+- [`prefers-reduced-motion`: Sometimes less movement is more](https://web.dev/articles/prefers-reduced-motion?hl=en)    
+  作者：Thomas Steiner
+
 ### 跑馬燈（Marquee）和輪播（Carousels）
 
-跑馬燈和輪播通常包括自動前進的內容，對需要更多時間閱讀或與內容互動的使用者可能具有挑戰性。它們也可能難以使用鍵盤或螢幕閱讀器進行瀏覽。即便增加許多程式功能後（大量增加開發和維護的負擔）可能可以讓它符合親和力規範，它仍然為難以閱讀的介面元件，是非常不符合時間成本的元件。建議：
+跑馬燈和輪播通常包括自動前進的內容，對需要更多時間閱讀或與內容互動的使用者可能具有挑戰性。它們也可能難以使用鍵盤或輔助軟體進行瀏覽。即便增加許多程式功能後（大量增加開發和維護的負擔）可能可以讓它符合親和力規範，它仍然為難以閱讀的介面元件，是非常不符合時間成本的元件。建議：
 
 - 跑馬燈：隨機顯示單一訊息，並提供讀取下一則訊息的方法。
 - 輪播：僅顯示最新一則訊息、在讀取時隨機選擇最新的其中一則訊息、或切開 n 塊圖塊讓最新的 n 則訊息同時出現。
+
+#### 延伸參考資料
+
+- [Hero Images/Carousels](https://usability.yale.edu/usability-best-practices/hero-imagescarousels)    
+  作者：耶魯大學 ITS
+- [Should I Use A Carousel?](https://shouldiuseacarousel.com/)    
+  作者：Jared Smith
+- [Auto-Forwarding Carousels and Accordions Annoy Users and Reduce Visibility](https://www.nngroup.com/articles/auto-forwarding/)    
+  作者：Jakob Nielsen
 
 ### 跳出的對話框
 
 使用頁面跳出的對話框（`modal dialog`、甚至 HTML `<dialog>` 元件）常會早成使用上的困難，且要完成符合親和力的技術和開發需求相當高。就算完美達成了親和力的需求，仍可能造成輔助科技使用者的困擾，困親和力需求必須控制住鍵盤焦點、報讀對話框內容，增加用者瀏覽上的複雜度。建議尤其在「填寫表單」類的功能，將表當放到新的頁面，而非放在「暫時性」的使用者介面中。
 
-### 無限捲動
+### 無限捲動（Infinite scroll）
 
 無限捲動對各種使用者都可能早成很多障礙，因為它缺乏清晰的頁面邊界。可能令人困惑，例如不知道最終有多少筆資料，並妨礙使用者達到頁尾的內容。建議使用明確的分頁按鈕。
+
+#### 延伸參考資料
+
+- [Infinite Scrolling & Role=Feed Accessibility Issues](https://www.deque.com/blog/infinite-scrolling-rolefeed-accessibility-issues/)    
+  作者：Raghavendra Satish Peri
+- [So You Think You’ve Built a Good Infinite Scroll](https://adrianroselli.com/2014/05/so-you-think-you-built-good-infinite.html)    
+  作者：Adrian Roselli
 
 ### 仰賴滑鼠游標的互動行為（如 `:hover`）
 
@@ -38,6 +59,11 @@ text_only: 1
 
 尤其工具提示經常不是由「可互動元件（Interactive Content）」觸發，造成有非常多的使用障礙。
 
+#### 延伸參考資料
+
+- [The problem with tooltips and what to do instead](https://adamsilver.io/blog/the-problem-with-tooltips-and-what-to-do-instead/)     
+  作者：Adam Silver
+
 ### 單獨使用圖示（icon）
 
 小圖示很有可能會被誤解，因為它們的意義對於不同的文化和個人可能以不同的理解方式。在這個狀況下，許多開發者會仰賴「工具提示」去補足這部分可能造成使用者的誤解。這樣子因為不佳的設計方式導致需要導入另外一個不佳的設計方式，只會造成每況愈下，和一再膨脹的開發及維護成本。
@@ -48,11 +74,11 @@ text_only: 1
 
 ### 自訂表單控制項
 
-自訂的表單控制項如 `<select>` 可能在視覺上看起來漂亮，但可能缺乏螢幕閱讀器所依賴的必要語義資訊。在選擇使使用非 HTML 元件時，應該考量相對的開發成本需求，如有效率的複製所有瀏覽器和報讀軟體所有的功能，並持續更新到追蹤 ARIA 不同版本的需求。
+使用自訂的表單元件取代原生的 HTML 元件，如 `<select>`，可能在樣式上更有自訂的空間，但非常容易缺乏輔助軟體所依賴的語義資訊（semantics）。在選擇要自行取代 HTML 元件時，應該考量相對的開發成本需求，像是如何有效率地重現所有瀏覽器和輔助軟體所有的行為，並持續更新到追蹤 ARIA 不同版本的需求。自訂元件在非絕對必要的狀況下強烈建議不要使用。就算有此需求，也建議先參考 [WHATWG](https://github.com/whatwg/html) 是否有類似的提案或是 polyfill。
 
 ### 複雜的表格
 
-使用不正確標記和缺少標題的資料表格對螢幕閱讀器來說可能很難理解。正確標記的表格，包括列和行標題非常重要。必要時建議將複雜表格分開成多個表格。
+使用不正確標記和缺少標題的資料表格對輔助軟體來說可能很難理解。正確標記的表格，包括列和行標題非常重要。必要時建議將複雜表格分開成多個表格。
 
 ### CAPTCHA 驗證碼挑戰
 
@@ -62,6 +88,10 @@ text_only: 1
 - 其他更新技術的驗證技術，如 [Turnstile](https://www.cloudflare.com/zh-tw/products/turnstile/), [hCaptcha](https://hcaptcha.com/), [reCAPTCHA](https://hcaptcha.com/) 等等。
 - 在伺服器端加上速率限制，例如同一 IP 僅能在一定時間內送出多少需求，且在失敗多少次之後列入拒絕名單。
 
+#### 延伸參考資料
+
+- [Spam-free accessible forms](https://webaim.org/blog/spam_free_accessible_forms/)     
+  作者：Jared Smith
 
 ### 侵入性彈出視窗和通知
 
@@ -69,4 +99,11 @@ text_only: 1
 
 ### PDF 或其他無親和力的文件格式
 
-上傳不具親和力的 PDF 文件對於依賴螢幕閱讀器的使用者可能會帶來問題。在儲存及建立這些文件時，應該考量各種親和力需求，例如文字沒有被圖片化，仍染可以被選取等功能。或者應同時提供具可達性的替代方法。
+上傳不具親和力的 PDF 文件對於依賴輔助軟體的使用者可能會帶來問題。在儲存及建立這些文件時，應該考量各種親和力需求，例如文字沒有被圖片化，仍染可以被選取等功能。或者應同時提供具可達性的替代方法。
+
+#### 延伸參考資料
+
+- [PDF Accessibility](https://webaim.org/techniques/acrobat/)    
+  作者：WebAIM
+- [Creating Accessible PDFs](https://accessibility.huit.harvard.edu/pdf)    
+  作者：哈佛大學
