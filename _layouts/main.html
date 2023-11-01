@@ -19,7 +19,7 @@
     </a>
   </header>
   <main class="flex flex-wrap flex-nowrap-l content-start pa4 bt">
-    <nav aria-label="主要" class="w-100 w5-l mt2 flex-shrink-0 overflow-auto h-auto-ns h4">
+    <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
       {% for collection in site.collections %}
         {% if collection.docs.size == 0 %}{% continue %}{% endif %}
         <details class="mb3" {% if page.path contains collection.label %}open{% endif %}>
@@ -44,7 +44,7 @@
     <div id="main" class="ml4-l flex-auto">
       {% assign filetype = page.path | split:'.' | last %}
       {% if filetype == 'md' %}
-        <article class="w-paragraph nested-copy-separator {% if page.text_only %}measure-wide{% endif %} mt4 mt0-ns">
+        <article class="w-paragraph nested-copy-separator {% if page.text_only %}measure-wide{% endif %}">
           <h2>{{ page.title }}</h2>
           {% if page.maturity %}
             {% include maturity.html maturity=page.maturity %}
@@ -57,10 +57,11 @@
     </div>
   </main>
   <div class="one-column bg-layer1">
-    <footer class="site-footer f6 flex items-center gap4">
-    <div class="lh-solid w2">{% include components.svg %}</div>
-      <div class="mw5">
-        <a href="/accessibility-statement">親和力宣告</a>
+    <footer class="site-footer f6 flex items-start gap4">
+      <div class="lh-solid w2">{% include components.svg %}</div>
+      <div class="mw5 flex flex-column gap2">
+        <a href="{% link accessibility-statement.md %}">親和力宣告</a>
+        <a href="{% link contact.md %}">意見回覆．聯絡我們</a>
       </div>
     </footer>
   </div>

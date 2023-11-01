@@ -19,6 +19,16 @@ maturity: "alpha"
 * 中英夾雜時務必在中文與英文數字之間加上空格。    
   例如「手續費 30 元」而非「手續費30元」。
 
+### 文字寬度
+
+
+<div class="w-100 relative flex flex-column gap2 items-start">
+
+<code>.w-paragraph</code>
+<span class="db">以基礎的純文字大小，使用 <code>.w-paragraph</code> 限制文字每行最多字數，確保文字易讀性。</span>
+
+</div>
+
 ### 大小
 
 <div class="ba br3 w-100 pa4 relative flex flex-column gap2 items-start">
