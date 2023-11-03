@@ -33,7 +33,7 @@ Engineering has a direct and vital impact on the quality of life <b>for all peop
 
 在決定技術時，原則上以 HTML 出發，建立出最基本的**可用**網站雛形，再加入 CSS、JavaScript，增進網頁的功能。在這之後，再考慮實驗性的 Web API 及其 polyfill。
 
-若要因某些原因**必要**考慮第三方<mark>框架</mark>，照以上原則，在網頁前端部分以 HTML 元件為基底，而非使用第三方<mark>元件庫</mark>。這部分可以參考[反面教材]({% link _technology/anti_patterns/index.md %})。
+若要因某些原因**必要**考慮第三方<mark>框架</mark>，照以上原則，在網頁前端部分以 HTML 元件為基底，而非使用第三方<mark>元件庫</mark>。這部分可以參考[漸進增強]({% link _technology/progressive_enhancement/index.md %})及[反面教材]({% link _technology/anti_patterns/index.md %})。
 
 ### 規範依據
 

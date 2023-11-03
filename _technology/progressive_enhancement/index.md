@@ -8,7 +8,7 @@ text_only: 1
 
 ### 開發範例
 
-第一步：寫下基礎需要的 HTML 元件。
+第一步：使用正確的 HTML 元件寫出最基本且**立即可用**的功能。
 
 {% capture html %}
 <form action="/signup">
