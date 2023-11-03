@@ -1,3 +1,15 @@
-<div class="bg-layer1 overflow-auto f6 ph3 pv3 br3">
-  {% highlight html %}{{ include.content }}{% endhighlight %}
+<div class="bg-layer1 overflow-auto fs7 ph3 pv3 br3">
+  {% capture highlight %}{% highlight html %}{{ include.content }}{% endhighlight %}{% endcapture %}
+  
+  {% if include.highlight %}
+  {% assign strings = include.highlight | split: "," %}
+    {% assign marked_highlight = highlight %}
+    {% for string in strings %}
+      {% assign marked = string | prepend: "<mark>" | append: "</mark>" %}
+      {% assign marked_highlight = marked_highlight | replace: string, marked %}
+    {% endfor %}
+    {{ marked_highlight }}
+  {% else %}
+    {{ highlight }}
+  {% endif %}
 </div>
