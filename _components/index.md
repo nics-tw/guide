@@ -40,13 +40,20 @@ text_only: 1
 
 下載 [official-document-element.js](/assets/js/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
 
-{% capture html %}<script src="../official-document-element.js" defer>{% endcapture %}
+{% capture html %}<script src="../official-document-element.js" type="module">{% endcapture %}
 {% include example-html.html content=html %}
 
 #### [互動資料表格]({% link _components/table/index.md %})
 
 下載 [interactive-table-element.js](/assets/components/interactive-table-element.js) 檔案並選擇性使用下方程式碼匯入：
 
-{% capture html %}<script src="../interactive-table-element.js" defer>{% endcapture %}
+{% capture html %}<script src="../interactive-table-element.js" type="module">{% endcapture %}
 {% include example-html.html content=html %}
 
+
+#### [互動資料表格]({% link _components/skip-to/index.md %})
+
+下載 [skip-to-element.js](/assets/components/skip-to-element.js) 檔案並選擇性使用下方程式碼匯入：
+
+{% capture html %}<script src="../skip-to-element.js" type="module">{% endcapture %}
+{% include example-html.html content=html %}

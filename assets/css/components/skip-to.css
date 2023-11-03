@@ -11,7 +11,7 @@ skip-to {
   left: 0; right: 0;
 }
 
-skip-to a {
+skip-to .skip-to {
   display: block;
   background: var(--linkColor);
   color: #fff;
@@ -21,12 +21,12 @@ skip-to a {
   font-size: 14px;
 }
 
-skip-to a:focus {
+skip-to .skip-to:focus {
   box-shadow: 0 0 0 3px var(--subtleBackgroundColor);
   outline: none;
 }
 
-skip-to a:not(:focus) {
+skip-to .skip-to:not(:focus) {
   width: 1px;
   height: 1px;
   padding: 0;

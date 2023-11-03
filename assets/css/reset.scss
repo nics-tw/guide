@@ -20,3 +20,7 @@ article {
     margin-top: 0;
   }
 }
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
