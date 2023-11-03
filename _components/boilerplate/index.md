@@ -10,7 +10,7 @@ maturity: "alpha"
 
 [空白範本]({{ path }})原始碼。
 
-<div class="bg-layer1 overflow-auto f6 ph3 pv3 highlight maxh br3">
+<div class="bg-layer1 overflow-auto f6 ph3 pv3 highlight maxh br3 fs7">
   <pre data-fetch-url="{{ path }}"></pre>
 </div>
 
@@ -20,6 +20,6 @@ maturity: "alpha"
 
 [單欄位範本]({{ path }})。
 
-<div class="bg-layer1 overflow-auto f6 ph3 pv3 highlight maxh br3">
+<div class="bg-layer1 overflow-auto f6 ph3 pv3 highlight maxh br3 fs7">
   <pre data-fetch-url="{{ path }}"></pre>
 </div>

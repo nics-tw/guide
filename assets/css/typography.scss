@@ -82,6 +82,10 @@ h6, h5, h4, h3, h2, h1,
   line-height: 1.5em;
 }
 
+.fs7 {
+  font-size: var(--description-font-size);
+}
+
 h6, .heading6, .fs6 {
   font-size: var(--h6-font-size);
 }
