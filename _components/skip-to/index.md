@@ -4,13 +4,9 @@ title: 跳至主要內容區
 maturity: "alpha"
 ---
 
-### Custom Element
-
-- 使用 [`<skip-to>`](/assets/js/components/skip-to-element.js)。
+此為符合無障礙規範 A 等級所需要的元件。
 
 ### 基礎使用方式
-
-此為符合無障礙規範 A 等級所需要的元件。
 
 {% capture html %}<skip-to>
   <a href="#main" class="skip-to">跳至主要內容區</a>
@@ -19,6 +15,10 @@ maturity: "alpha"
 
 {% capture path %}{{ site.baseurl }}{% link _components/skip-to/skip-to.html %}{% endcapture %}
 {% include iframe.html src=path %}
+
+#### Custom Element
+
+- 使用 [`<skip-to>`](/assets/js/components/skip-to-element.js)。
 
 #### 漸進增強規則
 
