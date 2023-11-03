@@ -11,7 +11,7 @@ maturity: "alpha"
   include example.html 
   content=html 
   i18n_selector="button" 
-  i18n="English:Submit,Delete,Cancel;日文:送信,削除,キャンセル;Tiếng Việt:Gửi,Xóa,Hủy;ไทย:ส่ง,ลบ,ยกเลิก"
+  i18n="en-US:Submit,Delete,Cancel;ja:送信,削除,キャンセル;vn:Gửi,Xóa,Hủy;th:ส่ง,ลบ,ยกเลิก"
 %}
 
 #### CSS
@@ -27,7 +27,7 @@ maturity: "alpha"
   include example.html 
   content=html 
   i18n_selector="button" 
-  i18n="English:Submit,Next;日文:送信,次へ;Tiếng Việt:Gửi,Kế tiếp;ไทย:ส่ง,ต่อไป"
+  i18n="en-US:Submit,Next;ja:送信,次へ;vn:Gửi,Kế tiếp;th:ส่ง,ต่อไป"
 %}
 
 #### CSS
@@ -41,7 +41,7 @@ maturity: "alpha"
   include example.html 
   content=html 
   i18n_selector="button"
-  i18n="English:Submit;日文:送信;Tiếng Việt:Gửi;ไทย:ส่ง"
+  i18n="en-US:Submit;ja:送信;vn:Gửi;th:ส่ง"
 %}
 
 #### CSS

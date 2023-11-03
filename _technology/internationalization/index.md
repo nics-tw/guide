@@ -5,7 +5,7 @@ layout: main
 
 ### 提供多國語系版本網站
 
-在資源充裕的狀態下，理想上我們應盡量提供多國語系的頁面，確保我們能盡可能縮小在台灣生活的多元族群所得到的資訊落差。提供語言選單時，使用 <span lang="en">[`hreflang`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#hreflang)</span> 標記指示語言之間的關係，以幫助翻譯服務將使用者導向適當的語言版本。
+在資源充裕的狀態下，理想上我們應盡量提供多國語系的頁面，確保我們能盡可能縮小在台灣生活的多元族群所得到的資訊落差。提供語言選單時，使用 <span lang="en">[`hreflang`](https://developer.mozilla.org/en-US:/docs/Web/HTML/Element/a#hreflang)</span> 標記指示語言之間的關係，以幫助翻譯服務將使用者導向適當的語言版本。
 
 ### 提供可準確被程式閱讀的網站
 

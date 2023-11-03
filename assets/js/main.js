@@ -9,6 +9,8 @@ document.addEventListener('change', (event) => {
   const elements = parent.querySelectorAll(selector)
 
   if (!langMap.get(select)) langMap.set(select, [...elements].map(e => getTextNode(e).data))
+
+  parent.setAttribute('lang', option.lang)
   let phrases
 
   if (option.value === 'default') {

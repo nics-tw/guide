@@ -22,7 +22,7 @@ maturity: "alpha"
 
 #### 漸進增強規則
 
-- 使用 [Document Fragment](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#document_fragments) 連結至目的地，確保即使 JavaScript 沒有讀取出來，使用者仍然可以跳至目的地。
+- 使用 [Document Fragment](https://developer.mozilla.org/en-US:/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#document_fragments) 連結至目的地，確保即使 JavaScript 沒有讀取出來，使用者仍然可以跳至目的地。
 
 ### 提供多個彈跳點
 

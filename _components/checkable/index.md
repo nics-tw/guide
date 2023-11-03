@@ -10,7 +10,7 @@ maturity: "alpha"
 {% include example.html 
   content=html
   i18n_selector="[for=v-healthid-input],[for=v-moica-input],[for=v-phone-input]" 
-  i18n="English:Health card ID,Digital Certificate,Cell phone"
+  i18n="en-US:Health card ID,Digital Certificate,Cell phone"
 %}
 
 #### CSS

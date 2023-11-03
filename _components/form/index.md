@@ -10,7 +10,7 @@ maturity: "alpha"
 {% include example.html 
   content=html
   i18n_selector="[for=city],[for=id],[for=name],[for=desc],[for=items]" 
-  i18n="English:City of residence,ID type,Full name,Description,Applications"
+  i18n="en-US:City of residence,ID type,Full name,Description,Applications"
 %}
 
 #### CSS
@@ -23,9 +23,9 @@ maturity: "alpha"
 #### 親和力
 
 - 使用 `.field-label`，必要使用 `for` 和 `id` 連結 `<label>` 元件和 `<input>` 元件。
-- 使用 [`[autocomplete]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values) 方便使用者快速填寫欄位。
+- 使用 [`[autocomplete]`](https://developer.mozilla.org/en-US:/docs/Web/HTML/Attributes/autocomplete#values) 方便使用者快速填寫欄位。
 - 盡量使用 `input[type=text]`，倚賴伺服器端驗證再於瀏覽器端顯示錯誤內容。伺服器端的表格內容驗證比瀏覽器端的表格驗證更為重要。因為 HTML 的內建表格驗證存在許多親和力的疑慮（請參考 [Avoid Default Field Validation](https://adrianroselli.com/2019/02/avoid-default-field-validation.html).），建議非必要時，盡量仰賴伺服器端驗證，並正確地保留使用者輸入的內容且顯示錯誤。
-- 需要特定的輸入模式則使用 [`[inputmode]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) 做設定。
+- 需要特定的輸入模式則使用 [`[inputmode]`](https://developer.mozilla.org/en-US:/docs/Web/HTML/Global_attributes/inputmode) 做設定。
 
 ### 選項欄位
 
@@ -33,7 +33,7 @@ maturity: "alpha"
 {% include example.html 
   content=html
   i18n_selector="[for=city],[for=id],[for=name],[for=desc],[for=items]" 
-  i18n="English:City of residence,ID type,Full name,Description,Applications"
+  i18n="en-US:City of residence,ID type,Full name,Description,Applications"
 %}
 
 #### CSS
@@ -48,7 +48,7 @@ maturity: "alpha"
 {% include example.html 
   content=html
   i18n_selector="label,.field-description li" 
-  i18n="English:Email,Address must end with @pdis.nat.gov.tw.;"
+  i18n="en-US:Email,Address must end with @pdis.nat.gov.tw.;"
 %}
 
 #### CSS
@@ -65,7 +65,7 @@ maturity: "alpha"
 {% include example.html
   content=html
   i18n_selector="label,.field-required" 
-  i18n="English:Email,required;"
+  i18n="en-US:Email,required;"
 %}
 
 #### 親和力
