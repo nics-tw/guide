@@ -1,5 +1,5 @@
 ---
-title: 多國語系支援
+title: 多國語系字體
 layout: main
 maturity: "alpha"
 ---
