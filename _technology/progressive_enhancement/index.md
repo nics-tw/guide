@@ -49,10 +49,15 @@ text_only: 1
       <input data-auto-check class="field-input" type="text" id="username" autocomplete="username">
     </fieldset>
   </div>
-</form>{% endcapture %}
+</form>
+
+<script>
+  document.querySelector('[data-auto-check]').addEventListener('input', ...)
+</script>
+{% endcapture %}
 
 <div class="br3 br--bottom overflow-hidden">
-  {% include example-html.html content=html highlight="data-auto-check" %}
+  {% include example-html.html content=html highlight="data-auto-check,script" %}
 </div>
 
 用這樣的開發模式，即可確認在 CSS 或 JavaScript 沒有讀取成功的狀態下，使用者仍然可以操作網站。並在 CSS 或 JavaScript 正常的狀況下，讓使用者用有最佳的體驗。
