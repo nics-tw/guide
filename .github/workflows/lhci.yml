@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g @lhci/cli@0.11.x
-      - run: lhci collect --url=https://guide.pdis.run/
+      - run: lhci collect --url=https://guide.nics.nat.gov.tw/
       - name: Archive lighthouse results
         uses: actions/upload-artifact@v3
         with:
