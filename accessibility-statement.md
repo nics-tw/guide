@@ -3,7 +3,7 @@ layout: main
 title: 政府網站設計原則親和力宣告
 ---
 
-這是一份由 <span class="basic-information organization-name">PDIS</span> 發表的親和力宣告。
+這是一份由 <span class="basic-information organization-name">PDIS</span> 發表的親和力宣告。並於 2024 年 3 月 27 日轉由 <span class="basic-information organization-name">NICS</span> 接續維護。
 
 ### 支持親和力的舉措
 
@@ -12,7 +12,7 @@ title: 政府網站設計原則親和力宣告
 <ul class="organizational-effort accessibility-measures">
 	<li>在我們的任務宣告裡納入親和力。</li>
 	<li>在我們內部政策的各個環節均考量親和力。</li>
-	<li>指派專責的親和力總顧問。</li>
+	<li>諮詢親和力總顧問。</li>
 </ul>
 
 ### 符合狀態
@@ -31,7 +31,7 @@ title: 政府網站設計原則親和力宣告
 <ul class="basic-information feedback h-card">
 	<li>
 	電子郵件：
-	<a class="email u-email" href="mailto:jedi@nics.moda.gov.tw">jedi@nics.moda.gov.tw</a>
+	<a class="email u-email" href="mailto:ikngoo@nics.nat.gov.tw">ikngoo@nics.nat.gov.tw</a>
 </li>
 </ul>
 
@@ -62,4 +62,4 @@ title: 政府網站設計原則親和力宣告
 
 ### 日期
 
-本宣告係於 <span class="basic-information statement-created-date">2023 年 10 月 31 日</span>使用 <a href="https://www.w3.org/WAI/planning/statements/">W3C Accessibility Statement Generator Tool</a> 所產生。
+本宣告係於 <span class="basic-information statement-created-date">2023 年 10 月 31 日</span>使用 <a href="https://www.w3.org/WAI/planning/statements/">W3C Accessibility Statement Generator Tool</a> 所產生。並於 2024 年 4 月 23 日修正。
