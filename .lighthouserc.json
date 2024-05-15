@@ -2,6 +2,31 @@
   "ci": {
     "collect":{
       "numberOfRuns": 1,
+      "startServerCommand": "bundle exec jekyll server",
+      "url": [
+        "http://localhost:4000/",
+        "http://localhost:4000/accessibility-statement.html",
+        "http://localhost:4000/contact.html",
+        "http://localhost:4000/components/index.html",
+        "http://localhost:4000/components/boilerplate/index.html",
+        "http://localhost:4000/components/checkable/index.html",
+        "http://localhost:4000/components/ctas/index.html",
+        "http://localhost:4000/components/digital-info/index.html",
+        "http://localhost:4000/components/form/index.html",
+        "http://localhost:4000/components/official-document/index.html",
+        "http://localhost:4000/components/skip-to/index.html",
+        "http://localhost:4000/components/table/index.html",
+        "http://localhost:4000/components/textarea/index.html",
+        "http://localhost:4000/components/warning-text/index.html",
+        "http://localhost:4000/technology/index.html",
+        "http://localhost:4000/technology/anti_patterns/index.html",
+        "http://localhost:4000/technology/internationalization/index.html",
+        "http://localhost:4000/technology/progressive_enhancement/index.html",
+        "http://localhost:4000/visual/index.html",
+        "http://localhost:4000/visual/colors/index.html",
+        "http://localhost:4000/visual/internationalization/index.html",
+        "http://localhost:4000/visual/typography/index.html"
+      ],
       "settings": {
         "preset": "desktop"
       }
