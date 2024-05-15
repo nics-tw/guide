@@ -1,17 +1,24 @@
 name: Lighthouse CI
-on: [page_build]
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Triggers the workflow when pull request is opened or updated
+  pull_request:
+
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
       - run: npm install -g @lhci/cli@0.11.x
+      # Collect Lighthouse results
       - run: lhci collect --url=https://guide.nics.nat.gov.tw/
       - name: Archive lighthouse results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: lighhouse-report
+          name: lighthouse-report
           path: .lighthouseci
