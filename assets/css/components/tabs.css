@@ -1,0 +1,63 @@
+:root {
+    --tabs-header-bg: var(--gov-white);
+    --tabs-header-fontColor: var(--gov-gray-500);
+    --tabs-header-active-bg: var(--gov-blue-100);
+    --tabs-header-active-fontColor: var(--gov-black);
+    --tabs-header-hover-bg: var(--gov-blue-50);
+    --tabs-header-hover-fontColor: var(--gov-gray-500);
+    --tabs-body-bg: var(--gov-white);
+    --tabs-border: var(--gov-blue-100);
+}
+
+.tabs {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabs_label {
+    cursor: pointer;
+    background: var(--tabs-header-bg);
+    color: var(--tabs-header-fontColor);
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: 2px solid var(--tabs-border);
+    border-bottom: none;
+    padding: 10px 15px;
+    float: left;
+    margin-right: 2px;
+    font: italic 1em;
+    cursor: pointer;
+}
+
+label:hover {
+    background: var(--tabs-header-hover-bg);
+    color: var(--tabs-header-hover-fontColor);
+}
+
+.tabs_radio:checked+.tabs_label {
+    font-weight: bold;
+    background: var(--tabs-header-active-bg);
+    color: var(--tabs-header-active-fontColor);
+}
+
+.tabs_radio:checked+.tabs_label+.tabs_content {
+    display: initial;
+}
+
+.tabs_radio {
+    display: none;
+}
+
+.tabs_content {
+    order: 1;
+    width: 100%;
+    float: left;
+    clear: both;
+    position: relative;
+    background: var(--tabs-body-bg);
+    border-radius: 0 10px 10px 10px;
+    border: 2px solid var(--tabs-border);
+    padding: 1rem;
+    height: auto;
+    display: none;
+}
