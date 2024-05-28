@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <link rel="stylesheet" href="D:\WorkSpace\Code\guide\assets\css\components\header.css">
+    <title>政府網站設計原則</title>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header class="header" data-module="header">
+        <div class="header__top">
+            <div class="width-container header__top-container">
+                <div class="header__actions">
+                    <a href="#" class="header__link small-text">網站導覽</a>
+                    <a href="#" class="header__link small-text" lang="zh-TW">中文</a>
+                    <a href="#" class="header__link small-text" lang="en">英文</a>
+                    <a href="#" id="decreaseFont" class="header__link small-text" aria-label="Decrease font size">A-</a>
+                    <a href="#" id="defaultFont" class="header__link small-text" aria-label="Default font size">A</a>
+                    <a href="#" id="increaseFont" class="header__link small-text" aria-label="Increase font size">A+</a>
+                </div>
+            </div>
+        </div>
+        <div class="header__divider width-container"></div>
+        <div class="header__bottom">
+            <div class="width-container header__container">
+                <div class="header__logo">
+                    <a href="#" class="header__link header__link--homepage">
+                        <img src="D:\WorkSpace\Code\guide\logo.png" alt="網站標誌" class="header__logotype">
+                    </a>
+                </div>
+                <button class="header__menu-button" aria-controls="navigation" aria-expanded="false"
+                    aria-label="Toggle navigation">≡</button>
+                <div class="header__content">
+                    <a href="#" class="header__link service-name js-dropdown-toggle">Service name 1 </a>
+                    <a href="#" class="header__link service-name js-dropdown-toggle">Service name 2 </a>
+                    <a href="#" class="header__link service-name js-dropdown-toggle">Service name 3 </a>
+                    <!-- Additional links for mobile view -->
+                    <div class="header__additional-links">
+                        <div class="header__divider width-container"></div>
+                        <div class="header__actions-row">
+                            <a href="#" class="header__link small-text">網站導覽</a>
+                            <a href="#" class="header__link small-text">中文</a>
+                            <a href="#" class="header__link small-text">英文</a>
+                        </div>
+                        <div class="header__actions-row">
+                            <a href="#" id="mobileDecreaseFont" class="header__link small-text"
+                                aria-label="Decrease font size">A-</a>
+                            <a href="#" id="mobileDefaultFont" class="header__link small-text"
+                                aria-label="Default font size">A</a>
+                            <a href="#" id="mobileIncreaseFont" class="header__link small-text"
+                                aria-label="Increase font size">A+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var decreaseFontButtons = document.querySelectorAll('#decreaseFont, #mobileDecreaseFont');
+            var defaultFontButtons = document.querySelectorAll('#defaultFont, #mobileDefaultFont');
+            var increaseFontButtons = document.querySelectorAll('#increaseFont, #mobileIncreaseFont');
+            var body = document.body;
+            var currentFontSize = 16;
+            var minFontSize = 12;
+            var maxFontSize = 24;
+
+            function updateFontSize(size) {
+                body.style.fontSize = size + 'px';
+                body.setAttribute('aria-live', 'polite');
+                body.setAttribute('aria-label', 'Current font size: ' + size + ' pixels');
+            }
+
+            decreaseFontButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentFontSize > minFontSize) {
+                        currentFontSize -= 1;
+                        updateFontSize(currentFontSize);
+                    }
+                });
+            });
+
+            defaultFontButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    currentFontSize = 16;
+                    updateFontSize(currentFontSize);
+                });
+            });
+
+            increaseFontButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentFontSize < maxFontSize) {
+                        currentFontSize += 1;
+                        updateFontSize(currentFontSize);
+                    }
+                });
+            });
+
+            var menuButton = document.querySelector('.header__menu-button');
+            var headerContent = document.querySelector('.header__content');
+
+            menuButton.addEventListener('click', function () {
+                var isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                headerContent.classList.toggle('is-visible');
+            });
+        });
+    </script>
+</body>
