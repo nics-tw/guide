@@ -1,0 +1,101 @@
+:root{
+    --accordion-header-bg:var(--gov-white);  
+    --accordion-header-active-bg:var(--gov-blue-100);  
+    --accordion-body-bg:var(--gov-white);  
+    --accordion-header-fontColor:var(--gov-black); 
+    --accordion-body-border:var(--gov-blue-100);           
+  }
+  
+  .accordion {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .accordion input[type="checkbox"] {
+    display: none;
+  }
+
+  .accordion label {
+    display: block;
+    padding: 16px 20px;
+    background: var(--accordion-header-bg);
+    color: var(--accordion-header-fontColor);
+    cursor: pointer;
+    border: 1px solid var(--accordion-body-border);
+    margin-bottom: 0;
+    position: relative;
+
+    height: 22px;
+    opacity: 0.9;
+    font-family: NotoSansTC;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: 0.32px;
+    text-align: left;
+  }
+
+  .accordion label::after {
+    content: '﹀';
+    color: var(--accordion-header-fontColor);
+    font-weight: 600;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .accordion input[type="checkbox"]:checked + label::after {
+    content: '︿';
+    font-weight: 600;
+    color: var(--accordion-header-fontColor);
+  }
+
+  .accordion .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+    background: var(--accordion-body-bg);
+    font-family: NotoSansTC;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: 0.56px;
+    text-align: left;
+  }
+
+  .accordion input[type="checkbox"]:checked ~ .content {
+    max-height: 300px;
+    padding: 24px 20px;
+  }
+
+  .accordion input[type="checkbox"]:checked + label {
+    background: var(--accordion-header-active-bg);
+    border-bottom: 0;
+  }
+
+  .accordion .accordion-item {
+    /* border-bottom: 1px solid #d1e7dd; */
+    border: 1px solid var(--accordion-body-border);
+    border-bottom: none;
+  }
+
+
+  .accordion .accordion-item:first-child, .accordion .accordion-item:first-child label{
+    /* border-bottom: 1px solid #d1e7dd; */
+    border: 1px solid var(--accordion-body-border);
+    border-top-left-radius:0.5rem;
+    border-top-right-radius:0.5rem;
+    border-bottom: none;
+  }
+
+  .accordion .accordion-item:last-child, .accordion .accordion-item:last-of-type input[type="checkbox"]:not(:checked) ~ label, .accordion .accordion-item:last-child input[type="checkbox"]:checked ~ .content{
+    border: 1px solid var(--accordion-body-border);
+    border-bottom-left-radius:0.5rem;
+    border-bottom-right-radius:0.5rem;
+  }
