@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 多重選擇及補充說明
+title: 多重選擇及補充說明 (Checkable)
 maturity: "alpha"
 ---
 
