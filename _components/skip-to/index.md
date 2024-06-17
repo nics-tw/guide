@@ -13,7 +13,7 @@ maturity: "alpha"
 </skip-to>{% endcapture %}
 <div class="br3 mb4 overflow-hidden">{% include example-html.html content=html %}</div>
 
-{% capture path %}{{ site.baseurl }}{% link _components/skip-to/skip-to.html %}{% endcapture %}
+{% capture path %}{{ site.url }}{% link _components/skip-to/skip-to.html %}{% endcapture %}
 {% include iframe.html src=path %}
 
 #### Custom Element
@@ -35,5 +35,5 @@ maturity: "alpha"
 {% endcapture %}
 <div class="br3 mb4 overflow-hidden">{% include example-html.html content=html %}</div>
 
-{% capture path %}{{ site.baseurl }}{% link _components/skip-to/skip-to-multiple.html %}{% endcapture %}
+{% capture path %}{{ site.url }}{% link _components/skip-to/skip-to-multiple.html %}{% endcapture %}
 {% include iframe.html src=path height=360 %}
