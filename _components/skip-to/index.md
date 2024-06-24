@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 跳至主要內容區
+title: 跳至主要內容區 (Skip-To)
 maturity: "alpha"
 ---
 

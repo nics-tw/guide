@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 按鈕及連結
+title: 按鈕及連結 (Button and Link)
 maturity: "alpha"
 ---
 

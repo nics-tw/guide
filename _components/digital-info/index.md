@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 數位名片
+title: 數位名片 (Digital Info)
 maturity: "alpha"
 ---
 
