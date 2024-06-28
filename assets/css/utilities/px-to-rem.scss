@@ -1,0 +1,18 @@
+$root-font-size: 16px !default;
+
+/// Convert pixels to rem
+///
+/// The px-to-rem root-font-size must be configured to match
+/// the font-size of your root (html) element
+///
+/// @param {Number} $value - Length in pixels
+/// @return {Number} Length in rems
+/// @access public
+
+@function px-to-rem($value) {
+    @if unitless($value) {
+      $value: $value * 1px;
+    }
+  
+    @return calc($value / $root-font-size * 1rem);
+  }
