@@ -1,5 +1,4 @@
 @import 'lang/zh.css';
-@import 'utilities/px-to-rem.scss';
 
 :root {
   &:lang(zh) {
@@ -18,32 +17,31 @@
     --body-font-family: inter, system-ui, sans-serif;
   }
 
-  --body-line-height: 1.7em;
-  --body-font-size: #{px-to-rem(16px)};
+  --body-line-height: 1.7;
+  --body-font-size: 16px;
 
-  --description-font-size: #{px-to-rem(14px)};;
+  --description-font-size: 0.82em;
   --description-letter-spacing: 0.04em;
 
-  --paragraph-font-size: #{px-to-rem(18px)};
   --paragraph-width: 35em;
   --heading-font-weight: 600;
   
-  --h6-font-size: #{px-to-rem(18px)};
+  --h6-font-size: 1em;
   --h6-font-weight: 700;
 
-  --h5-font-size: #{px-to-rem(20px)};;
+  --h5-font-size: 1.2em;
   --h5-font-weight: 400;
 
-  --h4-font-size: #{px-to-rem(24px)};;
+  --h4-font-size: 1.25em;
   --h4-font-weight: 600;
   
-  --h3-font-size: #{px-to-rem(28px)};;
+  --h3-font-size: 1.45em;
   --h3-font-weight: 600;
   
-  --h2-font-size: #{px-to-rem(32px)};;
+  --h2-font-size: 1.9em;
   --h2-font-weight: 600;
 
-  --h1-font-size: #{px-to-rem(36px)};
+  --h1-font-size: 2.2em;
   --h1-font-weight: 600;
 }
 
@@ -143,11 +141,6 @@ body, a, button, input, textarea, select {
 body {
   line-height: var(--body-line-height);
   font-size: var(--body-font-size);
-}
-
-p {
-  line-height: var(--body-line-height);
-  font-size: var(--paragraph-font-size);
 }
 
 .desc {
