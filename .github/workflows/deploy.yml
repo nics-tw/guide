@@ -1,11 +1,11 @@
 name: Deploy to google cloud storage
 on:
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  workflow_call:
     inputs:
       RUN_ID:
         description: 'Artifact run_id to deploy'
         required: true
+        type: string
         default: '<RUN_ID>'
 
 jobs:
@@ -25,8 +25,8 @@ jobs:
       with:
         name: jekyll-site
         github-token: ${{ secrets.GH_PAT }} # personal access token with actions:read permissions on target repo
-        run-id: ${{ github.event.inputs.RUN_ID }}
-        path: ./site
+        run-id: ${{ inputs.RUN_ID }}
+        path: ./${{ inputs.RUN_ID }}
 
     - name: Authenticate to Google Cloud
       uses: 'google-github-actions/auth@v2'
@@ -36,5 +36,5 @@ jobs:
     - name: Upload to GCS
       uses: 'google-github-actions/upload-cloud-storage@v2'
       with:
-        path: './site'
+        path: './${{ inputs.RUN_ID }}'
         destination: 'guide-dev'

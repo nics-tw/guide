@@ -33,3 +33,9 @@ jobs:
         with:
           name: jekyll-site
           path: ./_site
+  deploy:
+    uses: ./.github/workflows/deploy.yml
+    needs: build
+    with:
+          RUN_ID: ${{ github.run_id }}
+    secrets: inherit
