@@ -35,6 +35,9 @@ jobs:
           path: ./_site
   deploy:
     uses: ./.github/workflows/deploy.yml
+    permissions: # Required by google-github-actions/auth
+      contents: 'read'
+      id-token: 'write'
     needs: build
     with:
           RUN_ID: ${{ github.run_id }}
