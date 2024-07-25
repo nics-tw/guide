@@ -33,3 +33,34 @@ jobs:
         with:
           name: jekyll-site
           path: ./_site
+  deploy:
+    uses: ./.github/workflows/deploy.yml
+    permissions: # Required by google-github-actions/auth
+      contents: 'read'
+      id-token: 'write'
+    needs: build
+    with:
+          RUN_ID: ${{ github.run_id }}
+    secrets: inherit
+  comment: # Required by peter-evans/create-or-update-comment@v4
+    runs-on: ubuntu-latest
+    permissions:
+        pull-requests: write
+    needs: deploy
+    steps:
+    - name: Find Comment
+      uses: peter-evans/find-comment@v3
+      id: fc
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        comment-author: 'github-actions[bot]'
+        body-includes: Deployed to
+
+    - name: Create or update comment
+      uses: peter-evans/create-or-update-comment@v4
+      with:
+        comment-id: ${{ steps.fc.outputs.comment-id }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          Deployed to https://storage.googleapis.com/guide-dev/${{ github.run_id }}/index.html
+        edit-mode: replace
