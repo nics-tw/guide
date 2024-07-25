@@ -42,8 +42,10 @@ jobs:
     with:
           RUN_ID: ${{ github.run_id }}
     secrets: inherit
-  comment:
+  comment: # Required by peter-evans/create-or-update-comment@v4
     runs-on: ubuntu-latest
+    permissions:
+        pull-requests: write
     needs: deploy
     steps:
     - name: Find Comment
