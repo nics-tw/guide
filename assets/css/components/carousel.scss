@@ -1,0 +1,270 @@
+/* .carousel */
+
+img.reload {
+    padding: 0.25em;
+    display: block-inline;
+    position: relative;
+    top: 6px;
+    height: 0.9em;
+}
+
+.carousel {
+    background-color: #eee;
+    max-width: 900px;
+
+    .carousel-inner {
+        position: relative;
+    }
+
+    .carousel-items {
+        padding: 5px;
+
+        &.focus {
+            padding: 2px;
+            border: solid 3px #005a9c;
+        }
+    }
+
+    .carousel-item {
+        display: none;
+        max-height: 400px;
+        max-width: 900px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+
+        &.active {
+            display: block;
+        }
+
+        .carousel-image a img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            right: 15%;
+            bottom: 0;
+            left: 15%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: #fff;
+            text-align: center;
+
+            a {
+                cursor: pointer;
+                text-decoration: underline;
+                color: #fff;
+                font-weight: 600;
+
+                &:hover {
+                    background-color: rgb(0 0 0 / 100%);
+                }
+
+                &:focus {
+                    padding: 4px;
+                    border: 2px solid #fff;
+                    background-color: rgb(0 0 0 / 100%);
+                    outline: none;
+                    color: #fff;
+                }
+            }
+
+            span.contrast {
+                display: inline-block;
+                margin: 0;
+                padding: 6px;
+                background-color: rgb(0 0 0 / 65%);
+                border-radius: 5px;
+                border: 0 solid transparent;
+
+                &:hover {
+                    background-color: rgb(0 0 0 / 100%);
+                }
+            }
+
+            p {
+                font-size: 1em;
+                line-height: 1.5;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .controls {
+        box-sizing: border-box;
+        position: absolute;
+        top: 1em;
+        z-index: 10;
+        display: flex;
+        width: 100%;
+        padding: 0.25em 1.25em 0;
+
+        button {
+            position: absolute;
+            z-index: 10;
+            flex: 0 0 auto;
+            margin: 0;
+            padding: 0;
+            border: none;
+            background: transparent;
+            outline: none;
+
+            &.previous {
+                right: 70px;
+            }
+
+            &.next {
+                right: 18px;
+            }
+
+            &:focus svg .background,
+            &:hover svg .background,
+            &:hover svg .border {
+                fill: #005a9c;
+                stroke: #005a9c;
+                opacity: 1;
+            }
+
+            &:focus svg .border {
+                stroke: white;
+            }
+
+            svg {
+                .background {
+                    stroke: black;
+                    fill: black;
+                    stroke-width: 1px;
+                    opacity: 0.6;
+                }
+
+                .border {
+                    fill: transparent;
+                    stroke: transparent;
+                    stroke-width: 2px;
+                }
+
+                .pause {
+                    stroke-width: 4;
+                    fill: transparent;
+                    stroke: transparent;
+                }
+
+                .play {
+                    stroke-width: 1;
+                    fill: transparent;
+                    stroke: transparent;
+                }
+
+                polygon {
+                    fill: white;
+                    stroke: white;
+                }
+            }
+
+            &.pause svg .pause {
+                fill: white;
+                stroke: white;
+            }
+
+            &.play svg .play {
+                fill: white;
+                stroke: white;
+            }
+        }
+    }
+}
+
+/* More like bootstrap, less accessible */
+
+.carousel-moreaccessible {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    border: #eee solid 4px;
+    border-radius: 5px;
+
+    .controls {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0.25em 0.25em 0;
+
+        &.carousel-moreaccessible {
+            position: static;
+            height: 36px;
+
+            button.previous {
+                right: 60px;
+            }
+
+            button.next {
+                right: 6px;
+            }
+        }
+    }
+
+    .carousel-items,
+    .carousel-items.focus {
+        padding: 0;
+        border: none;
+
+        &.focus .carousel-image a {
+            padding: 2px;
+            border: 3px solid #005a9c;
+        }
+    }
+
+    .carousel-item {
+        padding: 0;
+        margin: 0;
+        max-height: none;
+
+        .carousel-caption {
+            position: static;
+            padding: 0;
+            margin: 0;
+            height: 60px;
+            color: black;
+
+            p {
+                padding: 0;
+                margin: 0;
+            }
+
+            h3 {
+                font-size: 1.1em;
+                padding: 0;
+                margin: 0;
+            }
+
+            a {
+                display: inline-block;
+                margin: 0;
+                padding: 6px;
+                color: black;
+                background-color: transparent;
+                border: none;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: rgb(0 0 0 / 20%);
+                }
+
+                &:focus {
+                    padding: 4px;
+                    border: 2px solid #005a9c;
+                    background-color: transparent;
+                    color: black;
+                    outline: none;
+                }
+            }
+
+            span.contrast,
+            span.contrast:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
