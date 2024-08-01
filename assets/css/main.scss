@@ -1,7 +1,5 @@
----
----
 
-@import "variables.css";
+@import "variables.scss";
 @import "reset.css";
 @import "typography.scss";
 @import "components/ctas.scss";
@@ -15,7 +13,7 @@
 @import "components/nav.scss";
 @import "components/layout.scss";
 @import "components/breadcrumb.scss";
-@import "components/accordion.scss";
+@import "components/accordion.css";
 @import "components/tabs.css";
 @import "tachyons.css";
 @import "color.css";
