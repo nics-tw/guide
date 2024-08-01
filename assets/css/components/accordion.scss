@@ -1,0 +1,108 @@
+// 變數定義
+$accordion-header-bg: var(--gov-white);  
+$accordion-header-active-bg: var(--gov-blue-100);  
+$accordion-body-bg: var(--gov-white);  
+$accordion-header-fontColor: var(--gov-black); 
+$accordion-body-border: var(--gov-blue-100); 
+$accordion-icon-color: var(--gov-black); // 新增變數用於 SVG 顏色;
+
+// 根選擇器
+:root {
+  --accordion-header-bg: #{$accordion-header-bg};
+  --accordion-header-active-bg: #{$accordion-header-active-bg};
+  --accordion-body-bg: #{$accordion-body-bg};
+  --accordion-header-fontColor: #{$accordion-header-fontColor};
+  --accordion-body-border: #{$accordion-body-border};
+  --accordion-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") ;
+  //--accordion-icon-active-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'%3E%3Cpath fill-rule='evenodd' d='M1.646 11.354a.5.5 0 0 1 .708 0L8 5.707l5.646 5.647a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1-.708 0l-6 6a.5.5 0 0 1 0 .708z'/%3E%3C/svg%3E") !default;
+}
+
+.accordion {
+  width: 100%;
+  margin: 0 auto;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    display: block;
+    padding: 16px 20px;
+    background: $accordion-header-bg;
+    color: $accordion-header-fontColor;
+    cursor: pointer;
+    border: 1px solid $accordion-body-border;
+    margin-bottom: 0;
+    position: relative;
+
+    height: 22px;
+    opacity: 0.9;
+    font-family: NotoSansTC;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: 0.32px;
+    text-align: left;
+
+    &::after {
+      content: '';
+      background-image: var(--accordion-icon-url);
+      background-repeat: no-repeat;
+      background-size: 20px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  input[type="checkbox"]:checked + label {
+    background: $accordion-header-active-bg;
+    border-bottom: 0;
+
+    &::after {
+      background-image: var(--accordion-icon-active-url);
+    }
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+    background: $accordion-body-bg;
+    font-family: NotoSansTC;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: 0.56px;
+    text-align: left;
+
+    input[type="checkbox"]:checked ~ & {
+      max-height: 300px;
+      padding: 24px 20px;
+    }
+  }
+
+  .accordion-item {
+    border: 1px solid $accordion-body-border;
+    border-bottom: none;
+
+    &:first-child {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    &:last-child,
+    &:last-of-type input[type="checkbox"]:not(:checked) ~ label,
+    &:last-child input[type="checkbox"]:checked ~ .content {
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+  }
+}
