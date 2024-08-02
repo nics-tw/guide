@@ -38,6 +38,10 @@ maturity: "new"
 - `data-behavior="multiple"`：作為設定是否可以常開選單的屬性。
 - `.btn-toggle`：作為一鍵開合所有選單的元件(請設定於可點擊元件中 Ex: `<button>`)。
 
+#### JavaScript
+
+- 使用 [`accordion.js`](/assets/components/accordion.js)。
+
 ### 副標題(摘要)折疊選單
 
 - 可在標題欄新增副標題(摘要)→請注意僅在實際需要時添加摘要行，避免按鈕文字太長。
@@ -96,3 +100,5 @@ Accordion元件會向使用者隱藏內容。因非所有使用者都會注意�
     - 使用 Accordion：當有較多部分且需要垂直排列時。
 
 依據以上指南選擇適合的元件，有助於提升使用者體驗與頁面載入性能。
+
+<script src="/assets/js/components/accordion.js" type="module">
