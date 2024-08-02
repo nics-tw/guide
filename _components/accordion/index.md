@@ -4,9 +4,45 @@ title: 折疊選單 (Accordion)
 maturity: "new"
 ---
 
-### 常見折疊選單
+### 常見基本折疊選單
 
-{% capture html %}{% include accordion/accordion.html %}{% endcapture %}
+- 預設一次僅可展開一個選單，點擊其他選單會自動關閉先前選單
+
+{% capture html %}{% include accordion/accordion_single.html %}{% endcapture %}
+{% 
+  include example.html content=html
+%}
+
+#### CSS
+
+- `.accordion`：作為全部`.accordion-item`的容器。
+- `.accordion-item`：作為單獨折疊選單的容器。
+- `label`：作為單獨折疊選單的 `<label>`。
+- `.accordion-body`：作為單獨折疊選單的內容。
+
+### 長開折疊選單
+
+- 展開選單需再次點擊關閉，使折疊選單在開啟另一個選單時保持開啟狀態。
+
+{% capture html %}{% include accordion/accordion_multiple.html %}{% endcapture %}
+{% 
+  include example.html content=html
+%}
+
+#### CSS
+
+- `.accordion`：作為全部`.accordion-item`的容器。
+- `.accordion-item`：作為單獨折疊選單的容器。
+- `label`：作為單獨折疊選單的 `<label>`。
+- `.accordion-body`：作為單獨折疊選單的內容。
+- `data-behavior="multiple"`：作為設定是否可以常開選單的屬性。
+- `.btn-toggle`：作為一鍵開合所有選單的元件(請設定於可點擊元件中 Ex: `<button>`)。
+
+### 副標題(摘要)折疊選單
+
+- 可在標題欄新增副標題(摘要)→請注意僅在實際需要時添加摘要行，避免按鈕文字太長。
+
+{% capture html %}{% include accordion/accordion_subTitle.html %}{% endcapture %}
 {% 
   include example.html content=html
 %}
@@ -16,11 +52,9 @@ maturity: "new"
 - `.accordion`：作為全部`.accordion-item`的容器。
 - `.accordion-item`：作為單獨折疊選單的容器。
 - `label`：作為單獨折疊選單的 `<label>`。
-- `.content`：作為單獨折疊選單的內容。
-
-#### 親和力
-
-- 使用 `label`，必要使用 `for` 與 `id` 連結 `<label>` 元件與 `<input>` 元件。
+- `.accordion-body`：作為單獨折疊選單的內容。
+- `.main-title`：作為主標題的內容。
+- `.sub-title`：作為副標題的內容。
 
 #### 建議使用時機
 
@@ -53,7 +87,6 @@ Accordion元件會向使用者隱藏內容。因非所有使用者都會注意�
 頁籤與折疊選單都會隱藏部分內容。開發者應根據使用情境挑選合適的元件。
 
 * 考量因素
-
     - 如果使用者不需要同時查看多個部分，優先考慮使用頁籤 (Tabs)。
     - 如果使用者需要在部分之間快速切換，頁籤 (Tabs) 可以顯示內容而不會將其他部分推下頁面，這與折疊選單 (Accordion) 不同。
     - 如果有很多內容，頁籤 (Tabs) 可以容納較少的部分，因為它們是水平排列的，而折疊選單 (Accordion) 是垂直排列的。
