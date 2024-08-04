@@ -101,4 +101,4 @@ Accordion元件會向使用者隱藏內容。因非所有使用者都會注意�
 
 依據以上指南選擇適合的元件，有助於提升使用者體驗與頁面載入性能。
 
-<script src="/assets/js/components/accordion.js" type="module">
+<script src="{{ "/assets/js/components/accordion.js" | absolute_url }}" type="module"></script>
