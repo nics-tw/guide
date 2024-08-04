@@ -1,0 +1,132 @@
+ :root{
+  --accordion-header-bg:var(--backgroundColor);
+  --accordion-header-active-bg:var(--gov-blue-100);
+  --accordion-body-bg:var(--backgroundColor);
+  --accordion-header-fontColor:var(--textColor);
+  --accordion-body-border:var(--gov-blue-100);
+  --accordion-body-active-border:var(--secondaryTextColor);
+  --accordion-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23var(--accordion-icon-color)'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  --accordion-icon-active-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23var(--accordion-icon-color)'%3E%3Cpath fill-rule='evenodd' d='M1.646 11.354a.5.5 0 0 1 .708 0L8 5.707l5.646 5.647a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1-.708 0l-6 6a.5.5 0 0 1 0 .708z'/%3E%3C/svg%3E");
+}
+
+.accordion {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.accordion input[type="checkbox"] {
+  display: none;
+}
+
+.accordion label {
+  display: block;
+  padding: 16px 20px;
+  background: var(--accordion-header-bg);
+  color: var(--accordion-header-fontColor);
+  cursor: pointer;
+  border: 1px solid var(--accordion-body-border);
+  margin-bottom: 0;
+  position: relative;
+  opacity: 0.9;
+  font-family: NotoSansTC;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.32px;
+  text-align: left;
+}
+
+.accordion label .main-title {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.accordion label .sub-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.accordion label::after {
+  content: '';
+  background-image: var(--accordion-icon-url);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.accordion input[type="checkbox"]:checked + label {
+  background: var(--accordion-header-active-bg);
+  box-shadow: 1px 0 3px 0 var(--accordion-body-active-border);  
+}
+
+.accordion input[type="checkbox"]:checked + label::after {
+  background-image: var(--accordion-icon-active-url);
+}
+
+.accordion .accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+  background: var(--accordion-body-bg);
+  font-family: NotoSansTC;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4;
+  letter-spacing: 0.56px;
+  text-align: left;
+}
+
+.accordion input[type="checkbox"]:checked ~ .accordion-body {
+  max-height: 300px;
+  padding: 16px 20px;
+  box-shadow: 1px 0 3px 0 var(--accordion-body-active-border);
+}
+
+.accordion .accordion-item {
+  border: 1px solid var(--accordion-body-border);
+  border-bottom: none;
+}
+
+.accordion .accordion-item:first-child,
+.accordion .accordion-item:first-child label {
+  border: 1px solid var(--accordion-body-border);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom: none;
+}
+
+.accordion .accordion-item:last-child,
+.accordion .accordion-item:last-of-type input[type="checkbox"]:not(:checked) ~ label,
+.accordion .accordion-item:last-child input[type="checkbox"]:checked ~ .accordion-body {
+  border: 1px solid var(--accordion-body-border);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.accordion .show {
+  max-height: 300px;
+  padding: 16px 20px;
+}
+
+.btn-toggle {
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--gov-primary);
+  color: var(--gov-blue-50);
+  border-radius: 50px;
+  border: 1px solid var(--gov-primary);
+}
+
+.btn-toggle:hover {
+  background-color: var(--gov-link-hover-color);
+  color: var(--gov-blue-50);
+}
+

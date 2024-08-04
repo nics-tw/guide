@@ -22,4 +22,4 @@ maturity: "alpha"
 - `<li>` 預設就請放入 `data-limit-phrase` 的後半部上限提醒。
 - 無論如何，伺服器接收內容時仍須再次驗證字數。
 
-<script src="/assets/js/components/character-count.js" type="module">
+<script src="{{ "/assets/js/components/character-count.js" | absolute_url }}" type="module"></script>
