@@ -53,4 +53,4 @@ maturity: "alpha"
 
 - 語音識別系統（Dragon NaturallySpeaking, MacOS/iOS Voice Control）
 
-<script src="/assets/js/components/interactive-table-element.js" type="module">
+<script src="{{ "/assets/js/components/interactive-table-element.js" | absolute_url }}" type="module"></script>
