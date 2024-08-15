@@ -37,44 +37,5 @@
         </div>
     </header>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var decreaseFontButton = document.getElementById('decreaseFont');
-            var defaultFontButton = document.getElementById('defaultFont');
-            var increaseFontButton = document.getElementById('increaseFont');
-            var body = document.body;
-            var currentFontSize = 16;
-            var minFontSize = 12;
-            var maxFontSize = 24;
-
-            function updateFontSize(size) {
-                body.style.fontSize = size + 'px';
-                body.setAttribute('aria-live', 'polite');
-                body.setAttribute('aria-label', 'Current font size: ' + size + ' pixels');
-            }
-
-            decreaseFontButton.addEventListener('click', function (event) {
-                event.preventDefault();
-                if (currentFontSize > minFontSize) {
-                    currentFontSize -= 1;
-                    updateFontSize(currentFontSize);
-                }
-            });
-
-            defaultFontButton.addEventListener('click', function (event) {
-                event.preventDefault();
-                currentFontSize = 16;
-                updateFontSize(currentFontSize);
-            });
-
-            increaseFontButton.addEventListener('click', function (event) {
-                event.preventDefault();
-                if (currentFontSize < maxFontSize) {
-                    currentFontSize += 1;
-                    updateFontSize(currentFontSize);
-                }
-            });
-        });
-
-    </script>
+    <script src="{{ "/assets/js/header.js" | absolute_url }}" defer></script>
 </body>
