@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 
 <head>
-    <link rel="stylesheet" href="D:\WorkSpace\Code\guide\assets\css\components\header.css">
+    <link rel="stylesheet" href="{{ "assets/css/components/header.css" | absolute_url }}">
     <title>政府網站設計原則</title>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
@@ -29,7 +29,7 @@
             <div class="width-container header__container">
                 <div class="header__logo">
                     <a href="#" class="header__link header__link--homepage">
-                        <img src="D:\WorkSpace\Code\guide\logo.png" alt="網站標誌" class="header__logotype">
+                        <img src="{{ "/assets/favicon.png" | absolute_url }}" alt="網站標誌" class="header__logotype">
                     </a>
                 </div>
                 <button class="header__menu-button" aria-controls="navigation" aria-expanded="false"
