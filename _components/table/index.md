@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 表格
+title: 表格 (Table)
 maturity: "alpha"
 ---
 

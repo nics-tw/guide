@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 警告文字
+title: 警告文字 (Warning Text)
 maturity: "alpha"
 ---
 

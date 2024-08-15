@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 按鈕及連結
+title: 按鈕及連結 (Button and Link)
 maturity: "alpha"
 ---
 
@@ -11,7 +11,7 @@ maturity: "alpha"
   include example.html 
   content=html 
   i18n_selector="button" 
-  i18n="en-US:Submit,Delete,Cancel;ja:送信,削除,キャンセル;vn:Gửi,Xóa,Hủy;th:ส่ง,ลบ,ยกเลิก"
+  i18n="en-US:Submit,Delete,Cancel;ja:送信,削除,キャンセル;vi:Gửi,Xóa,Hủy;th:ส่ง,ลบ,ยกเลิก"
 %}
 
 #### CSS
@@ -31,7 +31,7 @@ maturity: "alpha"
   include example.html 
   content=html 
   i18n_selector="button" 
-  i18n="en-US:Submit,Next;ja:送信,次へ;vn:Gửi,Kế tiếp;th:ส่ง,ต่อไป"
+  i18n="en-US:Submit,Next;ja:送信,次へ;vi:Gửi,Kế tiếp;th:ส่ง,ต่อไป"
 %}
 
 #### CSS
@@ -55,7 +55,7 @@ maturity: "alpha"
   include example.html 
   content=html 
   i18n_selector="button"
-  i18n="en-US:Submit;ja:送信;vn:Gửi;th:ส่ง"
+  i18n="en-US:Submit;ja:送信;vi:Gửi;th:ส่ง"
 %}
 
 #### CSS

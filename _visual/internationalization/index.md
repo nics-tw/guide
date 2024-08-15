@@ -57,12 +57,12 @@ maturity: "alpha"
 
 ### 越南文
 
-字體檔案：[`lang/vn.css`]({{ '/assets/css/lang/vn.css' | absolute_url }})
-<link href="{{ '/assets/css/lang/vn.css' | absolute_url }}" rel="stylesheet">
+字體檔案：[`lang/vi.css`]({{ '/assets/css/lang/vi.css' | absolute_url }})
+<link href="{{ '/assets/css/lang/vi.css' | absolute_url }}" rel="stylesheet">
 
 
-<!-- https://www.nhi.gov.tw/resource/Handbook/2020-2021/images/pdf/2020-2021_vn.pdf -->
-<div class="pa4 ba plain w-paragraph" lang="vn">
+<!-- https://www.nhi.gov.tw/resource/Handbook/2020-2021/images/pdf/2020-2021_vi.pdf -->
+<div class="pa4 ba plain w-paragraph" lang="vi">
   <h4>Bảo hiểm y tế toàn dân là gì?</h4>
   <p class="desc">Bảo hiểm y tế toàn dân, đảm bảo quyền lợi khám chữa bệnh trọn đời của bạn.</p>
 
