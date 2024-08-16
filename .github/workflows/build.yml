@@ -1,0 +1,70 @@
+name: Build
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Triggers the workflow when pull request is opened or updated
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # ref: https://github.com/actions/starter-workflows/tree/main/pages
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
+        with:
+          ruby-version: '3.1' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      # Fix gemfile not found issue
+      - name: Bundle init
+        run: bundle init && bundle add jekyll
+
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default 
+        # run: bundle exec jekyll build
+        # replace _config_development's url using sed because jekyll has no command to do it
+        run: |
+          TARGET_URL="https://storage.googleapis.com/guide-dev/${{ github.run_id }}"
+          sed -i.bak "s|^url:.*|url: $TARGET_URL|" _config_development.yml
+          bundle exec jekyll build --config _config_development.yml
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: jekyll-site
+          path: ./_site
+  deploy:
+    uses: ./.github/workflows/deploy.yml
+    permissions: # Required by google-github-actions/auth
+      contents: 'read'
+      id-token: 'write'
+    needs: build
+    with:
+          RUN_ID: ${{ github.run_id }}
+    secrets: inherit
+  comment: # Required by peter-evans/create-or-update-comment@v4
+    runs-on: ubuntu-latest
+    permissions:
+        pull-requests: write
+    needs: deploy
+    steps:
+    - name: Find Comment
+      uses: peter-evans/find-comment@v3
+      id: fc
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        comment-author: 'github-actions[bot]'
+        body-includes: Deployed to
+
+    - name: Create or update comment
+      uses: peter-evans/create-or-update-comment@v4
+      with:
+        comment-id: ${{ steps.fc.outputs.comment-id }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          Deployed to https://storage.googleapis.com/guide-dev/${{ github.run_id }}/index.html
+        edit-mode: replace

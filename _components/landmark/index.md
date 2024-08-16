@@ -1,12 +1,12 @@
 ---
 layout: main
-title: 頁面地標架構
+title: 頁面地標架構 (Landmark)
 maturity: "alpha"
 ---
 
 ### 空白範本
 
-{% capture path %}{{ site.baseurl }}{% link _components/boilerplate/blank.html %}{% endcapture %}
+{% capture path %}{{ site.url }}{% link _components/landmark/blank.html %}{% endcapture %}
 
 [空白範本]({{ path }})原始碼。
 
@@ -16,7 +16,7 @@ maturity: "alpha"
 
 ### 單欄位範本
 
-{% capture path %}{{ site.baseurl }}{% link _components/boilerplate/one-column.html %}{% endcapture %}
+{% capture path %}{{ site.url }}{% link _components/landmark/one-column.html %}{% endcapture %}
 
 [單欄位範本]({{ path }})。
 

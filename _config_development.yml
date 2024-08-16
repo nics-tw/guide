@@ -1,4 +1,4 @@
-url: "https://guide.nics.nat.gov.tw"
+url: "https://storage.googleapis.com/guide-dev/site"
 sass:
   sass_dir: assets/css
   style: :compressed

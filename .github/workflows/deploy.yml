@@ -1,0 +1,40 @@
+name: Deploy to google cloud storage
+on:
+  workflow_call:
+    inputs:
+      RUN_ID:
+        description: 'Artifact run_id to deploy'
+        required: true
+        type: string
+        default: '<RUN_ID>'
+
+jobs:
+  deploy-to-gcs:
+    runs-on: ubuntu-latest
+    permissions: # Required by google-github-actions/auth
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - name: Checkout
+      uses: 'actions/checkout@v4'
+
+    # ref: https://github.com/actions/download-artifact?tab=readme-ov-file#download-artifacts-from-other-workflow-runs-or-repositories
+    - name: Download artifacts from build
+      uses: actions/download-artifact@v4
+      with:
+        name: jekyll-site
+        github-token: ${{ secrets.GH_PAT }} # personal access token with actions:read permissions on target repo
+        run-id: ${{ inputs.RUN_ID }}
+        path: ./${{ inputs.RUN_ID }}
+
+    - name: Authenticate to Google Cloud
+      uses: 'google-github-actions/auth@v2'
+      with:
+        workload_identity_provider: ${{ secrets.GC_WORKLOAD_IDENTITY_PROVIDER }}
+
+    - name: Upload to GCS
+      uses: 'google-github-actions/upload-cloud-storage@v2'
+      with:
+        path: './${{ inputs.RUN_ID }}'
+        destination: 'guide-dev'

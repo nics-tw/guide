@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 公文
+title: 公文 (Official Document)
 maturity: "alpha"
 ---
 
