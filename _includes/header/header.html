@@ -1,41 +1,26 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
 
-<head>
-    <link rel="stylesheet" href="{{ "assets/css/components/header.css" | absolute_url }}">
-    <title>政府網站設計原則</title>
-    <meta charset="UTF-8">
-    <meta name="robots" content="noindex">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-    <header class="header" data-module="header">
-        <div class="header__top">
-            <div class="width-container header__top-container">
-                <div class="header__actions">
-                    <a href="#" class="header__link small-text">網站導覽</a>
-                    <a href="#" class="header__link small-text" lang="zh-TW">中文</a>
-                    <a href="#" class="header__link small-text" lang="en">英文</a>
-                    <a href="#" id="decreaseFont" class="header__link small-text" aria-label="Decrease font size">A-</a>
-                    <a href="#" id="defaultFont" class="header__link small-text" aria-label="Default font size">A</a>
-                    <a href="#" id="increaseFont" class="header__link small-text" aria-label="Increase font size">A+</a>
-                </div>
+<header class="header" data-module="header">
+    <div class="header__top">
+        <div class="width-container header__top-container">
+            <div class="header__actions">
+                <a href="#" class="header__link small-text">網站導覽</a>
+                <a href="#" class="header__link small-text" lang="zh-TW">中文</a>
+                <a href="#" class="header__link small-text" lang="en">英文</a>
+                <a href="#" id="decreaseFont" class="header__link small-text" aria-label="Decrease font size">A-</a>
+                <a href="#" id="defaultFont" class="header__link small-text" aria-label="Default font size">A</a>
+                <a href="#" id="increaseFont" class="header__link small-text" aria-label="Increase font size">A+</a>
             </div>
         </div>
-        </div>
-        <div class="header__divider width-container"></div>
-        <div class="header__bottom">
-            <div class="width-container">
-                <div class="header__logo">
-                    <a href="#" class="header__link header__link--homepage">
-                        <img src="{{ "/assets/favicon.png" | absolute_url }}" alt="網站標誌" class="header__logotype">
-                    </a>
-                </div>
+    </div>
+    </div>
+    <div class="header__divider width-container"></div>
+    <div class="header__bottom">
+        <div class="width-container">
+            <div class="header__logo">
+                <a href="#" class="header__link header__link--homepage">
+                    <img src="{{ "/assets/favicon.png" | absolute_url }}" alt="網站標誌" class="header__logotype">
+                </a>
             </div>
         </div>
-    </header>
-
-    <script src="{{ "/assets/js/header.js" | absolute_url }}" defer></script>
-</body>
+    </div>
+</header>
