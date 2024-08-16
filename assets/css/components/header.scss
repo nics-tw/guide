@@ -9,7 +9,6 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     font-size: 16px;
-    /* 預設字體大小 */
 }
 
 /* Header Styles */
@@ -73,12 +72,16 @@ body {
     color: #FFFFFF;
     text-decoration: none;
     margin: 0 10px;
-}
 
-.header__link:hover,
-.header__link:focus {
-    text-decoration: underline;
-    color: #EBB95F;
+    &:hover {
+        text-decoration: underline;
+        color: #EBB95F;
+    }
+
+    &:focus {
+        text-decoration: underline;
+        color: #EBB95F;
+    }
 }
 
 .service-name {
@@ -143,6 +146,13 @@ body {
     padding: 10px 0;
 }
 
+/* Show the dropdown menu when is-visible class is added */
+.js-dropdown-menu.is-visible {
+    display: block;
+    top: calc(100% + 10px);
+    width: 20%;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header__container {
@@ -158,6 +168,19 @@ body {
     .header__content {
         display: none;
         flex-direction: column;
+
+        .dropdown {
+            width: 100%;
+
+            .header__navigation {
+                position: static;
+                width: 100%;
+            }
+        }
+
+        a {
+            margin: 10px 0;
+        }
     }
 
     .header__content.is-visible {
@@ -171,32 +194,16 @@ body {
         width: 30%;
     }
 
-    .header__content .dropdown {
-        width: 100%;
-    }
-
-    .header__content .dropdown .header__navigation {
-        position: static;
-        width: 100%;
-    }
-
-    .header__content a {
-        margin: 10px 0;
-    }
-
     .header__menu-button {
         display: block;
         margin-left: auto;
         font-size: 2.5em;
+        flex: 0 0 20%;
+        text-align: right;
     }
 
     .header__logo {
         flex: 0 0 40%;
-    }
-
-    .header__menu-button {
-        flex: 0 0 20%;
-        text-align: right;
     }
 
     .header__additional-links {
@@ -210,17 +217,9 @@ body {
         justify-content: center;
         width: 100%;
         padding: 5px 0;
+
+        a {
+            margin: 0 10px;
+        }
     }
-
-    .header__actions-row a {
-        margin: 0 10px;
-    }
-
-}
-
-/* Show the dropdown menu when is-visible class is added */
-.js-dropdown-menu.is-visible {
-    display: block;
-    top: calc(100% + 10px);
-    width: 20%;
 }
