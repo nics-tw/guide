@@ -1,5 +1,7 @@
 const langMap = new WeakMap()
 
+const langPage= document.documentElement.lang
+
 document.addEventListener('change', (event) => {
   const select = event.target.closest('select')
   if (!select || !select.hasAttribute('data-i18n-selector')) return
@@ -10,7 +12,7 @@ document.addEventListener('change', (event) => {
 
   if (!langMap.get(select)) langMap.set(select, [...elements].map(e => getTextNode(e).data))
 
-  parent.setAttribute('lang', option.lang)
+  if (langPage != option.lang) parent.setAttribute('lang', option.lang)
   let phrases
 
   if (option.value === 'default') {
