@@ -9,8 +9,8 @@ maturity: "alpha"
 {% capture html %}{% include form/form-elements.html %}{% endcapture %}
 {% include example.html 
   content=html
-  i18n_selector="[for=city],[for=id],[for=name],[for=desc],[for=items]" 
-  i18n="en-US:City of residence,ID type,Full name,Description,Applications"
+  i18n_selector="[for=name],[for=city],[for=desc]" 
+  i18n="en-US:Full name,City of residence,Description"
 %}
 
 #### CSS
@@ -32,8 +32,8 @@ maturity: "alpha"
 {% capture html %}{% include form/form-checkable.html %}{% endcapture %}
 {% include example.html 
   content=html
-  i18n_selector="[for=city],[for=id],[for=name],[for=desc],[for=items]" 
-  i18n="en-US:City of residence,ID type,Full name,Description,Applications"
+  i18n_selector="[for=id],[for=items]" 
+  i18n="en-US:ID type,Lost document replacement"
 %}
 
 #### CSS
