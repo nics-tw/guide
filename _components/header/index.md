@@ -97,4 +97,3 @@ maturity: "alpha"
 
 - 使用 [`header.js`](/assets/components/header.js)。
 
-<script src="{{ "/assets/js/components/header.js" | absolute_url }}" type="module"></script>
