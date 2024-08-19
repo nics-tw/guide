@@ -1,10 +1,10 @@
 ---
 layout: main
-title: Header
+title: 頁首 (Header)
 maturity: "alpha"
 ---
 
-### 純 Logo Header
+### 基本頁首
 
 {% capture html %}{% include header/header.html %}{% endcapture %}
 {% 
@@ -34,7 +34,7 @@ maturity: "alpha"
 
 ---
 
-### Header + 單連結
+### 頁首附帶單連結
 
 {% capture html %}{% include header/header_link.html %}{% endcapture %}
 {% 
@@ -63,7 +63,7 @@ maturity: "alpha"
 
 ---
 
-### Header + 階層式連結
+### 頁首附帶階層式連結
 
 {% capture html %}{% include header/header_linklevel.html %}{% endcapture %}
 {% 
