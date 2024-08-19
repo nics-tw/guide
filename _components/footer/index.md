@@ -1,10 +1,10 @@
 ---
 layout: main
-title: Footer
+title: 頁尾 (Footer)
 maturity: "alpha"
 ---
 
-### 基本 Footer
+### 基本頁尾
 
 {% capture html %}{% include footer/footer.html %}{% endcapture %}
 {% 
@@ -33,7 +33,7 @@ maturity: "alpha"
 
 ---
 
-### Footer + 支援連結
+### 頁尾附帶支援連結
 
 {% capture html %}{% include footer/footer_link.html %}{% endcapture %}
 {% 
@@ -59,7 +59,7 @@ maturity: "alpha"
 
 ---
 
-### Footer + 多層次導覽
+### 頁尾附帶多層次導覽
 
 {% capture html %}{% include footer/footer_service.html %}{% endcapture %}
 {% 
