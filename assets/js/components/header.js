@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var headers = document.querySelectorAll('.headerfordemo');
 
     headers.forEach(function (header) {
-        var decreaseFontButtons = document.querySelectorAll('#decreaseFont, #mobileDecreaseFont');
-        var defaultFontButtons = document.querySelectorAll('#defaultFont, #mobileDefaultFont');
-        var increaseFontButtons = document.querySelectorAll('#increaseFont, #mobileIncreaseFont');
+        var decreaseFontButtons = header.querySelectorAll('#decreaseFont, #mobileDecreaseFont');
+        var defaultFontButtons = header.querySelectorAll('#defaultFont, #mobileDefaultFont');
+        var increaseFontButtons = header.querySelectorAll('#increaseFont, #mobileIncreaseFont');
         var body = document.body;
         var currentFontSize = 16;
         var minFontSize = 12;
@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        var dropdownToggles = document.querySelectorAll('.js-dropdown-toggle');
-        var dropdownMenus = document.querySelectorAll('.js-dropdown-menu');
+        var dropdownToggles = header.querySelectorAll('.js-dropdown-toggle');
+        var dropdownMenus = header.querySelectorAll('.js-dropdown-menu');
 
         dropdownToggles.forEach(function (toggle, index) {
             toggle.addEventListener('click', function (event) {
@@ -63,16 +63,15 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        var menuButton = document.querySelector('.header__menu-button');
-        var headerContent = document.querySelector('.header__content');
+        var menuButton = header.querySelector('.header__menu-button');
+        var headerContent = header.querySelector('.header__content');
 
-        if (menuButton) {
+        if (menuButton && headerContent) {
             menuButton.addEventListener('click', function () {
                 var isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
                 menuButton.setAttribute('aria-expanded', !isExpanded);
                 headerContent.classList.toggle('is-visible');
             });
         }
-
     });
 });
