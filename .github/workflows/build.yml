@@ -4,10 +4,13 @@ on:
   workflow_dispatch:
 
   # Triggers the workflow when pull request is opened or updated
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize, reopened, labeled]
 
 jobs:
   build:
+    # Run this job if the pull request is from the same repository or labeled with 'safe-to-deploy'
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository || github.event.label.name == 'safe-to-deploy' }}
     runs-on: ubuntu-latest
     steps:
       # ref: https://github.com/actions/starter-workflows/tree/main/pages
@@ -38,19 +41,19 @@ jobs:
           name: jekyll-site
           path: ./_site
   deploy:
+    needs: build
     uses: ./.github/workflows/deploy.yml
     permissions: # Required by google-github-actions/auth
       contents: 'read'
       id-token: 'write'
-    needs: build
     with:
           RUN_ID: ${{ github.run_id }}
     secrets: inherit
   comment: # Required by peter-evans/create-or-update-comment@v4
+    needs: deploy
     runs-on: ubuntu-latest
     permissions:
         pull-requests: write
-    needs: deploy
     steps:
     - name: Find Comment
       uses: peter-evans/find-comment@v3
