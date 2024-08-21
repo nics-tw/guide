@@ -38,4 +38,4 @@ maturity: "alpha"
 {% endcapture %}
 {% include example-html.html content=html %}
 
-<script src="/assets/js/components/official-document-element.js" type="module">
+<script src="{{ "/assets/js/components/official-document-element.js" | absolute_url }}" type="module"></script>
