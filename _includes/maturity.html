@@ -11,7 +11,7 @@
     <summary class="fr cursor-help">成熟度說明</summary>
     <ul aria-label="成熟度說明" class="fg-subtle w-100 mv0 pv3">
       {% for maturity in site.i18n.maturity %}
-      <li id="maturity-{{ maturity[0] }}">{{ maturity[1]["key"] }}：{{ maturity[1]["desc"] }}</li>
+      <li id="maturity-{{ maturity[0] }}-detail">{{ maturity[1]["key"] }}：{{ maturity[1]["desc"] }}</li>
       {% endfor %}
     </ul>
   </details>

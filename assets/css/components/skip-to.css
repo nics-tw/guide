@@ -18,7 +18,7 @@ skip-to .skip-to {
   text-decoration: none;
   padding: 1em;
   line-height: 1;
-  font-size: 14px;
+  font-size: 1em;
 }
 
 skip-to .skip-to:focus {
