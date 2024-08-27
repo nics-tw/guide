@@ -5,9 +5,12 @@ on:
 
   # Triggers the workflow when pull request is opened or updated
   pull_request:
+    types: [opened, synchronize, reopened, labeled]
 
 jobs:
   lighthouseci:
+    # Run this job if labeled with 'ci-lighthouse'
+    if: ${{ github.event.label.name == 'ci-lighthouse' }}
     runs-on: ubuntu-latest
     steps:
       #ref: https://github.com/actions/starter-workflows/tree/main/pages
