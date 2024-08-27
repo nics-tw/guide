@@ -116,17 +116,5 @@
   padding: 16px 20px;
 }
 
-.btn-toggle {
-  margin: 0.5rem 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--gov-primary);
-  color: var(--gov-blue-50);
-  border-radius: 50px;
-  border: 1px solid var(--gov-primary);
-}
 
-.btn-toggle:hover {
-  background-color: var(--gov-link-hover-color);
-  color: var(--gov-blue-50);
-}
 
