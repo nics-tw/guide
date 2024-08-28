@@ -44,7 +44,7 @@ maturity: "new"
 
 ### 副標題(摘要)折疊選單
 
-- 可在標題欄新增副標題(摘要)→請注意僅在實際需要時添加摘要行，避免按鈕文字太長。
+- 可在標題欄新增副標題(摘要)，請注意僅在實際需要時添加摘要行，避免按鈕文字太長。
 
 {% capture html %}{% include accordion/accordion_subTitle.html %}{% endcapture %}
 {%
