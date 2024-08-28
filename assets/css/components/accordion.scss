@@ -1,0 +1,108 @@
+// 變數定義
+$accordion-header-bg: var(--backgroundColor);  
+$accordion-header-active-bg: var(--gov-blue-100);  
+$accordion-body-bg: var(--backgroundColor);  
+$accordion-header-fontColor: var(--textColor); 
+$accordion-body-border: var(--gov-blue-100); 
+$accordion-body-active-border:var(--secondaryTextColor);
+$accordion-icon-url: url("/assets/svg/downarrow.svg") ;
+$accordion-icon-active-url: url("/assets/svg/uparrow.svg");
+
+.accordion {
+  width: 100%;
+  margin: 0 auto;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    display: block;
+    padding: 16px 20px;
+    background: $accordion-header-bg;
+    color: $accordion-header-fontColor;
+    cursor: pointer;
+    margin-bottom: 0;
+    position: relative;
+
+    opacity: 0.9;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.32px;
+    text-align: left;
+
+    .main-title {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .sub-title {
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    &::after {
+      content: '';
+      background-image: $accordion-icon-url;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  input[type="checkbox"]:checked + label {
+    background: $accordion-header-active-bg;
+
+    &::after {
+      background-image: $accordion-icon-active-url;
+    }
+  }
+
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    background: $accordion-body-bg;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.4;
+    letter-spacing: 0.56px;
+    text-align: left;
+
+    input[type="checkbox"]:checked ~ & {
+      max-height: 300px;
+      padding: 24px 20px;
+    }
+  }
+
+  .accordion-item {
+    border: 0.1rem solid $accordion-body-border;
+    border-bottom: none;
+
+    &:first-child, label {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    &:last-child,
+    &:last-of-type input[type="checkbox"]:not(:checked) ~ label,
+    &:last-child input[type="checkbox"]:checked ~ .accordion-body {
+      border-bottom: 1px solid $accordion-body-border;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+  }
+
+  .show {
+    max-height: 300px;
+    padding: 16px 20px;
+  }
+}
