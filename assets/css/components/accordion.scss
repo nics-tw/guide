@@ -61,7 +61,6 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
 
   input[type="checkbox"]:checked + label {
     background: $accordion-header-active-bg;
-    box-shadow: 1px 0 3px 0 $accordion-body-active-border;
 
     &::after {
       background-image: $accordion-icon-active-url;
@@ -71,7 +70,6 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
   .accordion-body {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out, padding 0.2s ease-out;
     background: $accordion-body-bg;
     font-size: 14px;
     font-weight: normal;
@@ -82,7 +80,6 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
     input[type="checkbox"]:checked ~ & {
       max-height: 300px;
       padding: 24px 20px;
-      box-shadow: 1px 0 3px 0 $accordion-body-active-border;
     }
   }
 
