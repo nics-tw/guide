@@ -22,7 +22,6 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
     background: $accordion-header-bg;
     color: $accordion-header-fontColor;
     cursor: pointer;
-    border: 1px solid $accordion-body-border;
     margin-bottom: 0;
     position: relative;
 
@@ -81,7 +80,7 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
   }
 
   .accordion-item {
-    border: 1px solid $accordion-body-border;
+    border: 0.1rem solid $accordion-body-border;
     border-bottom: none;
 
     &:first-child {
@@ -92,6 +91,7 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
     &:last-child,
     &:last-of-type input[type="checkbox"]:not(:checked) ~ label,
     &:last-child input[type="checkbox"]:checked ~ .accordion-body {
+      border-bottom: 1px solid $accordion-body-border;
       border-bottom-left-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
     }
