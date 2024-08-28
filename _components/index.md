@@ -51,7 +51,7 @@ text_only: 1
 {% include example-html.html content=html %}
 
 
-#### [互動資料表格]({% link _components/skip-to/index.md %})
+#### [跳至主要內容區]({% link _components/skip-to/index.md %})
 
 下載 [skip-to-element.js](/assets/js/components/skip-to-element.js) 檔案並選擇性使用下方程式碼匯入：
 
