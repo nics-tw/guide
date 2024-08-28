@@ -25,16 +25,25 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
     margin-bottom: 0;
     position: relative;
 
-    height: 22px;
     opacity: 0.9;
-    font-family: NotoSansTC;
     font-size: 16px;
     font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.4;
     letter-spacing: 0.32px;
     text-align: left;
+
+    .main-title {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .sub-title {
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0.7;
+    }
 
     &::after {
       content: '';
@@ -52,7 +61,7 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
 
   input[type="checkbox"]:checked + label {
     background: $accordion-header-active-bg;
-    border-bottom: 0;
+    box-shadow: 1px 0 3px 0 $accordion-body-active-border;
 
     &::after {
       background-image: $accordion-icon-active-url;
@@ -64,11 +73,8 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
     overflow: hidden;
     transition: max-height 0.2s ease-out, padding 0.2s ease-out;
     background: $accordion-body-bg;
-    font-family: NotoSansTC;
     font-size: 14px;
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.4;
     letter-spacing: 0.56px;
     text-align: left;
@@ -76,6 +82,7 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
     input[type="checkbox"]:checked ~ & {
       max-height: 300px;
       padding: 24px 20px;
+      box-shadow: 1px 0 3px 0 $accordion-body-active-border;
     }
   }
 
@@ -83,7 +90,7 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
     border: 0.1rem solid $accordion-body-border;
     border-bottom: none;
 
-    &:first-child {
+    &:first-child, label {
       border-top-left-radius: 0.5rem;
       border-top-right-radius: 0.5rem;
     }
@@ -95,5 +102,10 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
       border-bottom-left-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
     }
+  }
+
+  .show {
+    max-height: 300px;
+    padding: 16px 20px;
   }
 }
