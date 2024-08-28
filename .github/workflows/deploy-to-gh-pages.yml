@@ -20,8 +20,6 @@ concurrency:
 jobs:
   # Build job
   build:
-    # Run this job if the pull request is from the same repository or labeled with 'safe-to-deploy'
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository || github.event.label.name == 'safe-to-deploy' }}
     runs-on: ubuntu-latest
     steps:
       # ref: https://github.com/actions/starter-workflows/tree/main/pages
