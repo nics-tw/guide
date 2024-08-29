@@ -4,7 +4,7 @@
     {% if include.i18n %}
       {% assign i18n = include.i18n | split: ';' %}
       <select aria-label="語言選擇" data-i18n-selector="{{ include.i18n_selector }}" class="field-select absolute nt2 lh-solid pa1 right-0 mr4 top-0 f7 pointer">
-        <option lang="{{ layout.lang }}" value="default">正體中文</option>
+        <option value="default">正體中文</option>
         {% for lang in i18n %}
           {% assign parts = lang | split: ':' %}
           {% assign name = parts[0] %}
