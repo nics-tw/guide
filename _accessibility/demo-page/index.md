@@ -51,12 +51,6 @@ maturity: "new"
 [警告文字 (Warning Text)](https://guide.nics.nat.gov.tw/components/warning-text/index.html)  
 使用警告文字呈現「個人資料蒐集、處理、利用同意書」等類具法律效果內容，樣式有助於在視覺上一般內文文字區隔，並達到引導視線效果。
 
-[表單欄位 (Form)](https://guide.nics.nat.gov.tw/components/form/index.html)  
-
-
-[文字輸入區塊 (Textarea)](https://guide.nics.nat.gov.tw/components/textarea/index.html)  
-
-
 [表格（Table）](https://guide.nics.nat.gov.tw/components/table/index.html)  
 應用於表單輸入內容最終確認步驟，便於使用者對前一步輸入的資訊二次確認，並支援輔助科技瀏覽操作，參考 [UK.gov Smart Answer 範例](https://www.gov.uk/additional-commodity-code)。
 
@@ -158,10 +152,6 @@ maturity: "new"
 鍵盤瀏覽
 - 使用 `Tab` 在流程點與輸入欄位元素之間移動
 - 使用 `Enter`, `Space` 在聚焦到按鈕時可以觸發動作
-
-#### Role, Property, State, and Tabindex Attributes
-
-#### Browser compatibility
 
 #### Testing tools
 - [HTML validator](https://validator.nu/)

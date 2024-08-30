@@ -125,7 +125,7 @@ tool kit 輔助對設計稿進行無障礙標示，例如閱讀順序、焦點�
 
 ## Acceptance test
 
-[cypress-axe \- npm (npmjs.com)](https://www.npmjs.com/package/cypress-axe)  
+- [cypress-axe \- npm (npmjs.com)](https://www.npmjs.com/package/cypress-axe)  
 Test accessibility with axe-core in Cypress.  
 搭配閱讀：[🚅 Building a Cypress Accessibility Pipeline with Next.js and Axe \- DEV Community](https://dev.to/lundjrl/building-a-cypress-accessibility-pipeline-with-nextjs-and-axe-5146)
 
@@ -133,17 +133,3 @@ Test accessibility with axe-core in Cypress.
 
 - [GitHub \- GoogleChrome/lighthouse-ci: Automate running Lighthouse for every commit, viewing the changes, and preventing regressions](https://github.com/GoogleChrome/lighthouse-ci)  
   Lighthouse CI is a suite of tools that make continuously running, saving, retrieving, and asserting against Lighthouse results as easy as possible.
-
-## Reference
-
-### 一般性介紹、說明
-
-- [Free Accessibility Linters to Automate Accessibility Workflow • DigitalA11Y](https://www.digitala11y.com/free-accessibility-linters-to-automate-accessibility-workflow/)  
-- [How I do automated accessibility testing for my website | Opensource.com](https://opensource.com/article/23/2/automated-accessibility-testing)  
-- [Accessibility testing | GitLab](https://docs.gitlab.com/ee/ci/testing/accessibility\_testing.html)  
-- [Level Access | The Future of Digital Accessibility Starts Here](https://www.levelaccess.com/)  
-- [GitHub \- Section508Coordinators/Dev-Auto-Pipeline-Ex: This repository contains test automation scripts and related code arranged in examples to aid in the integration of Section 508/accessibility into test automation activities within the Software Engineering Life Cycle. Examples represent the higher end of test automation, to include CI/CD pipeline and cloud provider implementations.](https://github.com/Section508Coordinators/Dev-Auto-Pipeline-Ex)  
-- [Automating the accessibility tests of your source code with GitHub Actions | Adrián Bolonio \- Accessibility Software Engineering (adrianbolonio.com)](https://www.adrianbolonio.com/blog/accessibility-github-actions)  
-  **GitHub Action** if you use jest, you can create your own accessibility unit tests with jest-axe, a tool from the axe family of tools.  
-- [Figma Plugins that aid Accessibility | by Rhoda Michael | Bootcamp (uxdesign.cc)](https://bootcamp.uxdesign.cc/figma-plugins-that-aid-accessibility-57882ea14555)  
-- [How to Design for Accessibility & Inclusion | Figma](https://www.figma.com/resource-library/creating-accessible-and-inclusive-design/)
