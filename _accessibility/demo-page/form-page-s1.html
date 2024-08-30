@@ -1,0 +1,51 @@
+---
+title: 意見回饋頁範本
+layout: demo-page
+---
+
+<div class="one-col">
+  <header class="site-header">
+    <skip-to>
+      <a href="#main" class="skip-to">跳至主要內容區</a>
+      <a href="#navigation" class="skip-to">跳至主要連結表</a>
+      <a href="#footer" class="skip-to">跳至頁尾</a>
+    </skip-to>
+    <a href="{{ "/" | absolute_url}}" class="flex items-center">
+      <div class="bg-layer1 w2 mr3" style="aspect-ratio: 1 / 1;"><!-- logo --></div>
+      <h1>{{ page.title }}</h1>
+    </a>
+    <nav aria-label="主要" id="navigation" class="flex gap4 mt4">
+      <a href="#">首頁</a>
+      <a href="#">關於我們</a>
+    </nav>
+  </header>
+  {% include  demo-page/breadcrumb-step.html
+    path="Step 1.同意聲明;Step 2.填寫資料;Step 3.最終確認;Step 4.送出結果"
+    current=1
+  %}
+  <main class="site-main" id="main">
+    <h2>Step 1. 同意聲明</h2>
+    <form action="/components/demo-page/form-page-s2.html" method="get">
+      <div class="fields">
+        {% capture agreement %}{% include demo-page/warning-block-agreement.html %}{% endcapture %}
+        {{ agreement }}
+        
+        <div class="sr-only" id="notes_save_status" role="alert"></div>
+        
+        <div class="gap2 flex flex-wrap">
+          <button type="submit" class="button button-primary">同意</button>
+          <button type="button" class="button button-danger">不同意</button>
+        </div>  
+      </div>
+
+    </form>
+  </main>
+</div>
+<div class="one-column bg-layer1">
+  <footer id="footer" class="site-footer f6 flex items-center gap4">
+    <div class="plain w2 mr3" style="aspect-ratio: 1 / 1;"><!-- logo --></div>
+    <div class="mw5">
+      <a href="/accessibility-statement">親和力宣告</a>
+    </div>
+  </footer>
+</div>
