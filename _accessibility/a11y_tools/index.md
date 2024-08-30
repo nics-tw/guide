@@ -14,30 +14,28 @@ text_only: 1
 ---
 
 - [GitHub \- dequelabs/axe-core: Accessibility engine for automated Web UI testing](https://github.com/dequelabs/axe-core)  
-most popular tool from Deque
+Most popular tool from Deque
 
 - [GitHub \- pa11y/pa11y-ci: Pa11y CI is a CI-centric accessibility test runner, built using Pa11y](https://github.com/pa11y/pa11y-ci)  
-Pa11y CI is a CI-centric accessibility test runner, built using Pa11y  
-WCAG2A, WCAG2AA (default), WCAG2AAA – only used by htmlcs runner
+Pa11y CI is a CI-centric accessibility test runner, built using Pa11y. WCAG2A, WCAG2AA (default), WCAG2AAA – only used by htmlcs runner.
 
 - [Purple A11y \- Automating Testing to Improve Web Accessibility for Apps and Websites | Singapore Government Developer Portal (tech.gov.sg)](https://www.developer.tech.gov.sg/products/categories/design/purple-a11y/overview.html)  
-Based on axe-core from singapore gov
+Based on axe-core published by Singapore Government.
 
 - [Accessibility testing | GitLab](https://docs.gitlab.com/ee/ci/testing/accessibility\_testing.html)  
 Pa11y is a free and open source tool for measuring the accessibility of web sites. GitLab integrates Pa11y into a [CI/CD job template](https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Verify/Accessibility.gitlab-ci.yml).   
 As of GitLab 14.5, Pa11y uses WCAG 2.1 rules
 
-- [Web Accessibility Pipeline \- accessiBe](https://accessibe.com/accessflow/integrate)  
-WCAG, ADA
+- [Web Accessibility Pipeline - accessiBe](https://accessibe.com/accessflow/integrate)  
 
-- [Developer Tools for Accessibility | Level Access](https://www.levelaccess.com/developer-tools/)  
-with [Mocha \- the fun, simple, flexible JavaScript test framework (mochajs.org)](https://mochajs.org/), [BDD Testing & Collaboration Tools for Teams | Cucumber](https://cucumber.io/)
+- [Developer Tools for Accessibility Level Access](https://www.levelaccess.com/developer-tools/)  
+with [Mocha - the fun, simple, flexible JavaScript test framework (mochajs.org)](https://mochajs.org/), [BDD Testing & Collaboration Tools for Teams | Cucumber](https://cucumber.io/)
 
-- [HTML\_CodeSniffer (squizlabs.github.io)](https://squizlabs.github.io/HTML\_CodeSniffer/)  
+- [HTML_CodeSniffer (squizlabs.github.io)](https://squizlabs.github.io/HTML\_CodeSniffer/)  
 List Principle, SC, & Technique  
 WCAG 2.1, Section 508
 
-- [@axe-core/reporter-earl \- npm (npmjs.com)](https://www.npmjs.com/package/@axe-core/reporter-earl)  
+- [@axe-core/reporter-earl - npm (npmjs.com)](https://www.npmjs.com/package/@axe-core/reporter-earl)  
 A reporter for axe-core it will produce results using the Evaluation And Reporting Language (EARL) 1.0.
 
 - [https://www.ibm.com/able/toolkit/tools](https://www.ibm.com/able/toolkit/tools)
@@ -49,13 +47,13 @@ plugin 綜合性無障礙自動檢測。
 - [axe for Designers: A Free Accessibility Plugin – Figma](https://www.figma.com/community/plugin/1085612091163821851/axe-for-designers-a-free-accessibility-plugin)  
 plugin 綜合性無障礙自動檢測。
 
-- [Contrast | Figma](https://www.figma.com/community/plugin/748533339900865323/contrast)  
+- [Contrast - Figma](https://www.figma.com/community/plugin/748533339900865323/contrast)  
 plugin 輔助設計成品色彩組合有足夠對比度，功能是檢測 WCAG 規範 AA、AAA 等級的對比度符合度。
 
-- [A11y \- Focus Order – Figma](https://www.figma.com/community/plugin/731310036968334777/a11y-focus-order)  
+- [A11y - Focus Order – Figma](https://www.figma.com/community/plugin/731310036968334777/a11y-focus-order)  
 plugin 輔助設計鍵盤導覽順序，功能是在設計元素/元件標示焦點以及焦點順序。
 
-- [Text Resizer \- Accessibility Checker | Figma](https://www.figma.com/community/plugin/892114953056389734/text-resizer-accessibility-checker)  
+- [Text Resizer - Accessibility Checker Figma](https://www.figma.com/community/plugin/892114953056389734/text-resizer-accessibility-checker)  
 plugin 輔助設計成品在字級調整時有足夠調適性，功能是快速批次調整字級大小。
 
 - [Low Vision – Figma](https://www.figma.com/community/plugin/940423402083252469/low-vision)  
@@ -64,12 +62,12 @@ plugin 輔助避免低視能相關設計風險，功能是模擬低視能者所�
 - [Color Blind – Figma](https://www.figma.com/community/plugin/733343906244951586/color-blind)  
 plugin 輔助避免色覺辨識障礙相關設計風險，功能是模擬不同樣態的色覺功能所看到的景象。
 
-- [A11y Annotation Kit | Figma](https://www.figma.com/community/file/953682768192596304/a11y-annotation-kit)  
+- [A11y Annotation Kit - Figma](https://www.figma.com/community/file/953682768192596304/a11y-annotation-kit)  
 tool kit 輔助對設計稿進行無障礙標示，例如閱讀順序、焦點及焦點順序等。
 
-- [Inclusive Design illustrations | Figma](https://www.figma.com/community/file/946569165254852480/inclusive-design-illustrations)  
+- [Inclusive Design illustrations - Figma](https://www.figma.com/community/file/946569165254852480/inclusive-design-illustrations)  
 
-- [Accessible design toolkit | Figma](https://www.figma.com/community/file/1327037919540849715/accessible-design-toolkit)  
+- [Accessible design toolkit - Figma](https://www.figma.com/community/file/1327037919540849715/accessible-design-toolkit)  
 
 ## Continuous Design
 
