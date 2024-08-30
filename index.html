@@ -36,7 +36,7 @@
       <p class="w-paragraph"></p>
       <div class="three-col gap4 mv5">
         {% for collection in site.collections %}
-          {% if collection.docs.size == 0 %}{% continue %}{% endif %}
+          {% if collection.docs.size == 0 or collection.name == "親和力" %}{% continue %}{% endif %}
           {% assign filepath = collection.relative_directory | append: "/index.md" %}
           {% assign doc = collection.docs | where: "path", filepath | first %}
           {% assign svg = collection.relative_directory | prepend: "svgs/feat" | append: ".svg" %}
