@@ -1,0 +1,20 @@
+{% if include.path %}
+  {% assign pages = include.path | split: ';' %}
+    <nav aria-label="麵包屑" class="breadcrumb arrow-separator">
+        <ol>
+            {% for p in pages %}
+                <li>
+                  {% if include.current >= forloop.index  %} 
+                    {% if include.current == forloop.index  %}
+                      <a href="/components/demo-page/form-page-s{{ forloop.index }}.html" aria-current="page"><mark>{{ p }}</mark></a>
+                    {% else %}
+                      <a href="/components/demo-page/form-page-s{{ forloop.index }}.html">{{ p }}</a>
+                    {% endif %}
+                  {% else %}
+                    <span>{{ p }}</span>
+                  {% endif %}
+                </li>
+            {% endfor %}
+        </ol>
+    </nav>
+{% endif %}
