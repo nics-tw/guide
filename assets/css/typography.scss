@@ -2,22 +2,6 @@
 @import 'utilities/px-to-rem.scss';
 
 :root {
-  &:lang(zh) {
-    --body-font-family: helvetica, 'Noto Sans TC', system-ui, sans-serif;
-  }
-  &:lang(en) {
-    --body-font-family: helvetica, system-ui, sans-serif;
-  }
-  &:lang(ja) {
-    --body-font-family: helvetica, 'Noto Sans JP', system-ui, sans-serif;
-  }
-  &:lang(th) {
-    --body-font-family: helvetica, 'Noto Sans Thai', system-ui, sans-serif;
-  }
-  &:lang(vi) {
-    --body-font-family: inter, system-ui, sans-serif;
-  }
-
   --body-line-height: 1.7em;
   --body-font-size: #{px-to-rem(16px)};
 
@@ -45,6 +29,22 @@
 
   --h1-font-size: #{px-to-rem(36px)};
   --h1-font-weight: 600;
+
+  &:lang(zh) {
+    --body-font-family: helvetica, 'Noto Sans TC', system-ui, sans-serif;
+  }
+  &:lang(en) {
+    --body-font-family: helvetica, system-ui, sans-serif;
+  }
+  &:lang(ja) {
+    --body-font-family: helvetica, 'Noto Sans JP', system-ui, sans-serif;
+  }
+  &:lang(th) {
+    --body-font-family: helvetica, 'Noto Sans Thai', system-ui, sans-serif;
+  }
+  &:lang(vi) {
+    --body-font-family: inter, system-ui, sans-serif;
+  }
 }
 
 a {
