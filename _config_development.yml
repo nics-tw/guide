@@ -13,6 +13,9 @@ collections:
   components:
     name: "共用元件"
     output: true
+  accessibility:
+    name: "親和力"
+    output: true
 i18n:
   langs: 
     "en-US": "English (US)"
