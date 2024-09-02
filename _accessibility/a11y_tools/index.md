@@ -4,9 +4,10 @@ title: 檢測工具導入文件
 text_only: 1
 ---
 
-自動化檢測工具功能為輔助進行無障礙符合度檢測，但無法替代人工檢測。可以被自動化檢測的規則，僅能檢測出已知使用障礙的 3 成。完整的無障礙符合度稽核，建議遵循 WCAG-EM 規範並使用 WCAG-EM reporting tool 產出報告。
+自動化檢測工具功能為輔助進行無障礙規範符合度檢測，但無法取代手動檢測。可以被自動化檢測的規則，僅能檢測出 3-4 成已知的使用障礙，多數使用障礙仍需要透過手動檢測或使用者體驗才能夠發覺。在開發生命週期中，建議及早發現使用障礙並將其視為風險持續控管。不定期完成最小程度檢測，請參考 [WAI Easy Checks](https://www.w3.org/WAI/test-evaluate/preliminary/) 或 [GOV.UK 基礎檢查](https://www.gov.uk/government/publications/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one)，如檢測中發現任何未符合之情況，均以問題追蹤系統（issue tracker）納管修正。嚴謹的 WCAG 無障礙規範符合度稽核，建議遵循 [Website Accessibility Conformance Evaluation Methodology, WCAG-EM](https://www.w3.org/TR/WCAG-EM/) 並可以搭配 [WCAG-EM Report Tool](https://www.w3.org/WAI/eval/report-tool/) 產出無障礙規範符合度報告。
 
-### WAI 無障礙檢測工具清單（由工具發布者提報）
+### WAI 無障礙檢測工具清單
+[Web Accessibility Initiative, WAI](https://www.w3.org/WAI/) 透過工具發布者自行提報方式，蒐整了一份[檢測工具清單](https://www.w3.org/WAI/test-evaluate/tools/list/)。清單以網頁形式呈現並提供搜尋功能，根據檢測的目的（手動測試、自動測試、模擬使用者體驗）、標的（網站、行動 APP、文件、原始碼等），以及工具支援的標準（WCAG版本及等級、EPUB版本）、是否收費、工具類型（瀏覽器擴充元件、書籤、應用程式、線上工具等）等條件，篩選出最符合需求的工具來協助無障礙符合度檢測。也由於清單是由工具發布者自行提報，工具對於檢測規則的實作，是否能正確檢驗規格上宣稱的規範版本仍應加以驗證。值得注意的是部分工具有提供[親和力宣告](https://www.w3.org/WAI/planning/statements/)、以及是否[實作 Accessibility Conformance Testing, ACT Rules](https://www.w3.org/WAI/standards-guidelines/act/implementations/)，有助於了解工具的優勢與限制。
 - [Web Accessibility Evaluation Tools List](https://www.w3.org/WAI/test-evaluate/tools/list/)
 
 ### 候選工具
