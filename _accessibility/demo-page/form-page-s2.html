@@ -2,6 +2,7 @@
 title: 意見回饋頁範本
 layout: demo-page
 ---
+<script src="{{ "/assets/js/components/character-count.js" | absolute_url }}" type="module"></script>
 
 <div class="one-col">
   <header class="site-header">
@@ -27,21 +28,26 @@ layout: demo-page
   <main class="site-main" id="main">
     <h2>Step 2. 意見回饋</h2>
     <form action="/accessibility/demo-page/form-page-s3.html" method="get">
-      <div class="fields">
+      <div class="fields ba br3 pa4">
         <fieldset class="fieldset">
+          <legend class="field-label f3 center">聯絡資訊</legend>
           <label for="name" class="field-label">姓名</label>
-          <input type="text" id="name" name="name" autocomplete="name" class="field-input">
+          <input type="text" id="name" name="name" autocomplete="name" required class="field-input">
         </fieldset>
-        <fieldset class="fieldset">
+        <fieldset class="fieldset" data-limit-phrase="尚餘 {remaining} 字，|內容上限 {total} 字。">
+          <legend class="field-label f3 center">意見內容</legend>
           <label for="type" class="field-label">意見類型</label>
           <select class="field-input" id="type" name="type">
             <option>選擇</option>
             <option>陳情</option>
             <option>無障礙</option>
           </select>
+          <label for="comment" data-limit-phrase="尚餘 {remaining} 字，|內容上限 {total} 字。" class="field-label">說明意見</label>
+          <ul class="field-description" id="textarea-description">
+            <li data-character-notice aria-live="polite" aria-atomic="true">內容上限 200 字。</li>
+          </ul>
+          <textarea id="comment" rows="4" required data-character-limit="200" aria-describedby="textarea-description"></textarea>
         </fieldset>
-        {% capture textarea %}{% include textarea/index.html %}{% endcapture %}
-        {{ textarea }}
         <div class="sr-only" id="notes_save_status" role="alert"></div>
         
         <div class="gap2 flex flex-wrap">
