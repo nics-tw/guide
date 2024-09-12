@@ -4,7 +4,7 @@ title: 開發網站無障礙模板
 maturity: "new"
 ---
 
-### Read This First
+### 請優先閱讀
 {% capture warning %}{% include demo-page/warning-block.html %}{% endcapture %}
 {{ warning }}
 
@@ -137,7 +137,7 @@ maturity: "new"
 - 表單輸入內容透過 HTTP 協定方式提交。
 - 適當使用 WAI-ARIA 轉傳語意資訊給輔助科技，並參考[技術論壇建議](https://www.tpgi.com/required-attribute-requirements/#comment-1094)。
 
-#### Accessible features
+#### 無障礙特性
 
 語音報讀軟體（[NVDA](https://www.nvaccess.org/) + Edge 輔助科技與瀏覽器組合為例）
 - 使用快捷鍵 `NVDA + F7` 列出頁面地標清單
@@ -153,7 +153,7 @@ maturity: "new"
 - 使用 `Tab` 在流程點與輸入欄位元素之間移動
 - 使用 `Enter`, `Space` 在聚焦到按鈕時可以觸發動作
 
-#### Testing tools
+#### 測試工具
 - [HTML validator](https://validator.nu/)
 - [Lighthouse (12.0.0)](https://developer.chrome.com/docs/lighthouse/overview)
 - [Freego (Apr 15 2024)](https://accessibility.moda.gov.tw/Download/Detail/2763?Category=70)
