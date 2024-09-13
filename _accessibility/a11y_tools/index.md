@@ -15,7 +15,7 @@ text_only: 1
 ---
 
 - [GitHub \- dequelabs/axe-core: Accessibility engine for automated Web UI testing](https://github.com/dequelabs/axe-core)  
-Most popular tool from Deque
+One of most popular tools from Deque.
 
 - [GitHub \- pa11y/pa11y-ci: Pa11y CI is a CI-centric accessibility test runner, built using Pa11y](https://github.com/pa11y/pa11y-ci)  
 Pa11y CI is a CI-centric accessibility test runner, built using Pa11y. WCAG2A, WCAG2AA (default), WCAG2AAA – only used by htmlcs runner.
@@ -94,7 +94,7 @@ tool kit 輔助對設計稿進行無障礙標示，例如閱讀順序、焦點�
 - [axe Accessibility Linter \- Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter)  
   Check code files for common accessibility defects. Checks React (JSX), React Native, Angular, Vue, HTML, and Markdown.  
 - [axe Linter · GitHub Marketplace · GitHub](https://github.com/marketplace/axe-linter)  
-  Automatically find and fix accessibility issues with axe Linter. Axe Linter analyzes the changed or added code of your GitHub pull requests, reports issues and intelligently requests changes for common issues- all before your pull request gets reviewed and the code gets merged. 搭配閱讀：[Using the axe DevTools Linter GitHub Action | Deque Docs](https://docs.deque.com/linter/4.0.0/en/axe-linter-github-action)  
+  在 pull request 被審核或程式版本合併前，自動進行檢測並產出報告。搭配閱讀：[Using the axe DevTools Linter GitHub Action | Deque Docs](https://docs.deque.com/linter/4.0.0/en/axe-linter-github-action)  
 - [AccessLint \- Automated and continuous web accessibility testing](https://accesslint.com/)  
   AccessLint is a GitHub App that finds accessibility issues in your pull requests.  
 - [ASLint – Accessibility testing tool](https://aslint.org/)  
