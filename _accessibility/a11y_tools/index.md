@@ -18,15 +18,15 @@ text_only: 1
 
 - [GitHub \- pa11y/pa11y-ci: Pa11y CI is a CI-centric accessibility test runner, built using Pa11y](https://github.com/pa11y/pa11y-ci)  
 
-- [Purple A11y \- Automating Testing to Improve Web Accessibility for Apps and Websites | Singapore Government Developer Portal (tech.gov.sg)](https://www.developer.tech.gov.sg/products/categories/design/purple-a11y/overview.html)  
+- [Purple A11y \- Automating Testing to Improve Web Accessibility for Apps and Websites - Singapore Government Developer Portal](https://www.developer.tech.gov.sg/products/categories/design/purple-a11y/overview.html)  
 
-- [Accessibility testing | GitLab](https://docs.gitlab.com/ee/ci/testing/accessibility\_testing.html)  
+- [Accessibility testing - GitLab](https://docs.gitlab.com/ee/ci/testing/accessibility\_testing.html)  
 搭配閱讀： [CI/CD job template](https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Verify/Accessibility.gitlab-ci.yml).   
 
 - [Web Accessibility Pipeline - accessiBe](https://accessibe.com/accessflow/integrate)  
 
 - [Developer Tools for Accessibility Level Access](https://www.levelaccess.com/developer-tools/)  
-搭配閱讀： [Mocha - the fun, simple, flexible JavaScript test framework (mochajs.org)](https://mochajs.org/), [BDD Testing & Collaboration Tools for Teams | Cucumber](https://cucumber.io/)
+搭配閱讀： [Mocha - the fun, simple, flexible JavaScript test framework (mochajs.org)](https://mochajs.org/), [BDD Testing & Collaboration Tools for Teams - Cucumber](https://cucumber.io/)
 
 - [HTML_CodeSniffer (squizlabs.github.io)](https://squizlabs.github.io/HTML\_CodeSniffer/)  
 
@@ -68,16 +68,16 @@ text_only: 1
   - [GitHub \- mikaelvesavuori/github-ci-demo: This is a basic demonstration of what is needed to run a GitHub Actions CI build by calling their REST API.](https://github.com/mikaelvesavuori/github-ci-demo)  
   - [Mikael Vesavuori / gitlab-ci-demo · GitLab](https://gitlab.com/mikaelvesavuori/gitlab-ci-demo)  
   - [GitHub \- mikaelvesavuori/azure-devops-ci-demo: This is a basic demonstration of what is needed to run a Azure DevOps CI build by calling their REST API. We are using Figmagic for this demo, to demonstrate running it in CI.](https://github.com/mikaelvesavuori/azure-devops-ci-demo)  
-- [Level Access Figma plugin | Figma](https://www.figma.com/community/plugin/1268557036921715308/level-access-figma-plugin)  
+- [Level Access Figma plugin - Figma](https://www.figma.com/community/plugin/1268557036921715308/level-access-figma-plugin)  
      
-- [Tokens Studio for Figma (Figma Tokens) | Figma](https://www.figma.com/community/plugin/843461159747178978/tokens-studio-for-figma-figma-tokens)  
+- [Tokens Studio for Figma (Figma Tokens) - Figma](https://www.figma.com/community/plugin/843461159747178978/tokens-studio-for-figma-figma-tokens)  
    
-- [Token Export | Figma](https://www.figma.com/community/plugin/1318612019979212772/token-export)  
+- [Token Export - Figma](https://www.figma.com/community/plugin/1318612019979212772/token-export)  
   搭配閱讀：[Design Tokens Format Module](https://tr.designtokens.org/format/)
 
 ## git hook
 
-- [Using a Git Pre-Commit Hook with axe DevTools Linter | Deque Docs](https://docs.deque.com/linter/4.0.0/en/axe-linter-git-pre-commit-hook)  
+- [Using a Git Pre-Commit Hook with axe DevTools Linter - Deque Docs](https://docs.deque.com/linter/4.0.0/en/axe-linter-git-pre-commit-hook)  
   
 
 ## Linter
@@ -87,7 +87,7 @@ Linter 類型工具可以檢測 React (JSX), React Native, Angular, Vue, HTML, M
 - [axe Accessibility Linter \- Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter)  
   
 - [axe Linter · GitHub Marketplace · GitHub](https://github.com/marketplace/axe-linter)  
-  搭配閱讀：[Using the axe DevTools Linter GitHub Action | Deque Docs](https://docs.deque.com/linter/4.0.0/en/axe-linter-github-action)  
+  搭配閱讀：[Using the axe DevTools Linter GitHub Action - Deque Docs](https://docs.deque.com/linter/4.0.0/en/axe-linter-github-action)  
 - [AccessLint \- Automated and continuous web accessibility testing](https://accesslint.com/)  
     
 - [ASLint – Accessibility testing tool](https://aslint.org/)  
