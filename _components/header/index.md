@@ -13,9 +13,7 @@ maturity: "new"
   include example.html content=html
 %}
 
----
-
-### 頁首附帶單連結
+### 頁首與導覽列
 
 {% capture html %}{% include header/header_link.html %}{% endcapture %}
 {% 
