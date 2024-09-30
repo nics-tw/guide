@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "components/footer.scss";
+@import "components/header.scss";
 @import "variables.scss";
 @import "reset.scss";
 @import "typography.scss";
@@ -21,8 +23,7 @@
 @import "components/cookie-banner.scss";
 @import "tachyons.css";
 @import "color.css";
-@import "components/footer.scss";
-@import "components/header.scss";
+
 
 body,
 button,

@@ -1,90 +1,79 @@
 <header class="headerfordemo" data-module="header">
-    <div class="header__top">
-        <div class="width-container header__top-container">
-            <div class="header__actions">
-                <a href="#" class="header__link small-text">網站導覽</a>
-                <a href="#" class="header__link small-text" lang="zh-TW">中文</a>
-                <a href="#" class="header__link small-text" lang="en">英文</a>
-                <a href="#" id="decreaseFont" class="header__link small-text" aria-label="Decrease font size">A-</a>
-                <a href="#" id="defaultFont" class="header__link small-text" aria-label="Default font size">A</a>
-                <a href="#" id="increaseFont" class="header__link small-text" aria-label="Increase font size">A+</a>
+    <div class="header-top">
+        <div class="width-container header-top-container">
+            <div class="header-actions">
+                <a href="#" class="header-link small-text">網站導覽</a>
+                <a href="#" class="header-link small-text" lang="zh-TW">中文</a>
+                <a href="#" class="header-link small-text" lang="en">英文</a>
             </div>
         </div>
     </div>
-    <div class="header__divider width-container"></div>
-    <div class="header__bottom">
-        <div class="width-container header__container">
-            <div class="header__logo">
-                <a href="#" class="header__link header__link--homepage">
-                    <img src="{{ "/assets/favicon.png" | absolute_url }}" alt="網站標誌" class="header__logotype">
+    <div class="header-divider width-container"></div>
+    <div class="header-bottom">
+        <div class="width-container header-container">
+            <div class="header-logo">
+                <a href="#" class="header-link">
+                    <img src="{{ "/assets/favicon.png" | absolute_url }}" alt="網站標誌" class="header-logotype">
                 </a>
             </div>
-            <button class="header__menu-button" aria-controls="navigation" aria-expanded="false"
+            <button class="header-menu-button" aria-controls="navigation" aria-expanded="false"
                 aria-label="Toggle navigation">≡</button>
-            <div class="header__content">
+            <div class="header-content">
                 <div class="dropdown">
-                    <a href="#" class="header__link service-name js-dropdown-toggle">Service name 1 <span
+                    <a href="#" class="header-link service-name js-dropdown-toggle">Service name 1 <span
                             class="arrow-down">▼</span></a>
-                    <nav aria-label="Hierarchical Menu" class="header__navigation js-dropdown-menu">
-                        <ul class="header__navigation-list">
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                    <nav aria-label="Hierarchical Menu" class="header-navigation js-dropdown-menu">
+                        <ul class="header-navigation-list">
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     1</a></li>
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     2</a></li>
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     3</a></li>
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     4</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="dropdown">
-                    <a href="#" class="header__link service-name js-dropdown-toggle">Service name 2 <span
+                    <a href="#" class="header-link service-name js-dropdown-toggle">Service name 2 <span
                             class="arrow-down">▼</span></a>
-                    <nav aria-label="Hierarchical Menu" class="header__navigation js-dropdown-menu">
-                        <ul class="header__navigation-list">
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                    <nav aria-label="Hierarchical Menu" class="header-navigation js-dropdown-menu">
+                        <ul class="header-navigation-list">
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     1</a></li>
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     2</a></li>
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     3</a></li>
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     4</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="dropdown">
-                    <a href="#" class="header__link service-name js-dropdown-toggle">Service name 3 <span
+                    <a href="#" class="header-link service-name js-dropdown-toggle">Service name 3 <span
                             class="arrow-down">▼</span></a>
-                    <nav aria-label="Hierarchical Menu" class="header__navigation js-dropdown-menu">
-                        <ul class="header__navigation-list">
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                    <nav aria-label="Hierarchical Menu" class="header-navigation js-dropdown-menu">
+                        <ul class="header-navigation-list">
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     1</a></li>
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     2</a></li>
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     3</a></li>
-                            <li class="header__navigation-item"><a class="header__link" href="#">Navigation item
+                            <li class="header-navigation-item"><a class="header-link" href="#">Navigation item
                                     4</a></li>
                         </ul>
                     </nav>
                 </div>
                 <!-- Additional links for mobile view -->
-                <div class="header__additional-links">
-                    <div class="header__divider width-container"></div>
-                    <div class="header__actions-row">
-                        <a href="#" class="header__link small-text">網站導覽</a>
-                        <a href="#" class="header__link small-text" lang="zh-TW">中文</a>
-                        <a href="#" class="header__link small-text" lang="en">英文</a>
-                    </div>
-                    <div class="header__actions-row">
-                        <a href="#" id="mobileDecreaseFont" class="header__link small-text"
-                            aria-label="Decrease font size">A-</a>
-                        <a href="#" id="mobileDefaultFont" class="header__link small-text"
-                            aria-label="Default font size">A</a>
-                        <a href="#" id="mobileIncreaseFont" class="header__link small-text"
-                            aria-label="Increase font size">A+</a>
+                <div class="header-additional-links">
+                    <div class="header-divider width-container"></div>
+                    <div class="header-actions-row">
+                        <a href="#" class="header-link small-text">網站導覽</a>
+                        <a href="#" class="header-link small-text" lang="zh-TW">中文</a>
+                        <a href="#" class="header-link small-text" lang="en">英文</a>
                     </div>
                 </div>
             </div>
