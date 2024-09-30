@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        var menuButton = header.querySelector('.header__menu-button');
-        var headerContent = header.querySelector('.header__content');
+        var menuButton = header.querySelector('.header-menu-button');
+        var headerContent = header.querySelector('.header-content');
 
         if (menuButton && headerContent) {
             menuButton.addEventListener('click', function () {
