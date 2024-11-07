@@ -1,12 +1,12 @@
 :root {
-    --tabs-header-bg: var(--gov-white);
-    --tabs-header-fontColor: var(--gov-gray-500);
-    --tabs-header-active-bg: var(--gov-blue-100);
-    --tabs-header-active-fontColor: var(--gov-black);
-    --tabs-header-hover-bg: var(--gov-blue-50);
-    --tabs-header-hover-fontColor: var(--gov-gray-500);
-    --tabs-body-bg: var(--gov-white);
-    --tabs-border: var(--gov-blue-100);
+    --tabs-header-bg: var(--backgroundColor);
+    --tabs-header-fontColor: var(--textColor);
+    --tabs-header-active-bg: var(--primaryColor);
+    --tabs-header-active-fontColor: var(--backgroundColor);
+    --tabs-header-hover-bg: var(--borderColor);
+    --tabs-header-hover-fontColor: var(--textColor);
+    --tabs-body-bg: var(--backgroundColor);
+    --tabs-border: var(--borderColor);
 }
 
 .tabs {
