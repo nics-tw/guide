@@ -1,9 +1,10 @@
 // 變數定義
 $accordion-header-bg: var(--backgroundColor);  
-$accordion-header-active-bg: var(--gov-blue-100);  
+$accordion-header-active-bg: var(--primaryColor);  
 $accordion-body-bg: var(--backgroundColor);  
 $accordion-header-fontColor: var(--textColor); 
-$accordion-body-border: var(--gov-blue-100); 
+$accordion-header-active-fontColor: var(--backgroundColor); 
+$accordion-body-border: var(--borderColor); 
 $accordion-body-active-border:var(--secondaryTextColor);
 $accordion-icon-url: url("/assets/svg/downarrow.svg") ;
 $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
@@ -61,6 +62,7 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
 
   input[type="checkbox"]:checked + label {
     background: $accordion-header-active-bg;
+    color: $accordion-header-active-fontColor;
 
     &::after {
       background-image: $accordion-icon-active-url;
