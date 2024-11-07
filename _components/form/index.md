@@ -9,8 +9,8 @@ maturity: "alpha"
 {% capture html %}{% include form/form-elements.html %}{% endcapture %}
 {% include example.html 
   content=html
-  i18n_selector="[for=name],[for=city],[for=desc]" 
-  i18n="en-US:Full name,City of residence,Description"
+  i18n_selector="[for=name],[for=city],[for=desc],[for=select],[for=taipei],[for=newtaipei],[for=keelung]" 
+  i18n="en-US:Full name,City of residence,Description,Select,Taipei,New Taipei,Keelung"
 %}
 
 #### CSS
