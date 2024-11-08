@@ -10,7 +10,7 @@ maturity: "alpha"
 {% include example.html 
   content=html
   i18n_selector='[for=v-healthid-input],[for=v-moica-input],[for=v-phone-input],[i18n-method],[i18n-tw-fido],[i18n-description]'
-  i18n="en-US:Health card ID,Digital Certificate,Cell phone,Authentication method,TW FidO authentication,A natural person certificate can be used as an online ID to verify the identities of both parties during data exchange. The 'certificate' includes a 'digital signature' and a 'public key.'"
+  i18n="en-US:NHI Card,Digital Certificate,Cell phone,Authentication method,TW FidO authentication,A natural person certificate can be used as an online ID to verify the identities of both parties during data exchange. The 'certificate' includes a 'digital signature' and a 'public key.'"
 %}
 
 #### CSS
