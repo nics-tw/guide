@@ -32,8 +32,8 @@ maturity: "alpha"
 {% capture html %}{% include form/form-checkable.html %}{% endcapture %}
 {% include example.html 
   content=html
-  i18n_selector="[for=id],[for=items]" 
-  i18n="en-US:ID type,Lost document replacement"
+  i18n_selector="[for=id],[for=items],[for=v-healthid],[for=v-moica],[for=v-phone],[for=check-h-healthid],[for=check-h-moica],[for=check-h-id]" 
+  i18n="en-US:ID type,Lost document replacement,NHI Card,Digital Certificate,Cell phone,NHI Card,Digital Certificate,ID Card"
 %}
 
 #### CSS
