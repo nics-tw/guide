@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title></title>
+</head>
+<body>
+  <h1></h1>
+  <article>
+    <h1 id="政府網站設計原則">政府網站設計原則</h1>
+<h2 id="目標">目標</h2>
+<p>本文件所規劃之系統元件係以具備相容性、符合網頁標準之目標進行設計規劃，並最大化地使用網頁標準中所提供的元件加以優化，可供各機關及資通系統承包商直接採用及參考，減少對第三方元件及複雜前端開發框架的依賴，增加系統韌性、相容性及親和力。系統元件將會使用網頁標準元件作為根本基礎，因此即使各機關、廠商仍須使用前端開發框架，也不會有不相容的問題。</p>
+<h2 id="css-元件使用方式">CSS 元件使用方式</h2>
+<p>可直接<a href="https://guide.nics.nat.gov.tw/assets/css.zip">下載</a>，並使用下方程式碼匯入：</p>
+<pre tabindex="0"><code>&lt;link rel=&#34;stylesheet&#34; href=&#34;../main.css&#34;&gt;
+</code></pre><p>請避免一切對原始碼的改動。使用設計系統的目的就在於一致性。若需要特殊的顯示方式，請另行撰寫 CSS，以免造成日後版本升級困難。</p>
+<blockquote>
+<p>[!WARNING]
+本檔案暫時包含 <!-- raw HTML omitted -->Tachyons<!-- raw HTML omitted -->，作為 Atomic CSS 的第三方程式。</p>
+</blockquote>
+<h3 id="多國語系支援">多國語系支援</h3>
+<p>請依照<a href="https://guide.nics.nat.gov.tw/visual/internationalization/index.html">多國語系支援</a>另外包含所需要的字體 CSS 檔案。</p>
+<h2 id="javascript-元件使用方式">JavaScript 元件使用方式</h2>
+<h3 id="文字輸入區塊httpsguidenicsnatgovtwcomponentstextareaindexhtml"><a href="https://guide.nics.nat.gov.tw/components/textarea/index.html">文字輸入區塊</a></h3>
+<p>下載 <a href="https://guide.nics.nat.gov.tw/assets/js/components/character-count.js">character-count.js</a> 檔案並選擇性使用下方程式碼匯入：</p>
+<pre tabindex="0"><code>&lt;script src=&#34;../character-count.js&#34; defer&gt;
+</code></pre><h3 id="公文元件httpsguidenicsnatgovtwcomponentsofficial-documentindexhtml"><a href="https://guide.nics.nat.gov.tw/components/official-document/index.html">公文元件</a></h3>
+<p>下載 <a href="https://guide.nics.nat.gov.tw/assets/js/components/official-document-element.js">official-document-element.js</a> 檔案並選擇性使用下方程式碼匯入：</p>
+<pre tabindex="0"><code>&lt;script src=&#34;../official-document-element.js&#34; type=&#34;module&#34;&gt;
+</code></pre><h3 id="互動資料表格httpsguidenicsnatgovtwcomponentstableindexhtml"><a href="https://guide.nics.nat.gov.tw/components/table/index.html">互動資料表格</a></h3>
+<p>下載 <a href="https://guide.nics.nat.gov.tw/assets/js/components/interactive-table-element.js">interactive-table-element.js</a> 檔案並選擇性使用下方程式碼匯入：</p>
+<pre tabindex="0"><code>&lt;script src=&#34;../interactive-table-element.js&#34; type=&#34;module&#34;&gt;
+</code></pre><h3 id="互動資料表格httpsguidenicsnatgovtwcomponentsskip-toindexhtml"><a href="https://guide.nics.nat.gov.tw/components/skip-to/index.html">互動資料表格</a></h3>
+<p>下載 <a href="https://guide.nics.nat.gov.tw/assets/js/components/skip-to-element.js">skip-to-element.js</a> 檔案並選擇性使用下方程式碼匯入：</p>
+<pre tabindex="0"><code>&lt;script src=&#34;../skip-to-element.js&#34; type=&#34;module&#34;&gt;
+</code></pre><h2 id="開發">開發</h2>
+<pre tabindex="0"><code>jekyll server -w
+</code></pre><p>Run lighthouse locally:</p>
+<pre tabindex="0"><code>npx @lhci/cli assert --url=http://localhost:4000/
+</code></pre>
+  </article>
+</body>
+</html>

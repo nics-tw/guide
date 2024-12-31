@@ -9,7 +9,7 @@
 
 .one-col {
   .site-header, .site-main, .site-footer {
-    margin: 2em auto;
+    margin: 2rem auto;
   }
 
   .site-header {
@@ -43,7 +43,7 @@
     width: 30%;
   }
 
-  @media (max-width: 35em) {
+  @media (max-width: 35rem) {
     & > * {
       width: 100%;
     }

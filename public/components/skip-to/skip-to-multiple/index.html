@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>提供多個彈跳點範例</title>
+</head>
+<body>
+  <h1>提供多個彈跳點範例</h1>
+  <article>
+    
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | absolute_url }}">
+  <link rel="icon" type="image/png" href="">
+  <title>{{ page.title }}</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <script src="{{ "assets/js/components/skip-to-element.js" | absolute_url }}" type="module"></script>
+
+  <div class="ph4 pt4">點選此區域，並多次按下 <kbd>Tab</kbd> 鍵，即可各個「彈跳點」連結，並跳至該區域。</div>
+
+  <skip-to>
+  <a href="#main" class="skip-to">跳至主要內容區</a>
+  <a href="#navigation" class="skip-to">跳至主要連結表</a>
+  <a href="#footer" class="skip-to">跳至頁尾</a>
+  </skip-to>
+
+  <div class="one-col">
+    <header class="site-header">
+      <a href="{{ "/" | absolute_url}}" class="flex items-center">
+        <div class="bg-layer1 w2 mr3" style="aspect-ratio: 1;"><!-- logo --></div>
+        <h1>{{ page.title }}</h1>
+      </a>
+      <nav aria-label="主要" id="navigation" class="flex gap4 mt4">
+        <a href="#">首頁</a>
+        <a href="#">關於我們</a>
+      </nav>
+    </header>
+    <main class="site-main" id="main">
+      <p>全球資訊網協會在 Web Content Accessibility Guidelines (WCAG) 定義網頁設計師及開發者應該如何促進身心障礙者使用網頁的親和力，在其中對親和力的符合狀態分成三個符合等級：等級 A、等級 AA、等級 AAA。政府網站設計原則 完全符合 WCAG 2.1 等級 AA 的要求。「完全符合」的意思是所有內容完全依照親和力標準的要求來製作，沒有任何例外。</p>
+    </main>
+  </div>
+  <div class="one-column bg-layer1">
+    <footer class="site-footer f6 flex items-center gap4" id="footer">
+      <div class="plain w2 mr3" style="aspect-ratio: 1;"><!-- logo --></div>
+      <div class="mw5">
+        <a href="/accessibility-statement">親和力宣告</a>
+      </div>
+    </footer>
+  </div>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
+</body>
+</html>
+
+
+  </article>
+</body>
+</html>

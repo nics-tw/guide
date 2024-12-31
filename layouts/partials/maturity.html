@@ -1,0 +1,10 @@
+<div>
+  <h2>成熟度</h2>
+  <ul>
+    {{ range $key, $value := site.Params.maturity }}
+      <li id="maturity-{{ $key }}">
+        <strong>{{ $value.key }}</strong>: {{ $value.desc }}
+      </li>
+    {{ end }}
+  </ul>
+</div>

@@ -1,24 +1,22 @@
----
----
+@import "variables";  //背景黑底設定
+@import "reset";
+@import "typography";
+@import "components/ctas";
+@import "components/skip-to"; //首頁 "跳至內容區字樣" 消失
+@import "components/warning-text";
+@import "components/form";
+@import "components/table";
+@import "components/checkable";
+@import "components/list";
+@import "components/official-document";
+@import "components/nav";
+@import "components/layout";
+@import "components/breadcrumb";
+@import "components/accordion";
+@import "components/tabs";
+@import "tachyons";
+@import "color";
 
-@import "variables.scss";
-@import "reset.scss";
-@import "typography.scss";
-@import "components/ctas.scss";
-@import "components/skip-to.css";
-@import "components/warning-text.scss";
-@import "components/form.scss";
-@import "components/table.scss";
-@import "components/checkable.scss";
-@import "components/list.scss";
-@import "components/official-document.scss";
-@import "components/nav.scss";
-@import "components/layout.scss";
-@import "components/breadcrumb.scss";
-@import "components/accordion.scss";
-@import "components/tabs.css";
-@import "tachyons.css";
-@import "color.css";
 
 body,
 button,
@@ -46,7 +44,7 @@ input[type="password"],
 textarea {
   display: block;
   width: 100%;
-  padding: 0.4em;
+  padding: 0.4rem;
   border: 1px solid var(--borderColor);
   box-sizing: border-box;
   border-radius: 0.45rem;
@@ -55,7 +53,7 @@ textarea {
 }
 
 select {
-  padding: 0.4em;
+  padding: 0.4rem;
   border: 1px solid var(--borderColor);
   box-sizing: border-box;
   border-radius: 0.45rem;
@@ -64,10 +62,10 @@ select {
 }
 
 code {
-  font-size: 0.9em;
-  border-radius: 1em;
+  font-size: 0.9rem;
+  border-radius: 1rem;
   background-color: var(--backgroundColorLayer1);
-  padding: 0.1em 0.4em;
+  padding: 0.1rem 0.4rem;
 }
 
 div, button, summary, a, span, textarea, input, select, code, fieldset, label {
@@ -75,9 +73,9 @@ div, button, summary, a, span, textarea, input, select, code, fieldset, label {
 }
 
 .gap2 {
-  gap: 1em;
+  gap: 1rem;
 }
 
 .gap4 {
-  gap: 2em;
+  gap: 2rem;
 }

@@ -2,17 +2,17 @@
   text-align: left;
   border-spacing: 0;
   width: 100%;
-  margin: 0.8em 0;
+  margin: 0.8rem 0;
   
   .table-caption {
     font-weight: 600;
-    padding-bottom: 0.4em;
-    font-size: 1.4em;
+    padding-bottom: 0.4rem;
+    font-size: 1.4rem;
   }
   
   .table-cell,
   .table-head {
-    padding: 0.6em 1em;
+    padding: 0.6rem 1rem;
   }
 
   .table-caption {
@@ -24,7 +24,7 @@
   }
 
   .table-header .table-head {
-    min-width: 3em;
+    min-width: 3rem;
   }
 
   .table-head,
@@ -52,7 +52,7 @@
 
   &.table-nested-list {
     .list + .list {
-      margin-top: 1.5em;
+      margin-top: 1.5rem;
     }
   }
 }
@@ -67,24 +67,24 @@
   }
 
   .table-cell {
-    max-width: min(96cqw, 24em);
+    max-width: 96px; //
   }
 }
 
 .table.table-separator {
-  border-radius: 0.4em;
+  border-radius: 0.4rem;
   border: 1px solid var(--borderColor);
 
   .table-caption {
-    margin-bottom: 0.6em;
+    margin-bottom: 0.6rem;
   }
 
   .table-row .table-cell, .table-row .table-head {
-    padding: 0.4em 0.6em;
+    padding: 0.4rem 0.6rem;
 
     &:not(:last-of-type) {
       border-right: 1px solid var(--borderColor);
     }
-    // border-radius: 0.2em;
+    // border-radius: 0.2rem;
   }
 }

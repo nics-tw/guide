@@ -1,0 +1,12 @@
+<div class="bg-layer1 overflow-auto fs7 ph3 pv3 br3">
+  {{ $content := .Get "content" }}
+  {{ with .Get "highlight" }}
+    {{ $highlighted := $content }}
+    {{ range (split . ",") }}
+      {{ $highlighted = replace $highlighted . (printf "<mark>%s</mark>" .) }}
+    {{ end }}
+    {{ $highlighted | safeHTML }}
+  {{ else }}
+    {{ $content | safeHTML }}
+  {{ end }}
+</div>

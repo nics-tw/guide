@@ -1,5 +1,5 @@
 nav.breadcrumb {
-  padding: 0.8em 1em;
+  padding: 0.8rem 1rem;
   border: 0px solid var(--textColor);
   border-radius: 4px;
   background: var(--backgroundColor);
@@ -24,27 +24,27 @@ nav.breadcrumb {
   // use li + li::before to skip the first item
   li + li::before {
     display: inline-block;
-    margin: 0 0.25em;
+    margin: 0 0.25rem;
     transform: rotate(15deg);
-    border-right: 0.1em solid currentcolor;
-    height: 0.8em;
+    border-right: 0.1rem solid currentcolor;
+    height: 0.8rem;
     content: "";
   }
 
   // render as slash separator
   &.arrow-separator {  
     // Size of chevron (excluding border) 7/16 px ≅ 0.4375
-    $chevron-size: 0.4375em;
+    $chevron-size: 0.4375rem;
     // Size of chevron border
     $chevron-border-min-width: 1px;
-    $chevron-border-width: 0.0625em;
+    $chevron-border-width: 0.0625rem;
 
     // Calculated altitude (△↕) of the right-angled isosceles chevron with sides
     // of length 8 (7px + 1px border):
     //
     // √(8² + 8²) * 0.5 ≅ 5.655
     // 5.655 / 16 ≅ 0.3534375
-    $chevron-altitude-calculated: 0.3534375em;
+    $chevron-altitude-calculated: 0.3534375rem;
 
     // use li + li::before to skip the first item
     li + li::before {
@@ -59,7 +59,7 @@ nav.breadcrumb {
       width: $chevron-size;
       height: $chevron-size;
 
-      margin: auto 0.25em;
+      margin: auto 0.25rem;
 
       transform: translateX(-25%) rotate(45deg);
 

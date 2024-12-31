@@ -1,0 +1,30 @@
+baseURL = "https://guide.nics.nat.gov.tw"
+languageCode = "zh-TW"
+title = "政府網站設計原則"
+timezone = "Asia/Taipei"
+
+[sass]
+  [sass.defaults]
+    outputStyle = "compressed"
+
+[params]
+  [params.i18n]
+    langs = { "en-US" = "English (US)", "zh-TW" = "正體中文", "ja" = "日本語", "vi" = "Tiếng Việt", "th" = "ไทย" }
+
+  [params.maturity]
+    [params.maturity.new]
+      key = "新提案"
+      desc = "未完成開發、請勿使用。"
+    [params.maturity.alpha]
+      key = "封閉測試"
+      desc = "開發暫時性完成，可使用。可能仍有親和力或其他使用上問題待透過實測發現。"
+    [params.maturity.beta]
+      key = "公開測試"
+      desc = "開發暫時性完成，歡迎使用。具有完整親和力報告。"
+    [params.maturity.production]
+      key = "已穩定"
+      desc = "開發完成、歡迎使用。應無任何親和力或使用上問題。"
+   
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true

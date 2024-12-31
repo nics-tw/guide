@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/guide.css">
+  <link rel="icon" type="image/png" href="http://localhost:1313/assets/favicon.png">
+  <title>表單欄位 (Form) | 政府網站設計原則</title>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="one-column">
+  <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
+  <header class="header ph4 pv4">
+    <a href="http://localhost:1313/" class="logo no-underline bw1 color-inherit inline-flex items-center">
+      <div class="logo-svg mr3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 184 186"><path fill="#004ECC" class="square" d="M76 110v76H0v-76z"/><path fill="#CC3100" class="triangle" d="M184 186h-78v-78l78 78Z"/><circle class="circle" cx="39" cy="39" r="39" fill="#00CC5E"/></svg></div>
+      <h1 class="heading4">政府網站設計原則</h1>
+    </a>
+  </header>
+  <main class="flex flex-wrap flex-nowrap-l content-start pa4 bt">
+    <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
+      
+  <details class="mb3" >
+    <summary class="pointer mb3">
+      <a class="pa2 mb2" href="http://localhost:1313/components/">共用元件</a>
+    </summary>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/official-document/">公文 (Official Document)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/checkable/">多重選擇及補充說明 (Checkable)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/accordion/">折疊選單 (Accordion)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/button-and-link/">按鈕及連結 (Button and Link)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/digital-info/">數位名片 (Digital Info)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/textarea/">文字輸入區塊 (Textarea)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/form/">表單欄位 (Form)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/table/">表格 (Table)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/warning-text/">警告文字 (Warning Text)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/skip-to/">跳至主要內容區 (Skip-To)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/tabs/">頁籤 (Tabs)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/landmark/">頁面地標架構 (Landmark)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/breadcrumb/">麵包屑 (Breadcrumb)</a>
+    
+  </details>
+
+  <details class="mb3" >
+    <summary class="pointer mb3">
+      <a class="pa2 mb2" href="http://localhost:1313/technology/">前端工程原則</a>
+    </summary>
+    
+      <a class="nav-link"  href="http://localhost:1313/technology/anti_patterns/">反面教材</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/technology/internationalization/">多國語系支援</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/technology/progressive_enhancement/">漸進增強</a>
+    
+  </details>
+
+  <details class="mb3" >
+    <summary class="pointer mb3">
+      <a class="pa2 mb2" href="http://localhost:1313/visual/">視覺設計</a>
+    </summary>
+    
+      <a class="nav-link"  href="http://localhost:1313/visual/internationalization/">多國語系字體</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/visual/typography/">文字樣式</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/visual/colors/">色彩</a>
+    
+  </details>
+
+
+
+    </nav>
+    <div id="main" class="ml4-l flex-auto">
+      
+        <article class="w-paragraph nested-copy-separator">
+          <h2>表單欄位 (Form)</h2>
+          <h3 id="簡易欄位">簡易欄位</h3>
+<p>{% capture html %}{% include form/form-elements.html %}{% endcapture %}
+{% include example.html
+content=html
+i18n_selector=&quot;[for=name],[for=city],[for=desc]&quot;
+i18n=&ldquo;en-US:Full name,City of residence,Description&rdquo;
+%}</p>
+<h4 id="css">CSS</h4>
+<ul>
+<li><code>.fields</code>：作為全部 <code>.fieldset</code> 的容器。</li>
+<li><code>fieldset.fieldset</code>：作為單獨表單項目的容器。</li>
+<li><code>label.field-label</code>：作為單獨表單項目的 <code>&lt;label&gt;</code>。</li>
+<li><code>.field-input</code>：作為輸入欄位。</li>
+</ul>
+<h4 id="親和力">親和力</h4>
+<ul>
+<li>使用 <code>.field-label</code>，必要使用 <code>for</code> 和 <code>id</code> 連結 <code>&lt;label&gt;</code> 元件和 <code>&lt;input&gt;</code> 元件。</li>
+<li>使用 <a href="https://developer.mozilla.org/en-US:/docs/Web/HTML/Attributes/autocomplete#values"><code>[autocomplete]</code></a> 方便使用者快速填寫欄位。</li>
+<li>盡量使用 <code>input[type=text]</code>，倚賴伺服器端驗證再於瀏覽器端顯示錯誤內容。伺服器端的表格內容驗證比瀏覽器端的表格驗證更為重要。因為 HTML 的內建表格驗證存在許多親和力的疑慮（請參考 <a href="https://adrianroselli.com/2019/02/avoid-default-field-validation.html">Avoid Default Field Validation</a>.），建議非必要時，盡量仰賴伺服器端驗證，並正確地保留使用者輸入的內容且顯示錯誤。</li>
+<li>需要特定的輸入模式則使用 <a href="https://developer.mozilla.org/en-US:/docs/Web/HTML/Global_attributes/inputmode"><code>[inputmode]</code></a> 做設定。</li>
+</ul>
+<h3 id="選項欄位">選項欄位</h3>
+<p>{% capture html %}{% include form/form-checkable.html %}{% endcapture %}
+{% include example.html
+content=html
+i18n_selector=&quot;[for=id],[for=items]&quot;
+i18n=&ldquo;en-US:ID type,Lost document replacement&rdquo;
+%}</p>
+<h4 id="css-1">CSS</h4>
+<ul>
+<li><code>.checkable-wrapper-v</code>：用來包含直式的選項。</li>
+<li><code>.checkable-wrapper-h</code>：用來包含橫式的選項。</li>
+<li><code>.checkable-item</code>：用來包含單一選項，其中包含 <code>&lt;input&gt;</code> 以及 <code>&lt;label&gt;</code> 欄位。</li>
+</ul>
+<h3 id="欄位說明">欄位說明</h3>
+<p>{% capture html %}{% include form/field.html %}{% endcapture %}
+{% include example.html
+content=html
+i18n_selector=&ldquo;label,.field-description li&rdquo;
+i18n=&ldquo;en-US:Email,Address must end with @pdis.nat.gov.tw.;&rdquo;
+%}</p>
+<h4 id="css-2">CSS</h4>
+<ul>
+<li><code>ul.field-description</code>：作為單獨表單項目說明文字。</li>
+</ul>
+<h4 id="親和力-1">親和力</h4>
+<ul>
+<li>使用 <code>ul.field-description</code>，必要使用 <code>aria-describedby</code> 和 <code>id</code> 連結說明元件和 <code>&lt;input&gt;</code> 元件。</li>
+</ul>
+<h3 id="必要欄位">必要欄位</h3>
+<p>{% capture html %}{% include form/field-required.html %}{% endcapture %}
+{% include example.html
+content=html
+i18n_selector=&ldquo;label,.field-required&rdquo;
+i18n=&ldquo;en-US:Email,required;&rdquo;
+%}</p>
+<h4 id="親和力-2">親和力</h4>
+<ul>
+<li>使用 <code>input[aria-required=&quot;true&quot;]</code> 告知輔助科技。</li>
+</ul>
+<h3 id="欄位及驗證錯誤內容">欄位及驗證錯誤內容</h3>
+<p>{% capture html %}{% include form/field-error.html %}{% endcapture %}
+{% include example.html content=html %}</p>
+<h4 id="css-3">CSS</h4>
+<ul>
+<li><code>.fieldset-has-error</code>：作為欄位內容有錯誤的視覺辨識。</li>
+</ul>
+<h4 id="親和力-3">親和力</h4>
+<ul>
+<li>在 <code>ul.field-description</code> 將錯誤訊息詳細說明，並用「錯誤：」做為開頭區分表單欄位說明。</li>
+</ul>
+<h3 id="欄位加上頭尾文字">欄位加上頭尾文字</h3>
+<p>{% capture html %}{% include form/field-fixes.html %}{% endcapture %}
+{% include example.html content=html %}</p>
+<h4 id="css-4">CSS</h4>
+<ul>
+<li><code>.field-input-fixes</code>：作為輸入欄位 prefix 及 suffix 的容器。</li>
+<li><code>.field-input-prefix</code>：作為 prefix 文字。</li>
+<li><code>.field-input-suffix</code>：作為 suffix 文字。</li>
+</ul>
+<h4 id="親和力-4">親和力</h4>
+<ul>
+<li>使用 <code>.field-input-prefix</code> 或 <code>.field-input-suffix</code> 時，必要使用 <code>aria-describedby</code> 和 <code>id</code> 連結說明元件和 <code>&lt;input&gt;</code> 元件。</li>
+</ul>
+<h3 id="參考資料">參考資料</h3>
+<ul>
+<li>沒有使用 <a href="https://a11ysupport.io/tech/aria/aria-errormessage_attribute"><code>aria-errormessage</code></a> 因為瀏覽器支援不足。</li>
+<li>沒有使用 <a href="https://a11ysupport.io/tech/aria/aria-invalid_attribute"><code>aria-invalid</code></a> 因為元件暫時不支援客戶端驗證。</li>
+<li><a href="https://gds.blog.gov.uk/2021/11/17/why-we-think-online-html-forms-are-usually-better-than-document-based-forms-in-government/">Why we think online HTML forms are usually better than document-based forms in government
+</a></li>
+<li><a href="https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/">Why the GOV.UK Design System team changed the input type for numbers</a></li>
+</ul>
+
+        </article>
+      
+    </div>
+  </main>
+  <div class="one-column bg-layer1">
+    <footer class="site-footer f6 flex items-start gap4">
+      <div class="lh-solid w2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 184 186"><path fill="#004ECC" class="square" d="M76 110v76H0v-76z"/><path fill="#CC3100" class="triangle" d="M184 186h-78v-78l78 78Z"/><circle class="circle" cx="39" cy="39" r="39" fill="#00CC5E"/></svg></div>
+      <div class="mw5 flex flex-column gap2">
+        <a href="/accessibility-statement">親和力宣告</a>
+        <a href="/contact">意見回覆．聯絡我們</a>
+      </div>
+    </footer>
+  </div>
+  <script src="http://localhost:1313/assets/js/main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</body>
+</html>

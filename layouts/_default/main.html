@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  {{ $mainCSS := resources.Get "css/main.scss" | css.Sass }}
+  {{ $guideCSS := resources.Get "css/guide.scss" | css.Sass }}
+  <link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $guideCSS.RelPermalink }}">
+  <link rel="icon" type="image/png" href="{{ "assets/favicon.png" | absURL }}">
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}政府網站設計原則</title>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="one-column">
+  <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
+  <header class="header ph4 pv4">
+    <a href="{{ "/" | absURL }}" class="logo no-underline bw1 color-inherit inline-flex items-center">
+      <div class="logo-svg mr3">{{ partial "components.svg" . }}</div>
+      <h1 class="heading4">政府網站設計原則</h1>
+    </a>
+  </header>
+  <main class="flex flex-wrap flex-nowrap-l content-start pa4 bt">
+    <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
+      {{ range sort .Site.Sections "Title" }}
+  <details class="mb3" {{ if eq .RelPermalink .Permalink }}open{{ end }}>
+    <summary class="pointer mb3">
+      <a class="pa2 mb2" href="{{ .Permalink }}">{{ .Title }}</a>
+    </summary>
+    {{ range sort .Pages "Title" }}
+      <a class="nav-link" {{ if eq .RelPermalink .Permalink }}aria-current="page"{{ end }} href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+  </details>
+{{ end }}
+
+
+    </nav>
+    <div id="main" class="ml4-l flex-auto">
+      {{ if not .Params.text_only }}
+        <article class="w-paragraph nested-copy-separator">
+          <h2>{{ .Title }}</h2>
+          {{ .Content }}
+        </article>
+      {{ else }}
+        {{ .Content }}
+      {{ end }}
+    </div>
+  </main>
+  <div class="one-column bg-layer1">
+    <footer class="site-footer f6 flex items-start gap4">
+      <div class="lh-solid w2">{{ partial "components.svg" . }}</div>
+      <div class="mw5 flex flex-column gap2">
+        <a href="{{ "accessibility-statement" | relURL }}">親和力宣告</a>
+        <a href="{{ "contact" | relURL }}">意見回覆．聯絡我們</a>
+      </div>
+    </footer>
+  </div>
+  <script src="{{ "assets/js/main.js" | absURL }}" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</body>
+</html>

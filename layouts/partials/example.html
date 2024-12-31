@@ -1,0 +1,25 @@
+<div class="ba br3 w-100 relative">
+  <div class="pa4" data-example>
+    {{ .content }}
+    {{ with .i18n }}
+      {{ $i18n := split . ";" }}
+      <select aria-label="語言選擇" data-i18n-selector="{{ .i18n_selector }}" class="field-select absolute nt2 lh-solid pa1 right-0 mr4 top-0 f7 pointer">
+        <option value="default">正體中文</option>
+        {{ range $i18n }}
+          {{ $parts := split . ":" }}
+          <option lang="{{ index $parts 0 }}" data-phrases="{{ index $parts 1 }}">
+            {{ index $.Site.Params.i18n.langs (index $parts 0) }}
+          </option>
+        {{ end }}
+      </select>
+    {{ end }}
+  </div>
+  <details>
+    <summary class="absolute nt3 lh-solid button button-mini right-0 mr4 f7 pointer br2">
+      HTML
+    </summary>
+    <div class="br3 br--bottom overflow-hidden">
+      {{ partial "example-html" (dict "content" .content "context" .) }}
+    </div>
+  </details>
+</div>

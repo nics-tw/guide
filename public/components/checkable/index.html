@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/guide.css">
+  <link rel="icon" type="image/png" href="http://localhost:1313/assets/favicon.png">
+  <title>多重選擇及補充說明 (Checkable) | 政府網站設計原則</title>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="one-column">
+  <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
+  <header class="header ph4 pv4">
+    <a href="http://localhost:1313/" class="logo no-underline bw1 color-inherit inline-flex items-center">
+      <div class="logo-svg mr3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 184 186"><path fill="#004ECC" class="square" d="M76 110v76H0v-76z"/><path fill="#CC3100" class="triangle" d="M184 186h-78v-78l78 78Z"/><circle class="circle" cx="39" cy="39" r="39" fill="#00CC5E"/></svg></div>
+      <h1 class="heading4">政府網站設計原則</h1>
+    </a>
+  </header>
+  <main class="flex flex-wrap flex-nowrap-l content-start pa4 bt">
+    <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
+      
+  <details class="mb3" >
+    <summary class="pointer mb3">
+      <a class="pa2 mb2" href="http://localhost:1313/components/">共用元件</a>
+    </summary>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/official-document/">公文 (Official Document)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/checkable/">多重選擇及補充說明 (Checkable)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/accordion/">折疊選單 (Accordion)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/button-and-link/">按鈕及連結 (Button and Link)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/digital-info/">數位名片 (Digital Info)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/textarea/">文字輸入區塊 (Textarea)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/form/">表單欄位 (Form)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/table/">表格 (Table)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/warning-text/">警告文字 (Warning Text)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/skip-to/">跳至主要內容區 (Skip-To)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/tabs/">頁籤 (Tabs)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/landmark/">頁面地標架構 (Landmark)</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/components/breadcrumb/">麵包屑 (Breadcrumb)</a>
+    
+  </details>
+
+  <details class="mb3" >
+    <summary class="pointer mb3">
+      <a class="pa2 mb2" href="http://localhost:1313/technology/">前端工程原則</a>
+    </summary>
+    
+      <a class="nav-link"  href="http://localhost:1313/technology/anti_patterns/">反面教材</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/technology/internationalization/">多國語系支援</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/technology/progressive_enhancement/">漸進增強</a>
+    
+  </details>
+
+  <details class="mb3" >
+    <summary class="pointer mb3">
+      <a class="pa2 mb2" href="http://localhost:1313/visual/">視覺設計</a>
+    </summary>
+    
+      <a class="nav-link"  href="http://localhost:1313/visual/internationalization/">多國語系字體</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/visual/typography/">文字樣式</a>
+    
+      <a class="nav-link"  href="http://localhost:1313/visual/colors/">色彩</a>
+    
+  </details>
+
+
+
+    </nav>
+    <div id="main" class="ml4-l flex-auto">
+      
+        <article class="w-paragraph nested-copy-separator">
+          <h2>多重選擇及補充說明 (Checkable)</h2>
+          <h3 id="追加欄位">追加欄位</h3>
+<p>{% capture html %}{% include checkable/radios-with-extra-elements.html %}{% endcapture %}
+{% include example.html
+content=html
+i18n_selector=&quot;[for=v-healthid-input],[for=v-moica-input],[for=v-phone-input]&quot;
+i18n=&ldquo;en-US:Health card ID,Digital Certificate,Cell phone&rdquo;
+%}</p>
+<h4 id="css">CSS</h4>
+<ul>
+<li><code>input.chcecked--extra-fields</code>：加到 <code>input[type=radio]</code> 或 <code>input[type=checkbox]</code> 後即可在勾選後，顯示後方的 <code>.fields</code> 元件。</li>
+</ul>
+
+        </article>
+      
+    </div>
+  </main>
+  <div class="one-column bg-layer1">
+    <footer class="site-footer f6 flex items-start gap4">
+      <div class="lh-solid w2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 184 186"><path fill="#004ECC" class="square" d="M76 110v76H0v-76z"/><path fill="#CC3100" class="triangle" d="M184 186h-78v-78l78 78Z"/><circle class="circle" cx="39" cy="39" r="39" fill="#00CC5E"/></svg></div>
+      <div class="mw5 flex flex-column gap2">
+        <a href="/accessibility-statement">親和力宣告</a>
+        <a href="/contact">意見回覆．聯絡我們</a>
+      </div>
+    </footer>
+  </div>
+  <script src="http://localhost:1313/assets/js/main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</body>
+</html>

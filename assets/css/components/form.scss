@@ -19,7 +19,7 @@
     .field-label:before {
       content: '⚹';
       color: var(--dangerColor);
-      margin-right: 0.6em;
+      margin-right: 0.6rem;
     }
     .field-description {
       color: var(--dangerColor);
@@ -32,7 +32,7 @@
 
   .field-required {
     color: var(--dangerColor);
-    margin-left: 0.6em;
+    margin-left: 0.6rem;
   }
   
   .field-description {
@@ -76,14 +76,14 @@
   .field-input-prefix,
   .field-input-suffix {
     padding: 0 0.8rem;
-    font-size: 0.95em;
+    font-size: 0.95rem;
   }
 }
 
 .checkable-wrapper-v,
 .checkable-wrapper-h {
   display: flex;
-  gap: 1em;
+  gap: 1rem;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -103,7 +103,7 @@
   display: flex;
   align-items: baseline;
   justify-content: stretch;
-  column-gap: 1em;
+  column-gap: 1rem;
   flex-wrap: wrap;
 
   input[type=radio],

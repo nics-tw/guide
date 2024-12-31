@@ -20,28 +20,28 @@
   --body-line-height: 1.7;
   --body-font-size: 16px;
 
-  --description-font-size: 0.82em;
-  --description-letter-spacing: 0.04em;
+  --description-font-size: 0.82rem;
+  --description-letter-spacing: 0.04rem;
 
-  --paragraph-width: 35em;
+  --paragraph-width: 35rem;
   --heading-font-weight: 600;
   
-  --h6-font-size: 1em;
+  --h6-font-size: 1rem;
   --h6-font-weight: 700;
 
-  --h5-font-size: 1.2em;
+  --h5-font-size: 1.2rem;
   --h5-font-weight: 400;
 
-  --h4-font-size: 1.25em;
+  --h4-font-size: 1.25rem;
   --h4-font-weight: 600;
   
-  --h3-font-size: 1.45em;
+  --h3-font-size: 1.45rem;
   --h3-font-weight: 600;
   
-  --h2-font-size: 1.9em;
+  --h2-font-size: 1.9rem;
   --h2-font-weight: 600;
 
-  --h1-font-size: 2.2em;
+  --h1-font-size: 2.2rem;
   --h1-font-weight: 600;
 }
 
@@ -62,8 +62,8 @@ b, strong {
 mark {
   color: var(--textColor);
   background: none;
-  box-shadow: inset 0 -0.6em var(--highlightColor);
-  padding: 0 0.1em;
+  box-shadow: inset 0 -0.6rem var(--highlightColor);
+  padding: 0 0.1rem;
 }
 
 .w-paragraph {
@@ -71,15 +71,15 @@ mark {
 }
 
 :lang(en, vi) {
-  --body-line-height: 1.45em;
+  --body-line-height: 1.45rem;
   --body-font-family: Helvetica, Arial, sans-serif;
-  --description-letter-spacing: 0.01em;
+  --description-letter-spacing: 0.01rem;
 }
 
 h6, h5, h4, h3, h2, h1,
 .heading6, .heading5, .heading4, .heading3, .heading2, .heading1 {
   font-weight: var(--heading-font-weight);
-  line-height: 1.5em;
+  line-height: 1.5rem;
 }
 
 .fs7 {
