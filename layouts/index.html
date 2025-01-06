@@ -38,7 +38,7 @@
       <div class="three-col gap4 mv5">
         {{ range .Site.Sections }}
           {{ if .Pages }}
-            {{ $filepath := printf "%s/_index.md" .File.Dir }}
+            {{ $filepath := path.Join .File.Dir "_index.md" }}
             {{ $doc := .Site.GetPage $filepath }}
             {{ $svgPath := printf "/svgs/feat_%s.svg" .Section }}
             <div class="ph2 tc w-100" style="flex: 1 1 calc(33.333% - 2rem);">
