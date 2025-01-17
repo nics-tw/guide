@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "lint:styles": "npx stylelint '**/*.css' --ignore-path .gitignore",
+    "lint:fix:styles": "npx stylelint '**/*.css' --ignore-path .gitignore --fix"
+  },
   "devDependencies": {
     "stylelint": "^16.12.0",
     "stylelint-config-standard-scss": "^14.0.0",

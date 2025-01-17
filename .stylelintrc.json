@@ -1,4 +1,5 @@
 {
+  "ignoreFiles": ["assets/css/tachyons.css"],
   "extends": "stylelint-config-standard-scss",
   "plugins": ["stylelint-order"],
   "rules": {
