@@ -33,3 +33,4 @@ i18n:
     production:
       key: 已穩定
       desc: 開發完成、歡迎使用。應無任何親和力或使用上問題。
+google_analytics: G-N6NH4PCNQK # your own tracking ID
