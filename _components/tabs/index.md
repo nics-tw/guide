@@ -19,4 +19,4 @@ maturity: "new"
 
 #### 親和力
 
-- 使用 `.tabs-label`，必要使用 `for` 與 `id` 連結 `<label>` 元件與 `<input>` 元件。
+- 使用 `.tabs-label`，必要使用 `for` 連接 `<input>` 元件中的 `id` 。
