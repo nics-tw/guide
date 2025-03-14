@@ -45,7 +45,7 @@ class OfficialDocumentElement extends HTMLElement {
     od.querySelector('.od-date').textContent = this._insertSpace(date)
     od.querySelector('.od-num').textContent = this._insertSpace(documentMeta)
     const dl = od.querySelector('dl')
-    dl.innerHTML = `${this._dt('主旨', title)}${this._dt('依據', dependency)}${this._dt('公告事項', items)}`
+    dl.innerHTML = `${this._dt('主旨', this._escapeHtml(title))}${this._dt('依據', this._escapeHtml(dependency))}${this._dt('公告事項', this._escapeHtml(items))}`
     od.querySelector('.od-admin').textContent = `${adminTitle}　${adminName}`
 
     return od
@@ -58,6 +58,17 @@ class OfficialDocumentElement extends HTMLElement {
   _dt(title, text) { 
     const splitTitle = title.split('').map(t => `<span>${t}</span>`).join('')
     return `<dt>${splitTitle}</dt><dd>${text}</dd>`
+  }
+
+  _escapeHtml(text) {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    }
+    return text.replace(/[&<>"']/g, function(m) { return map[m] })
   }
 
   _css() {
