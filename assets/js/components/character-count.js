@@ -19,7 +19,7 @@ for (const limitedCount of document.querySelectorAll('[data-limit-phrase]')) {
   function updateNotice() {
     const remaining = total - textarea.value.length
     lastRemaining = remaining
-    notice.textContent = phrase.replace(/\|/g, '').replace('{remaining}', Math.max(0, remaining))
+    notice.textContent = phrase.replace('{remaining}', String(Math.max(0, remaining)))
   }
 
   function conditionallyPreventInput(event) {
