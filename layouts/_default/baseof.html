@@ -67,7 +67,12 @@
       </div>
     </footer>
   </div>
-  <script src="{{ "assets/js/main.js" | absURL }}" defer></script>
+  {{ $mainJS := resources.Get "js/main.js" }}
+  {{ if $mainJS }}
+  <script src="{{ $mainJS.RelPermalink }}" defer></script>
+  {{ else }}
+  <!-- js/main.js not found -->
+  {{ end }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </body>
