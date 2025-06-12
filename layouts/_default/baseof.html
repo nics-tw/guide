@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  {{ $mainCSS := resources.Get "css/main.scss" | toCSS }}
+  {{ $mainCSS := resources.Get "css/main.scss" | toCSS (dict "targetPath" "main.css") }}
   {{ $guideCSS := resources.Get "css/guide.scss" | toCSS }}
   <link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">
   <link rel="stylesheet" href="{{ $guideCSS.RelPermalink }}">
+  {{ $langCode := .Site.Language.Lang }}
+  {{ $langCSSPath := printf "css/lang/%s.css" $langCode }}
+  {{ $langCSS := resources.Get $langCSSPath }}
+  {{ if $langCSS }}
+  <link rel="stylesheet" href="{{ $langCSS.RelPermalink }}">
+  {{ else }}
+    {{/* Attempt to load with full language code if short one failed, e.g., zh-TW.css */}}
+    {{ $langFullCode := .Site.Language.LanguageCode }}
+    {{ $langFullCSSPath := printf "css/lang/%s.css" $langFullCode }}
+    {{ $langFullCSS := resources.Get $langFullCSSPath }}
+    {{ if $langFullCSS }}
+  <link rel="stylesheet" href="{{ $langFullCSS.RelPermalink }}">
+    {{ end }}
+  {{ end }}
   <link rel="icon" type="image/png" href="{{ "assets/favicon.png" | absURL }}">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}政府網站設計原則</title>
   <meta charset="UTF-8">

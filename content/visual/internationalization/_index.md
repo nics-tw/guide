@@ -6,8 +6,9 @@ maturity: "alpha"
 
 ### 中文
 
-字體檔案（預設）：[`lang/zh.css`](../../assets/css/lang/zh.css)  
-<link href="../../assets/css/lang/zh.css" rel="stylesheet">
+字體檔案（預設）：[`lang/zh.css`](../../assets/css/lang/zh.css)
+
+<!-- <link href="../../assets/css/lang/zh.css" rel="stylesheet"> --> <!-- Removed, handled by baseof.html -->
 
 <div class="pa4 ba plain w-paragraph nested-copy-separator" lang="zh-hant">
   <h4>什麼是全民健保？</h4>
@@ -28,7 +29,8 @@ maturity: "alpha"
 
 ### 日文
 
-字體檔案：[lang/ja.css](../../assets/css/lang/ja.css)  
+字體檔案：[lang/ja.css](../../assets/css/lang/ja.css)
+
 <link href="../../assets/css/lang/ja.css" rel="stylesheet">
 
 <div class="pa4 ba plain w-paragraph" lang="ja">
