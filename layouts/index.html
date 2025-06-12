@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  {{ $mainCSS := resources.Get "css/main.scss" | css.Sass }}
-  {{ $guideCSS := resources.Get "css/guide.scss" | css.Sass }}
+  {{ $mainCSS := resources.Get "css/main.scss" | toCSS }}
+  {{ $guideCSS := resources.Get "css/guide.scss" | toCSS }}
 
   <link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">
   <link rel="stylesheet" href="{{ $guideCSS.RelPermalink }}">  
