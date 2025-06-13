@@ -1,18 +1,11 @@
 ---
-layout: main
 title: 按鈕及連結 (Button and Link)
 maturity: "alpha"
 ---
 
 ### 常見按鈕
 
-{% capture html %}{% include ctas/button.html %}{% endcapture %}
-{% 
-  include example.html 
-  content=html 
-  i18n_selector="button" 
-  i18n="en-US:Submit,Delete,Cancel;ja:送信,削除,キャンセル;vi:Gửi,Xóa,Hủy;th:ส่ง,ลบ,ยกเลิก"
-%}
+{{< render_example partial="ctas/button.html" i18n_selector="button" i18n="en-US:Submit,Delete,Cancel;ja:送信,削除,キャンセル;vi:Gửi,Xóa,Hủy;th:ส่ง,ลบ,ยกเลิก" >}}
 
 #### CSS
 
@@ -26,13 +19,7 @@ maturity: "alpha"
 
 ### 不可用的按鈕
 
-{% capture html %}{% include ctas/button-disabled.html %}{% endcapture %}
-{% 
-  include example.html 
-  content=html 
-  i18n_selector="button" 
-  i18n="en-US:Submit,Next;ja:送信,次へ;vi:Gửi,Kế tiếp;th:ส่ง,ต่อไป"
-%}
+{{< render_example partial="ctas/button-disabled.html" i18n_selector="button" i18n="en-US:Submit,Next;ja:送信,次へ;vi:Gửi,Kế tiếp;th:ส่ง,ต่อไป" >}}
 
 #### CSS
 
@@ -50,13 +37,7 @@ maturity: "alpha"
 
 ### 按鈕尺寸
 
-{% capture html %}{% include ctas/button-size.html %}{% endcapture %}
-{% 
-  include example.html 
-  content=html 
-  i18n_selector="button"
-  i18n="en-US:Submit;ja:送信;vi:Gửi;th:ส่ง"
-%}
+{{< render_example partial="ctas/button-size.html" i18n_selector="button" i18n="en-US:Submit;ja:送信;vi:Gửi;th:ส่ง" >}}
 
 #### CSS
 
@@ -66,8 +47,7 @@ maturity: "alpha"
 
 ### 連結
 
-{% capture html %}{% include ctas/link.html %}{% endcapture %}
-{% include example.html content=html %}
+{{< render_example partial="ctas/link.html" >}}
 
 #### CSS
 

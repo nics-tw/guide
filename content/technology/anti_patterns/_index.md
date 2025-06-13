@@ -1,5 +1,4 @@
 ---
-layout: main
 title: 反面教材
 text_only: 1
 ---
@@ -18,7 +17,7 @@ text_only: 1
 
 #### 延伸參考資料
 
-- [`prefers-reduced-motion`: Sometimes less movement is more](https://web.dev/articles/prefers-reduced-motion?hl=en)    
+- [`prefers-reduced-motion`: Sometimes less movement is more](https://web.dev/articles/prefers-reduced-motion?hl=en)  
   作者：Thomas Steiner
 
 ### 跑馬燈（Marquee）和輪播（Carousels）
@@ -30,11 +29,11 @@ text_only: 1
 
 #### 延伸參考資料
 
-- [Hero Images/Carousels](https://usability.yale.edu/usability-best-practices/hero-imagescarousels)    
+- [Hero Images/Carousels](https://usability.yale.edu/usability-best-practices/hero-imagescarousels)  
   作者：耶魯大學 ITS
-- [Should I Use A Carousel?](https://shouldiuseacarousel.com/)    
+- [Should I Use A Carousel?](https://shouldiuseacarousel.com/)  
   作者：Jared Smith
-- [Auto-Forwarding Carousels and Accordions Annoy Users and Reduce Visibility](https://www.nngroup.com/articles/auto-forwarding/)    
+- [Auto-Forwarding Carousels and Accordions Annoy Users and Reduce Visibility](https://www.nngroup.com/articles/auto-forwarding/)  
   作者：Jakob Nielsen
 
 ### 跳出的對話框
@@ -47,9 +46,9 @@ text_only: 1
 
 #### 延伸參考資料
 
-- [Infinite Scrolling & Role=Feed Accessibility Issues](https://www.deque.com/blog/infinite-scrolling-rolefeed-accessibility-issues/)    
+- [Infinite Scrolling & Role=Feed Accessibility Issues](https://www.deque.com/blog/infinite-scrolling-rolefeed-accessibility-issues/)  
   作者：Raghavendra Satish Peri
-- [So You Think You’ve Built a Good Infinite Scroll](https://adrianroselli.com/2014/05/so-you-think-you-built-good-infinite.html)    
+- [So You Think You’ve Built a Good Infinite Scroll](https://adrianroselli.com/2014/05/so-you-think-you-built-good-infinite.html)  
   作者：Adrian Roselli
 
 ### 仰賴滑鼠游標的互動行為（如 `:hover`）
@@ -67,7 +66,7 @@ text_only: 1
 
 #### 延伸參考資料
 
-- [The problem with tooltips and what to do instead](https://adamsilver.io/blog/the-problem-with-tooltips-and-what-to-do-instead/)     
+- [The problem with tooltips and what to do instead](https://adamsilver.io/blog/the-problem-with-tooltips-and-what-to-do-instead/)  
   作者：Adam Silver
 
 ### 單獨使用圖示（icon）
@@ -96,7 +95,7 @@ text_only: 1
 
 #### 延伸參考資料
 
-- [Spam-free accessible forms](https://webaim.org/blog/spam_free_accessible_forms/)     
+- [Spam-free accessible forms](https://webaim.org/blog/spam_free_accessible_forms/)  
   作者：Jared Smith
 
 ### 侵入性彈出視窗和通知
@@ -109,7 +108,7 @@ text_only: 1
 
 #### 延伸參考資料
 
-- [PDF Accessibility](https://webaim.org/techniques/acrobat/)    
+- [PDF Accessibility](https://webaim.org/techniques/acrobat/)  
   作者：WebAIM
-- [Creating Accessible PDFs](https://accessibility.huit.harvard.edu/pdf)    
+- [Creating Accessible PDFs](https://accessibility.huit.harvard.edu/pdf)  
   作者：哈佛大學

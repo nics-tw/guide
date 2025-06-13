@@ -1,15 +1,11 @@
 ---
-layout: main
 title: 頁籤 (Tabs)
 maturity: "new"
 ---
 
 ### 常見頁籤
 
-{% capture html %}{% include tabs/tabs.html %}{% endcapture %}
-{%
-  include example.html content=html
-%}
+{{< render_example partial="tabs/tabs.html" >}}
 
 #### CSS
 

@@ -1,5 +1,4 @@
 ---
-layout: main
 title: 麵包屑 (Breadcrumb)
 maturity: "new"
 ---
@@ -11,15 +10,11 @@ maturity: "new"
 
 ### 斜線分隔
 
-{{ $html := partial "breadcrumb/slash-separator.html" . }}
-{{ partial "example.html" (dict "content" $html "context" .) }}
+{{< render_example partial="breadcrumb/slash-separator.html" >}}
 
 ### 箭頭分隔
 
-{% capture html %}{% include breadcrumb/arrow-separator.html %}{% endcapture %}
-{% include example.html
-  content=html
-%}
+{{< render_example partial="breadcrumb/arrow-separator.html" >}}
 
 #### CSS
 

@@ -1,17 +1,11 @@
 ---
-layout: main
 title: 表單欄位 (Form)
 maturity: "alpha"
 ---
 
 ### 簡易欄位
 
-{% capture html %}{% include form/form-elements.html %}{% endcapture %}
-{% include example.html 
-  content=html
-  i18n_selector="[for=name],[for=city],[for=desc]" 
-  i18n="en-US:Full name,City of residence,Description"
-%}
+{{< render_example partial="form/form-elements.html" i18n_selector="[for=name],[for=city],[for=desc]" i18n="en-US:Full name,City of residence,Description" >}}
 
 #### CSS
 
@@ -29,12 +23,7 @@ maturity: "alpha"
 
 ### 選項欄位
 
-{% capture html %}{% include form/form-checkable.html %}{% endcapture %}
-{% include example.html 
-  content=html
-  i18n_selector="[for=id],[for=items]" 
-  i18n="en-US:ID type,Lost document replacement"
-%}
+{{< render_example partial="form/form-checkable.html" i18n_selector="[for=id],[for=items]" i18n="en-US:ID type,Lost document replacement" >}}
 
 #### CSS
 
@@ -44,12 +33,7 @@ maturity: "alpha"
 
 ### 欄位說明
 
-{% capture html %}{% include form/field.html %}{% endcapture %}
-{% include example.html 
-  content=html
-  i18n_selector="label,.field-description li" 
-  i18n="en-US:Email,Address must end with @pdis.nat.gov.tw.;"
-%}
+{{< render_example partial="form/field.html" i18n_selector="label,.field-description li" i18n="en-US:Email,Address must end with @pdis.nat.gov.tw.;" >}}
 
 #### CSS
 
@@ -61,12 +45,7 @@ maturity: "alpha"
 
 ### 必要欄位
 
-{% capture html %}{% include form/field-required.html %}{% endcapture %}
-{% include example.html
-  content=html
-  i18n_selector="label,.field-required" 
-  i18n="en-US:Email,required;"
-%}
+{{< render_example partial="form/field-required.html" i18n_selector="label,.field-required" i18n="en-US:Email,required;" >}}
 
 #### 親和力
 
@@ -74,8 +53,7 @@ maturity: "alpha"
 
 ### 欄位及驗證錯誤內容
 
-{% capture html %}{% include form/field-error.html %}{% endcapture %}
-{% include example.html content=html %}
+{{< render_example partial="form/field-error.html" >}}
 
 #### CSS
 
@@ -87,8 +65,7 @@ maturity: "alpha"
 
 ### 欄位加上頭尾文字
 
-{% capture html %}{% include form/field-fixes.html %}{% endcapture %}
-{% include example.html content=html %}
+{{< render_example partial="form/field-fixes.html" >}}
 
 #### CSS
 
@@ -105,5 +82,5 @@ maturity: "alpha"
 - 沒有使用 [`aria-errormessage`](https://a11ysupport.io/tech/aria/aria-errormessage_attribute) 因為瀏覽器支援不足。
 - 沒有使用 [`aria-invalid`](https://a11ysupport.io/tech/aria/aria-invalid_attribute) 因為元件暫時不支援客戶端驗證。
 - [Why we think online HTML forms are usually better than document-based forms in government
-](https://gds.blog.gov.uk/2021/11/17/why-we-think-online-html-forms-are-usually-better-than-document-based-forms-in-government/)
+  ](https://gds.blog.gov.uk/2021/11/17/why-we-think-online-html-forms-are-usually-better-than-document-based-forms-in-government/)
 - [Why the GOV.UK Design System team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)

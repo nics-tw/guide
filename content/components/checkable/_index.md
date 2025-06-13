@@ -1,17 +1,11 @@
 ---
-layout: main
 title: 多重選擇及補充說明 (Checkable)
 maturity: "alpha"
 ---
 
 ### 追加欄位
 
-{% capture html %}{% include checkable/radios-with-extra-elements.html %}{% endcapture %}
-{% include example.html 
-  content=html
-  i18n_selector="[for=v-healthid-input],[for=v-moica-input],[for=v-phone-input]" 
-  i18n="en-US:Health card ID,Digital Certificate,Cell phone"
-%}
+{{< render_example partial="checkable/radios-with-extra-elements.html" i18n_selector="[for=v-healthid-input],[for=v-moica-input],[for=v-phone-input]" i18n="en-US:Health card ID,Digital Certificate,Cell phone" >}}
 
 #### CSS
 

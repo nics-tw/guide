@@ -1,13 +1,11 @@
 ---
-layout: main
 title: 表格 (Table)
 maturity: "alpha"
 ---
 
 ### 一般表格
 
-{% capture html %}{% include table/table.html %}{% endcapture %}
-{% include example.html content=html %}
+{{< render_example partial="table/table.html" >}}
 
 #### HTML
 
@@ -16,8 +14,7 @@ maturity: "alpha"
 
 ### 左右滑動表格
 
-{% capture html %}{% include table/table-scrollable.html %}{% endcapture %}
-{% include example.html content=html %}
+{{< render_example partial="table/table-scrollable.html" >}}
 
 #### CSS
 
@@ -25,8 +22,7 @@ maturity: "alpha"
 
 ### 明顯分線表格
 
-{% capture html %}{% include table/table-cells.html %}{% endcapture %}
-{% include example.html content=html %}
+{{< render_example partial="table/table-cells.html" >}}
 
 #### CSS
 
@@ -34,8 +30,7 @@ maturity: "alpha"
 
 ### 互動資料表格
 
-{% capture html %}{% include table/table-interactive.html %}{% endcapture %}
-{% include example.html content=html %}
+{{< render_example partial="table/table-interactive.html" >}}
 
 #### Custom Element
 
@@ -53,4 +48,4 @@ maturity: "alpha"
 
 - 語音識別系統（Dragon NaturallySpeaking, MacOS/iOS Voice Control）
 
-<script src="{{ "/assets/js/components/interactive-table-element.js" | absolute_url }}" type="module"></script>
+{{< asset_script "js/components/interactive-table-element.js" >}}
