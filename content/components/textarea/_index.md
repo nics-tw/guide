@@ -4,8 +4,7 @@ title: 文字輸入區塊 (Textarea)
 maturity: "alpha"
 ---
 
-{% capture html %}{% include textarea/index.html %}{% endcapture %}
-{% include example.html content=html %}
+{{< render_example partial="textarea/index.html" >}}
 
 ### JavaScript
 
