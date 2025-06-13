@@ -1,14 +1,9 @@
 ---
-layout: main
 title: 公文 (Official Document)
 maturity: "alpha"
 ---
 
-{% capture html %}{% include official-document/main.html %}{% endcapture %}
-{% 
-  include example.html 
-  content=html
-%}
+{{< render_example partial="official-document/main.html" >}}
 
 ### Custom Element
 
@@ -23,7 +18,8 @@ maturity: "alpha"
 
 #### 純文字格式需求
 
-{% capture html %}
+{{< example-html content=`
+
 <!-- 部門，如「數位發展部」 -->公告
 <!-- 公告日期，如「中華民國112年1月3日」 -->
 <!-- 公告編號號碼，如「數位政府字第 11140006811 號」-->
@@ -31,11 +27,12 @@ maturity: "alpha"
 主旨：<!-- 公文主旨 -->
 依據：<!-- 公文依據 -->
 公告事項：
+
 <!-- 公告事項內文（多行） -->
 
 <!-- 長官職稱 -->
 <!-- 長官姓名 -->
-{% endcapture %}
-{% include example-html.html content=html %}
 
-<script src="{{ "/assets/js/components/official-document-element.js" | absolute_url }}" type="module"></script>
+` >}}
+
+{{< asset_script "js/components/official-document-element.js" >}}
