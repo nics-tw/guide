@@ -23,8 +23,11 @@
       HTML
     </summary>
     <div class="br3 br--bottom overflow-hidden">
-      {{ partial "shortcodes/example-html" (dict "content" .raw_content
-      "context" .context) }}
+      {{- $passed_content := .raw_content -}} {{- $passed_highlight := "" -}}
+      {{- if .context -}} {{- with .context.Params.highlight -}} {{-
+      $passed_highlight = . -}} {{- end -}} {{- end -}} {{- partial
+      "shared/display_code_example.html" (dict "input_content" $passed_content
+      "highlight_terms_string" $passed_highlight) -}}
     </div>
   </details>
 </div>
