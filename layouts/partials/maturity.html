@@ -4,9 +4,10 @@
     class="flex-auto f6 mv0 reset-list flex items-center flex-wrap flex-nowrap-l gap2 br3 w-100 pa0 overflow-hidden bg-layer1"
   >
     {{ $current_maturity_val := .current_maturity }} {{ $maturities_map :=
-    site.Params.maturity }} {{ $num_maturities := len $maturities_map }} {{
-    $processed_count := 0 }} {{ range $maturity_id, $maturity_details :=
-    $maturities_map }} {{/* Hugo 會按鍵的字母順序迭代 map */}}
+    site.Params.maturity }} {{ $maturity_order := site.Params.maturity.order }}
+    {{ $num_maturities := len $maturity_order }} {{ $processed_count := 0 }} {{
+    range $maturity_id := $maturity_order }} {{ $maturity_details := index
+    $maturities_map $maturity_id }} {{/* 按照指定順序迭代 */}}
     <li
       id="maturity-{{ $maturity_id }}"
       class="tc pv2 flex-auto w-100 w-25-l {{ if eq $current_maturity_val $maturity_id }}fw8 bg-layer2{{ else }}fg-subtle{{ end }}"
@@ -21,8 +22,10 @@
   <details class="f6">
     <summary class="fr cursor-help">成熟度說明</summary>
     <ul aria-label="成熟度說明" class="fg-subtle w-100 mv0 pv3">
-      {{ range $maturity_id, $maturity_details := site.Params.maturity }} {{/*
-      Hugo 會按鍵的字母順序迭代 map */}}
+      {{ $maturities_map := site.Params.maturity }} {{ $maturity_order :=
+      site.Params.maturity.order }} {{ range $maturity_id := $maturity_order }}
+      {{ $maturity_details := index $maturities_map $maturity_id }} {{/*
+      按照指定順序迭代 */}}
       <li id="maturity-{{ $maturity_id }}-detail">
         {{ $maturity_details.key }}：{{ $maturity_details.desc }}
       </li>

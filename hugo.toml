@@ -13,6 +13,8 @@ timezone = "Asia/Taipei"
     langs = { "en-US" = "English (US)", "zh-TW" = "正體中文", "ja" = "日本語", "vi" = "Tiếng Việt", "th" = "ไทย" }
 
   [params.maturity]
+    # 定義成熟度標籤的顯示順序
+    order = ["new", "alpha", "beta", "production"]
     [params.maturity.new]
       key = "新提案"
       desc = "未完成開發、請勿使用。"
