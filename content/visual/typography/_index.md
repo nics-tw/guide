@@ -50,22 +50,28 @@ maturity: "alpha"
 
 <div class="ba br3 w-100 pa4 relative flex flex-column gap2 items-start">
 
-<code><h1></code>
+<code>&lt;h1&gt;</code>
+
 <span class="db heading1">標題一</span>
 
-<code><h2></code>
+<code>&lt;h2&gt;</code>
+
 <span class="db heading2">標題二</span>
 
-<code><h3></code>
+<code>&lt;h3&gt;</code>
+
 <span class="db heading3">標題三</span>
 
-<code><h4></code>
+<code>&lt;h4&gt;</code>
+
 <span class="db heading4">標題四</span>
 
-<code><h5></code>
+<code>&lt;h5&gt;</code>
+
 <span class="db heading5">標題五</span>
 
-<code><h6></code>
+<code>&lt;h6&gt;</code>
+
 <span class="db heading6">標題六</span>
 
 </div>
