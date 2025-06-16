@@ -36,16 +36,53 @@
   </header>
   <main class="flex flex-wrap flex-nowrap-l content-start pa4 bt">
     <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
-      {{ range sort .Site.Sections "Title" }}
-  <details class="mb3" {{ if eq .RelPermalink .Permalink }}open{{ end }}>
-    <summary class="pointer mb3">
-      <a class="pa2 mb2" href="{{ .Permalink }}">{{ .Title }}</a>
-    </summary>
-    {{ range sort .Pages "Title" }}
-      <a class="nav-link" {{ if eq .RelPermalink .Permalink }}aria-current="page"{{ end }} href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
-  </details>
-{{ end }}
+      {{/* 使用 where 過濾器的優化版本 */}}
+      {{ $sectionOrder := slice "共用元件" "前端工程原則" "視覺設計" }}
+      {{ $allSections := $.Site.Sections }}
+      {{ $sections := slice }}
+
+      {{/* 按指定順序添加 sections */}}
+      {{ range $sectionOrder }}
+        {{ $targetTitle := . }}
+        {{ $matchingSections := where $allSections "Title" $targetTitle }}
+        {{ if $matchingSections }}
+          {{ $sections = $sections | append (index $matchingSections 0) }}
+        {{ end }}
+      {{ end }}
+
+      {{/* 添加未指定順序的 sections */}}
+      {{ range $allSections }}
+        {{ if not (in $sectionOrder .Title) }}
+          {{ $sections = $sections | append . }}
+        {{ end }}
+      {{ end }}
+      
+      {{ range $sections }}
+        <details class="mb3" {{ if eq .RelPermalink $.RelPermalink }}open{{ end }}>
+          <summary class="pointer mb3">
+            <a class="pa2 mb2" href="{{ .Permalink }}">{{ .Title }}</a>
+          </summary>
+          {{/* 自定義排序：按括號內英文部分排序 */}}
+          {{ $sortedPages := slice }}
+          {{ range .Pages }}
+            {{ $sortKey := .Title }}
+            {{/* 提取括號內的英文部分作為排序鍵 */}}
+            {{ if strings.Contains .Title "(" }}
+              {{ $parts := split .Title "(" }}
+              {{ if gt (len $parts) 1 }}
+                {{ $rightPart := index $parts 1 }}
+                {{ $englishPart := replace $rightPart ")" "" }}
+                {{ $sortKey = $englishPart }}
+              {{ end }}
+            {{ end }}
+            {{ $sortedPages = $sortedPages | append (dict "page" . "sortKey" $sortKey) }}
+          {{ end }}
+          {{/* 按英文排序鍵進行排序 */}}
+          {{ range sort $sortedPages "sortKey" }}
+            <a class="nav-link" {{ if eq .page.RelPermalink $.RelPermalink }}aria-current="page"{{ end }} href="{{ .page.Permalink }}">{{ .page.Title }}</a>
+          {{ end }}
+        </details>
+      {{ end }}
     </nav>
     <div id="main" class="ml4-l flex-auto">
       {{ if .IsHome }}
