@@ -1,6 +1,5 @@
 ---
 title: 反面教材
-text_only: 1
 ---
 
 就算你經常在各大網站上看到以下提及的做法，並<strong>不代表</strong>他們是好的典範。親和力設計專家 Heydon Pickering 在 [Listen To Me And Not Google](https://heydonworks.com/article/listen-to-me-not-google/) 就提及一個實際範例：他當時的客戶希望能夠比照 Google Material Design 的 `<input>` 樣式做設計，但他強烈反對那樣的視覺處理方式，認為會造成很大的使用障礙。但卻因為 Google 這樣大型企業提出了這樣的設計模式，造成他說服客戶上的困難。幾年後，Google 的團隊，如同 Heydon 一開始所提出的專業建議，發現過去的設計確實造成了很大的使用障礙，[透過許多研究後，重新設計了 `<input>`](https://medium.com/google-design/the-evolution-of-material-designs-text-fields-603688b3fe03)。

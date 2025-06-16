@@ -3,47 +3,87 @@ layout: main
 ---
 
 <article>
-
   <h2 class="f4 mt2">製作數位名片</h2>
 
-<p>由人力資源部門製作後，將數位名片 HTML 檔案上傳後，並將網址產生 QR code，印至於名片上。</p>
+  <p>
+    由人力資源部門製作後，將數位名片 HTML 檔案上傳後，並將網址產生 QR
+    code，印至於名片上。
+  </p>
 
-<!--（補充無障礙 QR code 宣告作法 @jedi） -->
-
+  <!--（補充無障礙 QR code 宣告作法 @jedi） -->
 </article>
 
 <div class="flex flex-wrap flex-nowrap-l gap4">
   <form class="w-50-l w-100 fields" data-generate-digital-info>
     <fieldset class="fieldset">
       <label class="field-label" for="organization">單位 （必要欄位）</label>
-      <input class="field-input" type="text" id="organization" name="organization" placeholder="國家資通安全研究院" required>
+      <input
+        class="field-input"
+        type="text"
+        id="organization"
+        name="organization"
+        placeholder="國家資通安全研究院"
+        required
+      />
     </fieldset>
-    
+
     <fieldset class="fieldset">
       <label class="field-label" for="full-name">姓名 （必要欄位）</label>
-      <input class="field-input" type="text" id="full-name" name="full-name" placeholder="王小明" required>
+      <input
+        class="field-input"
+        type="text"
+        id="full-name"
+        name="full-name"
+        placeholder="王小明"
+        required
+      />
     </fieldset>
-    
+
     <fieldset class="fieldset">
       <label class="field-label" for="title">職稱 （必要欄位）</label>
-      <input class="field-input" type="text" id="title" name="title" placeholder="主秘書" required>
+      <input
+        class="field-input"
+        type="text"
+        id="title"
+        name="title"
+        placeholder="主秘書"
+        required
+      />
     </fieldset>
-    
+
     <fieldset class="fieldset">
       <label class="field-label" for="phone">聯絡電話</label>
-      <input class="field-input" type="tel" id="phone" name="phone" placeholder="0900-000-000">
+      <input
+        class="field-input"
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="0900-000-000"
+      />
     </fieldset>
-    
+
     <fieldset class="fieldset">
       <label class="field-label" for="email">電子信箱</label>
-      <input class="field-input" type="email" id="email" name="email" placeholder="tester@nics.nat.gov.tw">
+      <input
+        class="field-input"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="tester@nics.nat.gov.tw"
+      />
     </fieldset>
-    
+
     <fieldset class="fieldset">
       <label class="field-label" for="address">地址</label>
-      <input class="field-input" type="text" id="address" name="address" placeholder="臺北市中正區延平南路 143 號">
+      <input
+        class="field-input"
+        type="text"
+        id="address"
+        name="address"
+        placeholder="臺北市中正區延平南路 143 號"
+      />
     </fieldset>
-    
+
     <div class="bn gap2 flex flex-row">
       <button type="submit" class="button button-primary">確認</button>
       <button type="reset" class="button">重新設定</button>
@@ -65,16 +105,20 @@ layout: main
           <h3 data-address-label class="f6">地址</h3>
           <div data-field data-address>臺北市中正區延平南路 143 號</div>
         </div>
-        <a href class="button mh4 mb4" hidden data-vcard>下載 VCard (.vcf) 檔案</a>
+        <a href class="button mh4 mb4" hidden data-vcard
+          >下載 VCard (.vcf) 檔案</a
+        >
       </div>
     </div>
     <div class="mt3 flex justify-between">
-      <a href class="button" data-export hidden download="digital-info.html">輸出 HTML</a>
+      <a href class="button" data-export hidden download="digital-info.html"
+        >輸出 HTML</a
+      >
     </div>
   </div>
 </div>
 
-<script src="{{ "components/digital-info/main.js" | absolute_url }}" defer></script>
+{{< asset_script "js/components/digital-info/main.js" >}}
 <style>
   [data-default] {
     opacity: 0.6;
@@ -95,10 +139,23 @@ layout: main
     vertical-align: text-bottom;
   }
 
-  [data-default] [data-organization]:before { background: var(--borderColor); width: 148px; }
-  [data-default] [data-full-name]:before { width: 62px; }
-  [data-default] [data-title]:before { width: 124px; }
-  [data-default] [data-phone]:before { width: 124px; }
-  [data-default] [data-email]:before { width: 265px; }
-  [data-default] [data-address]:before { width: 322px; }
+  [data-default] [data-organization]:before {
+    background: var(--borderColor);
+    width: 148px;
+  }
+  [data-default] [data-full-name]:before {
+    width: 62px;
+  }
+  [data-default] [data-title]:before {
+    width: 124px;
+  }
+  [data-default] [data-phone]:before {
+    width: 124px;
+  }
+  [data-default] [data-email]:before {
+    width: 265px;
+  }
+  [data-default] [data-address]:before {
+    width: 322px;
+  }
 </style>

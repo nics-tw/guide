@@ -1,6 +1,5 @@
 ---
 title: 漸進增強
-text_only: 1
 ---
 
 請參考 [Wikipedia 漸進增強文件](https://zh.wikipedia.org/wiki/漸進增強)及 <span lang="en">[Progressive enhancement is still important](https://jakearchibald.com/2013/progressive-enhancement-still-important/)</span>。
@@ -9,9 +8,16 @@ text_only: 1
 
 第一步：使用正確的 HTML 元件寫出最基本且**立即可用**的功能。
 
-<div class="br3 br--bottom overflow-hidden">
-  {{< example-html content="<form action=\"/signup\">\n  <fieldset>\n    <label for=\"username\">使用者名稱</label>\n    <input type=\"text\" id=\"username\" autocomplete=\"username\">\n  </fieldset>\n</form>" highlight="form,label,input,action" >}}
-</div>
+{{< example-html
+content=`<form action="/signup">
+
+  <fieldset>
+    <label for="username">使用者名稱</label>
+    <input type="text" id="username" autocomplete="username">
+  </fieldset>
+</form>` 
+  highlight="fieldset,label,input"
+>}}
 
 第二步：加上需要的 CSS classes。
 

@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap');
+
+[lang^="zh"] {
+  font-family: helvetica, 'Noto Sans TC', system-ui, sans-serif;
+}

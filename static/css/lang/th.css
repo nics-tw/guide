@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap');
+
+[lang^="th"] {
+  font-family: helvetica, 'Noto Sans Thai', system-ui, sans-serif;
+}

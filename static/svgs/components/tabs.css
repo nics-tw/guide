@@ -1,0 +1,63 @@
+:root {
+    --tabs-header-bg: var(--backgroundColor);
+    --tabs-header-fontColor: var(--textColor);
+    --tabs-header-active-bg: var(--primaryColor);
+    --tabs-header-active-fontColor: var(--backgroundColor);
+    --tabs-header-hover-bg: var(--borderColor);
+    --tabs-header-hover-fontColor: var(--textColor);
+    --tabs-body-bg: var(--backgroundColor);
+    --tabs-border: var(--borderColor);
+}
+
+.tabs {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabs-label {
+    cursor: pointer;
+    background: var(--tabs-header-bg);
+    color: var(--tabs-header-fontColor);
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: 2px solid var(--tabs-border);
+    border-bottom: none;
+    padding: 10px 15px;
+    float: left;
+    margin-right: 2px;
+    font: italic 1rem;
+    cursor: pointer;
+}
+
+label:hover {
+    background: var(--tabs-header-hover-bg);
+    color: var(--tabs-header-hover-fontColor);
+}
+
+.tabs-radio:checked+.tabs-label {
+    font-weight: bold;
+    background: var(--tabs-header-active-bg);
+    color: var(--tabs-header-active-fontColor);
+}
+
+.tabs-radio:checked+.tabs-label+.tabs-content {
+    display: initial;
+}
+
+.tabs-radio {
+    display: none;
+}
+
+.tabs-content {
+    order: 1;
+    width: 100%;
+    float: left;
+    clear: both;
+    position: relative;
+    background: var(--tabs-body-bg);
+    border-radius: 0 10px 10px 10px;
+    border: 2px solid var(--tabs-border);
+    padding: 1rem;
+    height: auto;
+    display: none;
+}

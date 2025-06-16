@@ -1,8 +1,5 @@
 ---
-
 title: 前端工程原則
-layout: main
-text_only: 1
 ---
 
 <blockquote lang="en">

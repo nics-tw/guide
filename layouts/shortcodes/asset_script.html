@@ -1,5 +1,2 @@
-{{ $srcAssetPath := .Get 0 }} {{ $js := resources.Get $srcAssetPath }} {{ if $js
-}}
-<script src="{{ $js.RelPermalink }}" type="module"></script>
-{{ else }} {{ warnf "JS Shortcode: Resource not found at path '%s'"
-$srcAssetPath }} {{ end }}
+{{- $src := .Get 0 -}}
+<script src="{{ $src | relURL }}" type="module"></script>
