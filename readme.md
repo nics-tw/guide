@@ -58,11 +58,11 @@
 ## 開發
 
 ```
-jekyll server -w
+hugo server
 ```
 
 Run lighthouse locally:
 
 ```
-npx @lhci/cli assert --url=http://localhost:4000/
+npx @lhci/cli assert --url=http://localhost:1313/
 ```

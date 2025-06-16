@@ -1,5 +1,4 @@
 ---
-layout: main
 title: 可搜尋選項列表 (Datalist)
 maturity: "new"
 ---
@@ -17,8 +16,7 @@ maturity: "new"
 
 ### 基本樣式
 
-{% capture html %}{% include datalist/index.html %}{% endcapture %}
-{% include example.html content=html %}
+{{< render_example partial="datalist/index.html" >}}
 
 - 可以分別試試輸入「tw」、「臺灣」看看
 

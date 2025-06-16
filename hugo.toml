@@ -8,6 +8,7 @@ timezone = "Asia/Taipei"
     outputStyle = "compressed"
 
 [params]
+  google_analytics = "G-N6NH4PCNQK"
   [params.i18n]
     langs = { "en-US" = "English (US)", "zh-TW" = "正體中文", "ja" = "日本語", "vi" = "Tiếng Việt", "th" = "ไทย" }
 

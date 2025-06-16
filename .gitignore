@@ -1,5 +1,3 @@
-# May be related to jekyll
-_site
 .DS_Store
 .lighthouseci
 .sass-cache
