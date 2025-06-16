@@ -58,7 +58,7 @@
       {{ end }}
       
       {{ range $sections }}
-        <details class="mb3" {{ if eq .RelPermalink $.RelPermalink }}open{{ end }}>
+        <details class="mb3" {{ if hasPrefix $.RelPermalink .RelPermalink }}open{{ end }}>
           <summary class="pointer mb3">
             <a class="pa2 mb2" href="{{ .Permalink }}">{{ .Title }}</a>
           </summary>
