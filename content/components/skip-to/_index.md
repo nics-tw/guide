@@ -1,5 +1,4 @@
 ---
-layout: main
 title: 跳至主要內容區 (Skip-To)
 maturity: "alpha"
 ---
@@ -8,17 +7,15 @@ maturity: "alpha"
 
 ### 基礎使用方式
 
-{{ $html1 := \`<skip-to>
+{{< example-html content=`<skip-to>
   <a href="#main" class="skip-to">跳至主要內容區</a>
-</skip-to>\` }}
-
-<div class="br3 mb4 overflow-hidden">{{< example-html content=$html1 >}}</div>
+</skip-to>` >}}
 
 <iframe src="{{< get_permalink "components/skip-to/skip-to.html" >}}" class="w-100 ba br3 mb3" style="height: 150px;" title="跳至主要內容區範例"></iframe>
 
 #### Custom Element
 
-- 使用 [<code><skip-to></code>]({{ "js/components/skip-to-element.js" | relURL }})。
+- 使用 [<code class="language-plaintext highlighter-rouge">&lt;skip-to&gt;</code>](/js/components/skip-to-element.js)。
 
 #### 漸進增強規則
 
@@ -26,13 +23,13 @@ maturity: "alpha"
 
 ### 提供多個彈跳點
 
-{{ $html2 := \`
+{{< example-html content=`
 <skip-to>
   <a href="#main" class="skip-to">跳至主要內容區</a>
   <a href="#navigation" class="skip-to">跳至主要連結表</a>
   <a href="#footer" class="skip-to">跳至頁尾</a>
-</skip-to>\` }}
-
-<div class="br3 mb4 overflow-hidden">{{< example-html content=$html2 >}}</div>
+</skip-to>` >}}
 
 <iframe src="{{< get_permalink "components/skip-to/skip-to-multiple.html" >}}" class="w-100 ba br3 mb3" style="height: 360px;" title="提供多個彈跳點範例"></iframe>
+
+{{< asset_script "js/components/skip-to-element.js" >}}
