@@ -14,7 +14,7 @@ title: 多國語系支援
 
 在 HTML 中使用 `lang` 屬性來標識每個區塊的語言。這有助於翻譯服務識別和處理不同語言的內容。
 
-{{< render_example partial="technology/internationalization/example1.html" >}}
+{{< live-example partial="technology/internationalization/example1.html" >}}
 
 #### 避免文字在圖像中
 

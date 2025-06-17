@@ -16,7 +16,7 @@ maturity: "new"
 
 ### 基本樣式
 
-{{< render_example partial="datalist/index.html" >}}
+{{< live-example partial="datalist/index.html" >}}
 
 - 可以分別試試輸入「tw」、「臺灣」看看
 

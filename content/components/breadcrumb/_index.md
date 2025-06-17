@@ -10,11 +10,11 @@ maturity: "new"
 
 ### 斜線分隔
 
-{{< render_example partial="breadcrumb/slash-separator.html" >}}
+{{< live-example partial="breadcrumb/slash-separator.html" >}}
 
 ### 箭頭分隔
 
-{{< render_example partial="breadcrumb/arrow-separator.html" >}}
+{{< live-example partial="breadcrumb/arrow-separator.html" >}}
 
 #### CSS
 

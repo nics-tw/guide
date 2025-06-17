@@ -1,5 +1,4 @@
 ---
-layout: main
 title: 意見回覆．聯絡我們
 ---
 

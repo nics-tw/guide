@@ -1,2 +1,0 @@
-{{ $pagePath := .Get 0 }} {{ $page := site.GetPage $pagePath }} {{ if $page }}
-{{ $page.Permalink }} {{ else }} Page not found: {{ $pagePath }} {{ end }}

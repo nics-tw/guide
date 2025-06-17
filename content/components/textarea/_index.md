@@ -3,7 +3,7 @@ title: 文字輸入區塊 (Textarea)
 maturity: "alpha"
 ---
 
-{{< render_example partial="textarea/index.html" >}}
+{{< live-example partial="textarea/index.html" >}}
 
 ### JavaScript
 

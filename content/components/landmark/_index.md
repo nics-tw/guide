@@ -5,7 +5,7 @@ maturity: "alpha"
 
 ### 空白範本
 
-[空白範本]({{< get_permalink "components/landmark/blank.html" >}})原始碼。
+[空白範本](/components/landmark/blank.html)原始碼。
 
 <div class="bg-layer1 overflow-auto f6 ph3 pv3 highlight maxh br3 fs7">
   <pre data-fetch-url="/components/landmark/blank.html"></pre>

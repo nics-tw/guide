@@ -1,5 +1,4 @@
 ---
-layout: main
 title: 政府網站設計原則親和力宣告
 ---
 
@@ -18,7 +17,7 @@ title: 政府網站設計原則親和力宣告
 ### 符合狀態
 
 全球資訊網協會在 <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> 定義網頁設計師及開發者應該如何促進身心障礙者使用網頁的親和力，在其中對親和力的符合狀態分成三個符合等級：等級 A、等級 AA、等級 AAA。<span class="basic-information website-name">政府網站設計原則</span>
-	<span class="basic-information conformance-status" data-printfilter="lowercase">完全符合</span> <span class="basic-information conformance-standard"><span data-negate="">WCAG 2.1 等級 AA</span> 的要求。</span><span>「<span class="basic-information conformance-status">完全符合</span>」的意思是<span class="basic-information conformance-meaning">所有內容完全依照親和力標準的要求來製作，沒有任何例外</span>。</span>
+<span class="basic-information conformance-status" data-printfilter="lowercase">完全符合</span> <span class="basic-information conformance-standard"><span data-negate="">WCAG 2.1 等級 AA</span> 的要求。</span><span>「<span class="basic-information conformance-status">完全符合</span>」的意思是<span class="basic-information conformance-meaning">所有內容完全依照親和力標準的要求來製作，沒有任何例外</span>。</span>
 
 #### 額外的親和力考量
 

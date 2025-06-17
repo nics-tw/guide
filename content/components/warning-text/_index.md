@@ -3,7 +3,7 @@ title: 警告文字 (Warning Text)
 maturity: "alpha"
 ---
 
-{{< render_example partial="warning-text/block.html" >}}
+{{< live-example partial="warning-text/block.html" >}}
 
 ### CSS
 

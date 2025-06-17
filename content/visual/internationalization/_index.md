@@ -28,7 +28,7 @@ maturity: "alpha"
 
 ### 日文
 
-字體檔案：[lang/ja.css](/css/lang/ja.css)
+字體檔案：[`lang/ja.css`](/css/lang/ja.css)
 
 <link href="/css/lang/ja.css" rel="stylesheet">
 

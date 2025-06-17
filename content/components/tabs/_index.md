@@ -5,7 +5,7 @@ maturity: "new"
 
 ### 常見頁籤
 
-{{< render_example partial="tabs/tabs.html" >}}
+{{< live-example partial="tabs/tabs.html" >}}
 
 #### CSS
 

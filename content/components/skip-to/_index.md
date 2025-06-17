@@ -7,11 +7,11 @@ maturity: "alpha"
 
 ### 基礎使用方式
 
-{{< example-html content=`<skip-to>
+{{< code-example content=`<skip-to>
   <a href="#main" class="skip-to">跳至主要內容區</a>
 </skip-to>` >}}
 
-<iframe src="{{< get_permalink "components/skip-to/skip-to.html" >}}" class="w-100 ba br3 mb3" style="height: 150px;" title="跳至主要內容區範例"></iframe>
+<iframe src="components/skip-to/skip-to.html" class="w-100 ba br3 mb3" style="height: 150px;" title="跳至主要內容區範例"></iframe>
 
 #### Custom Element
 
@@ -23,13 +23,13 @@ maturity: "alpha"
 
 ### 提供多個彈跳點
 
-{{< example-html content=`
+{{< code-example content=`
 <skip-to>
   <a href="#main" class="skip-to">跳至主要內容區</a>
   <a href="#navigation" class="skip-to">跳至主要連結表</a>
   <a href="#footer" class="skip-to">跳至頁尾</a>
 </skip-to>` >}}
 
-<iframe src="{{< get_permalink "components/skip-to/skip-to-multiple.html" >}}" class="w-100 ba br3 mb3" style="height: 360px;" title="提供多個彈跳點範例"></iframe>
+<iframe src="{components/skip-to/skip-to-multiple.html" class="w-100 ba br3 mb3" style="height: 360px;" title="提供多個彈跳點範例"></iframe>
 
-{{< asset_script "js/components/skip-to-element.js" >}}
+{{< asset-script "js/components/skip-to-element.js" >}}

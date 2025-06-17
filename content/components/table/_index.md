@@ -5,7 +5,7 @@ maturity: "alpha"
 
 ### 一般表格
 
-{{< render_example partial="table/table.html" >}}
+{{< live-example partial="table/table.html" >}}
 
 #### HTML
 
@@ -14,7 +14,7 @@ maturity: "alpha"
 
 ### 左右滑動表格
 
-{{< render_example partial="table/table-scrollable.html" >}}
+{{< live-example partial="table/table-scrollable.html" >}}
 
 #### CSS
 
@@ -22,7 +22,7 @@ maturity: "alpha"
 
 ### 明顯分線表格
 
-{{< render_example partial="table/table-cells.html" >}}
+{{< live-example partial="table/table-cells.html" >}}
 
 #### CSS
 
@@ -30,7 +30,7 @@ maturity: "alpha"
 
 ### 互動資料表格
 
-{{< render_example partial="table/table-interactive.html" >}}
+{{< live-example partial="table/table-interactive.html" >}}
 
 #### Custom Element
 
@@ -48,4 +48,4 @@ maturity: "alpha"
 
 - 語音識別系統（Dragon NaturallySpeaking, MacOS/iOS Voice Control）
 
-{{< asset_script "js/components/interactive-table-element.js" >}}
+{{< asset-script "js/components/interactive-table-element.js" >}}

@@ -5,7 +5,7 @@ maturity: "alpha"
 
 ### 樣式
 
-{{< render_example partial="visual/typography/example1.html" >}}
+{{< live-example partial="visual/typography/example1.html" >}}
 
 #### 注意事項
 

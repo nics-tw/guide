@@ -1,6 +1,0 @@
-{{ define "main" }} {{ if not .Params.text_only }}
-<article class="w-paragraph nested-copy-separator">
-  <h2>{{ .Title }}</h2>
-  {{ .Content }}
-</article>
-{{ else }} {{ .Content }} {{ end }} {{ end }}

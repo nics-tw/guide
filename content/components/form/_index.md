@@ -5,7 +5,7 @@ maturity: "alpha"
 
 ### 簡易欄位
 
-{{< render_example partial="form/form-elements.html" i18n_selector="[for=name],[for=city],[for=desc]" i18n="en-US:Full name,City of residence,Description" >}}
+{{< live-example partial="form/form-elements.html" i18n_selector="[for=name],[for=city],[for=desc]" i18n="en-US:Full name,City of residence,Description" >}}
 
 #### CSS
 
@@ -23,7 +23,7 @@ maturity: "alpha"
 
 ### 選項欄位
 
-{{< render_example partial="form/form-checkable.html" i18n_selector="[for=id],[for=items]" i18n="en-US:ID type,Lost document replacement" >}}
+{{< live-example partial="form/form-checkable.html" i18n_selector="[for=id],[for=items]" i18n="en-US:ID type,Lost document replacement" >}}
 
 #### CSS
 
@@ -33,7 +33,7 @@ maturity: "alpha"
 
 ### 欄位說明
 
-{{< render_example partial="form/field.html" i18n_selector="label,.field-description li" i18n="en-US:Email,Address must end with @pdis.nat.gov.tw.;" >}}
+{{< live-example partial="form/field.html" i18n_selector="label,.field-description li" i18n="en-US:Email,Address must end with @pdis.nat.gov.tw.;" >}}
 
 #### CSS
 
@@ -45,7 +45,7 @@ maturity: "alpha"
 
 ### 必要欄位
 
-{{< render_example partial="form/field-required.html" i18n_selector="label,.field-required" i18n="en-US:Email,required;" >}}
+{{< live-example partial="form/field-required.html" i18n_selector="label,.field-required" i18n="en-US:Email,required;" >}}
 
 #### 親和力
 
@@ -53,7 +53,7 @@ maturity: "alpha"
 
 ### 欄位及驗證錯誤內容
 
-{{< render_example partial="form/field-error.html" >}}
+{{< live-example partial="form/field-error.html" >}}
 
 #### CSS
 
@@ -65,7 +65,7 @@ maturity: "alpha"
 
 ### 欄位加上頭尾文字
 
-{{< render_example partial="form/field-fixes.html" >}}
+{{< live-example partial="form/field-fixes.html" >}}
 
 #### CSS
 

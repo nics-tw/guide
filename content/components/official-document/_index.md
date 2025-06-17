@@ -3,7 +3,7 @@ title: 公文 (Official Document)
 maturity: "alpha"
 ---
 
-{{< render_example partial="official-document/main.html" >}}
+{{< live-example partial="official-document/main.html" >}}
 
 ### Custom Element
 
@@ -18,7 +18,7 @@ maturity: "alpha"
 
 #### 純文字格式需求
 
-{{< example-html content=`
+{{< code-example content=`
 
 <!-- 部門，如「數位發展部」 -->公告
 <!-- 公告日期，如「中華民國112年1月3日」 -->
@@ -35,4 +35,4 @@ maturity: "alpha"
 
 ` >}}
 
-{{< asset_script "js/components/official-document-element.js" >}}
+{{< asset-script "js/components/official-document-element.js" >}}
