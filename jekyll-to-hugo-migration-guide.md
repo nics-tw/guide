@@ -42,7 +42,7 @@
 ### 4. 路徑處理方式
 
 - **Jekyll**: 使用 `absolute_url` 過濾器和 `{% link %}` 標籤
-- **Hugo**: 使用相對路徑和內建函數如 `relURL`、`absURL`
+- **Hugo**: 優先使用 Hugo shortcodes（`{{< ref >}}`、`relURL`），其次使用相對路徑
 
 ### 5. 組件系統
 
@@ -140,10 +140,10 @@ maturity: "alpha"
 [空白範本]({{ path }})
 ```
 
-#### Hugo - 相對路徑
+#### Hugo - Hugo Shortcodes（推薦）
 
 ```markdown
-[空白範本](/components/landmark/blank.html)
+[空白範本]({{< ref "components/landmark/blank.html" >}})
 ```
 
 ### 程式碼範例顯示
@@ -166,6 +166,76 @@ maturity: "alpha"
   <a href="#main" class="skip-to">跳至主要內容區</a>
 </skip-to>` >}}
 ```
+
+## 內部連結最佳實踐
+
+在 Hugo 專案中，處理內部連結時應優先採用 Hugo 提供的 shortcodes，這能確保連結的可靠性和維護性。
+
+### 推薦的連結處理方式
+
+#### 1. 使用 `{{< ref >}}` shortcode（強烈推薦）
+
+```markdown
+[組件範例]({{< ref "components/form/_index.md" >}})
+[空白範本]({{< ref "components/landmark/blank.html" >}})
+```
+
+**優勢**：
+
+- 自動驗證連結有效性，建置時會檢查目標檔案是否存在
+- 支援相對路徑解析，無需擔心網站部署路徑變更
+- 支援錨點連結：`{{< ref "components/form/_index.md#基本使用" >}}`
+
+#### 2. 使用 `relURL` 函數
+
+```markdown
+[組件列表]({{< relURL "/components/" >}})
+```
+
+**適用場景**：
+
+- 連結到靜態資源（如 CSS、JS、圖片）
+- 需要動態生成 URL 的情況
+
+#### 3. 硬編碼相對路徑（不推薦）
+
+```markdown
+[組件範例](/components/form/)
+```
+
+**問題**：
+
+- 無法在建置時驗證連結有效性
+- 網站結構變更時容易產生死連結
+- 維護成本較高
+
+### 實際對比範例
+
+#### 不推薦的寫法
+
+```markdown
+<!-- 硬編碼路徑，無法驗證有效性 -->
+
+[表單組件](/components/form/)
+[空白範本](/components/landmark/blank.html)
+```
+
+#### 推薦的寫法
+
+```markdown
+<!-- 使用 Hugo shortcodes，建置時自動驗證 -->
+
+[表單組件]({{< ref "components/form/_index.md" >}})
+[空白範本]({{< ref "components/landmark/blank.html" >}})
+```
+
+### 連結驗證機制
+
+使用 `{{< ref >}}` 的好處是 Hugo 會在建置過程中：
+
+1. 檢查目標檔案是否存在
+2. 自動解析正確的 URL 路徑
+3. 如果連結無效會產生建置錯誤，提早發現問題
 
 ## Shortcodes 使用場景詳解
 
@@ -390,7 +460,7 @@ maturity: "alpha"
 #### Hugo 版本
 
 ```markdown
-[空白範本](/components/landmark/blank.html)原始碼。
+[空白範本]({{< ref "components/landmark/blank.html" >}})原始碼。
 
 <div class="bg-layer1 overflow-auto f6 ph3 pv3 highlight maxh br3 fs7">
   <pre data-fetch-url="/components/landmark/blank.html"></pre>
@@ -403,9 +473,11 @@ maturity: "alpha"
 
 **A**:
 
+- **優先使用 Hugo shortcodes**：使用 `{{< ref >}}` 來建立內部連結，這能在建置時自動驗證連結有效性
 - 檢查檔案是否存在於正確位置
 - 使用相對路徑而非絕對路徑
 - 確認 Hugo 的 `baseURL` 設定正確
+- 避免硬編碼路徑，改用 `{{< ref >}}` 或 `relURL` 函數
 
 ### Q2: CSS 或 JS 資源載入失敗？
 

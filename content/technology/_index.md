@@ -22,7 +22,7 @@ Engineering has a direct and vital impact on the quality of life <b>for all peop
 
 - 效能：是否可以在最快的速度下完成使用者所想要達成的目的？
 - 親和力：是否可以讓使用者在沒有障礙的流程中達成目的？
-- 使用者經驗：使否可以在順暢的方式達成目的？
+- 使用者經驗：是否可以在順暢的方式達成目的？
 
 #### 可維護性
 
