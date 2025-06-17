@@ -1,5 +1,4 @@
 ---
-layout: main
 title: 頁面地標架構 (Landmark)
 maturity: "alpha"
 ---
@@ -9,13 +8,13 @@ maturity: "alpha"
 [空白範本]({{< get_permalink "components/landmark/blank.html" >}})原始碼。
 
 <div class="bg-layer1 overflow-auto f6 ph3 pv3 highlight maxh br3 fs7">
-  <pre data-fetch-url="{{< get_permalink "components/landmark/blank.html" >}}"></pre>
+  <pre data-fetch-url="/components/landmark/blank.html"></pre>
 </div>
 
 ### 單欄位範本
 
-[單欄位範本]({{< get_permalink "components/landmark/one-column.html" >}})原始碼。
+[單欄位範本](/components/landmark/one-column.html)原始碼。
 
 <div class="bg-layer1 overflow-auto f6 ph3 pv3 highlight maxh br3 fs7">
-  <pre data-fetch-url="{{< get_permalink "components/landmark/one-column.html" >}}"></pre>
+  <pre data-fetch-url="/components/landmark/one-column.html"></pre>
 </div>
