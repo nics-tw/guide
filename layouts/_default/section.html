@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="w-paragraph nested-copy-separator">
+  <h2>{{ .Title }}</h2>
+  {{ if .Params.maturity }}
+    {{ partial "maturity.html" (dict "current_maturity" .Params.maturity) }}
+  {{ end }}
+  {{ .Content }}
+  {{ if .Pages }}
+    <ul>
+      {{ range .Pages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</article>
+{{ end }}

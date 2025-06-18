@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  {{ $mainCSS := resources.Get "css/main.scss" | toCSS (dict "targetPath" "main.css") }}
+  {{ $guideCSS := resources.Get "css/guide.scss" | toCSS }}
+  <link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $guideCSS.RelPermalink }}">
+  {{ $langCode := .Site.Language.Lang }}
+  {{ $langCSSPath := printf "css/lang/%s.css" $langCode }}
+  {{ $langCSS := resources.Get $langCSSPath }}
+  {{ if $langCSS }}
+  <link rel="stylesheet" href="{{ $langCSS.RelPermalink }}">
+  {{ else }}
+    {{/* Attempt to load with full language code if short one failed, e.g., zh-TW.css */}}
+    {{ $langFullCode := .Site.Language.LanguageCode }}
+    {{ $langFullCSSPath := printf "css/lang/%s.css" $langFullCode }}
+    {{ $langFullCSS := resources.Get $langFullCSSPath }}
+    {{ if $langFullCSS }}
+  <link rel="stylesheet" href="{{ $langFullCSS.RelPermalink }}">
+    {{ end }}
+  {{ end }}
+  <link rel="icon" type="image/png" href="{{ "assets/favicon.png" | absURL }}">
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}政府網站設計原則</title>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="one-column">
+  <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
+  <header class="header ph4 pv4">
+    <a href="{{ "/" | absURL }}" class="logo no-underline bw1 color-inherit inline-flex items-center">
+      <div class="logo-svg mr3">{{ partial "components.svg" . }}</div>
+      <h1 class="heading4">政府網站設計原則</h1>
+    </a>
+  </header>
+  <main class="flex flex-wrap flex-nowrap-l content-start pa4 bt">
+    <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
+      {{/* 使用 where 過濾器的優化版本 */}}
+      {{ $sectionOrder := slice "共用元件" "前端工程原則" "視覺設計" }}
+      {{ $allSections := $.Site.Sections }}
+      {{ $sections := slice }}
+
+      {{/* 按指定順序添加 sections */}}
+      {{ range $sectionOrder }}
+        {{ $targetTitle := . }}
+        {{ $matchingSections := where $allSections "Title" $targetTitle }}
+        {{ if $matchingSections }}
+          {{ $sections = $sections | append (index $matchingSections 0) }}
+        {{ end }}
+      {{ end }}
+
+      {{/* 添加未指定順序的 sections */}}
+      {{ range $allSections }}
+        {{ if not (in $sectionOrder .Title) }}
+          {{ $sections = $sections | append . }}
+        {{ end }}
+      {{ end }}
+      
+      {{ range $sections }}
+        <details class="mb3" {{ if hasPrefix $.RelPermalink .RelPermalink }}open{{ end }}>
+          <summary class="pointer mb3">
+            <a class="pa2 mb2" href="{{ .Permalink }}">{{ .Title }}</a>
+          </summary>
+          {{/* 自定義排序：按括號內英文部分排序 */}}
+          {{ $sortedPages := slice }}
+          {{ range .Pages }}
+            {{ $sortKey := .Title }}
+            {{/* 提取括號內的英文部分作為排序鍵 */}}
+            {{ if strings.Contains .Title "(" }}
+              {{ $parts := split .Title "(" }}
+              {{ if gt (len $parts) 1 }}
+                {{ $rightPart := index $parts 1 }}
+                {{ $englishPart := replace $rightPart ")" "" }}
+                {{ $sortKey = $englishPart }}
+              {{ end }}
+            {{ end }}
+            {{ $sortedPages = $sortedPages | append (dict "page" . "sortKey" $sortKey) }}
+          {{ end }}
+          {{/* 按英文排序鍵進行排序 */}}
+          {{ range sort $sortedPages "sortKey" }}
+            <a class="nav-link" {{ if eq .page.RelPermalink $.RelPermalink }}aria-current="page"{{ end }} href="{{ .page.Permalink }}">{{ .page.Title }}</a>
+          {{ end }}
+        </details>
+      {{ end }}
+    </nav>
+    <div id="main" class="ml4-l flex-auto">
+      {{ if .IsHome }}
+        {{ block "main" . }}{{ end }}
+      {{ else }}
+        {{ if not .Params.text_only }}
+          <article class="w-paragraph nested-copy-separator">
+            <h2>{{ .Title }}</h2>
+  {{ if .Params.maturity }}
+                      {{ partial "maturity.html" (dict "current_maturity" .Params.maturity) }}
+                    {{ end }}
+            {{ .Content }}
+          </article>
+        {{ else }}
+          {{ .Content }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </main>
+  <div class="one-column bg-layer1">
+    <footer class="site-footer f6 flex items-start gap4">
+      <div class="lh-solid w2">{{ partial "components.svg" . }}</div>
+      <div class="mw5 flex flex-column gap2">
+        <a href="{{ "accessibility-statement" | relURL }}">親和力宣告</a>
+        <a href="{{ "contact" | relURL }}">意見回覆．聯絡我們</a>
+      </div>
+    </footer>
+  </div>
+    {{ $mainJS := resources.Get "js/main.js" }} {{ if $mainJS }}
+    <script src="{{ $mainJS.RelPermalink }}" defer></script>
+    {{ end }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</body>
+</html>
