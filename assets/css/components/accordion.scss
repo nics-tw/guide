@@ -1,13 +1,13 @@
 // 變數定義
-$accordion-header-bg: var(--backgroundColor);  
-$accordion-header-active-bg: var(--primaryColor);  
-$accordion-body-bg: var(--backgroundColor);  
-$accordion-header-fontColor: var(--textColor); 
-$accordion-header-active-fontColor: var(--backgroundColor); 
-$accordion-body-border: var(--borderColor); 
-$accordion-body-active-border:var(--secondaryTextColor);
-$accordion-icon-url: url("/assets/svg/downarrow.svg") ;
-$accordion-icon-active-url: url("/assets/svg/uparrow.svg");
+$accordion-header-bg: var(--backgroundColor);
+$accordion-header-active-bg: var(--primaryColor);
+$accordion-body-bg: var(--backgroundColor);
+$accordion-header-fontColor: var(--textColor);
+$accordion-header-active-fontColor: var(--backgroundColor);
+$accordion-body-border: var(--borderColor);
+$accordion-body-active-border: var(--secondaryTextColor);
+$accordion-icon-url: url("/svgs/downarrow.svg");
+$accordion-icon-active-url: url("/svgs/uparrow.svg");
 
 .accordion {
   width: 100%;
@@ -37,7 +37,7 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
       font-size: 16px;
       font-weight: 600;
     }
-    
+
     .sub-title {
       display: block;
       font-size: 14px;
@@ -46,7 +46,7 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
     }
 
     &::after {
-      content: '';
+      content: "";
       background-image: $accordion-icon-url;
       background-repeat: no-repeat;
       background-size: 20px;
@@ -88,7 +88,8 @@ $accordion-icon-active-url: url("/assets/svg/uparrow.svg");
     border: 0.1rem solid $accordion-body-border;
     border-bottom: none;
 
-    &:first-child, label {
+    &:first-child,
+    label {
       border-top-left-radius: 0.5rem;
       border-top-right-radius: 0.5rem;
     }
