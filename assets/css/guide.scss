@@ -109,7 +109,7 @@ svg {
   text-shadow: 0.1 0.1em var(--backgroundColor) 0.1 -0.1em var(
       --backgroundColor
     ) -0.1 0.1em var(--backgroundColor) -0.1 -0.1em var(--backgroundColor);
-  font-size: max(min(1.8em, 6vw), 2cqw);
+  font-size: unquote("max(min(1.8em, 6vw), 2cqw)");
   white-space: nowrap;
   position: absolute;
 }
