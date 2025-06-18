@@ -30,31 +30,26 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Setup Ruby
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
-        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
-      # Fix gemfile not found issue
-      - name: Bundle init
-        run: bundle init && bundle add jekyll
+          hugo-version: "latest"
+          extended: true
 
-      - name: Build with Jekyll
-        # Outputs to the './_site' directory by default 
-        # run: bundle exec jekyll build
-        # replace _config_development's url using sed because jekyll has no command to do it
+      - name: Build with Hugo
+        # Outputs to the './public' directory by default
         run: |
-          bundle exec jekyll build --config _config.yml
+          hugo --minify --config hugo.toml
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: jekyll-site
-          path: ./_site
+          name: hugo-site
+          path: ./public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
   # Deployment job
   deploy:
