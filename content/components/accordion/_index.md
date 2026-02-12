@@ -29,7 +29,7 @@ maturity: "new"
 
 #### JavaScript
 
-- 使用 [`accordion.js`](/assets/components/accordion.js)。
+- 使用 [`accordion.js`](/js/components/accordion.js)。
 
 ### 副標題(摘要)折疊選單
 

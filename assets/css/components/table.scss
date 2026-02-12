@@ -67,7 +67,7 @@
   }
 
   .table-cell {
-    max-width: min(96cqw, 24em);
+    max-width: unquote("min(96cqw, 24em)");
   }
 }
 
