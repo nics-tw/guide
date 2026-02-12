@@ -1,0 +1,6 @@
+{{- $src := .Get 0 -}} {{- $resource := resources.Get (strings.TrimPrefix
+"assets/" $src) -}} {{- if $resource -}}
+<link rel="stylesheet" href="{{ $resource.RelPermalink }}" />
+{{- else -}}
+<!-- Asset not found: {{ $src }} -->
+{{- end -}}
