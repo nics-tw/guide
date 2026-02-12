@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+  {{ partial "analytics.html" . }}
   {{ $mainCSS := resources.Get "css/main.scss" | toCSS (dict "targetPath" "main.css") }}
   {{ $guideCSS := resources.Get "css/guide.scss" | toCSS }}
   <link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">
@@ -36,34 +37,7 @@
   </header>
   <main class="flex flex-wrap flex-nowrap-l content-start pa4 bt">
     <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
-      {{ $sections := .Site.Sections }}
-      {{/* Sort sections based on weight defined in frontmatter or default order */}}
-      {{ range $sections.ByWeight }}
-        <details class="mb3" {{ if hasPrefix $.RelPermalink .RelPermalink }}open{{ end }}>
-          <summary class="pointer mb3">
-            <a class="pa2 mb2" href="{{ .Permalink }}">{{ .Title }}</a>
-          </summary>
-          {{/* Pages sorting logic */}}
-          {{ $sortedPages := slice }}
-          {{ range .Pages }}
-            {{ $sortKey := .Title }}
-            {{/* Custom sorting: extract English part inside parentheses if available */}}
-            {{ if strings.Contains .Title "(" }}
-              {{ $parts := split .Title "(" }}
-              {{ if gt (len $parts) 1 }}
-                {{ $rightPart := index $parts 1 }}
-                {{ $englishPart := replace $rightPart ")" "" }}
-                {{ $sortKey = $englishPart }}
-              {{ end }}
-            {{ end }}
-            {{ $sortedPages = $sortedPages | append (dict "page" . "sortKey" $sortKey) }}
-          {{ end }}
-          
-          {{ range sort $sortedPages "sortKey" }}
-            <a class="nav-link" {{ if eq .page.RelPermalink $.RelPermalink }}aria-current="page"{{ end }} href="{{ .page.Permalink }}">{{ .page.Title }}</a>
-          {{ end }}
-        </details>
-      {{ end }}
+      {{ partial "nav.html" . }}
     </nav>
     <div id="main" class="ml4-l flex-auto">
       {{ if .IsHome }}

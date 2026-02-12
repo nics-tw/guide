@@ -1,5 +1,4 @@
 ---
-layout: main
 title: 跳至主要內容區 (Skip-To)
 maturity: "alpha"
 ---
@@ -8,17 +7,15 @@ maturity: "alpha"
 
 ### 基礎使用方式
 
-{% capture html %}<skip-to>
+{{< code-example content=`<skip-to>
   <a href="#main" class="skip-to">跳至主要內容區</a>
-</skip-to>{% endcapture %}
-<div class="br3 mb4 overflow-hidden">{% include example-html.html content=html %}</div>
+</skip-to>` >}}
 
-{% capture path %}{{ site.url }}{% link _components/skip-to/skip-to.html %}{% endcapture %}
-{% include iframe.html src=path %}
+<iframe src="/components/skip-to/skip-to" class="w-100 ba br3 mb3" style="height: 150px;" title="跳至主要內容區範例"></iframe>
 
 #### Custom Element
 
-- 使用 [`<skip-to>`](/assets/js/components/skip-to-element.js)。
+- 使用 [<code class="language-plaintext highlighter-rouge">&lt;skip-to&gt;</code>](/js/components/skip-to-element.js)。
 
 #### 漸進增強規則
 
@@ -26,14 +23,13 @@ maturity: "alpha"
 
 ### 提供多個彈跳點
 
-{% capture html %}
+{{< code-example content=`
 <skip-to>
   <a href="#main" class="skip-to">跳至主要內容區</a>
   <a href="#navigation" class="skip-to">跳至主要連結表</a>
   <a href="#footer" class="skip-to">跳至頁尾</a>
-</skip-to>
-{% endcapture %}
-<div class="br3 mb4 overflow-hidden">{% include example-html.html content=html %}</div>
+</skip-to>` >}}
 
-{% capture path %}{{ site.url }}{% link _components/skip-to/skip-to-multiple.html %}{% endcapture %}
-{% include iframe.html src=path height=360 %}
+<iframe src="/components/skip-to/skip-to-multiple/" class="w-100 ba br3 mb3" style="height: 360px;" title="提供多個彈跳點範例"></iframe>
+
+{{< asset-script "js/components/skip-to-element.js" >}}

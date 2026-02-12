@@ -1,7 +1,5 @@
 ---
 title: 共用元件
-layout: main
-text_only: 1
 ---
 
 ### 目標
@@ -10,10 +8,9 @@ text_only: 1
 
 ### CSS 元件使用方式
 
-可直接[下載](/assets/css.zip)，並使用下方程式碼匯入：
+可直接[下載](/zip/css.zip)，並使用下方程式碼匯入：
 
-{% capture html %}<link rel="stylesheet" href="../main.css">{% endcapture %}
-{% include example-html.html content=html %}
+{{< code-example content=`<link rel="stylesheet" href="../main.css">` >}}
 
 請避免一切對原始碼的改動。使用設計系統的目的就在於一致性。若需要特殊的顯示方式，請另行撰寫 CSS，以免造成日後版本升級困難。
 
@@ -25,35 +22,30 @@ text_only: 1
 
 #### 多國語系支援
 
-請依照[多國語系支援]({% link _visual/internationalization/index.md %})另外包含所需要的字體 CSS 檔案。
+請依照[多國語系支援]({{< ref "visual/internationalization/_index.md" >}})另外包含所需要的字體 CSS 檔案。
 
 ### JavaScript 元件使用方式
 
-#### [文字輸入區塊]({% link _components/textarea/index.md %})
+#### [文字輸入區塊]({{< ref "components/textarea/_index.md" >}})
 
-下載 [character-count.js](/assets/js/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [character-count.js](/js/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
 
-{% capture html %}<script src="../character-count.js" defer>{% endcapture %}
-{% include example-html.html content=html %}
+{{< code-example content=`<script src="../character-count.js" defer></script>` >}}
 
-#### [公文元件]({% link _components/official-document/index.md %})
+#### [公文元件]({{< ref "components/official-document/_index.md" >}})
 
-下載 [official-document-element.js](/assets/js/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [official-document-element.js](/js/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
 
-{% capture html %}<script src="../official-document-element.js" type="module">{% endcapture %}
-{% include example-html.html content=html %}
+{{< code-example content=`<script src="../official-document-element.js" type="module"></script>` >}}
 
-#### [互動資料表格]({% link _components/table/index.md %})
+#### [互動資料表格]({{< ref "components/table/_index.md" >}})
 
-下載 [interactive-table-element.js](/assets/js/components/interactive-table-element.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [interactive-table-element.js](/js/components/interactive-table-element.js) 檔案並選擇性使用下方程式碼匯入：
 
-{% capture html %}<script src="../interactive-table-element.js" type="module">{% endcapture %}
-{% include example-html.html content=html %}
+{{< code-example content=`<script src="../interactive-table-element.js" type="module"></script>` >}}
 
+#### [跳至主要內容區]({{< ref "components/skip-to/_index.md" >}})
 
-#### [跳至主要內容區]({% link _components/skip-to/index.md %})
+下載 [skip-to-element.js](/js/components/skip-to-element.js) 檔案並選擇性使用下方程式碼匯入：
 
-下載 [skip-to-element.js](/assets/js/components/skip-to-element.js) 檔案並選擇性使用下方程式碼匯入：
-
-{% capture html %}<script src="../skip-to-element.js" type="module">{% endcapture %}
-{% include example-html.html content=html %}
+{{< code-example content=`<script src="../skip-to-element.js" type="module"></script>` >}}

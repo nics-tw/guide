@@ -1,0 +1,28 @@
+{{ $sections := .Site.Sections }}
+{{/* Sort sections based on weight defined in frontmatter or default order */}}
+{{ range $sections.ByWeight }}
+  <details class="mb3" {{ if hasPrefix $.RelPermalink .RelPermalink }}open{{ end }}>
+    <summary class="pointer mb3">
+      <a class="pa2 mb2" href="{{ .Permalink }}">{{ .Title }}</a>
+    </summary>
+    {{/* Pages sorting logic */}}
+    {{ $sortedPages := slice }}
+    {{ range .Pages }}
+      {{ $sortKey := .Title }}
+      {{/* Custom sorting: extract English part inside parentheses if available */}}
+      {{ if strings.Contains .Title "(" }}
+        {{ $parts := split .Title "(" }}
+        {{ if gt (len $parts) 1 }}
+          {{ $rightPart := index $parts 1 }}
+          {{ $englishPart := replace $rightPart ")" "" }}
+          {{ $sortKey = $englishPart }}
+        {{ end }}
+      {{ end }}
+      {{ $sortedPages = $sortedPages | append (dict "page" . "sortKey" $sortKey) }}
+    {{ end }}
+    
+    {{ range sort $sortedPages "sortKey" }}
+      <a class="nav-link" {{ if eq .page.RelPermalink $.RelPermalink }}aria-current="page"{{ end }} href="{{ .page.Permalink }}">{{ .page.Title }}</a>
+    {{ end }}
+  </details>
+{{ end }}

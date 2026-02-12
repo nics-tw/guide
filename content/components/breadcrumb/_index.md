@@ -1,5 +1,4 @@
 ---
-layout: main
 title: 導覽標記 (Breadcrumb)
 maturity: "new"
 ---
@@ -11,17 +10,11 @@ maturity: "new"
 
 ### 斜線分隔
 
-{% capture html %}{% include breadcrumb/slash-separator.html %}{% endcapture %}
-{% include example.html
-  content=html
-%}
+{{< live-example partial="breadcrumb/slash-separator.html" >}}
 
 ### 箭頭分隔
 
-{% capture html %}{% include breadcrumb/arrow-separator.html %}{% endcapture %}
-{% include example.html
-  content=html
-%}
+{{< live-example partial="breadcrumb/arrow-separator.html" >}}
 
 #### CSS
 

@@ -1,2 +1,5 @@
 {{- $src := .Get 0 -}}
+{{- if (hasPrefix $src "assets/") -}}
+  {{- $src = strings.TrimPrefix "assets/" $src -}}
+{{- end -}}
 <script src="{{ $src | relURL }}" type="module"></script>

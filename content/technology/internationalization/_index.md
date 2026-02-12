@@ -1,6 +1,5 @@
 ---
 title: 多國語系支援
-layout: main
 ---
 
 ### 提供多國語系版本網站
@@ -15,11 +14,7 @@ layout: main
 
 在 HTML 中使用 `lang` 屬性來標識每個區塊的語言。這有助於翻譯服務識別和處理不同語言的內容。
 
-{% capture html %}<div>事情</div>
-會被念為ㄕˋㄑㄧㄥˊ。
-<div lang="ja">事情</div>
-會被念為じじょう。{% endcapture %}
-{% include example.html content=html %}
+{{< live-example partial="technology/internationalization/example1.html" >}}
 
 #### 避免文字在圖像中
 

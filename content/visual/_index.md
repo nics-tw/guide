@@ -1,6 +1,5 @@
 ---
-title: 視覺元素
-layout: main
+title: 視覺設計
 ---
 
-{% include /svgs/hero.svg %}
+{{< figure src="/svgs/hero.svg" alt="Hero Image" >}}

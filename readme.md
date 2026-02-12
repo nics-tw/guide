@@ -25,7 +25,7 @@
 
 ### [文字輸入區塊](https://guide.nics.nat.gov.tw/components/textarea/index.html)
 
-下載 [character-count.js](https://guide.nics.nat.gov.tw/assets/js/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [character-count.js](https://guide.nics.nat.gov.tw/js/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
 
 ```
 <script src="../character-count.js" defer>
@@ -33,7 +33,7 @@
 
 ### [公文元件](https://guide.nics.nat.gov.tw/components/official-document/index.html)
 
-下載 [official-document-element.js](https://guide.nics.nat.gov.tw/assets/js/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [official-document-element.js](https://guide.nics.nat.gov.tw/js/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
 
 ```
 <script src="../official-document-element.js" type="module">
@@ -41,7 +41,7 @@
 
 ### [互動資料表格](https://guide.nics.nat.gov.tw/components/table/index.html)
 
-下載 [interactive-table-element.js](https://guide.nics.nat.gov.tw/assets/js/components/interactive-table-element.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [interactive-table-element.js](https://guide.nics.nat.gov.tw/js/components/interactive-table-element.js) 檔案並選擇性使用下方程式碼匯入：
 
 ```
 <script src="../interactive-table-element.js" type="module">
@@ -49,7 +49,7 @@
 
 ### [互動資料表格](https://guide.nics.nat.gov.tw/components/skip-to/index.html)
 
-下載 [skip-to-element.js](https://guide.nics.nat.gov.tw/assets/js/components/skip-to-element.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [skip-to-element.js](https://guide.nics.nat.gov.tw/js/components/skip-to-element.js) 檔案並選擇性使用下方程式碼匯入：
 
 ```
 <script src="../skip-to-element.js" type="module">
