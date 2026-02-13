@@ -8,7 +8,7 @@ title: 共用元件
 
 ### CSS 元件使用方式
 
-可直接[下載](/zip/css.zip)，並使用下方程式碼匯入：
+可直接[下載]({{< relURL "zip/css.zip" >}})，並使用下方程式碼匯入：
 
 {{< code-example content=`<link rel="stylesheet" href="../main.css">` >}}
 
@@ -28,24 +28,24 @@ title: 共用元件
 
 #### [文字輸入區塊]({{< ref "components/textarea/_index.md" >}})
 
-下載 [character-count.js](/js/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [character-count.js]({{< relURL "js/components/character-count.js" >}}) 檔案並選擇性使用下方程式碼匯入：
 
 {{< code-example content=`<script src="../character-count.js" defer></script>` >}}
 
 #### [公文元件]({{< ref "components/official-document/_index.md" >}})
 
-下載 [official-document-element.js](/js/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [official-document-element.js]({{< relURL "js/components/official-document-element.js" >}}) 檔案並選擇性使用下方程式碼匯入：
 
 {{< code-example content=`<script src="../official-document-element.js" type="module"></script>` >}}
 
 #### [互動資料表格]({{< ref "components/table/_index.md" >}})
 
-下載 [interactive-table-element.js](/js/components/interactive-table-element.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [interactive-table-element.js]({{< relURL "js/components/interactive-table-element.js" >}}) 檔案並選擇性使用下方程式碼匯入：
 
 {{< code-example content=`<script src="../interactive-table-element.js" type="module"></script>` >}}
 
 #### [跳至主要內容區]({{< ref "components/skip-to/_index.md" >}})
 
-下載 [skip-to-element.js](/js/components/skip-to-element.js) 檔案並選擇性使用下方程式碼匯入：
+下載 [skip-to-element.js]({{< relURL "js/components/skip-to-element.js" >}}) 檔案並選擇性使用下方程式碼匯入：
 
 {{< code-example content=`<script src="../skip-to-element.js" type="module"></script>` >}}

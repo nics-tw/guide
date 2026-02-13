@@ -1,7 +1,7 @@
 {{ $sections := .Site.Sections }}
 {{/* Sort sections based on weight defined in frontmatter or default order */}}
 {{ range $sections.ByWeight }}
-  <details class="mb3" {{ if hasPrefix $.RelPermalink .RelPermalink }}open{{ end }}>
+  <details class="mb3" {{ if eq $.Section .Section }}open{{ end }}>
     <summary class="pointer mb3">
       <a class="pa2 mb2" href="{{ .Permalink }}">{{ .Title }}</a>
     </summary>

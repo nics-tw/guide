@@ -7,7 +7,7 @@ maturity: "alpha"
 
 ### JavaScript
 
-- 下載 [`character-count.js`](/js/components/character-count.js) 檔案。
+- 下載 [`character-count.js`]({{< relURL "js/components/character-count.js" >}}) 檔案。
 
 ### JavaScript 行為使用的 data-attributes
 

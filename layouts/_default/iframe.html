@@ -4,7 +4,7 @@
     {{ $iframeCSS := resources.Get "css/iframe.scss" | toCSS (dict "targetPath"
     "iframe.css") }}
     <link rel="stylesheet" href="{{ $iframeCSS.RelPermalink }}" />
-    <link rel="icon" type="image/png" href="{{ "assets/favicon.png" | absURL
+    <link rel="icon" type="image/png" href="{{ "assets/favicon.png" | relURL
     }}">
     <title>{{ if .Title }}{{ .Title }} | {{ end }}政府網站設計原則</title>
     <meta charset="UTF-8" />

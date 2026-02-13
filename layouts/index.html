@@ -13,11 +13,11 @@
 <div class="three-col gap4 mv5">
   {{ range .Site.Sections }} {{ if .Pages }} {{ $filepath := path.Join .File.Dir
   "_index.md" }} {{ $doc := .Site.GetPage $filepath }} {{ $svgPath := printf
-  "/svgs/feat_%s.svg" .Section }}
+  "svgs/feat_%s.svg" .Section }}
   <div class="ph2 tc w-100" style="flex: 1 1 calc(33.333% - 2rem)">
     <a class="db" {{ with $doc }}href="{{ .RelPermalink }}" {{ end }}>
       <div class="w-70 center">
-        <img src="{{ $svgPath }}" alt="{{ .Title }}" />
+        <img src="{{ $svgPath | relURL }}" alt="{{ .Title }}" />
       </div>
       <div class="mt3">{{ .Title }}</div>
     </a>

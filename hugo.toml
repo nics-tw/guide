@@ -2,6 +2,7 @@ baseURL = "https://guide.nics.nat.gov.tw"
 languageCode = "zh-TW"
 title = "政府網站設計原則"
 timezone = "Asia/Taipei"
+uglyURLs = true
 
 [sass]
   [sass.defaults]

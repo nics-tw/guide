@@ -22,7 +22,7 @@ maturity: "new"
 
 #### JavaScript
 
-- 使用 [`accordion.js`](/js/components/accordion.js)。
+- 使用 [`accordion.js`]({{< relURL "js/components/accordion.js" >}})。
 
 ### 副標題(摘要)折疊選單
 
@@ -40,5 +40,3 @@ maturity: "new"
 - `.accordion-body`：作為單獨折疊選單的內容。
 - `.main-title`：作為主標題的內容。
 - `.sub-title`：作為副標題的內容。
-
-{{< asset-script "js/components/accordion.js" >}}

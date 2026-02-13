@@ -7,7 +7,7 @@ maturity: "alpha"
 
 ### Custom Element
 
-- 使用 [`<official-document>`](/js/components/official-document-element.js)。
+- 使用 [`<official-document>`]({{< relURL "js/components/official-document-element.js" >}})。
 
 ### 使用方式
 

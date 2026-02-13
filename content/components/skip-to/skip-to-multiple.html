@@ -5,15 +5,15 @@ layout: raw
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
-    <link rel="stylesheet" href="/main.css" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="{{< relURL "main.css" >}}" />
+    <link rel="icon" type="image/png" href="{{< relURL "assets/favicon.png" >}}" />
     <title>提供多個彈跳點範例</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <script src="/js/components/skip-to-element.js" type="module"></script>
+    {{< asset-script "js/components/skip-to-element.js" >}}
 
     <div class="ph4 pt4">
       點選此區域，並多次按下
@@ -28,7 +28,7 @@ layout: raw
 
     <div class="one-col">
       <header class="site-header">
-        <a href="/" class="flex items-center">
+        <a href="{{< relURL "/" >}}" class="logo flex items-center">
           <div class="bg-layer1 w2 mr3" style="aspect-ratio: 1">
             <!-- logo -->
           </div>
@@ -48,11 +48,11 @@ layout: raw
         </p>
       </main>
     </div>
-    <div class="one-column bg-layer1">
+    <div class="one-col bg-layer1">
       <footer class="site-footer f6 flex items-center gap4" id="footer">
         <div class="plain w2 mr3" style="aspect-ratio: 1"><!-- logo --></div>
         <div class="mw5">
-          <a href="/accessibility-statement">親和力宣告</a>
+          <a href="{{< relURL "accessibility-statement" >}}">親和力宣告</a>
         </div>
       </footer>
     </div>
