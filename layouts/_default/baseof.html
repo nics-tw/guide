@@ -20,7 +20,8 @@
   <link rel="stylesheet" href="{{ $langFullCSS.RelPermalink }}">
     {{ end }}
   {{ end }}
-  <link rel="icon" type="image/png" href="{{ "assets/favicon.png" | absURL }}">
+  {{ $favicon := resources.Get "favicon.png" }}
+  <link rel="icon" type="image/png" href="{{ $favicon.RelPermalink }}">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}政府網站設計原則</title>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
