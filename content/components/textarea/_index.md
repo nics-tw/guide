@@ -19,3 +19,5 @@ maturity: "alpha"
 
 - `<li>` 預設就請放入 `data-limit-phrase` 的後半部上限提醒。
 - 無論如何，伺服器接收內容時仍須再次驗證字數。
+
+{{< asset-script "js/components/character-count.js" >}}
