@@ -18,6 +18,12 @@
     {{ $langFullCSS := resources.Get $langFullCSSPath }}
     {{ if $langFullCSS }}
   <link rel="stylesheet" href="{{ $langFullCSS.RelPermalink }}">
+    {{ else }}
+      {{/* Fallback to zh.css if no specific language file found */}}
+      {{ $zhCSS := resources.Get "css/lang/zh.css" }}
+      {{ if $zhCSS }}
+      <link rel="stylesheet" href="{{ $zhCSS.RelPermalink }}">
+      {{ end }}
     {{ end }}
   {{ end }}
   {{ $favicon := resources.Get "favicon.png" }}
