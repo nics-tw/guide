@@ -10,19 +10,19 @@
   {{ $langCSSPath := printf "css/lang/%s.css" $langCode }}
   {{ $langCSS := resources.Get $langCSSPath }}
   {{ if $langCSS }}
-  <link rel="stylesheet" href="{{ $langCSS.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $langCSS.Permalink | relURL }}">
   {{ else }}
     {{/* Attempt to load with full language code if short one failed, e.g., zh-TW.css */}}
     {{ $langFullCode := .Site.Language.LanguageCode }}
     {{ $langFullCSSPath := printf "css/lang/%s.css" $langFullCode }}
     {{ $langFullCSS := resources.Get $langFullCSSPath }}
     {{ if $langFullCSS }}
-  <link rel="stylesheet" href="{{ $langFullCSS.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $langFullCSS.Permalink | relURL }}">
     {{ else }}
       {{/* Fallback to zh.css if no specific language file found */}}
       {{ $zhCSS := resources.Get "css/lang/zh.css" }}
       {{ if $zhCSS }}
-      <link rel="stylesheet" href="{{ $zhCSS.RelPermalink }}">
+      <link rel="stylesheet" href="{{ $zhCSS.Permalink | relURL }}">
       {{ end }}
     {{ end }}
   {{ end }}
