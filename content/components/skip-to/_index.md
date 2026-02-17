@@ -15,7 +15,7 @@ maturity: "alpha"
 
 #### Custom Element
 
-- 使用 [<code class="language-plaintext highlighter-rouge"><skip-to></code>]({{< relURL "js/components/skip-to-element.js" >}})。
+- 使用 [`<skip-to>`]({{< relURL "js/components/skip-to-element.js" >}})。
 
 #### 漸進增強規則
 
