@@ -26,8 +26,7 @@
       {{ end }}
     {{ end }}
   {{ end }}
-  {{ $favicon := resources.Get "favicon.png" }}
-  <link rel="icon" type="image/png" href="{{ $favicon.RelPermalink }}">
+  <link rel="icon" type="image/png" href="{{ "favicon.png" | relURL }}">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}政府網站設計原則</title>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
