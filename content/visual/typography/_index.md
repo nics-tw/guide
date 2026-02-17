@@ -17,8 +17,8 @@ maturity: "alpha"
 
 <div class="w-100 relative flex flex-column gap2 items-start">
 
-<code>.w-paragraph</code>
-<span class="db">以基礎的純文字大小，使用 <code>.w-paragraph</code> 限制文字每行最多字數，確保文字易讀性。</span>
+`.w-paragraph`
+<span class="db">以基礎的純文字大小，使用 `.w-paragraph` 限制文字每行最多字數，確保文字易讀性。</span>
 
 </div>
 
@@ -26,22 +26,22 @@ maturity: "alpha"
 
 <div class="ba br3 w-100 pa4 relative flex flex-column gap2 items-start">
 
-<code>.fs1</code>
+`.fs1`
 <span class="db fs1">文字大小一</span>
 
-<code>.fs2</code>
+`.fs2`
 <span class="db fs2">文字大小二</span>
 
-<code>.fs3</code>
+`.fs3`
 <span class="db fs3">文字大小三</span>
 
-<code>.fs4</code>
+`.fs4`
 <span class="db fs4">文字大小四</span>
 
-<code>.fs5</code>
+`.fs5`
 <span class="db fs5">文字大小五</span>
 
-<code>.fs6</code>
+`.fs6`
 <span class="db fs6">文字大小六</span>
 
 </div>
@@ -50,27 +50,27 @@ maturity: "alpha"
 
 <div class="ba br3 w-100 pa4 relative flex flex-column gap2 items-start">
 
-<code>&lt;h1&gt;</code>
+`<h1>`
 
 <span class="db heading1">標題一</span>
 
-<code>&lt;h2&gt;</code>
+`<h2>`
 
 <span class="db heading2">標題二</span>
 
-<code>&lt;h3&gt;</code>
+`<h3>`
 
 <span class="db heading3">標題三</span>
 
-<code>&lt;h4&gt;</code>
+`<h4>`
 
 <span class="db heading4">標題四</span>
 
-<code>&lt;h5&gt;</code>
+`<h5>`
 
 <span class="db heading5">標題五</span>
 
-<code>&lt;h6&gt;</code>
+`<h6>`
 
 <span class="db heading6">標題六</span>
 
