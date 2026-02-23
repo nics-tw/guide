@@ -43,13 +43,13 @@
     </a>
   </header>
   {{ end }}
-  <main class="{{ if .IsHome }}site-main{{ else }}flex flex-wrap flex-nowrap-l content-start pa4 bt{{ end }}">
+  <main {{ if .IsHome }}id="main"{{ end }} class="{{ if .IsHome }}site-main{{ else }}flex flex-wrap flex-nowrap-l content-start pa4 bt{{ end }}">
     {{ block "sidebar" . }}
     <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
       {{ partial "nav.html" . }}
     </nav>
     {{ end }}
-    <div id="main" class="ml4-l flex-auto">
+    <div {{ if not .IsHome }}id="main"{{ end }} class="{{ if not .IsHome }}ml4-l flex-auto{{ end }}">
       {{ block "main" . }}{{ end }}
     </div>
   </main>
