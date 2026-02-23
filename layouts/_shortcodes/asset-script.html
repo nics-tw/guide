@@ -1,0 +1,10 @@
+{{- $src := .Get 0 -}}
+{{- if (hasPrefix $src "assets/") -}}
+  {{- $src = strings.TrimPrefix "assets/" $src -}}
+{{- end -}}
+{{- $res := resources.Get $src -}}
+{{- if $res -}}
+  <script src="{{ $res.RelPermalink }}" type="module"></script>
+{{- else -}}
+  <script src="{{ $src | relURL }}" type="module"></script>
+{{- end -}}

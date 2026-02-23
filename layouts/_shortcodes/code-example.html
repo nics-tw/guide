@@ -1,0 +1,3 @@
+{{- $content_param := .Get "content" -}} {{- $highlight_param := .Get
+"highlight" -}} {{- partial "shared/display_code_example.html" (dict
+"input_content" $content_param "highlight_terms_string" $highlight_param) -}}

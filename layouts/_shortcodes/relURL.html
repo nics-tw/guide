@@ -1,0 +1,14 @@
+{{- $path := .Get 0 -}}
+{{- $lookupPath := $path -}}
+{{- if (hasPrefix $path "assets/") -}}
+  {{- $lookupPath = strings.TrimPrefix "assets/" $path -}}
+{{- end -}}
+{{- $res := false -}}
+{{- if ne $path "/" -}}
+  {{- $res = resources.Get $lookupPath -}}
+{{- end -}}
+{{- if $res -}}
+  {{- $res.RelPermalink -}}
+{{- else -}}
+  {{- $path | relURL -}}
+{{- end -}}

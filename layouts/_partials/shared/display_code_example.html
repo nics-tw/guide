@@ -1,0 +1,14 @@
+<div class="bg-layer1 overflow-auto fs7 ph3 pv3 br3">
+  <pre><code class="language-html">{{- $current_content := .input_content | htmlEscape -}}
+{{- with .highlight_terms_string -}}
+  {{- $highlight_terms := split . "," -}}
+  {{- range $highlight_terms -}}
+    {{- $term_to_highlight := . -}}
+    {{- $escaped_term := $term_to_highlight | htmlEscape -}}
+    {{- $current_content = replace $current_content $escaped_term (printf "<mark>%s</mark>" $escaped_term) -}}
+  {{- end -}}
+  {{- $current_content | safeHTML -}}
+{{- else -}}
+  {{- $current_content | safeHTML -}}
+{{- end -}}</code></pre>
+</div>
