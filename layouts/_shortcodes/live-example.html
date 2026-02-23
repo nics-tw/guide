@@ -1,5 +1,5 @@
 {{ $partial_name := .Get "partial" }} {{ $partial_path := printf
-"layouts/partials/%s" $partial_name }} {{ $rendered_content := partial
+"layouts/_partials/%s" $partial_name }} {{ $rendered_content := partial
 $partial_name . }} {{ $raw_content := readFile $partial_path }} {{ partial
 "example.html" (dict "rendered_content" $rendered_content "raw_content"
 $raw_content "context" .) }}
