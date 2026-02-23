@@ -1,5 +1,5 @@
 ---
-title: 前端工程原則
+title: 前端技術原則
 ---
 
 <blockquote lang="en">
