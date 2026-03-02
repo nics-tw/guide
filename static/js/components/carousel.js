@@ -44,7 +44,7 @@ var CarouselPreviousNext = function (node, options) {
 
   // Pause Button
 
-  var elem = document.querySelector('.carousel .controls button.rotation');
+  var elem = node.querySelector('.controls button.rotation');
   if (elem) {
     this.pausePlayButtonNode = elem;
     this.pausePlayButtonNode.addEventListener(
@@ -55,7 +55,7 @@ var CarouselPreviousNext = function (node, options) {
 
   // Previous Button
 
-  elem = document.querySelector('.carousel .controls button.previous');
+  elem = node.querySelector('.controls button.previous');
   if (elem) {
     this.previousButtonNode = elem;
     this.previousButtonNode.addEventListener(
@@ -74,7 +74,7 @@ var CarouselPreviousNext = function (node, options) {
 
   // Next Button
 
-  elem = document.querySelector('.carousel .controls button.next');
+  elem = node.querySelector('.controls button.next');
   if (elem) {
     this.nextButtonNode = elem;
     this.nextButtonNode.addEventListener(
