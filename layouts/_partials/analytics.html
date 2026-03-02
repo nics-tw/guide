@@ -1,5 +1,5 @@
 <!-- Google tag (gtag.js) -->
-{{- if .Site.Params.google_analytics }}
+{{- if and hugo.IsProduction .Site.Params.google_analytics }}
 <script
   async
   src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics }}"
