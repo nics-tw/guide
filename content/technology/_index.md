@@ -1,5 +1,6 @@
 ---
 title: 前端技術原則
+weight: 30
 ---
 
 <blockquote lang="en">

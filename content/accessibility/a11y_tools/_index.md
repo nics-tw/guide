@@ -1,6 +1,5 @@
 ---
 title: 檢測工具導入文件
-text_only: 1
 ---
 
 自動化檢測工具功能為輔助進行無障礙規範符合度檢測，但無法取代手動檢測。可以被自動化檢測的規則，僅能檢測出 3-4 成已知的使用障礙，多數使用障礙仍需要透過手動檢測或使用者體驗才能夠發覺。在開發生命週期中，建議及早發現使用障礙並將其視為風險持續控管。不定期完成最小程度檢測，請參考 [WAI Easy Checks](https://www.w3.org/WAI/test-evaluate/preliminary/) 或 [GOV.UK 基礎檢查](https://www.gov.uk/government/publications/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one)，如檢測中發現任何未符合之情況，均以問題追蹤系統（issue tracker）納管修正。嚴謹的 WCAG 無障礙規範符合度稽核，建議遵循 [Website Accessibility Conformance Evaluation Methodology, WCAG-EM](https://www.w3.org/TR/WCAG-EM/) 並可以搭配 [WCAG-EM Report Tool](https://www.w3.org/WAI/eval/report-tool/) 產出無障礙規範符合度報告。
