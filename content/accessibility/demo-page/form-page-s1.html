@@ -1,0 +1,108 @@
+---
+title: 意見回饋頁範本
+layout: demo-page
+---
+
+<div class="one-col">
+  <header class="site-header">
+    <skip-to>
+      <a href="#main" class="skip-to">跳至主要內容區</a>
+      <a href="#navigation" class="skip-to">跳至主要連結表</a>
+      <a href="#footer" class="skip-to">跳至頁尾</a>
+    </skip-to>
+    <a href="/" class="flex items-center">
+      <div class="bg-layer1 w2 mr3" style="aspect-ratio: 1 / 1;"><!-- logo --></div>
+      <h1>意見回饋頁範本</h1>
+    </a>
+    <nav aria-label="主要" id="navigation" class="flex gap4 mt4">
+      <a href="#">首頁</a>
+      <a href="#">關於我們</a>
+    </nav>
+  </header>
+  <nav aria-label="麵包屑" class="breadcrumb arrow-separator">
+    <ol>
+      <li>
+        <a href="/accessibility/demo-page/form-page-s1.html" aria-current="page"><mark>Step 1.同意聲明</mark></a>
+      </li>
+      <li>
+        <span>Step 2.填寫資料</span>
+      </li>
+      <li>
+        <span>Step 3.最終確認</span>
+      </li>
+      <li>
+        <span>Step 4.送出結果</span>
+      </li>
+    </ol>
+  </nav>
+  <main class="site-main" id="main">
+    <h2>Step 1. 同意聲明</h2>
+    <form action="/accessibility/demo-page/form-page-s2.html" method="get">
+      <div class="fields">
+        <div class="warning-text">
+          <strong>個人資料蒐集、處理、利用同意書</strong>
+          <p>
+             為遵守個人資料保護法規定，並保障當事人之權利，謹依法告知下列事項：
+          </p>
+          <p>
+            1. 機關名稱：XXXX機關（○○分局）
+            
+          </p>
+          <p>
+            2. 蒐集之特定目的：（例：代號一○一 XXXX業務）
+
+          </p>
+          <p>
+            3. 個人資料之類別：（例：姓名、身分證編號、出生年月日、住址…等）
+
+          </p>
+          <p>
+            4. 個人資料利用之期間、地區、對象及方式：
+            <ul>
+              <li>(1) 期間：（例：蒐集後一年）</li>
+              <li>(2) 地區：（例：中華民國主權範圍內）</li>
+              <li>(3) 對象：（例：自行使用）</li>
+              <li>(4) 方式：（例：公告）</li>
+            </ul>
+
+          </p>
+          <p>
+            5. 依個人資料保護法第 3 條規定，當事人可行使以下權利：
+            <ul>
+              <li>(1) 查詢或請求閱覽。</li>
+              <li>(2) 請求製給複製本。</li>
+              <li>(3) 請求補充或更正。</li>
+              <li>(4) 請求停止蒐集、處理及利用。</li>
+              <li>(5) 請求刪除。</li>
+            </ul>
+            若有上述需求，請與本單位聯繫，於填妥本單位當事人權利行使申請書後，本單位將依法進行回覆。另依個人資料保護法第 14 條規定，查詢或請求閱覽個人資料或製給複製本者，本單位得酌收必要成本費用。
+          </p>
+          <p>
+            6. 若未提供正確個人資料，本單位將無法提供您特定目的範圍內之相關服務。
+
+          </p>
+          <p>
+            本人已充分知悉貴單位上述告知事項，並同意貴單位蒐集、處理、利用本人之個人資料。
+            
+          </p>
+        </div>
+        
+        <div class="sr-only" id="notes_save_status" role="alert"></div>
+        
+        <div class="gap2 flex flex-wrap">
+          <button type="submit" class="button button-primary">同意</button>
+          <button type="button" class="button button-danger">不同意</button>
+        </div>  
+      </div>
+
+    </form>
+  </main>
+</div>
+<div class="one-column bg-layer1">
+  <footer id="footer" class="site-footer f6 flex items-center gap4">
+    <div class="plain w2 mr3" style="aspect-ratio: 1 / 1;"><!-- logo --></div>
+    <div class="mw5">
+      <a href="/accessibility-statement">親和力宣告</a>
+    </div>
+  </footer>
+</div>
