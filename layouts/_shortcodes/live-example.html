@@ -1,5 +1,9 @@
-{{ $partial_name := .Get "partial" }} {{ $partial_path := printf
-"layouts/_partials/%s" $partial_name }} {{ $rendered_content := partial
-$partial_name . }} {{ $raw_content := readFile $partial_path }} {{ partial
-"example.html" (dict "rendered_content" $rendered_content "raw_content"
-$raw_content "context" .) }}
+{{ $partial_name := .Get "partial" }}
+{{ $partial_path := printf "layouts/_partials/%s" $partial_name }}
+{{ $raw_content := readFile $partial_path }}
+{{/* customElement：此 live 範例含 custom element，build 時會被過濾；設為 true 時改以 base64 傳內容，由 main.js 還原為真實 HTML。 */}}
+{{ $customElement := .Get "customElement" }}
+{{ $inject_data := "" }}
+{{ if eq $customElement "true" }}{{ $inject_data = $raw_content | base64Encode }}{{ end }}
+{{ $rendered_content := cond (eq $customElement "true") "" (partial $partial_name .) }}
+{{ partial "example.html" (dict "rendered_content" $rendered_content "raw_content" $raw_content "inject_html_data" $inject_data "context" .) }}

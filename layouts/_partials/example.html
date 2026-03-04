@@ -1,6 +1,10 @@
 <div class="ba br3 w-100 relative">
   <div class="pa4" data-example>
-    {{ .rendered_content | safeHTML }} {{ with .i18n }} {{ $i18n := split . ";"
+    {{- if .inject_html_data -}}
+    <div data-live-example-inject data-content="{{ .inject_html_data | safeHTML }}"></div>
+    {{- else -}}
+    {{ .rendered_content | safeHTML }}
+    {{- end -}} {{ with .i18n }} {{ $i18n := split . ";"
     }}
     <select
       aria-label="語言選擇"

@@ -3,7 +3,7 @@ title: 公文 (Official Document)
 maturity: "alpha"
 ---
 
-{{< live-example partial="official-document/main.html" >}}
+{{< live-example partial="official-document/main.html" customElement="true" >}}
 
 ### Custom Element
 
