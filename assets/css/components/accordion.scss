@@ -6,8 +6,8 @@ $accordion-header-fontColor: var(--textColor);
 $accordion-header-active-fontColor: var(--backgroundColor); 
 $accordion-body-border: var(--borderColor); 
 $accordion-body-active-border:var(--secondaryTextColor);
-$accordion-icon-url: url("../svgs/downarrow.svg");
-$accordion-icon-active-url: url("../svgs/uparrow.svg");
+$accordion-icon-url: url("/svgs/downarrow.svg");
+$accordion-icon-active-url: url("/svgs/uparrow.svg");
 
 .accordion {
   width: 100%;

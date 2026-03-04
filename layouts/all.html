@@ -1,13 +1,13 @@
 {{ define "main" }}
-{{ if not .Params.text_only }}
-<article class="w-paragraph nested-copy-separator">
+{{ if eq .Params.text_only false }}
+{{ .Content }}
+{{ else }}
+<article class="w-paragraph">
   <h2>{{ .Title }}</h2>
   {{ if .Params.maturity }}
   {{ partial "maturity.html" (dict "current_maturity" .Params.maturity) }}
   {{ end }}
   {{ .Content }}
 </article>
-{{ else }}
-{{ .Content }}
 {{ end }}
 {{ end }}
