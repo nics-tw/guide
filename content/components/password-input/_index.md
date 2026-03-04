@@ -15,6 +15,6 @@ maturity: "new"
 
 #### JavaScript
 
-- 使用 [`accordion.js`]({{< relURL "js/components/accordion.js" >}})。
+- 使用 [`password-input.js`]({{< relURL "js/components/password-input.js" >}})。
 
 {{< asset-script "js/components/password-input.js" >}}
