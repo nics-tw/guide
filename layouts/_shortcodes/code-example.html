@@ -1,3 +1,23 @@
-{{- $content_param := .Get "content" -}} {{- $highlight_param := .Get
-"highlight" -}} {{- partial "shared/display_code_example.html" (dict
-"input_content" $content_param "highlight_terms_string" $highlight_param) -}}
+{{- $path_param := .Get "path" -}}
+{{- $content_param := .Get "content" -}}
+{{- $highlight_param := .Get "highlight" -}}
+{{- $class_param := .Get "class" -}}
+
+{{- $display_args := dict "input_content" "" "highlight_terms_string" $highlight_param "class" $class_param -}}
+
+{{- if $path_param -}}
+  {{- if strings.HasSuffix $path_param ".html" -}}
+    {{- $pagePath := strings.TrimSuffix ".html" (strings.TrimPrefix "/" $path_param) -}}
+    {{- $page := .Site.GetPage $pagePath -}}
+    {{- $plain_html := "" -}}
+    {{- with $page }}{{ $plain_html = .Content }}{{ end -}}
+    {{- $display_args = merge $display_args (dict "input_content" $plain_html) -}}
+  {{- else -}}
+    {{- $contentFilePath := printf "content/%s" (strings.TrimPrefix "/" $path_param) -}}
+    {{- $raw_content := readFile $contentFilePath -}}
+    {{- $display_args = merge $display_args (dict "input_content" $raw_content) -}}
+  {{- end -}}
+{{- else -}}
+  {{- $display_args = merge $display_args (dict "input_content" $content_param) -}}
+{{- end -}}
+{{- partial "shared/display_code_example.html" $display_args -}}

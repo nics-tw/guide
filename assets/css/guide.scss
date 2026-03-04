@@ -76,6 +76,17 @@ main {
   }
 }
 
+/* code-example / live-example 程式碼區塊：margin 與行距 */
+.display-code-example pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.67;
+}
+
+.display-code-example pre code {
+  line-height: inherit;
+}
+
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }

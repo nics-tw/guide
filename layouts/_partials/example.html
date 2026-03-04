@@ -16,6 +16,7 @@
     </select>
     {{ end }}
   </div>
+  {{- if .raw_content -}}
   <details>
     <summary
       class="absolute nt3 lh-solid button button-mini right-0 mr4 f7 pointer br2"
@@ -23,11 +24,12 @@
       HTML
     </summary>
     <div class="br3 br--bottom overflow-hidden">
-      {{- $passed_content := .raw_content -}} {{- $passed_highlight := "" -}}
-      {{- if .context -}} {{- with .context.Params.highlight -}} {{-
+      {{- $passed_content := .raw_content -}} {{- $passed_highlight := .highlight | default "" -}}
+      {{- if not $passed_highlight -}} {{- with .context.Params.highlight -}} {{-
       $passed_highlight = . -}} {{- end -}} {{- end -}} {{- partial
       "shared/display_code_example.html" (dict "input_content" $passed_content
       "highlight_terms_string" $passed_highlight) -}}
     </div>
   </details>
+  {{- end -}}
 </div>
