@@ -3,7 +3,7 @@
 {{ range $sections.ByWeight }}
   <details class="mb3" {{ if eq $.Section .Section }}open{{ end }}>
     <summary class="pointer mb3">
-      <a class="pa2 mb2" href="{{ .Permalink }}">{{ .Title }}</a>
+      <a class="pa2 mb2" href="{{ .RelPermalink }}">{{ .Title }}</a>
     </summary>
     {{/* Pages sorting logic */}}
     {{ $sortedPages := slice }}
@@ -22,7 +22,7 @@
     {{ end }}
     
     {{ range sort $sortedPages "sortKey" }}
-      <a class="nav-link" {{ if eq .page.RelPermalink $.RelPermalink }}aria-current="page"{{ end }} href="{{ .page.Permalink }}">{{ .page.Title }}</a>
+      <a class="nav-link" {{ if eq .page.RelPermalink $.RelPermalink }}aria-current="page"{{ end }} href="{{ .page.RelPermalink }}">{{ .page.Title }}</a>
     {{ end }}
   </details>
 {{ end }}

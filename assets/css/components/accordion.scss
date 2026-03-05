@@ -6,8 +6,9 @@ $accordion-header-fontColor: var(--textColor);
 $accordion-header-active-fontColor: var(--backgroundColor); 
 $accordion-body-border: var(--borderColor); 
 $accordion-body-active-border:var(--secondaryTextColor);
-$accordion-icon-url: url("/svgs/downarrow.svg");
-$accordion-icon-active-url: url("/svgs/uparrow.svg");
+/* 相對路徑：部署時 baseURL 含路徑（如 GCS guide-dev/RUN_ID）時，絕對路徑 /svgs/* 會漏掉路徑導致 403 */
+$accordion-icon-url: url("svgs/downarrow.svg");
+$accordion-icon-active-url: url("svgs/uparrow.svg");
 
 .accordion {
   width: 100%;
