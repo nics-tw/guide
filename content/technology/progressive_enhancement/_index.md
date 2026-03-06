@@ -8,20 +8,19 @@ title: 漸進增強
 
 第一步：使用正確的 HTML 元件寫出最基本且**立即可用**的功能。
 
+<!--prettier-ignore-start-->
 {{< code-example
 content=`<form action="/signup">
-
   <fieldset>
     <label for="username">使用者名稱</label>
     <input type="text" id="username" autocomplete="username">
   </fieldset>
 </form>` 
-  highlight="fieldset,label,input"
+  highlight="form,label,input,action"
 >}}
 
 第二步：加上需要的 CSS classes。
 
-<div class="br3 br--bottom overflow-hidden">
 {{< code-example
 content=`<form action="/signup">
   <div class="fields">
@@ -33,11 +32,9 @@ content=`<form action="/signup">
 </form>`
   highlight="\"fieldset\",\"fields\",\"field-input\",\"field-label\""
 >}}
-</div>
 
 第三步（若有需求）：選擇性用 selector （範例使用 `[data-auto-check]`）加上想要的 JavaScript 附加功能。
 
-<div class="br3 br--bottom overflow-hidden">
 {{< code-example
 content=`<form action="/signup">
   <div class="fields">
@@ -53,6 +50,6 @@ content=`<form action="/signup">
 </script>`
   highlight="data-auto-check,script"
 >}}
-</div>
+<!--prettier-ignore-end-->
 
 用這樣的開發模式，即可確認在 CSS 或 JavaScript 沒有讀取成功的狀態下，使用者仍然可以操作網站。並在 CSS 或 JavaScript 正常的狀況下，讓使用者用有最佳的體驗。

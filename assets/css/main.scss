@@ -1,5 +1,7 @@
 @import "variables"; //背景黑底設定
 @import "reset";
+@import "tachyons";
+@import "color";
 @import "typography";
 @import "components/ctas";
 @import "components/skip-to"; //首頁 "跳至內容區字樣" 消失
@@ -9,13 +11,14 @@
 @import "components/checkable";
 @import "components/list";
 @import "components/official-document";
+@import "components/password-input";
 @import "components/nav";
 @import "components/layout";
 @import "components/breadcrumb";
 @import "components/accordion";
 @import "components/tabs";
-@import "tachyons";
-@import "color";
+@import "components/carousel";
+@import "components/cookie-banner";
 
 body,
 button,

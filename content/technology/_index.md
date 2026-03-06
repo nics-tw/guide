@@ -2,11 +2,7 @@
 title: 前端技術原則
 ---
 
-<blockquote lang="en">
-
-Engineering has a direct and vital impact on the quality of life <b>for all people</b>. Accordingly, the services provided by engineers require honesty, impartiality, fairness, and equity, and must be dedicated to <b>the protection of the public health, safety, and welfare</b>.
-
-</blockquote>
+<blockquote lang="en">Engineering has a direct and vital impact on the quality of life <b>for all people</b>. Accordingly, the services provided by engineers require honesty, impartiality, fairness, and equity, and must be dedicated to <b>the protection of the public health, safety, and welfare</b>.</blockquote>
 
 網頁工程相比於產品工程、建築工程等其他工程領域，還只能算是剛出生的寶寶。工程學的共同點都在於有嚴謹的約束和施工約束。
 

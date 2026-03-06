@@ -1,5 +1,6 @@
-<div class="bg-layer1 overflow-auto fs7 ph3 pv3 br3">
-  <pre><code class="language-html">{{- $current_content := .input_content | htmlEscape -}}
+<div class="display-code-example bg-layer1 overflow-auto fs7 ph3 pv3 br3{{ with .class }} {{ . }}{{ end }}">
+  <pre><code class="language-html">{{- $raw := .input_content | strings.TrimSpace -}}
+{{- $current_content := $raw | htmlEscape -}}
 {{- with .highlight_terms_string -}}
   {{- $highlight_terms := split . "," -}}
   {{- range $highlight_terms -}}

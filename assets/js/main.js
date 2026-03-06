@@ -94,3 +94,20 @@ async function setCode(el) {
 for (const boilerplateTarget of document.querySelectorAll('[data-fetch-url]')) {
   setCode(boilerplateTarget)
 }
+
+// live-example customElement="true"：build 時 custom element 會被過濾，以 data-content (base64) 帶入後由此還原為真實 HTML
+function liveExampleInject () {
+  document.querySelectorAll('[data-live-example-inject]').forEach(el => {
+    const encoded = el.getAttribute('data-content')
+    if (!encoded) return
+    try {
+      const html = decodeURIComponent(escape(atob(encoded)))
+      el.outerHTML = html
+    } catch (_) {}
+  })
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', liveExampleInject)
+} else {
+  liveExampleInject()
+}

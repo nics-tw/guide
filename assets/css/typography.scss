@@ -1,3 +1,5 @@
+@import 'utilities/px-to-rem';
+
 :root {
   &:lang(zh) {
     --body-font-family: helvetica, 'Noto Sans TC', system-ui, sans-serif;
@@ -15,31 +17,32 @@
     --body-font-family: inter, system-ui, sans-serif;
   }
 
-  --body-line-height: 1.7;
-  --body-font-size: 16px;
+  --body-line-height: 1.7em;
+  --body-font-size: #{px-to-rem(16px)};
 
-  --description-font-size: 0.82em;
+  --description-font-size: #{px-to-rem(14px)};
+  --description-font-weight: 400;
   --description-letter-spacing: 0.04em;
 
+  --paragraph-font-size: #{px-to-rem(18px)};
   --paragraph-width: 35em;
-  --heading-font-weight: 600;
   
-  --h6-font-size: 1em;
+  --h6-font-size: #{px-to-rem(18px)};
   --h6-font-weight: 700;
 
-  --h5-font-size: 1.2em;
+  --h5-font-size: #{px-to-rem(20px)};
   --h5-font-weight: 400;
 
-  --h4-font-size: 1.25em;
+  --h4-font-size: #{px-to-rem(24px)};
   --h4-font-weight: 600;
   
-  --h3-font-size: 1.45em;
+  --h3-font-size: #{px-to-rem(28px)};
   --h3-font-weight: 600;
   
-  --h2-font-size: 1.9em;
+  --h2-font-size: #{px-to-rem(32px)};
   --h2-font-weight: 600;
 
-  --h1-font-size: 2.2em;
+  --h1-font-size: #{px-to-rem(36px)};
   --h1-font-weight: 600;
 }
 
@@ -74,62 +77,21 @@ mark {
   --description-letter-spacing: 0.01em;
 }
 
-h6, h5, h4, h3, h2, h1,
-.heading6, .heading5, .heading4, .heading3, .heading2, .heading1 {
-  font-weight: var(--heading-font-weight);
-  line-height: 1.5em;
-}
-
 .fs7 {
   font-size: var(--description-font-size);
 }
 
-h6, .heading6, .fs6 {
-  font-size: var(--h6-font-size);
-}
+@each $level in 1, 2, 3, 4, 5, 6 {
+  h#{$level},
+  .heading#{$level} {
+    font-size: var(--h#{$level}-font-size);
+    font-weight: var(--h#{$level}-font-weight);
+    line-height: 1.5em;
+  }
 
-h6, .heading6 {
-  font-weight: var(--h6-font-weight);
-}
-
-h5, .heading5, .fs5 {
-  font-size: var(--h5-font-size);
-}
-
-h5, .heading5 {
-  font-weight: var(--h5-font-weight);
-}
-
-h4, .heading4, .fs4 {
-  font-size: var(--h4-font-size);
-}
-
-h4, .heading4 {
-  font-weight: var(--h4-font-weight);
-}
-
-h3, .heading3, .fs3 {
-  font-size: var(--h3-font-size);
-}
-
-h3, .heading3 {
-  font-weight: var(--h3-font-weight);
-}
-
-h2, .heading2, .fs2 {
-  font-size: var(--h2-font-size);
-}
-
-h2, .heading2 {
-  font-weight: var(--h2-font-weight);
-}
-
-h1, .heading1, .fs1 {
-  font-size: var(--h1-font-size);
-}
-
-h1, .heading1 {
-  font-weight: var(--h1-font-weight);
+  .fs#{$level} {
+    font-size: var(--h#{$level}-font-size);
+  }
 }
 
 body, a, button, input, textarea, select {
@@ -139,6 +101,11 @@ body, a, button, input, textarea, select {
 body {
   line-height: var(--body-line-height);
   font-size: var(--body-font-size);
+}
+
+p {
+  line-height: var(--body-line-height);
+  font-size: var(--paragraph-font-size);
 }
 
 .desc {

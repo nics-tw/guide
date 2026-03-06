@@ -7,6 +7,12 @@
   padding: 2rem;
 }
 
+.width-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .one-col {
   .site-header, .site-main, .site-footer {
     margin: 2em auto;

@@ -1,9 +1,20 @@
 ---
 title: 單欄位範本
-layout: boilerplate
+layout: raw
 ---
-
-<div class="one-col">
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <link rel="stylesheet" href="{{< relURL "main.css" "abs" >}}">
+  <link rel="icon" type="image/png" href="">
+  <title>單欄位範本</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
+  <main id="main"><div class="one-col">
   <header class="site-header">
     <a href="{{< relURL "/" >}}" class="flex items-center">
       <div class="bg-layer1 w2 mr3" style="aspect-ratio: 1;"><!-- logo --></div>
@@ -53,7 +64,13 @@ layout: boilerplate
   <footer class="site-footer f6 flex items-center gap4">
     <div class="plain w2 mr3" style="aspect-ratio: 1;"><!-- logo --></div>
     <div class="mw5">
-      <a href="{{< relURL "accessibility-statement.html" >}}">親和力宣告</a>
+      <a href="/accessibility-statement">親和力宣告</a>
     </div>
   </footer>
 </div>
+</main>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
+</body>
+</html>

@@ -32,11 +32,3 @@ maturity: "new"
 
 {{< asset-script "js/components/accordion.js" >}}
 
-#### CSS
-
-- `.accordion`：作為全部`.accordion-item`的容器。
-- `.accordion-item`：作為單獨折疊選單的容器。
-- `label`：作為單獨折疊選單的 `<label>`。
-- `.accordion-body`：作為單獨折疊選單的內容。
-- `.main-title`：作為主標題的內容。
-- `.sub-title`：作為副標題的內容。

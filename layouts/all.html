@@ -1,5 +1,7 @@
 {{ define "main" }}
-{{ if not .Params.text_only }}
+{{ if eq .Params.text_only false }}
+{{ .Content }}
+{{ else }}
 <article class="w-paragraph nested-copy-separator">
   <h2>{{ .Title }}</h2>
   {{ if .Params.maturity }}
@@ -7,7 +9,5 @@
   {{ end }}
   {{ .Content }}
 </article>
-{{ else }}
-{{ .Content }}
 {{ end }}
 {{ end }}

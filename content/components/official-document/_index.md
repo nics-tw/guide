@@ -3,7 +3,7 @@ title: 公文 (Official Document)
 maturity: "alpha"
 ---
 
-{{< live-example partial="official-document/main.html" >}}
+{{< live-example partial="official-document/main.html" customElement="true" >}}
 
 ### Custom Element
 
@@ -18,6 +18,7 @@ maturity: "alpha"
 
 #### 純文字格式需求
 
+<!-- prettier-ignore-start -->
 {{< code-example content=`
 
 <!-- 部門，如「數位發展部」 -->公告
@@ -27,12 +28,12 @@ maturity: "alpha"
 主旨：<!-- 公文主旨 -->
 依據：<!-- 公文依據 -->
 公告事項：
-
 <!-- 公告事項內文（多行） -->
 
 <!-- 長官職稱 -->
 <!-- 長官姓名 -->
 
 ` >}}
+<!-- prettier-ignore-end -->
 
 {{< asset-script "js/components/official-document-element.js" >}}

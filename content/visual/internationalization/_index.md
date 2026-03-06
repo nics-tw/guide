@@ -38,3 +38,29 @@ maturity: "alpha"
 
   <p>「全民健康保険」はすべての国民が生まれると同時に加入が義務付けられている保険で、全国民が互いに支えあう制度となっています。通常は規定に基づき保険料を納付します。誰かが病気になった場合、政府は受け取った保険料を利用し、診療費用と薬品費用の一部を保険医療機関に患者に代わって納めます。このように病気になった時でも少額で適切な医療を受けることができます。</p>
 </div>
+
+### 泰文
+
+字體檔案：[`lang/th.css`]({{< relURL "css/lang/th.css" >}})
+
+<link href="{{< relURL "css/lang/th.css" >}}" rel="stylesheet">
+
+<div class="pa4 ba plain w-paragraph" lang="th">
+  <h4>การประกันสุขภาพคืออะไร</h4>
+  <p class="desc">การประกันสุขภาพครอบครัวมีสิทธิ์ในการรักษาตลอดชีวิต</p>
+
+  <p>การประกันสุขภาพเป็นระบบที่บังคับให้ประชาชนทุกคนเข้าร่วมตั้งแต่เกิดเป็นต้นไป ระบบนี้ขึ้นอยู่กับหลักการของการช่วยเหลือร่วมกันและต้องการผู้เอาประกันจ่ายเบี้ยประกันตามกฎหมาย ในกรณีที่คนตกเป็นโรค รัฐบาลจะใช้เงินเบี้ยประกันที่ได้รับเพื่อช่วยผู้ป่วยในการชำระบางส่วนของค่ารักษาพยาบาลและค่ายาที่สถาบันดูแลสุขภาพที่ได้รับสัญญาจากมัน นี้เป็นวิธีที่ทำให้เมื่อเราเจ็บป่วย เราสามารถรับการรักษาทางการแพทย์ที่เหมาะสมในราคาที่เป็นไปได้ได้</p>
+</div>
+
+### 越南文
+
+字體檔案：[`lang/vi.css`]({{< relURL "css/lang/vi.css" >}})
+
+<link href="{{< relURL "css/lang/vi.css" >}}" rel="stylesheet">
+
+<div class="pa4 ba plain w-paragraph" lang="vi">
+  <h4>Bảo hiểm y tế toàn dân là gì?</h4>
+  <p class="desc">Bảo hiểm y tế toàn dân, đảm bảo quyền lợi khám chữa bệnh trọn đời của bạn.</p>
+
+  <p>"Bảo hiểm y tế toàn dân" là loại bảo hiểm mà bất cứ ai từ khi sinh ra đều phải tham gia. Nó là chế độ giúp đỡ tương trợ toàn dân. Thông thường mọi người đều đóng bảo hiểm theo quy định, nếu chẳng may có người bị bệnh, chính phủ sẽ tận dụng số tiền bảo hiểm thu được, giúp người bệnh đóng một phần chi phí cho bệnh viện. Làm như vậy khiến bất cứ ai trong chúng ta khi mắc bệnh có thể chi ít tiền hơn, mà được chăm sóc chữa trị thỏa đáng. </p>
+</div>
