@@ -2,7 +2,7 @@
 {{ if eq .Params.text_only false }}
 {{ .Content }}
 {{ else }}
-<article class="w-paragraph">
+<article class="w-paragraph nested-copy-separator">
   <h2>{{ .Title }}</h2>
   {{ if .Params.maturity }}
   {{ partial "maturity.html" (dict "current_maturity" .Params.maturity) }}

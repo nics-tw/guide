@@ -80,11 +80,12 @@ main {
 .display-code-example pre {
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 1.67;
+  line-height: 1.6;
 }
 
 .display-code-example pre code {
   line-height: inherit;
+  font-size: 1em;
 }
 
 .tabular-nums {
