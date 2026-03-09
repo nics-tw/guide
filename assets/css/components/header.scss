@@ -10,20 +10,13 @@
 }
 
 .header-divider {
-    border-top: 1px dashed #000;
+    border-top: 1px dashed var(--borderColor);
     margin: 0;
 }
 
 .header-bottom {
     background-color: var(--backgroundColorLayer1);
     padding: 20px 0;
-}
-
-.width-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
 }
 
 .header-top-container {
@@ -108,7 +101,7 @@
     font-size: 2em;
     background: none;
     border: none;
-    color: white;
+    color: var(--textColor);
     cursor: pointer;
     padding: 10px;
 }

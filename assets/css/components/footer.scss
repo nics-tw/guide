@@ -6,12 +6,6 @@
     padding: 20px 0;
 }
 
-.width-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -57,21 +51,6 @@
         margin: 5px 0;
     }
 }
-
-// .footer-link {
-//     color: #EBB95F;
-//     text-decoration: none;
-
-//     &:hover {
-//         text-decoration: underline;
-//         color: #F2930E;
-//     }
-
-//     &:focus {
-//         text-decoration: underline;
-//         color: #F2930E;
-//     }
-// }
 
 .footer-inline-list {
     display: flex;
@@ -143,14 +122,8 @@
         text-align: center;
     }
 
-    .footer-info {
-        text-align: center;
-    }
-
-    .footer-legal {
-        text-align: center;
-    }
-
+    .footer-info,
+    .footer-legal,
     .footer-section {
         text-align: center;
     }

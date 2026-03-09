@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var headers = document.querySelectorAll('.headerfordemo');
+    const headers = document.querySelectorAll('.headerfordemo');
 
     headers.forEach(function (header) {
-        var decreaseFontButtons = header.querySelectorAll('#decreaseFont, #mobileDecreaseFont');
-        var defaultFontButtons = header.querySelectorAll('#defaultFont, #mobileDefaultFont');
-        var increaseFontButtons = header.querySelectorAll('#increaseFont, #mobileIncreaseFont');
-        var body = document.body;
-        var currentFontSize = 16;
-        var minFontSize = 12;
-        var maxFontSize = 24;
+        const decreaseFontButtons = header.querySelectorAll('#decreaseFont, #mobileDecreaseFont');
+        const defaultFontButtons = header.querySelectorAll('#defaultFont, #mobileDefaultFont');
+        const increaseFontButtons = header.querySelectorAll('#increaseFont, #mobileIncreaseFont');
+        const body = document.body;
+        let currentFontSize = 16;
+        const minFontSize = 12;
+        const maxFontSize = 24;
 
         function updateFontSize(size) {
             body.style.fontSize = size + 'px';
@@ -44,14 +44,14 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        var dropdownToggles = header.querySelectorAll('.js-dropdown-toggle');
-        var dropdownMenus = header.querySelectorAll('.js-dropdown-menu');
+        const dropdownToggles = header.querySelectorAll('.js-dropdown-toggle');
+        const dropdownMenus = header.querySelectorAll('.js-dropdown-menu');
 
         dropdownToggles.forEach(function (toggle, index) {
             toggle.addEventListener('click', function (event) {
                 event.preventDefault();
-                var menu = dropdownMenus[index];
-                var isVisible = menu.classList.contains('is-visible');
+                const menu = dropdownMenus[index];
+                const isVisible = menu.classList.contains('is-visible');
                 dropdownMenus.forEach(function (menu) {
                     menu.classList.remove('is-visible');
                 });
@@ -63,12 +63,12 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        var menuButton = header.querySelector('.header-menu-button');
-        var headerContent = header.querySelector('.header-content');
+        const menuButton = header.querySelector('.header-menu-button');
+        const headerContent = header.querySelector('.header-content');
 
         if (menuButton && headerContent) {
             menuButton.addEventListener('click', function () {
-                var isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
                 menuButton.setAttribute('aria-expanded', !isExpanded);
                 headerContent.classList.toggle('is-visible');
             });
