@@ -33,26 +33,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="{{ if .IsHome }}one-col{{ end }}">
-  <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
-  {{ block "header" . }}
-  <header class="header ph4 pv4">
-    <a href="{{ site.Home.RelPermalink }}" class="logo no-underline bw1 color-inherit inline-flex items-center">
-      <div class="logo-svg mr3">{{ partial "components.svg" . }}</div>
-      <h1 class="heading4">政府網站設計原則</h1>
-    </a>
-  </header>
-  {{ end }}
-  <main {{ if .IsHome }}id="main"{{ end }} class="{{ if .IsHome }}site-main{{ else }}flex flex-wrap flex-nowrap-l content-start pa4 bt{{ end }}">
-    {{ block "sidebar" . }}
-    <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
-      {{ partial "nav.html" . }}
-    </nav>
+<body>
+  <div class="{{ if .IsHome }}one-col{{ end }}">
+    <skip-to><a href="#main" class="skip-to">跳至主要內容區</a></skip-to>
+    {{ block "header" . }}
+    <header class="header ph4 pv4">
+      <a href="{{ site.Home.RelPermalink }}" class="logo no-underline bw1 color-inherit inline-flex items-center">
+        <div class="logo-svg mr3">{{ partial "components.svg" . }}</div>
+        <h1 class="heading4">政府網站設計原則</h1>
+      </a>
+    </header>
     {{ end }}
-    <div {{ if not .IsHome }}id="main"{{ end }} class="{{ if not .IsHome }}ml4-l flex-auto{{ end }}">
-      {{ block "main" . }}{{ end }}
-    </div>
-  </main>
+    <main {{ if .IsHome }}id="main"{{ end }} class="{{ if .IsHome }}site-main{{ else }}flex flex-wrap flex-nowrap-l content-start pa4 bt{{ end }}">
+      {{ block "sidebar" . }}
+      <nav aria-label="主要" class="w-100 mw5 w5-m mt2 flex-shrink-0 overflow-auto h-auto-l h4 mb4">
+        {{ partial "nav.html" . }}
+      </nav>
+      {{ end }}
+      <div {{ if not .IsHome }}id="main"{{ end }} class="{{ if not .IsHome }}ml4-l flex-auto{{ end }}">
+        {{ block "main" . }}{{ end }}
+      </div>
+    </main>
+  </div>
   <div class="one-column bg-layer1">
     <footer class="site-footer f6 flex items-start gap4">
       <div class="lh-solid w2">{{ partial "components.svg" . }}</div>

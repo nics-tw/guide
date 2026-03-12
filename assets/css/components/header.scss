@@ -1,0 +1,193 @@
+/* Header Styles */
+.headerfordemo {
+    background-color: var(--backgroundColorLayer1);
+    // color: #FFFFFF;
+}
+
+.header-top {
+    background-color: var(--backgroundColorLayer1);
+    padding: 10px 0;
+}
+
+.header-divider {
+    border-top: 1px dashed var(--borderColor);
+    margin: 0;
+}
+
+.header-bottom {
+    background-color: var(--backgroundColorLayer1);
+    padding: 20px 0;
+}
+
+.header-top-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-logo {
+    flex: 0 0 auto;
+}
+
+.header-logotype {
+    max-height: 60px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+.header-link {
+    margin: 0 10px;
+}
+
+.service-name {
+    font-size: 1.2em;
+    margin: 0 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.header-navigation {
+    display: none;
+    position: absolute;
+    background-color: var(--backgroundColorLayer1);
+    top: 100%;
+    z-index: 1000;
+}
+
+.header-navigation-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.header-navigation-item {
+    margin: 5px 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.header-menu-button {
+    display: none;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: var(--textColor);
+    cursor: pointer;
+    padding: 10px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.small-text {
+    font-size: 0.9em;
+}
+
+.header-additional-links {
+    display: none;
+    padding: 10px 0;
+}
+
+/* Show the dropdown menu when is-visible class is added */
+.js-dropdown-menu.is-visible {
+    display: block;
+    top: calc(100% + 10px);
+    width: 20%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-top {
+        display: none;
+    }
+
+    .header-content {
+        display: none;
+        flex-direction: column;
+
+        .dropdown {
+            width: 100%;
+
+            .header-navigation {
+                position: static;
+                width: 100%;
+            }
+        }
+
+        a {
+            margin: 10px 0;
+        }
+    }
+
+    .header-content.is-visible {
+        display: flex;
+        background-color: var(--backgroundColorLayer1);
+        padding: 10px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        min-width: 200px;
+        width: 30%;
+    }
+
+    .header-menu-button {
+        display: block;
+        margin-left: auto;
+        font-size: 2.5em;
+        flex: 0 0 20%;
+        text-align: right;
+    }
+
+    .header-logo {
+        flex: 0 0 40%;
+    }
+
+    .header-additional-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-actions-row {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 5px 0;
+
+        a {
+            margin: 0 10px;
+        }
+    }
+}

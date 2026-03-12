@@ -1,3 +1,13 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+body > :first-child {
+  flex: 1;
+}
+
 .site-header, .site-main, .site-footer {
   max-width:calc(var(--paragraph-width) * 1.5);
   padding: 0 2rem;
