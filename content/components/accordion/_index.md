@@ -5,7 +5,9 @@ maturity: "new"
 
 ### 常見基本折疊選單
 
-- 預設一次僅可展開一個選單，點擊其他選單會自動關閉先前選單
+- 預設一次僅可展開一個選單，點擊其他選單會自動關閉先前選單。
+- 預設為收摺狀態，可透過自訂 CSS 修改樣式或覆寫預設變數。
+- `.accordion-body` 元素爲展開狀態下所呈現的內容。
 
 {{< live-example partial="accordion/accordion_single.html" >}}
 
