@@ -1,0 +1,3 @@
+{{- $path := .Get "path" -}}
+{{- $current := int (.Get "current") -}}
+{{- partial "demo-page/breadcrumb-step.html" (dict "path" $path "current" $current) -}}
