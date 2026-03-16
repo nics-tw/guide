@@ -62,34 +62,37 @@ maturity: "new"
 針對本案例應用情境，微調元件的結構，例如：流程點之間具有順序性，所以未完成步驟1則無法操作後續步驟，故目前頁面之後的步驟調整為不可操作的 `span` 元素。  
 引用[特殊標記文字]({{< ref "visual/typography/_index.md" >}})及粗體文字樣式標示目前頁面，避免單純使用單一種感知元素（如形狀、顏色、大小、視覺位置、方向或聲音等）標示，產生 [SC 1.3.3 Sensory Characteristics](https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html) 相關使用障礙。
 
-本設計原則文件使用 Jekyll 框架，若使用相同技術架構開發網站，可以透過 Liquid 模板語法的迴圈快速應用 [breadcrumb]({{< ref "components/breadcrumb/_index.md" >}}) 元件，產生步驟導覽列。  
-透過 include 同步宣告 `path` 用來設定步驟或流程點名稱，`current` 用來設定目前頁面。
+本設計原則文件使用 Hugo 框架，可以透過 Go template 語法的迴圈快速應用 [breadcrumb]({{< ref "components/breadcrumb/_index.md" >}}) 元件，產生步驟導覽列。  
+透過 partial 同步宣告 `path` 用來設定步驟或流程點名稱，`current` 用來設定目前頁面。
 {{< code-example
-content=`<!-- Liquid templating syntax in Jekyll -->
-  {% include  demo-page/breadcrumb-step.html
-    path="Step 1.同意聲明;Step 2.填寫資料;Step 3.最終確認;Step 4.送出結果"
-    current=2
-  %}`
+content=`<!-- Go template syntax in Hugo -->
+{{ partial "demo-page/breadcrumb-step.html"
+    (dict
+      "path" "Step 1.同意聲明;Step 2.填寫資料;Step 3.最終確認;Step 4.送出結果"
+      "current" 2
+    )
+}}`
 >}}
-`path` 格式為使用分號(;)分隔的字串，用 `split` filter 分隔後，可透過迴圈設定步驟或流程點名稱。
+`path` 格式為使用分號(;)分隔的字串，用 `split` 函式分隔後，可透過迴圈設定步驟或流程點名稱。
 {{< code-example
-content=`<!-- Liquid templating syntax in Jekyll -->
-  {% assign pages = include.path | split: ';' %}`
+content=`<!-- Go template syntax in Hugo -->
+{{ $pages := split .path ";" }}`
 >}}
-透過邏輯判斷 `current` 與 `forloop.index` 數值大小關係，可區分 3 種樣式（含目前頁、可操作的先前步驟、不可操作的後續步驟）。
+透過邏輯判斷 `current` 與迴圈索引數值大小關係，可區分 3 種樣式（含目前頁、可操作的先前步驟、不可操作的後續步驟）。
 {{< code-example
-content=`<!-- Liquid templating syntax in Jekyll -->
-  {% for p in pages %}  
-    {% if include.current >= forloop.index  %}  
-      {% if include.current == forloop.index  %}  
-        <mark>{{ p }}</mark>
-      {% else %}  
-        <a href="./">{{ p }}</a>
-      {% endif %}  
-    {% else %}  
-      <span>{{ p }}</span>
-    {% endif %}  
-  {% endfor %}`
+content=`<!-- Go template syntax in Hugo -->
+{{ range $index, $p := $pages }}
+  {{ $i := add $index 1 }}
+  {{ if le $i $.current }}
+    {{ if eq $i $.current }}
+      <a href="/accessibility/demo-page/form-page-s{{ $i }}.html" aria-current="page"><mark>{{ $p }}</mark></a>
+    {{ else }}
+      <a href="/accessibility/demo-page/form-page-s{{ $i }}.html">{{ $p }}</a>
+    {{ end }}
+  {{ else }}
+    <span>{{ $p }}</span>
+  {{ end }}
+{{ end }}`
 >}}
 
 ##### Server side
