@@ -30,19 +30,19 @@ content=`<fieldset class="fieldset">
 
 {{< code-example
 content=`<script>
-  window.onload = function() {
+  document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('[data-required="true"]').forEach(function(input) {
       input.setAttribute('aria-required', 'true');
     });
-  };
+  });
 </script>`
 >}}
 
 ### 說明頁面
 
-[開發網站無障礙模板](/accessibility/demo-page/)
+[開發網站無障礙模板]({{< ref "accessibility/demo-page/_index.md" >}})
 
-[檢測工具導入文件](/accessibility/a11y_tools/)
+[檢測工具導入文件]({{< ref "accessibility/a11y_tools/_index.md" >}})
 
 #### 延伸參考資料
 

@@ -11,5 +11,9 @@
 {{- if $res -}}
   {{- if $absolute }}{{ $res.Permalink }}{{ else }}{{ $res.RelPermalink }}{{ end -}}
 {{- else -}}
-  {{- if $absolute }}{{ $path | absURL }}{{ else }}{{ $path | relURL }}{{ end -}}
+  {{- if eq $path "/" -}}
+    {{- if $absolute }}{{ "" | absURL }}{{ else }}{{ "" | relURL }}{{ end -}}
+  {{- else -}}
+    {{- if $absolute }}{{ $path | absURL }}{{ else }}{{ $path | relURL }}{{ end -}}
+  {{- end -}}
 {{- end -}}

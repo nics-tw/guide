@@ -3,7 +3,6 @@ title: 首頁範本
 layout: raw
 ---
 {{< demo-page-head >}}
-<!-- TODO: 增加 noscript -->
 <noscript><span>您的瀏覽器不支援或未開啟JavaScript功能，將無法正常使用本系統，請開啟瀏覽器JavaScript功能，以利系統順利執行。</span></noscript>
 <div class="one-col">
   <header class="site-header">
@@ -15,11 +14,11 @@ layout: raw
       <a href="#footer" class="skip-to">跳至頁尾</a>
     </skip-to>
 
-    <a href="/" class="flex items-center">
+    <a href="{{< relURL "index.html" >}}" class="flex items-center">
       <div class="bg-layer1 w2 mr3" style="aspect-ratio: 1 / 1;"><!-- logo --></div>
       <h1>首頁範本</h1>
     </a>
-    <nav aria-label="主要" class="flex gap4 mt4">
+    <nav aria-label="主要" id="navigation" class="flex gap4 mt4">
       <a href="#">首頁</a>
       <a href="#">關於我們</a>
     </nav>
@@ -28,7 +27,7 @@ layout: raw
     <nav aria-label="麵包屑" class="breadcrumb arrow-separator">
         <ol>
           <li>
-            <a href="/">首頁</a>
+            <a href="{{< relURL "index.html" >}}">首頁</a>
           </li>
         </ol>
     </nav>    
@@ -70,7 +69,7 @@ layout: raw
   <footer id="footer" class="site-footer f6 flex items-center gap4">
     <div class="plain w2 mr3" style="aspect-ratio: 1 / 1;"><!-- logo --></div>
     <div class="mw5">
-      <a href="/accessibility-statement">親和力宣告</a>
+      <a href="{{< relURL "accessibility-statement" >}}">親和力宣告</a>
     </div>
   </footer>
 </div>

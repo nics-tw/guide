@@ -15,7 +15,7 @@ maturity: "new"
 
 ### 首頁範本
 
-[首頁範本](/accessibility/demo-page/landing-page.html)原始碼。
+[首頁範本]({{< ref "accessibility/demo-page/landing-page.html" >}})原始碼。
 
 {{< code-example path="accessibility/demo-page/landing-page.html" class="maxh" >}}
 
@@ -23,7 +23,7 @@ maturity: "new"
 
 此頁面範本為常見的表單填寫、業務申辦等類型的數位服務情境，在操作目的較單純的情境應可簡化為單一頁面或單一操作元件。為確保範本足以因應複雜情境，並展示多項共用元件應用，且避免 [SC 3.3.4 Error Prevention (Legal, Financial, Data)](https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html) 使用障礙，故範本設計中融入了填寫資料前的同意宣告，以及填寫資料後、送出資料前的最終確認。
 
-[意見回饋頁範本](/accessibility/demo-page/form-page-s1.html)原始碼。
+[意見回饋頁範本]({{< ref "accessibility/demo-page/form-page-s1.html" >}})原始碼。
 
 {{< code-example path="accessibility/demo-page/form-page-s1.html" class="maxh" >}}
 
@@ -83,11 +83,12 @@ content=`<!-- Go template syntax in Hugo -->
 content=`<!-- Go template syntax in Hugo -->
 {{ range $index, $p := $pages }}
   {{ $i := add $index 1 }}
+  {{ $href := printf "accessibility/demo-page/form-page-s%d.html" $i | absURL }}
   {{ if le $i $.current }}
     {{ if eq $i $.current }}
-      <a href="/accessibility/demo-page/form-page-s{{ $i }}.html" aria-current="page"><mark>{{ $p }}</mark></a>
+      <a href="{{ $href }}" aria-current="page"><mark>{{ $p }}</mark></a>
     {{ else }}
-      <a href="/accessibility/demo-page/form-page-s{{ $i }}.html">{{ $p }}</a>
+      <a href="{{ $href }}">{{ $p }}</a>
     {{ end }}
   {{ else }}
     <span>{{ $p }}</span>
