@@ -5,7 +5,7 @@ maturity: "alpha"
 
 ### 常見按鈕
 
-{{< live-example partial="ctas/button.html" i18n_selector="button" i18n="en-US:Submit,Delete,Cancel;ja:送信,削除,キャンセル;vi:Gửi,Xóa,Hủy;th:ส่ง,ลบ,ยกเลิก" >}}
+{{< live-example partial="ctas/button.html" i18n_selector="button" i18n="en-US:Submit,Delete,Next;ja:送信,削除,キャンセル;vi:Gửi,Xóa,Hủy;th:ส่ง,ลบ,ยกเลิก" >}}
 
 #### CSS
 
