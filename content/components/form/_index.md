@@ -23,7 +23,7 @@ maturity: "alpha"
 
 ### 選項欄位
 
-{{< live-example partial="form/form-checkable.html" i18n_selector="[for=id],[for=items]" i18n="en-US:ID type,Lost document replacement" >}}
+{{< live-example partial="form/form-checkable.html" i18n_selector="[for=id],[for=items],[for=v-healthid],[for=v-moica],[for=v-phone],[for=check-h-healthid],[for=check-h-moica],[for=check-h-id]" i18n="en-US:ID type,Lost document replacement,NHI Card,Digital Certificate,Cell phone,NHI Card,Digital Certificate,ID Card" >}}
 
 #### CSS
 
