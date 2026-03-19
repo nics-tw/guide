@@ -14,7 +14,7 @@
       <option value="default">正體中文</option>
       {{ range $i18n }} {{ $parts := split . ":" }}
       <option lang="{{ index $parts 0 }}" data-phrases="{{ index $parts 1 }}">
-        {{ index $.Site.Params.i18n.langs (index $parts 0) }}
+        {{ index $.context.Site.Params.i18n.langs (index $parts 0) }}
       </option>
       {{ end }}
     </select>
