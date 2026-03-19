@@ -59,13 +59,13 @@ img.reload {
                 font-weight: 600;
 
                 &:hover {
-                    background-color: rgb(0, 0, 0);
+                    background-color: rgba(0, 0, 0, 1);
                 }
 
                 &:focus {
                     padding: 4px;
                     border: 2px solid #fff;
-                    background-color: rgb(0, 0, 0);
+                    background-color: rgba(0, 0, 0, 1);
                     outline: none;
                     color: #fff;
                 }
@@ -80,7 +80,7 @@ img.reload {
                 border: 0 solid transparent;
 
                 &:hover {
-                    background-color: rgb(0, 0, 0);
+                    background-color: rgba(0, 0, 0, 1);
                 }
             }
 
