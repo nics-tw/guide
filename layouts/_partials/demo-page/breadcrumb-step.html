@@ -1,0 +1,22 @@
+{{- if .path -}}
+{{- $pages := split .path ";" -}}
+  <nav aria-label="麵包屑" class="breadcrumb arrow-separator">
+    <ol>
+      {{- range $index, $p := $pages -}}
+        {{- $i := add $index 1 -}}
+        {{- $href := printf "accessibility/demo-page/form-page-s%d.html" $i | relURL -}}
+        <li>
+          {{- if le $i $.current -}}
+            {{- if eq $i $.current -}}
+              <a href="{{ $href }}" aria-current="page"><mark>{{ $p }}</mark></a>
+            {{- else -}}
+              <a href="{{ $href }}">{{ $p }}</a>
+            {{- end -}}
+          {{- else -}}
+            <span>{{ $p }}</span>
+          {{- end -}}
+        </li>
+      {{- end }}
+    </ol>
+  </nav>
+{{- end -}}

@@ -1,5 +1,6 @@
 ---
 title: 前端技術原則
+weight: 30
 ---
 
 <blockquote lang="en">Engineering has a direct and vital impact on the quality of life <b>for all people</b>. Accordingly, the services provided by engineers require honesty, impartiality, fairness, and equity, and must be dedicated to <b>the protection of the public health, safety, and welfare</b>.</blockquote>
