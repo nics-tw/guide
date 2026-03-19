@@ -5,7 +5,7 @@ maturity: "alpha"
 
 ### 簡易欄位
 
-{{< live-example partial="form/form-elements.html" i18n_selector="[for=name],[for=city],[for=desc]" i18n="en-US:Full name,City of residence,Description" >}}
+{{< live-example partial="form/form-elements.html" i18n_selector="[for=name],[for=city],[for=desc],[for=select],[for=taipei],[for=newtaipei],[for=keelung]" i18n="en-US:Full name,City of residence,Description,Select,Taipei,New Taipei,Keelung" >}}
 
 #### CSS
 
