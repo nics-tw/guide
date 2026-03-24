@@ -7,4 +7,4 @@
 {{ if eq $customElement "true" }}{{ $inject_data = $raw_content | base64Encode }}{{ end }}
 {{ $rendered_content := cond (eq $customElement "true") "" (partial $partial_name .) }}
 {{ $code_content := cond (eq $customElement "true") $raw_content $rendered_content }}
-{{ partial "example.html" (dict "rendered_content" $rendered_content "raw_content" $code_content "inject_html_data" $inject_data "context" .) }}
+{{ partial "example.html" (dict "rendered_content" $rendered_content "raw_content" $code_content "inject_html_data" $inject_data "i18n" (.Get "i18n") "i18n_selector" (.Get "i18n_selector") "context" .) }}

@@ -5,7 +5,7 @@ maturity: "alpha"
 
 ### 簡易欄位
 
-{{< live-example partial="form/form-elements.html" i18n_selector="[for=name],[for=city],[for=desc]" i18n="en-US:Full name,City of residence,Description" >}}
+{{< live-example partial="form/form-elements.html" i18n_selector="[for=name],[for=city],[for=desc],[value='select'],[value=taipei],[value=newtaipei],[value=keelung]" i18n="en-US:Full name,City of residence,Description,Select,Taipei,New Taipei,Keelung" >}}
 
 #### CSS
 
@@ -23,7 +23,7 @@ maturity: "alpha"
 
 ### 選項欄位
 
-{{< live-example partial="form/form-checkable.html" i18n_selector="[for=id],[for=items]" i18n="en-US:ID type,Lost document replacement" >}}
+{{< live-example partial="form/form-checkable.html" i18n_selector="[for=id],[for=items],[for=v-healthid],[for=v-moica],[for=v-phone],[for=check-h-healthid],[for=check-h-moica],[for=check-h-id]" i18n="en-US:ID type,Lost document replacement,NHI Card,Digital Certificate,Cell phone,NHI Card,Digital Certificate,ID Card" >}}
 
 #### CSS
 
@@ -33,7 +33,7 @@ maturity: "alpha"
 
 ### 欄位說明
 
-{{< live-example partial="form/field.html" i18n_selector="label,.field-description li" i18n="en-US:Email,Address must end with @pdis.nat.gov.tw.;" >}}
+{{< live-example partial="form/field.html" i18n_selector="label,.field-description li" i18n="en-US:Email,Address must end with @pdis.nat.gov.tw." >}}
 
 #### CSS
 
@@ -45,7 +45,7 @@ maturity: "alpha"
 
 ### 必要欄位
 
-{{< live-example partial="form/field-required.html" i18n_selector="label,.field-required" i18n="en-US:Email,required;" >}}
+{{< live-example partial="form/field-required.html" i18n_selector="label,.field-required" i18n="en-US:Email,required" >}}
 
 #### 親和力
 
