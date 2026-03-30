@@ -1,0 +1,38 @@
+<div data-search-feedback-demo>
+  <form data-search-form novalidate>
+    <label for="search-input">搜尋關鍵字</label>
+    <span id="search-hint" class="visually-hidden">搜尋後結果將顯示於下方</span>
+    <input
+      type="search"
+      id="search-input"
+      name="q"
+      placeholder="請輸入關鍵字"
+      autocomplete="off"
+      aria-describedby="search-hint"
+      data-search-input
+    >
+    <button type="submit">搜尋</button>
+  </form>
+  <div
+    role="status"
+    aria-atomic="true"
+    class="search-feedback__status"
+    id="search-status"
+    data-search-status
+  ></div>
+  <div
+    role="alert"
+    aria-atomic="true"
+    class="search-feedback__status"
+    id="search-alert"
+    data-search-alert
+  ></div>
+  <h2
+    class="visually-hidden"
+    tabindex="-1"
+    data-results-heading
+  ></h2>
+  <ul aria-label="搜尋結果" data-search-results hidden>
+    <li>搜尋結果項目</li>
+  </ul>
+</div>

@@ -1,0 +1,156 @@
+// =============================================================================
+// Search Feedback 元件樣式
+// =============================================================================
+// 職責：status region 的視覺呈現與各狀態 modifier class
+// 注意：status region 保持視覺可見（依 HTMHell 建議，避免維護兩套文字）
+//       若需視覺隱藏，改用 .visually-hidden，不可用 display:none（會讓 AT 也忽略）
+// =============================================================================
+
+// --- 狀態顏色變數 ---
+$sf-color-loading:   var(--secondaryTextColor, #6b7280);
+$sf-color-found:     var(--primaryColor, #005ea2);
+$sf-color-not-found: var(--secondaryTextColor, #6b7280);
+$sf-color-error:     var(--dangerColor); // 錯誤狀態使用 design token（自動適應暗色模式）
+
+// --- Status Region 核心 ---
+.search-feedback__status {
+  min-height: 1.5rem; // 保留空間，避免版面跳動
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem; // 15px
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+
+  // 初始狀態：不顯示任何視覺效果（內容為空）
+  // 不可用 display:none，否則 AT 會忽略 live region。
+  // 改用 position:absolute 讓空容器脫離 flex 佈局，不佔 gap 間距。
+  &:empty {
+    position: absolute;
+    padding: 0;
+    min-height: 0;
+  }
+
+  // --loading：搜尋中
+  &--loading {
+    color: $sf-color-loading;
+    background-color: var(--backgroundColorLayer1);
+    border-left: 3px solid $sf-color-loading;
+  }
+
+  // --found：有結果
+  &--found {
+    color: $sf-color-found;
+    background-color: var(--backgroundColorLayer2);
+    border-left: 3px solid $sf-color-found;
+  }
+
+  // --not-found：無結果
+  &--not-found {
+    color: $sf-color-not-found;
+    background-color: var(--backgroundColorLayer1);
+    border-left: 3px solid $sf-color-not-found;
+  }
+
+  // --error：錯誤
+  // 不可只靠顏色傳達狀態，文字本身已說明錯誤情境
+  &--error {
+    color: $sf-color-error;
+    background-color: var(--backgroundColorLayer1);
+    border-left: 3px solid $sf-color-error;
+    font-weight: 600;
+  }
+}
+
+// --- Demo 外框 ---
+.search-feedback-demo {
+  position: relative; // 供空的 live region（position:absolute）定位
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+// --- Demo：輸入群組 ---
+.search-feedback-demo__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.search-feedback-demo__label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--textColor);
+}
+
+.search-feedback-demo__input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.search-feedback-demo__input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--borderColor, #d1d5db);
+  border-radius: 0.25rem;
+
+  &:focus {
+    outline: 3px solid var(--primaryColor, #005ea2);
+    outline-offset: 2px;
+  }
+}
+
+// --- Demo：結果列表 ---
+.search-feedback-demo__results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.search-feedback-demo__result-item {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--backgroundColor, #fff);
+  border: 1px solid var(--borderColor, #e5e7eb);
+  border-radius: 0.25rem;
+  font-size: 0.9375rem;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// --- Demo：控制按鈕區 ---
+.search-feedback-demo__controls {
+  border-top: 1px solid var(--borderColor, #e5e7eb);
+  padding-top: 0.75rem;
+}
+
+.search-feedback-demo__controls-label {
+  font-size: 0.875rem;
+  color: var(--secondaryTextColor, #6b7280);
+  margin: 0 0 0.5rem;
+}
+
+.search-feedback-demo__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+// --- 無 JS 提示 ---
+.search-feedback-demo__noscript {
+  font-size: 0.875rem;
+  color: var(--secondaryTextColor, #6b7280);
+  font-style: italic;
+}
+
+// --- prefers-reduced-motion：停用所有動畫 ---
+@media (prefers-reduced-motion: reduce) {
+  .search-feedback__status {
+    transition: none;
+  }
+}

@@ -1,0 +1,31 @@
+<div data-live-filter-demo>
+  <label for="filter-input">即時篩選</label>
+  <span id="filter-hint" class="visually-hidden">結果將隨您輸入即時更新</span>
+  <input
+    type="search"
+    id="filter-input"
+    placeholder="輸入關鍵字即時篩選"
+    autocomplete="off"
+    aria-describedby="filter-hint"
+    data-live-filter-input
+  >
+  <div
+    role="status"
+    aria-atomic="true"
+    class="search-feedback__status"
+    id="live-filter-status"
+    data-live-filter-status
+  ></div>
+  <div
+    role="alert"
+    aria-atomic="true"
+    class="search-feedback__status"
+    id="live-filter-alert"
+    data-live-filter-alert
+  ></div>
+  <ul aria-label="篩選結果" data-live-filter-list>
+    <li data-filter-text="項目一">項目一</li>
+    <li data-filter-text="項目二">項目二</li>
+    <li data-filter-text="項目三">項目三</li>
+  </ul>
+</div>
