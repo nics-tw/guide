@@ -1,0 +1,175 @@
+// Modal 元件樣式
+// 使用原生 <dialog> 元素，搭配 showModal() 開啟
+// 背景遮罩採用 dialog::backdrop（瀏覽器原生支援）
+
+// ── 變數 ───────────────────────────────────────────────
+$modal-bg:            var(--backgroundColor);
+$modal-text:          var(--textColor);
+$modal-border:        var(--borderColor);
+$modal-backdrop-bg:   rgba(0, 0, 0, 0.55);
+$modal-shadow:        0 8px 32px rgba(0, 0, 0, 0.18);
+$modal-radius:        0.5rem;
+$modal-max-width:     640px;
+$modal-max-height:    90vh;
+$modal-header-bg:     var(--backgroundColorLayer1);
+$modal-close-size:    2.25rem;
+
+// ── 動畫 ───────────────────────────────────────────────
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ── Dialog 主體 ────────────────────────────────────────
+dialog.modal,
+dialog[id^="modal"] {
+  // 重設瀏覽器預設
+  padding: 0;
+  border: 1px solid $modal-border;
+  border-radius: $modal-radius;
+  background-color: $modal-bg;
+  color: $modal-text;
+  box-shadow: $modal-shadow;
+
+  // 尺寸與定位
+  width: 90vw;
+  max-width: $modal-max-width;
+  max-height: $modal-max-height;
+  overflow: hidden; // dialog 本身不捲動，body 區塊捲動
+
+  // dialog 本身設有 tabindex="-1" 以支援程式化聚焦
+  // 僅對非鍵盤觸發的聚焦隱藏 outline（:focus-visible 保留鍵盤使用者的視覺反饋）
+  // 符合 WCAG 2.4.11，同時維持 Adrian Roselli 建議的程式化聚焦無外框行為
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  // 開啟動畫
+  &[open] {
+    animation: modal-fade-in 0.2s ease-out;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  // Backdrop 遮罩（原生 <dialog>::backdrop）
+  &::backdrop {
+    background-color: $modal-backdrop-bg;
+    animation: modal-fade-in 0.2s ease-out;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+}
+
+// ── Header ─────────────────────────────────────────────
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: $modal-header-bg;
+  border-bottom: 1px solid $modal-border;
+  border-radius: $modal-radius $modal-radius 0 0;
+  flex-shrink: 0;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: $modal-text;
+}
+
+// ── 關閉按鈕（圖示型）──────────────────────────────────
+.modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: $modal-close-size;
+  height: $modal-close-size;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: var(--mutedTextColor);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  &:hover {
+    background-color: var(--backgroundColorLayer2);
+    color: $modal-text;
+    border-color: $modal-border;
+  }
+
+  // 清晰的 focus indicator（WCAG AA 符合）
+  &:focus-visible {
+    outline: 3px solid var(--linkColor);
+    outline-offset: 2px;
+  }
+
+  svg {
+    display: block;
+    pointer-events: none;
+  }
+}
+
+// ── Body（可捲動）─────────────────────────────────────
+.modal-body {
+  padding: 1.25rem;
+  overflow-y: auto;
+  // 扣除 header（約 3.5rem + 1px border）與 footer（約 4rem + 1px border）後的最大高度
+  max-height: calc(#{$modal-max-height} - 8rem);
+  color: $modal-text;
+  line-height: 1.6;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ── Footer ─────────────────────────────────────────────
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid $modal-border;
+  background-color: $modal-bg;
+  border-radius: 0 0 $modal-radius $modal-radius;
+  flex-shrink: 0;
+
+  // Footer 內的按鈕通用 focus indicator
+  button:focus-visible {
+    outline: 3px solid var(--linkColor);
+    outline-offset: 2px;
+  }
+}
+
+// ── 行動裝置 ───────────────────────────────────────────
+@media (max-width: 480px) {
+  dialog.modal,
+  dialog[id^="modal"] {
+    width: 100%;
+    max-width: 100%;
+    margin: auto 0 0; // 靠底部置中，初版不採用 bottom sheet 變體
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
