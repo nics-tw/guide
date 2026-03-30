@@ -11,6 +11,7 @@
   --dangerColor: #CC3100;
   --warningColor: #ff6600;
   --highlightColor: rgba(255, 255, 0, 0.8);
+  --hoverOverlay: rgba(0, 0, 0, 0.05);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +28,7 @@
     --dangerColor: #ff7f7f;
     --warningColor: #ff6600;
     --highlightColor: rgba(168, 168, 0, 0.6);
+    --hoverOverlay: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -46,7 +48,7 @@ body, .plain {
 .fg-subtle { color: var(--mutedTextColor) }
 .b-main { border-color: var(--textColor); }
 
-textarea, input {
+textarea, input, button {
   background-color: var(--backgroundColor);
   color: var(--textColor);
 }
