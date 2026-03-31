@@ -190,7 +190,6 @@
 
     &:hover {
       background: var(--backgroundColorLayer1, #f3f4f6) /* 專案 token: --backgroundColorLayer1（variables.scss） */;
-      border-color: var(--borderColor);
     }
 
     &:focus {
@@ -252,7 +251,6 @@
     // hover（非 disabled）
     &:not([aria-disabled="true"]):hover {
       background: var(--backgroundColorLayer1, #f3f4f6) /* 專案 token: --backgroundColorLayer1（variables.scss） */;
-      border-color: var(--borderColor);
     }
 
     // ── 今天（aria-current="date"）──
