@@ -3,8 +3,7 @@
  *
  * 設計決策：
  * - 使用原生 <dialog> + showModal()，取得原生 focus trap 與 ESC 支援
- * - 開啟時焦點移至 <dialog> 本身（tabindex="-1" + dialog.focus()）
- *   依據：Adrian Roselli 2025 建議，先宣告標題再讓使用者 Tab 到互動元素
+ * - 開啟時焦點由 showModal() + autofocus 屬性管理，移至 dialog 內指定元素
  * - 關閉時焦點還原至觸發按鈕（JS 手動管理，原生 <dialog> 不自動處理）
  * - Backdrop 點擊關閉：預設啟用，可在 <dialog> 加上 data-modal-no-backdrop-close 停用
  * - 不在 dialog 層級攔截 Space 鍵，讓瀏覽器原生行為處理
@@ -33,9 +32,6 @@ function initModal(dialog) {
   function openModal(triggerEl) {
     lastTrigger = triggerEl;
     dialog.showModal();
-    // 焦點移至 dialog 本身（非第一個子元素）
-    // tabindex="-1" 使 dialog 可被程式化聚焦
-    dialog.focus();
   }
 
   /**
@@ -61,7 +57,9 @@ function initModal(dialog) {
   });
 
   // ── 關閉按鈕：data-modal-close ────────────────────────
-  // 監聽 dialog 內所有帶有 data-modal-close 的按鈕
+  // 關閉按鈕已包裹在 <form method="dialog"> 中，submit 會觸發原生 dialog.close()。
+  // 監聽 close 事件統一處理焦點還原（涵蓋 form submit 與 ESC 兩種關閉途徑）。
+  // 同時保留 click 委派，確保焦點還原邏輯在所有關閉途徑下皆觸發。
   dialog.addEventListener('click', function (event) {
     const closeBtn = event.target.closest('[data-modal-close]');
     if (closeBtn) {

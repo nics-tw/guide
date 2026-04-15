@@ -16,28 +16,30 @@
   aria-modal="true"
   aria-labelledby="modal-demo-title"
   aria-describedby="modal-demo-desc"
-  tabindex="-1"
 >
   <div class="modal-header">
     <h2 id="modal-demo-title" class="modal-title">Modal 標題</h2>
-    <button
-      type="button"
-      class="modal-close"
-      data-modal-close
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        aria-hidden="true"
-        focusable="false"
+    <form method="dialog">
+      <button
+        type="submit"
+        class="modal-close"
+        data-modal-close
+        autofocus
       >
-        <line x1="3" y1="3" x2="17" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="17" y1="3" x2="3" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <span class="visually-hidden">關閉</span>
-    </button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <line x1="3" y1="3" x2="17" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="17" y1="3" x2="3" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="visually-hidden">關閉</span>
+      </button>
+    </form>
   </div>
   <div class="modal-body">
     <p id="modal-demo-desc">
@@ -45,10 +47,10 @@
       請確認後點擊「確認」或按 ESC 鍵關閉。
     </p>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="button" data-modal-close>取消</button>
-    <button type="button" class="button button-primary" data-modal-close>確認</button>
-  </div>
+  <form method="dialog" class="modal-footer">
+    <button type="submit" class="button" data-modal-close>取消</button>
+    <button type="submit" class="button button-primary" data-modal-close>確認</button>
+  </form>
 </dialog>
 
 <!--
