@@ -10,6 +10,8 @@
  *   3. 若需即時篩選，可搭配 debounce() 控制觸發頻率
  *
  * ARIA 設計說明：
+ *   - <output> 原生具有 role="status" + aria-live="polite"，為語意化的狀態容器
+ *   - 需要 assertive 通知時，在 <output> 加上 role="alert" 覆寫
  *   - status region 必須在頁面載入時就存在於 DOM，初始內容為空
  *   - 更新順序：先更新結果列表 → 再更新 status 文字
  *   - 重複搜尋：先清空 status（約 100ms delay）→ 再填入新文字，確保宣告觸發
@@ -46,7 +48,7 @@ function debounce(fn, delay) {
  *   2. 等待約 100ms（讓 AT 感知到空→有的變化）
  *   3. 設定新的狀態 class 與文字
  *
- * @param {HTMLElement} statusEl  role="status" 容器元素
+ * @param {HTMLOutputElement} statusEl  <output> 容器元素（原生 role="status"）
  * @param {string}      state     'loading' | 'found' | 'not-found' | 'error' | ''
  * @param {string}      message   宣告文字（用 textContent 設定，非 innerHTML）
  */
@@ -76,7 +78,7 @@ function updateStatus(statusEl, state, message) {
  * 更新 assertive alert region（無結果、錯誤等需立即通知的狀態）
  * 與 updateStatus 共用 modifier class 以統一視覺樣式
  *
- * @param {HTMLElement} alertEl   role="alert" 容器元素
+ * @param {HTMLOutputElement} alertEl   <output role="alert"> 容器元素
  * @param {string}      state     'not-found' | 'error' | ''
  * @param {string}      message   宣告文字
  */

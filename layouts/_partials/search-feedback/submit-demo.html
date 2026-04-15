@@ -26,29 +26,27 @@
   </form>
 
   {{/* Search Feedback 元件核心：status region 必須在頁面載入時就存在，初始為空 */}}
-  <div
-    role="status"
+  <output
     aria-atomic="true"
     class="search-feedback__status"
     id="js-search-status-submit"
     data-search-status
-  ></div>
+  ></output>
 
   {{/* Assertive live region：無結果或錯誤時立即通知 */}}
-  <div
+  <output
     role="alert"
     aria-atomic="true"
     class="search-feedback__status"
     id="js-search-alert-submit"
     data-search-alert
-  ></div>
+  ></output>
 
-  {{/* 搜尋結果標題：提供鍵盤使用者的導覽錨點，搜尋完成後由 JS 聚焦 */}}
-  <h2
-    class="visually-hidden"
-    tabindex="-1"
+  {{/* 搜尋結果摘要：由 JS 更新文字，<output> 原生具 role="status"，AT 自動播報 */}}
+  <output
+    class="search-feedback__status"
     data-results-heading
-  ></h2>
+  ></output>
 
   {{/* 模擬搜尋結果列表（aria-busy 設定在此容器） */}}
   <ul
@@ -67,8 +65,8 @@
     <p class="search-feedback-demo__noscript">需要啟用 JavaScript 才能操作以下示範按鈕。</p>
   </noscript>
 
-  <div class="search-feedback-demo__controls" data-search-controls>
-    <p class="search-feedback-demo__controls-label">模擬狀態切換：</p>
+  <fieldset class="search-feedback-demo__controls" data-search-controls>
+    <legend class="search-feedback-demo__controls-label">以下為模擬 4 種搜尋狀態的啟動按鈕</legend>
     <div class="search-feedback-demo__buttons">
       <button
         type="button"
@@ -102,6 +100,6 @@
         錯誤
       </button>
     </div>
-  </div>
+  </fieldset>
 
 </div>

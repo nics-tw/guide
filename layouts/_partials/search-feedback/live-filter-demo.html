@@ -18,22 +18,21 @@
   </div>
 
   {{/* Search Feedback 元件核心：status region 必須在頁面載入時就存在，初始為空 */}}
-  <div
-    role="status"
+  <output
     aria-atomic="true"
     class="search-feedback__status"
     id="js-search-status-filter"
     data-live-filter-status
-  ></div>
+  ></output>
 
   {{/* Assertive live region：無結果時立即通知（polite 不夠及時） */}}
-  <div
+  <output
     role="alert"
     aria-atomic="true"
     class="search-feedback__status"
     id="js-search-alert-filter"
     data-live-filter-alert
-  ></div>
+  ></output>
 
   {{/* 可篩選清單 */}}
   <ul

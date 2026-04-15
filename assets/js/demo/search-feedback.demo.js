@@ -62,12 +62,12 @@ function initSearchFeedbackDemo(root) {
       var message = '';
       if (state === 'found') {
         message = keyword
-          ? '找到「' + keyword + '」共 ' + count + ' 筆結果'
-          : '找到 ' + count + ' 筆結果';
+          ? '搜尋結果共 ' + count + ' 筆，關鍵字「' + keyword + '」'
+          : '搜尋結果共 ' + count + ' 筆';
         updateAlert(alertEl, '', '');
         if (resultsHeading) {
           resultsHeading.textContent = message;
-          resultsHeading.focus();
+          // <output> 原生具 role="status"，AT 自動播報，不需 focus
           updateStatus(statusEl, '', '');
         } else {
           updateStatus(statusEl, state, message);
