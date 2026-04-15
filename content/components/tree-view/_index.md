@@ -1,5 +1,5 @@
 ---
-title: 樹狀檢視 (View Tree)
+title: 樹狀檢視 (Tree View)
 maturity: "new"
 ---
 
