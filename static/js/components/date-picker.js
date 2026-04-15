@@ -35,7 +35,7 @@
   }
 
   /**
-   * 驗證 YYYY-MM-DD 格式並確認為合法日期
+   * 驗證 YYYY-MM-DD 格式並確認為合法日期（含日期溢位檢查）
    * @param {string} value
    * @returns {boolean}
    */
@@ -43,8 +43,13 @@
     if (!value) return false;
     var regex = /^\d{4}-\d{2}-\d{2}$/;
     if (!regex.test(value)) return false;
-    var d = parseISODate(value);
-    return !isNaN(d.getTime());
+    var parts = value.split('-');
+    var y = parseInt(parts[0], 10);
+    var m = parseInt(parts[1], 10);
+    var d = parseInt(parts[2], 10);
+    if (m < 1 || m > 12) return false;
+    if (d < 1 || d > getDaysInMonth(y, m - 1)) return false;
+    return true;
   }
 
   /**
@@ -120,6 +125,8 @@
     this.nativeInput = container.querySelector('.dp__input--native');
     this.toggleBtn   = container.querySelector('.dp__button');
     this.dialog      = container.querySelector('.dp__dialog');
+    this.prevYearBtn = container.querySelector('.dp__nav-btn--prev-year');
+    this.nextYearBtn = container.querySelector('.dp__nav-btn--next-year');
     this.prevBtn     = container.querySelector('.dp__nav-btn--prev');
     this.nextBtn     = container.querySelector('.dp__nav-btn--next');
     this.monthLabel  = container.querySelector('.dp__month-heading');
@@ -127,7 +134,7 @@
     this.grid        = container.querySelector('.dp__grid tbody');
     this.closeBtn    = container.querySelector('.dp__close-btn');
     this.feedback    = container.querySelector('.dp__feedback');
-    this.hintId      = 'dp-hint';
+
 
     // 支援 data-min / data-max
     this.minDate = container.dataset.min || null;
@@ -169,7 +176,6 @@
       textInput.setAttribute('aria-expanded', 'false');
       textInput.setAttribute('aria-controls', 'dp-dialog');
       textInput.setAttribute('aria-autocomplete', 'none');
-      textInput.setAttribute('aria-describedby', this.hintId);
       textInput.setAttribute('inputmode', 'numeric');
       textInput.setAttribute('spellcheck', 'false');
 
@@ -236,6 +242,10 @@
     this._textInput.addEventListener('blur', function () {
       self._validateInput(self._textInput.value);
     });
+
+    // 上/下年按鈕
+    this.prevYearBtn.addEventListener('click', function () { self.prevYear(); });
+    this.nextYearBtn.addEventListener('click', function () { self.nextYear(); });
 
     // 上個月 / 下個月按鈕
     this.prevBtn.addEventListener('click', function () { self.prevMonth(); });
@@ -328,8 +338,13 @@
     var year  = this.state.year;
     var month = this.state.month;
 
-    // 更新月份標題（visible text 與 live region span 分開更新）
-    this.monthLive.textContent = formatMonthLabel(year, month);
+    // 更新月份標題（清空後重設，確保 aria-live 重新觸發播報）
+    var label = formatMonthLabel(year, month);
+    this.monthLive.textContent = '';
+    var self = this;
+    setTimeout(function () {
+      self.monthLive.textContent = label;
+    }, 50);
 
     var today       = formatISO(new Date());
     var selected    = this.state.selectedDate;
@@ -340,15 +355,6 @@
     // 計算月份首日是星期幾（0=日）
     var firstDay = new Date(year, month, 1).getDay();
     var daysInMonth = getDaysInMonth(year, month);
-
-    // 前月補位天數
-    var prevYear  = month === 0 ? year - 1 : year;
-    var prevMonth = month === 0 ? 11 : month - 1;
-    var daysInPrevMonth = getDaysInMonth(prevYear, prevMonth);
-
-    // 後月補位天數
-    var nextYear  = month === 11 ? year + 1 : year;
-    var nextMonth = month === 11 ? 0 : month + 1;
 
     // 清空 tbody
     var tbody = this.grid;
@@ -370,17 +376,9 @@
       var dateStr, dayNum, isOtherMonth;
 
       if (i < firstDay) {
-        // 前月溢出日期
-        dayNum = daysInPrevMonth - firstDay + i + 1;
-        dateStr = formatISO(new Date(prevYear, prevMonth, dayNum));
         isOtherMonth = true;
-        td.classList.add('dp__cell--other-month');
       } else if (i >= firstDay + daysInMonth) {
-        // 後月溢出日期
-        dayNum = i - firstDay - daysInMonth + 1;
-        dateStr = formatISO(new Date(nextYear, nextMonth, dayNum));
         isOtherMonth = true;
-        td.classList.add('dp__cell--other-month');
       } else {
         // 本月日期
         dayNum = i - firstDay + 1;
@@ -388,9 +386,15 @@
         isOtherMonth = false;
       }
 
+      // 非本月日期不顯示內容，也不設互動屬性
+      if (isOtherMonth) {
+        // 空白 <td>：無文字、無 tabindex、無 data-date，AT 跳過
+        row.appendChild(td);
+        continue;
+      }
+
       td.textContent = dayNum;
       td.dataset.date = dateStr;
-      td.setAttribute('aria-label', formatDateLabel(dateStr));
       td.setAttribute('tabindex', '-1');
       td.setAttribute('aria-selected', 'false');
 
@@ -505,34 +509,6 @@
         this._moveFocusTo(formatISO(newDate));
         break;
 
-      case 'Home':
-        // 移至當週第一天（星期日）
-        e.preventDefault();
-        newDate = new Date(date);
-        newDate.setDate(newDate.getDate() - newDate.getDay());
-        this._moveFocusTo(formatISO(newDate));
-        break;
-
-      case 'End':
-        // 移至當週最後一天（星期六）
-        e.preventDefault();
-        newDate = new Date(date);
-        newDate.setDate(newDate.getDate() + (6 - newDate.getDay()));
-        this._moveFocusTo(formatISO(newDate));
-        break;
-
-      case 'PageUp':
-        // 切換至上個月
-        e.preventDefault();
-        this._navigateMonth(-1);
-        break;
-
-      case 'PageDown':
-        // 切換至下個月
-        e.preventDefault();
-        this._navigateMonth(1);
-        break;
-
       case 'Enter':
       case ' ':
         // 只在焦點位於日期格子時才攔截，導覽按鈕與關閉按鈕交由瀏覽器原生 click 處理
@@ -606,12 +582,12 @@
   };
 
   /**
-   * Tab 鍵焦點陷阱：在 prevBtn → nextBtn → focusedGridCell → closeBtn 之間循環
+   * Tab 鍵焦點陷阱：在 prevYearBtn → prevBtn → nextBtn → nextYearBtn → focusedGridCell → closeBtn 之間循環
    * 明確列舉焦點節點，避免 querySelectorAll 依 DOM 順序造成非預期循環
    */
   DatePicker.prototype._handleTabTrap = function (e) {
     var focusedCell = this.dialog.querySelector('.dp__cell[tabindex="0"]');
-    var focusable = [this.prevBtn, this.nextBtn, focusedCell, this.closeBtn].filter(Boolean);
+    var focusable = [this.prevYearBtn, this.prevBtn, this.nextBtn, this.nextYearBtn, focusedCell, this.closeBtn].filter(Boolean);
 
     if (focusable.length === 0) return;
 
@@ -631,7 +607,47 @@
     }
   };
 
-  // ── 月份導覽按鈕 ──────────────────────────────────────────
+  // ── 年份導覽 ──────────────────────────────────────────────
+
+  /**
+   * @param {number} delta - -1 上年, +1 下年
+   * @param {boolean} [moveFocusToGrid=true]
+   */
+  DatePicker.prototype._navigateYear = function (delta, moveFocusToGrid) {
+    if (moveFocusToGrid === undefined) moveFocusToGrid = true;
+
+    var date = parseISODate(this.state.focusedDate || formatISO(new Date()));
+    var day  = date.getDate();
+
+    var newYear  = this.state.year + delta;
+    var newMonth = this.state.month;
+
+    var maxDay = getDaysInMonth(newYear, newMonth);
+    if (day > maxDay) day = maxDay;
+
+    this.state.year  = newYear;
+    this.state.month = newMonth;
+    this.state.focusedDate = formatISO(new Date(newYear, newMonth, day));
+
+    this.renderCalendar();
+
+    if (moveFocusToGrid) {
+      var self = this;
+      requestAnimationFrame(function () {
+        self._focusDate(self.state.focusedDate);
+      });
+    }
+  };
+
+  // ── 導覽按鈕 ──────────────────────────────────────────────
+
+  DatePicker.prototype.prevYear = function () {
+    this._navigateYear(-1, false);
+  };
+
+  DatePicker.prototype.nextYear = function () {
+    this._navigateYear(1, false);
+  };
 
   DatePicker.prototype.prevMonth = function () {
     this._navigateMonth(-1, false);
@@ -702,7 +718,6 @@
       return;
     }
 
-    // 格式正確：同步狀態
     this.state.selectedDate = value;
     this.nativeInput.value  = value;
     this._updateFeedback('已輸入日期：' + formatDateLabel(value));

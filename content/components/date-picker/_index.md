@@ -18,8 +18,9 @@ maturity: "new"
 #### 親和力
 
 - 採 combobox + dialog + grid 架構，符合 [W3C APG Date Picker Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/) 模式。
-- 月曆開啟後方向鍵移動日期、Enter／Space 選取、ESC 關閉、Tab 焦點陷阱。
+- 月曆開啟後方向鍵移動日期、Enter／Space 選取、ESC 關閉、Tab 焦點陷阱。月份與年度切換使用導覽按鈕。
 - 超出 `data-min` / `data-max` 範圍的日期使用 `aria-disabled="true"`（非 HTML `disabled`），鍵盤仍可經過。
+- 星期欄位由 `<th scope="col" aria-label="星期X">` 提供完整語境，日期格子由格線結構自動帶出星期與日期資訊。
 
 #### JavaScript
 

@@ -4,13 +4,7 @@
        - 觸控裝置（pointer: coarse）：JS 不增強，維持原生 <input type="date">
        - 桌面 + JS：增強為 combobox + dialog + grid 模式
 -->
-<div class="dp__wrapper" data-date-picker>
-  <p id="dp-hint" class="dp__hint">
-    請輸入日期（格式：YYYY-MM-DD），或按下日曆按鈕以月曆選取。
-    月曆開啟後可用方向鍵移動日期、Enter 或空白鍵確認選取、ESC 關閉、
-    Page Up／Page Down 切換上下月、Home／End 移至當週第一或最後一天。
-  </p>
-  <div class="dp">
+<div class="dp" data-date-picker>
     <label class="dp__label" for="dp-input">選擇日期</label>
     <div class="dp__input-group">
       <input
@@ -18,7 +12,6 @@
         id="dp-input"
         name="date"
         class="dp__input dp__input--native"
-        aria-describedby="dp-hint"
       />
 
       <!--
@@ -30,7 +23,6 @@
           aria-expanded="false"
           aria-controls="dp-grid"
           aria-autocomplete="none"
-          aria-describedby="dp-hint"
           placeholder="YYYY-MM-DD"
       -->
       <button
@@ -55,6 +47,11 @@
       hidden
     >
       <div class="dp__nav">
+        <button type="button" class="dp__nav-btn dp__nav-btn--prev-year" aria-label="上一年">
+          <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.41 7.41L17 6l-6 6 6 6 1.41-1.41L13.83 12zM12.41 7.41L11 6l-6 6 6 6 1.41-1.41L7.83 12z"/>
+          </svg>
+        </button>
         <button type="button" class="dp__nav-btn dp__nav-btn--prev" aria-label="上個月">
           <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
@@ -74,6 +71,11 @@
         <button type="button" class="dp__nav-btn dp__nav-btn--next" aria-label="下個月">
           <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+        <button type="button" class="dp__nav-btn dp__nav-btn--next-year" aria-label="下一年">
+          <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5.59 7.41L7 6l6 6-6 6-1.41-1.41L10.17 12zM11.59 7.41L13 6l6 6-6 6-1.41-1.41L16.17 12z"/>
           </svg>
         </button>
       </div>
@@ -102,22 +104,9 @@
                 class="dp__cell"
                 tabindex="-1"
                 data-date="2026-03-01"
-                aria-label="2026年3月1日"
               >1</td>
               ...
             </tr>
-
-            結構說明：
-            - <td> 在 <table role="grid"> 下隱含 role="gridcell"，不需顯式宣告
-            - gridcell 本身可聚焦（非包裹 <button>），符合 W3C APG Date Picker Dialog 範例
-            - 此結構確保 NVDA 在 role="grid" 下自動切換至 Focus mode，方向鍵事件正確傳遞
-
-            狀態標記（JS 動態加上）：
-            - 今天：<td aria-current="date" class="dp__cell dp__cell--today">
-            - 已選取：<td aria-selected="true" class="dp__cell dp__cell--selected">
-            - 不可選（min/max 超出）：<td aria-disabled="true" tabindex="-1" class="dp__cell dp__cell--disabled">
-            - 當前焦點：tabindex="0"（roving tabindex，同時只有一個 gridcell 為 0）
-            - 非本月：class="dp__cell dp__cell--other-month"
           -->
         </tbody>
       </table>
@@ -130,5 +119,4 @@
       aria-live="polite"
       aria-atomic="true"
     ></output>
-  </div>
 </div>

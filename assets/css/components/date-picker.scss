@@ -18,26 +18,11 @@
 //   date-picker 無需另寫 dark mode 區塊
 // ============================================================
 
-// ── 根 block wrapper ──────────────────────────────────────────
-
-.dp__wrapper {
-  display: inline-block;
-}
-
 // ── 主要 block ────────────────────────────────────────────────
 
 .dp {
   position: relative;
   display: inline-block;
-
-  // ── 操作提示文字 ──────────────────────────────────────────
-
-  &__hint {
-    font-size: 0.875rem;
-    color: var(--mutedTextColor, #6b7280); /* 專案 token: --mutedTextColor（variables.scss） */
-    margin-block-end: 0.5rem;
-    max-width: 32rem;
-  }
 
   // ── 標籤 ──────────────────────────────────────────────────
 
@@ -81,9 +66,9 @@
     &--native {
       // 預設顯示（無 JS 或觸控裝置）
 
-      // 桌面 JS 增強後，JS 會在 .dp__wrapper 加上 data-js-enhanced 屬性，
+      // 桌面 JS 增強後，JS 會在 .dp 加上 data-js-enhanced 屬性，
       // 並隱藏 native input
-      .dp__wrapper[data-js-enhanced] & {
+      .dp[data-js-enhanced] & {
         // 桌面：JS 增強後隱藏原生 input
         @media (pointer: fine) {
           display: none;
@@ -280,11 +265,6 @@
         background: var(--dp-selected-bg, #005fcc);
         filter: brightness(1.1);
       }
-    }
-
-    // ── 非本月日期（視覺弱化，仍可互動）──
-    &--other-month {
-      color: var(--mutedTextColor, #9ca3af) /* 專案 token: --mutedTextColor（variables.scss），fallback 略深以配合原始色調 */;
     }
 
     // ── 超出 min/max 範圍（不可選）──
