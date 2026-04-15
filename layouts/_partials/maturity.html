@@ -11,6 +11,7 @@
     <li
       id="maturity-{{ $maturity_id }}"
       class="tc pv2 flex-auto w-100 w-25-l {{ if eq $current_maturity_val $maturity_id }}fw8 bg-layer2{{ else }}fg-subtle{{ end }}"
+      {{ if eq $current_maturity_val $maturity_id }}aria-current="step"{{ end }}
     >
       {{ $maturity_details.key }}
     </li>
