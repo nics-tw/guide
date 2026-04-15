@@ -149,29 +149,41 @@ function initToolbar(toolbarEl) {
               var firstMenuItem = menuEl.querySelector('[role="menuitem"]');
               if (firstMenuItem) firstMenuItem.focus();
 
-              // 加入鍵盤導航（ArrowDown/Up、Escape、Tab）
+              // 加入鍵盤導航（ArrowDown/Up/Left/Right、Escape、Tab、Enter/Space）
+              // 所有已處理的按鍵都需 stopPropagation()，防止冒泡至 toolbar handler
               if (!menuEl._menuKeyHandler) {
                 menuEl._menuKeyHandler = function (e) {
                   var menuitems = Array.from(menuEl.querySelectorAll('[role="menuitem"]'));
                   var currentIdx = menuitems.indexOf(document.activeElement);
                   if (e.key === 'ArrowDown') {
                     e.preventDefault();
+                    e.stopPropagation();
                     menuitems[(currentIdx + 1) % menuitems.length].focus();
                   } else if (e.key === 'ArrowUp') {
                     e.preventDefault();
+                    e.stopPropagation();
                     menuitems[(currentIdx - 1 + menuitems.length) % menuitems.length].focus();
+                  } else if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                    // 攔截左右方向鍵，防止冒泡至 toolbar 的 roving tabindex handler
+                    // 導致 SR cursor 跳回 toolbar 按鈕
+                    e.preventDefault();
+                    e.stopPropagation();
                   } else if (e.key === 'Enter' || e.key === ' ') {
                     // APG: Enter/Space 觸發 menuitem 動作，關閉選單，焦點回觸發按鈕
                     e.preventDefault();
+                    e.stopPropagation();
                     item.setAttribute('aria-expanded', 'false');
                     menuEl.setAttribute('hidden', '');
                     item.focus();
                   } else if (e.key === 'Escape') {
                     e.preventDefault();
+                    e.stopPropagation();
                     item.setAttribute('aria-expanded', 'false');
                     menuEl.setAttribute('hidden', '');
                     item.focus();
                   } else if (e.key === 'Tab') {
+                    // Tab 離開選單：關閉選單，讓焦點自然移動
+                    e.stopPropagation();
                     item.setAttribute('aria-expanded', 'false');
                     menuEl.setAttribute('hidden', '');
                   }

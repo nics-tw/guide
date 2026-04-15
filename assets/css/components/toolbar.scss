@@ -29,6 +29,7 @@ $toolbar-pressed-color:   var(--backgroundColor);
   background-color: $toolbar-bg;
   border: 1px solid $toolbar-border;
   border-radius: 0.375rem;
+  position: relative; // 供子選單 absolute 定位基準
 
   // 允許換行（空間不足時）
   flex-wrap: wrap;
@@ -139,8 +140,12 @@ $toolbar-pressed-color:   var(--backgroundColor);
 
 // ── 示意選單（Menu Button 的 popup）──────────────────
 // 完整選單互動由 Menu Button 元件負責，此處僅做基礎樣式
+// 定位於 toolbar 容器下方（top: 100%），避免遮蔽 toolbar 內可聚焦元素
+// 符合 SC 2.4.11 / SC 2.4.12
 .toolbar__menu {
   position: absolute;
+  top: calc(100% + 0.25rem); // toolbar 下方，留 4px 間距
+  right: 0; // 靠右對齊（插入按鈕在最右側）
   list-style: none;
   margin: 0;
   padding: 0.25rem 0;
