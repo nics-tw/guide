@@ -41,8 +41,9 @@
   }
 
   // current page indicator
-  [aria-current="page"] {
-    border-left-color: var(--textColor);
+  a[aria-current="page"],
+  button[aria-current="page"] {
+    border-left: 3px solid var(--textColor);
     font-weight: 700;
     color: var(--textColor);
   }
