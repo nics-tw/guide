@@ -1,7 +1,7 @@
 /**
- * Tree View
+ * Side Navigation
  *
- * 使用原生 HTML 語意實作側邊導覽樹狀結構：
+ * 使用原生 HTML 語意實作側邊導覽結構：
  *   <nav>       — 導覽區塊（報讀器自動朗讀）
  *   <ul>/<li>   — 清單與項目（報讀器自動朗讀項目數）
  *   <a>         — 連結（報讀器朗讀「連結」）
@@ -11,12 +11,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.tree-view').forEach(initTreeView)
+  document.querySelectorAll('.side-navigation').forEach(initSideNavigation)
 })
 
-function initTreeView (nav) {
+function initSideNavigation (nav) {
   nav.addEventListener('click', (e) => {
-    const button = e.target.closest('.tree-view button[aria-expanded]')
+    const button = e.target.closest('.side-navigation button[aria-expanded]')
     if (!button) return
 
     const expanded = button.getAttribute('aria-expanded') === 'true'
