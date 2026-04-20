@@ -38,8 +38,9 @@ function initSearchFeedbackDemo(root) {
    * @param {number} [count]  有結果時的筆數
    */
   function simulateSearch(state, keyword, count) {
-    // 步驟 1：顯示「搜尋中」，清除前次 alert，設定 aria-busy
+    // 步驟 1：顯示「搜尋中」，清除前次結果與 alert，設定 aria-busy
     updateAlert(alertEl, '', '');
+    if (resultsHeading) resultsHeading.textContent = '';
     if (resultsList) {
       resultsList.setAttribute('aria-busy', 'true');
       resultsList.hidden = true;
@@ -67,7 +68,6 @@ function initSearchFeedbackDemo(root) {
         updateAlert(alertEl, '', '');
         if (resultsHeading) {
           resultsHeading.textContent = message;
-          // <output> 原生具 role="status"，AT 自動播報，不需 focus
           updateStatus(statusEl, '', '');
         } else {
           updateStatus(statusEl, state, message);
@@ -76,7 +76,6 @@ function initSearchFeedbackDemo(root) {
         message = keyword
           ? '找不到符合「' + keyword + '」的項目，請試試其他關鍵字'
           : '找不到符合的項目，請試試其他關鍵字';
-        // 先清空 status（讓 AT 結束 polite 宣告），再延遲觸發 assertive alert
         updateStatus(statusEl, '', '');
         setTimeout(function () {
           updateAlert(alertEl, 'not-found', message);
