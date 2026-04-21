@@ -10,7 +10,7 @@ maturity: "new"
 ### 基本範例
 
 - 以原生 `<ul>` / `<li>` 為語意基礎，再以 ARIA 屬性補足樹狀結構語意
-- 支援完整鍵盤操作（方向鍵、Home / End、Enter / Space）
+- 支援完整鍵盤操作
 - 採用 Roving tabindex 焦點管理：整個樹狀檢視只佔一個 Tab 停靠點
 
 {{< live-example partial="tree-view/tree_view_basic.html" >}}
