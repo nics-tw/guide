@@ -25,9 +25,9 @@ summary.button {
   cursor: pointer;
   
   &:hover:not(.button-disabled):not(:disabled), &:focus {
-    box-shadow: 
-      inset 0 0 1000px rgba(0, 0, 0, 0.05),
-      0 0 0 2px rgba(0, 0, 0, 0.05);
+    box-shadow:
+      inset 0 0 1000px var(--hoverOverlay),
+      0 0 0 2px var(--hoverOverlay);
     border-color: var(--buttonBorderColor);
   }                 
 
@@ -42,8 +42,8 @@ summary.button {
     border-color: var(--buttonBorderColor);
   
     &:hover:not(:disabled):not(.button-disabled), &:focus {
-      box-shadow: 
-        inset 0 0 1000px rgba(0, 0, 0, 0.05),
+      box-shadow:
+        inset 0 0 1000px var(--hoverOverlay),
         0 0 0 1px var(--backgroundColor),
         0 0 0 2px var(--buttonColor);
     }
@@ -60,13 +60,13 @@ summary.button {
   }
 
   &[disabled], &.button-disabled {
-    --buttonBorderColor: var(--backgroundColor);
+    --buttonBorderColor: var(--borderColor);
     cursor: not-allowed;
     outline: 1px dashed var(--borderColor);
     border-width: 2px;
     border-radius: 0.45rem;
     opacity: 0.8;
-    box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 0 1000px var(--hoverOverlay);
   }
   
   &.button-mini {
