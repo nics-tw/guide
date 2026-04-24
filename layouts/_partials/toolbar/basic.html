@@ -1,0 +1,169 @@
+<div role="toolbar" aria-label="文字格式" class="toolbar">
+  <button
+    type="button"
+    class="toolbar__button"
+    tabindex="0"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="15" y2="12"/>
+      <line x1="3" y1="18" x2="18" y2="18"/>
+    </svg>
+    <span class="visually-hidden">段落對齊</span>
+  </button>
+  <div
+    role="separator"
+    aria-orientation="vertical"
+    class="toolbar__separator"
+  ></div>
+  <button
+    type="button"
+    class="toolbar__button toolbar__button--toggle"
+    aria-pressed="false"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/>
+      <path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/>
+    </svg>
+    <span class="visually-hidden">粗體</span>
+  </button>
+  <button
+    type="button"
+    class="toolbar__button toolbar__button--toggle"
+    aria-pressed="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <line x1="19" y1="4" x2="10" y2="4"/>
+      <line x1="14" y1="20" x2="5" y2="20"/>
+      <line x1="15" y1="4" x2="9" y2="20"/>
+    </svg>
+    <span class="visually-hidden">斜體</span>
+  </button>
+  <!-- Disabled Toggle Button：底線，目前不可用（aria-disabled，仍納入 roving tabindex） -->
+  <button
+    type="button"
+    class="toolbar__button toolbar__button--toggle"
+    aria-pressed="false"
+    aria-disabled="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M6 4v6a6 6 0 0 0 12 0V4"/>
+      <line x1="4" y1="20" x2="20" y2="20"/>
+    </svg>
+    <span class="visually-hidden">底線</span>
+  </button>
+  <div
+    role="separator"
+    aria-orientation="vertical"
+    class="toolbar__separator"
+  ></div>
+  <button
+    type="button"
+    class="toolbar__button toolbar__button--menu"
+    aria-haspopup="menu"
+    aria-expanded="false"
+    aria-controls="toolbar-insert-menu"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <line x1="12" y1="5" x2="12" y2="19"/>
+      <line x1="5" y1="12" x2="19" y2="12"/>
+    </svg>
+    <span class="visually-hidden">插入</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      focusable="false"
+      class="toolbar__chevron"
+    >
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </button>
+
+  <!--
+    示意用選單（預設隱藏）
+    完整選單互動邏輯（menu role、menuitem、焦點管理）
+    屬於 Menu Button 元件的範疇，本展示僅示意結構。
+  -->
+  <ul
+    id="toolbar-insert-menu"
+    role="menu"
+    class="toolbar__menu"
+    hidden
+  >
+    <li role="menuitem" tabindex="-1">插入連結</li>
+    <li role="menuitem" tabindex="-1">插入圖片</li>
+    <li role="menuitem" tabindex="-1">插入表格</li>
+  </ul>
+</div>
