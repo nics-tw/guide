@@ -178,6 +178,7 @@
       textInput.setAttribute('aria-autocomplete', 'none');
       textInput.setAttribute('inputmode', 'numeric');
       textInput.setAttribute('spellcheck', 'false');
+      textInput.setAttribute('autocomplete', 'off');
 
       // 若原生 input 已有值，同步
       if (this.nativeInput.value && isValidDate(this.nativeInput.value)) {
@@ -701,7 +702,11 @@
    * @param {string} value
    */
   DatePicker.prototype._validateInput = function (value) {
-    if (!value) return;
+    if (!value) {
+      this.state.selectedDate = null;
+      this.nativeInput.value = '';
+      return;
+    }
 
     if (!isValidDate(value)) {
       this._updateFeedback('日期格式不正確，請輸入 YYYY-MM-DD 格式。');
