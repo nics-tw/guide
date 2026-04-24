@@ -1,10 +1,25 @@
 {{ $partial_name := .Get "partial" }}
 {{ $partial_path := printf "layouts/_partials/%s" $partial_name }}
 {{ $raw_content := readFile $partial_path }}
+{{/* source：指定原始碼檢視用的 partial（可與互動 demo 用不同檔案）。未指定時使用 partial 參數的檔案。 */}}
+{{ $source_name := .Get "source" }}
+{{ if $source_name }}
+  {{ $raw_content = readFile (printf "layouts/_partials/%s" $source_name) }}
+{{ end }}
 {{/* customElement：此 live 範例含 custom element，build 時會被過濾；設為 true 時改以 base64 傳內容，由 main.js 還原為真實 HTML。 */}}
 {{ $customElement := .Get "customElement" }}
 {{ $inject_data := "" }}
 {{ if eq $customElement "true" }}{{ $inject_data = $raw_content | base64Encode }}{{ end }}
 {{ $rendered_content := cond (eq $customElement "true") "" (partial $partial_name .) }}
-{{ $code_content := cond (eq $customElement "true") $raw_content $rendered_content }}
+{{/* 原始碼顯示：優先用 readFile（保留 HTML 註解），含 Hugo 模板語法時 fallback 用 partial 渲染 */}}
+{{ $code_content := $raw_content }}
+{{ if ne $customElement "true" }}
+  {{ if findRE `\{\{` $raw_content }}
+    {{ if $source_name }}
+      {{ $code_content = partial $source_name . }}
+    {{ else }}
+      {{ $code_content = $rendered_content }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 {{ partial "example.html" (dict "rendered_content" $rendered_content "raw_content" $code_content "inject_html_data" $inject_data "i18n" (.Get "i18n") "i18n_selector" (.Get "i18n_selector") "context" .) }}
