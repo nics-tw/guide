@@ -164,10 +164,9 @@ function initToolbar(toolbarEl) {
                     e.stopPropagation();
                     menuitems[(currentIdx - 1 + menuitems.length) % menuitems.length].focus();
                   } else if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-                    // 攔截左右方向鍵，防止冒泡至 toolbar 的 roving tabindex handler
-                    // 導致 SR cursor 跳回 toolbar 按鈕
-                    e.preventDefault();
-                    e.stopPropagation();
+                    item.setAttribute('aria-expanded', 'false');
+                    menuEl.setAttribute('hidden', '');
+                    item.focus();
                   } else if (e.key === 'Enter' || e.key === ' ') {
                     // APG: Enter/Space 觸發 menuitem 動作，關閉選單，焦點回觸發按鈕
                     e.preventDefault();
