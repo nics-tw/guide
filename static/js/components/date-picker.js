@@ -172,7 +172,7 @@
       textInput.className = 'dp__input dp__input--enhanced';
       textInput.setAttribute('placeholder', 'YYYY-MM-DD');
       textInput.setAttribute('role', 'combobox');
-      textInput.setAttribute('aria-haspopup', 'grid');
+      textInput.setAttribute('aria-haspopup', 'dialog');
       textInput.setAttribute('aria-expanded', 'false');
       textInput.setAttribute('aria-controls', 'dp-dialog');
       textInput.setAttribute('aria-autocomplete', 'none');
