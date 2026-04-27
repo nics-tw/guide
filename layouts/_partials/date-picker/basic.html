@@ -1,0 +1,122 @@
+<!-- Date Picker 元件
+     降級策略：
+       - 無 JS：顯示 <input type="date">，瀏覽器提供原生 date picker
+       - 觸控裝置（pointer: coarse）：JS 不增強，維持原生 <input type="date">
+       - 桌面 + JS：增強為 combobox + dialog + grid 模式
+-->
+<div class="dp" data-date-picker>
+    <label class="dp__label" for="dp-input">選擇日期</label>
+    <div class="dp__input-group">
+      <input
+        type="date"
+        id="dp-input"
+        name="date"
+        class="dp__input dp__input--native"
+      />
+
+      <!--
+        JS 增強後插入的 text input（combobox 模式）
+        由 JS 動態建立並插入，初始不存在於 HTML
+        JS 會加上以下屬性：
+          role="combobox"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="dp-dialog"
+          aria-autocomplete="none"
+          placeholder="YYYY-MM-DD"
+      -->
+      <button
+        type="button"
+        class="dp__button"
+        aria-label="開啟月曆"
+        aria-expanded="false"
+        aria-controls="dp-dialog"
+        hidden
+      >
+        <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.89 4 3 4.9 3 6v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
+        </svg>
+      </button>
+    </div>
+    <div
+      id="dp-dialog"
+      class="dp__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="選擇日期"
+      hidden
+    >
+      <div class="dp__nav">
+        <button type="button" class="dp__nav-btn dp__nav-btn--prev-year" aria-label="上一年">
+          <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.41 7.41L17 6l-6 6 6 6 1.41-1.41L13.83 12zM12.41 7.41L11 6l-6 6 6 6 1.41-1.41L7.83 12z"/>
+          </svg>
+        </button>
+        <button type="button" class="dp__nav-btn dp__nav-btn--prev" aria-label="上個月">
+          <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+
+        <!--
+          月份標題：visible text 供視覺使用，內部 span 作為 live region
+          （heading 本身作為 aria-live 在部分 AT 不觸發，故另設子 span）
+        -->
+        <h2
+          class="dp__month-heading"
+          id="dp-month-label"
+        >
+          <span class="dp__month-live" aria-live="polite" aria-atomic="true"></span>
+        </h2>
+        <button type="button" class="dp__nav-btn dp__nav-btn--next" aria-label="下個月">
+          <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+        <button type="button" class="dp__nav-btn dp__nav-btn--next-year" aria-label="下一年">
+          <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5.59 7.41L7 6l6 6-6 6-1.41-1.41L10.17 12zM11.59 7.41L13 6l6 6-6 6-1.41-1.41L16.17 12z"/>
+          </svg>
+        </button>
+      </div>
+      <table
+        role="grid"
+        id="dp-grid"
+        class="dp__grid"
+        aria-labelledby="dp-month-label"
+      >
+        <thead>
+          <tr>
+            <th scope="col" aria-label="星期日">日</th>
+            <th scope="col" aria-label="星期一">一</th>
+            <th scope="col" aria-label="星期二">二</th>
+            <th scope="col" aria-label="星期三">三</th>
+            <th scope="col" aria-label="星期四">四</th>
+            <th scope="col" aria-label="星期五">五</th>
+            <th scope="col" aria-label="星期六">六</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--
+            由 JS renderCalendar() 動態產生，每列結構如下：
+            <tr>
+              <td
+                class="dp__cell"
+                tabindex="-1"
+                data-date="2026-03-01"
+              >1</td>
+              ...
+            </tr>
+          -->
+        </tbody>
+      </table>
+      <div class="dp__actions">
+        <button type="button" class="dp__close-btn">關閉</button>
+      </div>
+    </div>
+    <output
+      class="dp__feedback"
+      aria-live="polite"
+      aria-atomic="true"
+    ></output>
+</div>

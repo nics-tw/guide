@@ -1,0 +1,105 @@
+<div class="search-feedback-demo" data-search-feedback-demo>
+
+  {{/* 搜尋表單 */}}
+  <form class="search-feedback-demo__form" data-search-form novalidate>
+    <div class="search-feedback-demo__input-group">
+      <label for="sf-search-input" class="search-feedback-demo__label">
+        搜尋關鍵字
+      </label>
+      <span id="sf-submit-hint" class="visually-hidden">搜尋後結果將顯示於下方</span>
+      <div class="search-feedback-demo__input-row">
+        <input
+          type="search"
+          id="sf-search-input"
+          name="q"
+          class="search-feedback-demo__input"
+          placeholder="請輸入關鍵字"
+          autocomplete="off"
+          aria-describedby="sf-submit-hint"
+          data-search-input
+        >
+        <button type="submit" class="button button-primary search-feedback-demo__submit">
+          搜尋
+        </button>
+      </div>
+    </div>
+  </form>
+
+  {{/* Search Feedback 元件核心：status region 必須在頁面載入時就存在，初始為空 */}}
+  <output
+    aria-atomic="true"
+    class="search-feedback__status"
+    id="js-search-status-submit"
+    data-search-status
+  ></output>
+
+  {{/* Assertive live region：無結果或錯誤時立即通知 */}}
+  <output
+    role="alert"
+    aria-atomic="true"
+    class="search-feedback__status"
+    id="js-search-alert-submit"
+    data-search-alert
+  ></output>
+
+  {{/* 搜尋結果摘要：由 JS 更新文字，<output> 原生具 role="status"，AT 自動播報 */}}
+  <output
+    class="search-feedback__status"
+    data-results-heading
+  ></output>
+
+  {{/* 模擬搜尋結果列表（aria-busy 設定在此容器） */}}
+  <ul
+    class="search-feedback-demo__results"
+    aria-label="搜尋結果"
+    data-search-results
+    hidden
+  >
+    <li class="search-feedback-demo__result-item"><a href="#">搜尋結果項目一</a></li>
+    <li class="search-feedback-demo__result-item"><a href="#">搜尋結果項目二</a></li>
+    <li class="search-feedback-demo__result-item"><a href="#">搜尋結果項目三</a></li>
+  </ul>
+
+  {{/* 示範控制按鈕（無 JS 時此區塊無功能，以 noscript 隱藏說明） */}}
+  <noscript>
+    <p class="search-feedback-demo__noscript">需要啟用 JavaScript 才能操作以下示範按鈕。</p>
+  </noscript>
+
+  <fieldset class="search-feedback-demo__controls" data-search-controls>
+    <legend class="search-feedback-demo__controls-label">以下為模擬 4 種搜尋狀態的啟動按鈕</legend>
+    <div class="search-feedback-demo__buttons">
+      <button
+        type="button"
+        class="button button-secondary"
+        data-search-trigger="loading"
+      >
+        搜尋中
+      </button>
+      <button
+        type="button"
+        class="button button-secondary"
+        data-search-trigger="found"
+        data-result-count="42"
+        data-keyword="台灣"
+      >
+        有結果（含 keyword）
+      </button>
+      <button
+        type="button"
+        class="button button-secondary"
+        data-search-trigger="not-found"
+        data-keyword="xyzabc"
+      >
+        無結果（含 keyword）
+      </button>
+      <button
+        type="button"
+        class="button button-secondary"
+        data-search-trigger="error"
+      >
+        錯誤
+      </button>
+    </div>
+  </fieldset>
+
+</div>

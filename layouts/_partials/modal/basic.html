@@ -1,0 +1,60 @@
+<button
+  type="button"
+  class="button"
+  data-modal-trigger="modal-demo"
+  aria-haspopup="dialog"
+>
+  開啟 Modal
+</button>
+
+<!--
+  無 JS 降級：若未載入 JavaScript，可在 <dialog> 加上 open 屬性使其靜態展開。
+  例如：<dialog id="modal-demo" open aria-modal="true" ...>
+-->
+<dialog
+  id="modal-demo"
+  aria-modal="true"
+  aria-labelledby="modal-demo-title"
+  aria-describedby="modal-demo-desc"
+>
+  <div class="modal-header">
+    <h2 id="modal-demo-title" class="modal-title">Modal 標題</h2>
+    <form method="dialog">
+      <button
+        type="submit"
+        class="modal-close"
+        data-modal-close
+        autofocus
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <line x1="3" y1="3" x2="17" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="17" y1="3" x2="3" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="visually-hidden">關閉</span>
+      </button>
+    </form>
+  </div>
+  <div class="modal-body">
+    <p id="modal-demo-desc">
+      這是 Modal 的說明文字。Modal 適用於需要使用者確認、閱讀重要資訊或填寫表單的情境。
+      請確認後點擊「確認」或按 ESC 鍵關閉。
+    </p>
+  </div>
+  <form method="dialog" class="modal-footer">
+    <button type="submit" class="button" data-modal-close>取消</button>
+    <button type="submit" class="button button-primary" data-modal-close>確認</button>
+  </form>
+</dialog>
+
+<!--
+  Backdrop 點擊關閉：預設啟用。
+  若需停用 backdrop 點擊關閉（例如表單型 Modal），在 <dialog> 加上：
+    data-modal-no-backdrop-close
+-->
