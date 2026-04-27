@@ -1,0 +1,196 @@
+.progress-stepper {
+  $segment-height: 0.5rem;
+  $counter-size: 2rem;
+  $bar-label-gap: 0.75rem; // >= 8px space between segment bar and label text
+  $color-complete: var(--linkColor, var(--textColor));
+  $color-current: var(--textColor);
+  $color-pending: var(--borderColor);
+  $color-pending-text: var(--mutedTextColor, var(--textColor));
+
+  display: block;
+  margin: 1em 0;
+
+  // Visually hidden, accessible to screen readers
+  &__status-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  &__segments {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin: 0 0 1em;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+
+  &__segment {
+    flex: 1 1 0;
+    min-width: 0;
+    position: relative;
+    padding-top: calc(#{$segment-height} + #{$bar-label-gap});
+    color: $color-pending-text;
+    font-size: 0.875rem;
+    word-break: break-word;
+
+    // The segment bar itself
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $segment-height;
+      background-color: $color-pending;
+      border-radius: 2px;
+    }
+
+    &--complete {
+      color: $color-complete;
+
+      &::before {
+        background-color: $color-complete;
+      }
+    }
+
+    &--current {
+      color: $color-current;
+      font-weight: 700;
+
+      &::before {
+        background-color: $color-current;
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  // Counter variant
+  &--counters &__segments {
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  &--counters &__segment {
+    padding-top: calc(#{$counter-size} + #{$bar-label-gap});
+
+    &::before {
+      top: calc((#{$counter-size} - #{$segment-height}) / 2);
+      height: $segment-height;
+      // leave space for the counter circle on the left
+      left: calc(#{$counter-size} / 2);
+    }
+
+    // Counter circle
+    .progress-stepper__counter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: $counter-size;
+      height: $counter-size;
+      border: 2px solid $color-pending;
+      border-radius: 50%;
+      background-color: var(--backgroundColor);
+      color: $color-pending-text;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    &--complete .progress-stepper__counter {
+      border-color: $color-complete;
+      background-color: $color-complete;
+      color: var(--backgroundColor);
+    }
+
+    &--current .progress-stepper__counter {
+      border-color: $color-current;
+      background-color: $color-current;
+      color: var(--backgroundColor);
+    }
+  }
+
+  // No-labels variant: render just the segment bars
+  &--no-labels &__segment {
+    padding-top: 0;
+    height: $segment-height;
+
+    &::before {
+      position: static;
+      display: block;
+      height: 100%;
+    }
+  }
+
+  // Heading below the segments
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+
+    h4 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--textColor);
+    }
+  }
+
+  &__heading-counter {
+    color: $color-pending-text;
+    font-size: 0.875rem;
+  }
+
+  &__current-step {
+    font-weight: 700;
+    color: var(--textColor);
+  }
+
+  // Mobile: collapse into a single bar showing only current / total
+  @media (max-width: 30em) {
+    &__segments {
+      gap: 0.125rem;
+    }
+
+    &__segment {
+      padding-top: $segment-height;
+    }
+
+    &__label,
+    &--counters &__counter {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    &--counters &__segment {
+      padding-top: $segment-height;
+
+      &::before {
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $segment-height;
+      }
+    }
+  }
+}
