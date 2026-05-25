@@ -6,7 +6,7 @@ maturity: "new"
 ### 說明
 
 - 檔案上傳（File Upload）讓使用者選擇本機檔案並上傳至系統，支援以「點擊選擇」或「拖曳至上傳區」兩種方式選取檔案。
-- 視覺風格參考日本デジタル庁デザインシステム的 File upload／Drop area，採用方形虛線拖放區搭配 outline 樣式的「選擇檔案」按鈕，並保留 HTML 原生 `<input type="file">` 的可及性與功能。
+- 視覺風格方形虛線拖放區搭配 outline 樣式的「選擇檔案」按鈕，並保留 HTML 原生 input 的可及性與功能。
 
 ### 預設
 
@@ -35,7 +35,7 @@ maturity: "new"
 - `.file-upload__instruction`：拖放說明文字。
 - `.file-upload--error`：錯誤狀態，搭配 `.fieldset-has-error` 與 `.field-error` 使用。
 - `.file-upload--has-files`：已選擇檔案後的樣式。
-- `.file-upload__file-list`／`.file-upload__file`：已選檔案清單與單一項目。
+- `.file-upload__file-list`/`.file-upload__file`：已選檔案清單與單一項目。
 - `.file-upload__file-remove`：移除單一檔案的按鈕。
 
 #### 使用規範
@@ -49,18 +49,17 @@ maturity: "new"
 
 #### 親和力
 
-- **保留原生 `<input type="file">`**：所有自訂視覺外觀皆建構於原生 `<input>` 之上，並以絕對定位 + `opacity: 0` 覆蓋整個拖放區，使其同時：
+- **保留原生 Input**：所有自訂視覺外觀皆建構於原生 `<input>` 之上，並以絕對定位 + `opacity: 0` 覆蓋整個拖放區，使其同時：
   - 接收滑鼠點擊以開啟系統檔案對話框
-  - 原生支援拖曳放置（無需 JavaScript）
-  - 由 `<label for>` 提供無障礙名稱，螢幕報讀軟體會朗讀「選擇檔案 按鈕，未選擇任何檔案」
+  - 原生支援拖曳放置
+  - 由 `<label>` 提供無障礙名稱，螢幕報讀軟體會朗讀「選擇檔案 按鈕，未選擇任何檔案」
   - 受鍵盤焦點，並由 `:focus-within` 將焦點輪廓延伸至視覺按鈕
 - **裝飾內容以 `aria-hidden="true"` 隱藏**：拖放區內的視覺按鈕與「拖曳至此」說明文字，對螢幕報讀軟體而言會與 `<input>` 本身的朗讀重複，因此整個 `.file-upload__dropzone` 加上 `aria-hidden="true"`，避免雙重朗讀。
-- **使用 `<label for>` 連結欄位標題**：欄位標題以 `<label for>` 與 `<input id>` 對應，符合 [WCAG 1.3.1 資訊與關聯](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html)、[3.3.2 標籤或指示](https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html)、[4.1.2 名稱、角色、值](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html)。
 - **使用 `aria-describedby` 連結提示與錯誤訊息**：說明檔案類型大小限制的提示文字、以及錯誤訊息，皆以 `aria-describedby` 連結至 `<input>`，讓螢幕報讀軟體在朗讀欄位時一併朗讀。
-- **錯誤狀態以 `aria-invalid="true"` 標示**：搭配視覺紅色邊框與「錯誤：」前綴文字，避免僅以顏色傳達錯誤狀態，符合 [WCAG 1.4.1 使用顏色](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)、[3.3.1 錯誤識別](https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html)。
-- **點擊目標 ≥ 2.5rem**：拖放區、按鈕、移除按鈕的點擊目標皆不小於 2.5rem × 2.5rem，符合 [WCAG 2.5.8 目標大小（最低）](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)。
-- **明顯的焦點外觀**：以 `:focus-within` 同時提示拖放區與內部視覺按鈕，符合 [WCAG 2.4.7 焦點可見](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html)、[2.4.11 焦點不被遮蔽（最低）](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html)。
-- **語音控制（Voice control）友善**：可見的「選擇檔案」文字與 `<label>` 文字一致，使用者可直接以語音指令啟動，符合 [WCAG 2.5.3 名稱中包含標籤](https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html)。
+- **錯誤狀態以 `aria-invalid="true"` 標示**：搭配視覺紅色邊框與「錯誤：」前綴文字，避免僅以顏色傳達錯誤狀態。
+- **點擊目標 ≥ 2.5rem**：拖放區、按鈕、移除按鈕的點擊目標皆不小於 2.5rem × 2.5rem。
+- **明顯的焦點外觀**：以 `:focus-within` 同時提示拖放區與內部視覺按鈕。
+- **語音控制（Voice control）友善**：可見的「選擇檔案」文字與 `<label>` 文字一致，使用者可直接以語音指令啟動。
 - **已選擇檔案以 `<ul aria-label>` 呈現**：螢幕報讀軟體可朗讀「已選擇的檔案，清單，共 N 項」，並可逐一朗讀檔名與大小。
 - **「移除」按鈕補上完整 `aria-label`**：例如「移除檔案：身分證正面.jpg」，避免僅朗讀「移除」造成混淆。
 - **漸進增強原則**：自訂行為（檔案清單、客製錯誤訊息、進度顯示）皆建構於原生 `<input type="file">` 之上；即使 JavaScript 失敗，使用者仍能以原生方式選擇與上傳檔案。
