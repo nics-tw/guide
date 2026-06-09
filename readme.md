@@ -44,7 +44,9 @@
 
 ## JavaScript 元件使用方式
 
-各 JS 元件採 Web Components / Custom Elements 設計，獨立分檔，使用時依需個別下載。所有 JS 元件統一以 ES module 載入：
+各 JS 元件獨立分檔，每個元件的下載連結與詳細用法請參考 [共用元件](https://guide.nics.nat.gov.tw/components/index.html) 各元件頁面。如需一次取得全部，可下載 [js-components.zip](https://guide.nics.nat.gov.tw/zip/js-components.zip)。
+
+所有 JS 元件統一以 ES module 載入：
 
 ```
 <script src="../{檔名}.js" type="module"></script>
@@ -56,8 +58,6 @@
 <script src="../character-count.js" type="module"></script>
 <script src="../accordion.js" type="module"></script>
 ```
-
-各 JS 元件的下載連結與完整使用方式，請參考 [共用元件](https://guide.nics.nat.gov.tw/components/index.html) 各元件頁面。
 
 ## 開發
 

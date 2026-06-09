@@ -41,13 +41,14 @@ jobs:
         run: |
           hugo --minify --config hugo.toml
 
-      - name: Package SCSS source for download
+      - name: Package source for download
         run: |
           mkdir -p ./public/zip ./_scss-source-stage/svgs
           cp -r assets/css ./_scss-source-stage/css
           cp static/svgs/downarrow.svg static/svgs/uparrow.svg ./_scss-source-stage/svgs/
           (cd ./_scss-source-stage && zip -r ../public/zip/scss-source.zip . -x '*.DS_Store' -x '*/.*')
           rm -rf ./_scss-source-stage
+          (cd static/js && zip -r ../../public/zip/js-components.zip components -x '*.DS_Store' -x '*/.*')
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4

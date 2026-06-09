@@ -46,7 +46,9 @@ weight: 20
 
 ### JavaScript 元件使用方式
 
-各 JS 元件採 Web Components / Custom Elements 設計，獨立分檔，使用時依需個別下載。所有 JS 元件統一以 ES module 載入：
+各 JS 元件獨立分檔，每個元件的下載連結與詳細用法請參考個別元件頁面。如需一次取得全部，可下載 [js-components.zip]({{< relURL "zip/js-components.zip" >}})。
+
+所有 JS 元件統一以 ES module 載入：
 
 {{< code-example content=`<script src="../{檔名}.js" type="module"></script>` >}}
 
@@ -54,5 +56,3 @@ weight: 20
 
 {{< code-example content=`<script src="../character-count.js" type="module"></script>
 <script src="../accordion.js" type="module"></script>` >}}
-
-各 JS 元件的下載連結與完整使用方式，請參考左側選單中對應的元件頁面。
