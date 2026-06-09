@@ -31,6 +31,14 @@ jobs:
           TARGET_URL="https://storage.googleapis.com/guide-dev/${{ github.run_id }}"
           hugo build --minify --baseURL "$TARGET_URL"
 
+      - name: Package SCSS source for download
+        run: |
+          mkdir -p ./public/zip ./_scss-source-stage/svgs
+          cp -r assets/css ./_scss-source-stage/css
+          cp static/svgs/downarrow.svg static/svgs/uparrow.svg ./_scss-source-stage/svgs/
+          (cd ./_scss-source-stage && zip -r ../public/zip/scss-source.zip . -x '*.DS_Store' -x '*/.*')
+          rm -rf ./_scss-source-stage
+
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
         with:
