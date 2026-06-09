@@ -4,6 +4,9 @@ title = "政府網站設計原則"
 timezone = "Asia/Taipei"
 uglyURLs = true
 
+[security]
+  allowContent = ['^text/html$', '^text/markdown$']
+
 [sass]
   [sass.defaults]
     outputStyle = "compressed"
