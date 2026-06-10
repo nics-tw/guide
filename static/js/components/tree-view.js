@@ -48,7 +48,13 @@ function initTreeView (tree) {
     all.forEach(it => {
       if (it.tabIndex !== 0 && it.tabIndex !== -1) it.tabIndex = -1
     })
-    if (!hasFocusable) all[0].tabIndex = 0
+    if (!hasFocusable) {
+      // Per WAI-ARIA APG, if a node is already selected, place the initial
+      // tabstop on it so keyboard users land on the current selection;
+      // otherwise fall back to the first node.
+      const selected = all.find(it => it.getAttribute('aria-selected') === 'true')
+      ;(selected || all[0]).tabIndex = 0
+    }
   }
 
   ensureSingleTabstop()
@@ -160,15 +166,20 @@ function initTreeView (tree) {
   })
 
   // ---- Click handler ----
+  // 只處理點擊在 .tree-view__label 上的事件，避免點擊巢狀子群組
+  // （ul[role="group"]）的縮排空白處或外邊距時，向上誤判為父節點 li。
   tree.addEventListener('click', (e) => {
-    const current = e.target.closest('[role="treeitem"]')
-    if (!current || !tree.contains(current)) return
+    const label = e.target.closest('.tree-view__label')
+    if (!label || !tree.contains(label)) return
+
+    const current = label.closest('[role="treeitem"]')
+    if (!current) return
 
     setFocus(current)
     select(current)
 
-    // Toggle expand/collapse only when clicking the label of a branch node
-    if (isBranch(current) && e.target.closest('.tree-view__label')) {
+    // Toggle expand/collapse for branch nodes
+    if (isBranch(current)) {
       isExpanded(current) ? collapse(current) : expand(current)
     }
   })

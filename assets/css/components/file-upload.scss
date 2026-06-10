@@ -24,6 +24,11 @@
     cursor: pointer;
     // Ensure the input itself is the topmost interactive element
     z-index: 1;
+    // The native input fills the whole drop zone, so its default focus ring
+    // would be drawn around the entire area and overlap/misalign with the
+    // outline drawn on &__button via :focus-within. Hide it here; the visible
+    // focus indicator is provided on the button instead.
+    outline: none;
   }
 
   &__input:disabled {

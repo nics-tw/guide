@@ -66,8 +66,11 @@
     transform: rotate(45deg);
   }
 
-  // hide children when collapsed
-  button[aria-expanded="false"] + ul {
+  // hide children when collapsed.
+  // Only applied once JS has enhanced the nav (data-js-enhanced). Without JS,
+  // submenus stay visible so the content is never permanently hidden
+  // (progressive enhancement).
+  &[data-js-enhanced] button[aria-expanded="false"] + ul {
     display: none;
   }
 }

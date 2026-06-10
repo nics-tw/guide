@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function initSideNavigation (nav) {
+  // Mark the nav as JS-enhanced so CSS can hide collapsed submenus.
+  // Without this attribute, submenus stay visible even if JS fails to load.
+  nav.setAttribute('data-js-enhanced', '')
+
   nav.addEventListener('click', (e) => {
     const button = e.target.closest('.side-navigation button[aria-expanded]')
     if (!button) return
