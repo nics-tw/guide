@@ -18,8 +18,8 @@ body > :first-child {
 }
 
 .width-container {
-  max-width: 1200px;
   margin: 0 auto;
+  max-width: 1200px;
   padding: 0 20px;
 }
 
@@ -35,10 +35,10 @@ body > :first-child {
 
 .two-col,
 .three-col {
-  gap: 2rem;
+  align-items: start;
   display: flex;
   flex-wrap: wrap;
-  align-items: start;
+  gap: 2rem;
   justify-content: space-between;
 
   & > * {

@@ -10,23 +10,22 @@
 }
 
 .tabs {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .tabs-label {
-    cursor: pointer;
     background: var(--tabs-header-bg);
-    color: var(--tabs-header-fontColor);
-    border-radius: 0.5rem 0.5rem 0 0;
     border: 2px solid var(--tabs-border);
     border-bottom: none;
-    padding: 10px 15px;
-    float: left;
-    margin-right: 2px;
-    font: italic 1em;
+    border-radius: 0.5rem 0.5rem 0 0;
+    color: var(--tabs-header-fontColor);
     cursor: pointer;
+    float: left;
+    font: italic 1em;
+    margin-right: 2px;
+    padding: 10px 15px;
 }
 
 label:hover {
@@ -35,9 +34,9 @@ label:hover {
 }
 
 .tabs-radio:checked+.tabs-label {
-    font-weight: bold;
     background: var(--tabs-header-active-bg);
     color: var(--tabs-header-active-fontColor);
+    font-weight: bold;
 }
 
 .tabs-radio:checked+.tabs-label+.tabs-content {
@@ -49,15 +48,15 @@ label:hover {
 }
 
 .tabs-content {
-    order: 1;
-    width: 100%;
-    float: left;
-    clear: both;
-    position: relative;
     background: var(--tabs-body-bg);
-    border-radius: 0 10px 10px 10px;
     border: 2px solid var(--tabs-border);
-    padding: 1rem;
-    height: auto;
+    border-radius: 0 10px 10px;
+    clear: both;
     display: none;
+    float: left;
+    height: auto;
+    order: 1;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
 }

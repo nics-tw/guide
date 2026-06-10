@@ -3,16 +3,16 @@
 // 背景遮罩採用 dialog::backdrop（瀏覽器原生支援）
 
 // ── 變數 ───────────────────────────────────────────────
-$modal-bg:            var(--backgroundColor);
-$modal-text:          var(--textColor);
-$modal-border:        var(--borderColor);
-$modal-backdrop-bg:   rgba(0, 0, 0, 0.55);
-$modal-shadow:        0 8px 32px rgba(0, 0, 0, 0.18);
-$modal-radius:        0.5rem;
-$modal-max-width:     640px;
-$modal-max-height:    90vh;
-$modal-header-bg:     var(--backgroundColorLayer1);
-$modal-close-size:    2.25rem;
+$modal-bg: var(--backgroundColor);
+$modal-text: var(--textColor);
+$modal-border: var(--borderColor);
+$modal-backdrop-bg: rgba(0, 0, 0, 55%);
+$modal-shadow: 0 8px 32px rgba(0, 0, 0, 18%);
+$modal-radius: 0.5rem;
+$modal-max-width: 640px;
+$modal-max-height: 90vh;
+$modal-header-bg: var(--backgroundColorLayer1);
+$modal-close-size: 2.25rem;
 
 // ── 動畫 ───────────────────────────────────────────────
 @keyframes modal-fade-in {
@@ -20,6 +20,7 @@ $modal-close-size:    2.25rem;
     opacity: 0;
     transform: translateY(-0.5rem);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -29,19 +30,19 @@ $modal-close-size:    2.25rem;
 // ── Dialog 主體 ────────────────────────────────────────
 dialog.modal,
 dialog[id^="modal"] {
-  // 重設瀏覽器預設
-  padding: 0;
+  background-color: $modal-bg;
   border: 1px solid $modal-border;
   border-radius: $modal-radius;
-  background-color: $modal-bg;
-  color: $modal-text;
   box-shadow: $modal-shadow;
+  color: $modal-text;
+  max-height: $modal-max-height;
+  max-width: $modal-max-width;
+  overflow: hidden; // dialog 本身不捲動，body 區塊捲動
+  // 重設瀏覽器預設
+  padding: 0;
 
   // 尺寸與定位
   width: 90vw;
-  max-width: $modal-max-width;
-  max-height: $modal-max-height;
-  overflow: hidden; // dialog 本身不捲動，body 區塊捲動
 
   // dialog 本身設有 tabindex="-1" 以支援程式化聚焦
   // 僅對非鍵盤觸發的聚焦隱藏 outline（:focus-visible 保留鍵盤使用者的視覺反饋）
@@ -61,8 +62,8 @@ dialog[id^="modal"] {
 
   // Backdrop 遮罩（原生 <dialog>::backdrop）
   &::backdrop {
-    background-color: $modal-backdrop-bg;
     animation: modal-fade-in 0.2s ease-out;
+    background-color: $modal-backdrop-bg;
 
     @media (prefers-reduced-motion: reduce) {
       animation: none;
@@ -72,40 +73,40 @@ dialog[id^="modal"] {
 
 // ── Header ─────────────────────────────────────────────
 .modal-header {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
   background-color: $modal-header-bg;
   border-bottom: 1px solid $modal-border;
   border-radius: $modal-radius $modal-radius 0 0;
+  display: flex;
   flex-shrink: 0;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
 }
 
 .modal-title {
-  margin: 0;
+  color: $modal-text;
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.4;
-  color: $modal-text;
+  margin: 0;
 }
 
 // ── 關閉按鈕（圖示型）──────────────────────────────────
 .modal-close {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: $modal-close-size;
-  height: $modal-close-size;
-  padding: 0;
+  background: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  background: transparent;
   color: var(--mutedTextColor);
   cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  height: $modal-close-size;
+  justify-content: center;
+  padding: 0;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  width: $modal-close-size;
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
@@ -113,8 +114,8 @@ dialog[id^="modal"] {
 
   &:hover {
     background-color: var(--backgroundColorLayer2);
-    color: $modal-text;
     border-color: $modal-border;
+    color: $modal-text;
   }
 
   // 清晰的 focus indicator（WCAG AA 符合）
@@ -131,12 +132,13 @@ dialog[id^="modal"] {
 
 // ── Body（可捲動）─────────────────────────────────────
 .modal-body {
-  padding: 1.25rem;
-  overflow-y: auto;
-  // 扣除 header（約 3.5rem + 1px border）與 footer（約 4rem + 1px border）後的最大高度
-  max-height: calc(#{$modal-max-height} - 8rem);
   color: $modal-text;
   line-height: 1.6;
+
+  // 扣除 header（約 3.5rem + 1px border）與 footer（約 4rem + 1px border）後的最大高度
+  max-height: calc(#{$modal-max-height} - 8rem);
+  overflow-y: auto;
+  padding: 1.25rem;
 
   p:last-child {
     margin-bottom: 0;
@@ -145,15 +147,15 @@ dialog[id^="modal"] {
 
 // ── Footer ─────────────────────────────────────────────
 .modal-footer {
-  display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  border-top: 1px solid $modal-border;
   background-color: $modal-bg;
   border-radius: 0 0 $modal-radius $modal-radius;
+  border-top: 1px solid $modal-border;
+  display: flex;
   flex-shrink: 0;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  padding: 1rem 1.25rem;
 
   // Footer 內的按鈕通用 focus indicator
   button:focus-visible {
@@ -166,10 +168,10 @@ dialog[id^="modal"] {
 @media (max-width: 480px) {
   dialog.modal,
   dialog[id^="modal"] {
-    width: 100%;
-    max-width: 100%;
-    margin: auto 0 0; // 靠底部置中，初版不採用 bottom sheet 變體
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    margin: auto 0 0; // 靠底部置中，初版不採用 bottom sheet 變體
+    max-width: 100%;
+    width: 100%;
   }
 }

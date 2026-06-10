@@ -2,15 +2,16 @@
 /* Footer Styles */
 .footer {
     background-color: var(--backgroundColorLayer1);
+
     // color: #FFFFFF;
     padding: 20px 0;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     text-align: left;
 }
 
@@ -26,8 +27,8 @@
 .footer-legal,
 .footer-section {
     flex: 1;
-    min-width: 250px;
     margin: 10px 0;
+    min-width: 250px;
 
     p {
         margin: 5px 0;
@@ -37,8 +38,8 @@
 .footer-inline-list {
     display: flex;
     list-style: none;
-    padding: 0;
     margin-bottom: 20px;
+    padding: 0;
 }
 
 .footer-inline-list-item {
@@ -46,28 +47,28 @@
 }
 
 .footer-support-links {
-    width: 100%;
     text-align: center;
+    width: 100%;
 }
 
 .footer-list {
-    list-style: none;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    list-style: none;
+    padding: 0;
 }
 
 .footer-list-item {
-    margin: 5px 0;
     flex: 0 0 50%;
+    margin: 5px 0;
 }
 
 .footer-navigation {
-    margin-top: 20px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 .footer-heading {
@@ -82,14 +83,14 @@
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
     height: 1px;
     margin: -1px;
-    padding: 0;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 /* Responsive Design */

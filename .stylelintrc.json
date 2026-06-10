@@ -7,6 +7,14 @@
     "custom-property-pattern": null,
     "scss/comment-no-empty": null,
     "scss/at-rule-no-unknown": true,
+    "scss/no-global-function-names": null,
+    "no-descending-specificity": null,
+    "media-feature-range-notation": "prefix",
+    "color-function-notation": "legacy",
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      { "message": "Expected class selector to be BEM kebab-case (block__element--modifier)" }
+    ],
     "order/order": [
         "custom-properties",
         "declarations"

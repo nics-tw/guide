@@ -1,13 +1,13 @@
 nav.breadcrumb {
-  padding: 0.8em 1em;
-  border: 0px solid var(--textColor);
-  border-radius: 4px;
   background: var(--backgroundColor);
+  border: 0 solid var(--textColor);
+  border-radius: 4px;
+  padding: 0.8em 1em;
 
   ol {
+    list-style: none;
     margin: 0;
     padding-left: 0;
-    list-style: none;
   }
 
   li {
@@ -23,18 +23,19 @@ nav.breadcrumb {
   // render as slash separator
   // use li + li::before to skip the first item
   li + li::before {
+    border-right: 0.1em solid currentcolor;
+    content: "";
     display: inline-block;
+    height: 0.8em;
     margin: 0 0.25em;
     transform: rotate(15deg);
-    border-right: 0.1em solid currentcolor;
-    height: 0.8em;
-    content: "";
   }
 
   // render as slash separator
   &.arrow-separator {  
     // Size of chevron (excluding border) 7/16 px ≅ 0.4375
     $chevron-size: 0.4375em;
+
     // Size of chevron border
     $chevron-border-min-width: 1px;
     $chevron-border-width: 0.0625em;
@@ -43,29 +44,25 @@ nav.breadcrumb {
     // of length 8 (7px + 1px border):
     //
     // √(8² + 8²) * 0.5 ≅ 5.655
-    // 5.655 / 16 ≅ 0.3534375
-    $chevron-altitude-calculated: 0.3534375em;
+    // 5.655 / 16 ≅ 0.3534
+    $chevron-altitude-calculated: 0.3534em;
 
     // use li + li::before to skip the first item
     li + li::before {
+      border: solid;
+      border-color: var(--textColor);
+      border-width: $chevron-border-min-width $chevron-border-min-width 0 0;
+      bottom: 0;
+
       // ref: https://github.com/alphagov/govuk-frontend/blob/main/packages/govuk-frontend/src/govuk/components/breadcrumbs/_index.scss
       // Create a chevron using a box with borders on two sides, rotated 45deg.
       content: "";
       display: inline-block;
-
-      top: 0;
-      bottom: 0;
-
-      width: $chevron-size;
       height: $chevron-size;
-
       margin: auto 0.25em;
-
+      top: 0;
       transform: translateX(-25%) rotate(45deg);
-
-      border: solid;
-      border-width: $chevron-border-min-width $chevron-border-min-width 0 0;
-      border-color: var(--textColor);
+      width: $chevron-size;
     }
   }
 }

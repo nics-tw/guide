@@ -1,6 +1,7 @@
 /* Header Styles */
 .headerfordemo {
     background-color: var(--backgroundColorLayer1);
+
     // color: #FFFFFF;
 }
 
@@ -20,15 +21,15 @@
 }
 
 .header-top-container {
+    align-items: center;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
 }
 
 .header-container {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     position: relative;
 }
 
@@ -41,10 +42,10 @@
 }
 
 .header-content {
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
+    display: flex;
     flex: 1;
+    justify-content: flex-end;
     position: relative;
 }
 
@@ -53,16 +54,16 @@
 }
 
 .service-name {
+    cursor: pointer;
     font-size: 1.2em;
     margin: 0 20px;
-    cursor: pointer;
     position: relative;
 }
 
 .header-navigation {
+    background-color: var(--backgroundColorLayer1);
     display: none;
     position: absolute;
-    background-color: var(--backgroundColorLayer1);
     top: 100%;
     z-index: 1000;
 }
@@ -80,29 +81,29 @@
 }
 
 .header-actions {
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
 .header-menu-button {
-    display: none;
-    font-size: 2em;
     background: none;
     border: none;
     color: var(--textColor);
     cursor: pointer;
+    display: none;
+    font-size: 2em;
     padding: 10px;
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
     height: 1px;
     margin: -1px;
-    padding: 0;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 .small-text {
@@ -124,8 +125,8 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: row;
         align-items: center;
+        flex-direction: row;
         justify-content: space-between;
     }
 
@@ -152,21 +153,21 @@
     }
 
     .header-content.is-visible {
-        display: flex;
         background-color: var(--backgroundColorLayer1);
+        display: flex;
+        min-width: 200px;
         padding: 10px;
         position: absolute;
-        top: 100%;
         right: 0;
-        min-width: 200px;
+        top: 100%;
         width: 30%;
     }
 
     .header-menu-button {
         display: block;
-        margin-left: auto;
-        font-size: 2.5em;
         flex: 0 0 20%;
+        font-size: 2.5em;
+        margin-left: auto;
         text-align: right;
     }
 
@@ -175,16 +176,16 @@
     }
 
     .header-additional-links {
+        align-items: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
     .header-actions-row {
         display: flex;
         justify-content: center;
-        width: 100%;
         padding: 5px 0;
+        width: 100%;
 
         a {
             margin: 0 10px;

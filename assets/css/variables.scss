@@ -9,9 +9,9 @@
   --borderColor: #ccc;
   --primaryColor: #262927;
   --dangerColor: #CC3100;
-  --warningColor: #ff6600;
-  --highlightColor: rgba(255, 255, 0, 0.8);
-  --hoverOverlay: rgba(0, 0, 0, 0.05);
+  --warningColor: #f60;
+  --highlightColor: rgba(255, 255, 0, 80%);
+  --hoverOverlay: rgba(0, 0, 0, 5%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,11 +24,11 @@
     --backgroundColorLayer2: #292928;
     --linkColor: #2a8be5;
     --borderColor: #414141;
-    --primaryColor: #ffffff;
+    --primaryColor: #fff;
     --dangerColor: #ff7f7f;
-    --warningColor: #ff6600;
-    --highlightColor: rgba(168, 168, 0, 0.6);
-    --hoverOverlay: rgba(255, 255, 255, 0.08);
+    --warningColor: #f60;
+    --highlightColor: rgba(168, 168, 0, 60%);
+    --hoverOverlay: rgba(255, 255, 255, 8%);
   }
 }
 
@@ -39,8 +39,8 @@ body, .plain {
 }
 
 .inverted {
-  color: var(--backgroundColor);
   background-color: var(--textColor);
+  color: var(--backgroundColor);
 }
 
 .bg-layer1 { background-color: var(--backgroundColorLayer1) }

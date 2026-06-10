@@ -1,22 +1,22 @@
 .table {
-  text-align: left;
   border-spacing: 0;
-  width: 100%;
   margin: 0.8em 0;
+  text-align: left;
+  width: 100%;
   
   .table-caption {
+    font-size: 1.4em;
     font-weight: 600;
     padding-bottom: 0.4em;
-    font-size: 1.4em;
+    text-align: left;
   }
   
   .table-cell,
   .table-head {
+    border-bottom: 1px solid var(--borderColor);
     padding: 0.6em 1em;
-  }
-
-  .table-caption {
-    text-align: left;
+    padding-left: 0;
+    vertical-align: top;
   }
 
   .table-head {
@@ -25,13 +25,6 @@
 
   .table-header .table-head {
     min-width: 3em;
-  }
-
-  .table-head,
-  .table-cell {
-    border-bottom: 1px solid var(--borderColor);
-    padding-left: 0;
-    vertical-align: top;
   }
 
   .table-row:last-of-type .table-cell {
@@ -62,8 +55,8 @@
   overflow: auto;
 
   .table {
-    width: max-content;
     min-width: 100%;
+    width: max-content;
   }
 
   .table-cell {
@@ -72,8 +65,8 @@
 }
 
 .table.table-separator {
-  border-radius: 0.4em;
   border: 1px solid var(--borderColor);
+  border-radius: 0.4em;
 
   .table-caption {
     margin-bottom: 0.6em;
@@ -85,6 +78,7 @@
     &:not(:last-of-type) {
       border-right: 1px solid var(--borderColor);
     }
+
     // border-radius: 0.2em;
   }
 }

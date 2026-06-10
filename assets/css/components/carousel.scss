@@ -1,11 +1,11 @@
 /* .carousel */
 
 img.reload {
-    padding: 0.25em;
     display: inline-block;
+    height: 0.9em;
+    padding: 0.25em;
     position: relative;
     top: 6px;
-    height: 0.9em;
 }
 
 .carousel {
@@ -20,8 +20,8 @@ img.reload {
         padding: 5px;
 
         &.focus {
-            padding: 2px;
             border: solid 3px #005a9c;
+            padding: 2px;
         }
     }
 
@@ -29,8 +29,8 @@ img.reload {
         display: none;
         max-height: 400px;
         max-width: 900px;
-        position: relative;
         overflow: hidden;
+        position: relative;
         width: 100%;
 
         &.active {
@@ -43,44 +43,44 @@ img.reload {
         }
 
         .carousel-caption {
+            bottom: 0;
+            color: #fff;
+            left: 15%;
+            padding-bottom: 20px;
+            padding-top: 20px;
             position: absolute;
             right: 15%;
-            bottom: 0;
-            left: 15%;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            color: #fff;
             text-align: center;
 
             a {
-                cursor: pointer;
-                text-decoration: underline;
                 color: #fff;
+                cursor: pointer;
                 font-weight: 600;
+                text-decoration: underline;
 
                 &:hover {
-                    background-color: rgba(0, 0, 0, 1);
+                    background-color: rgba(0, 0, 0, 100%);
                 }
 
                 &:focus {
-                    padding: 4px;
+                    background-color: rgba(0, 0, 0, 100%);
                     border: 2px solid #fff;
-                    background-color: rgba(0, 0, 0, 1);
-                    outline: none;
                     color: #fff;
+                    outline: none;
+                    padding: 4px;
                 }
             }
 
             span.contrast {
+                background-color: rgba(0, 0, 0, 65%);
+                border: 0 solid transparent;
+                border-radius: 5px;
                 display: inline-block;
                 margin: 0;
                 padding: 6px;
-                background-color: rgba(0, 0, 0, 0.65);
-                border-radius: 5px;
-                border: 0 solid transparent;
 
                 &:hover {
-                    background-color: rgba(0, 0, 0, 1);
+                    background-color: rgba(0, 0, 0, 100%);
                 }
             }
 
@@ -94,22 +94,22 @@ img.reload {
 
     .controls {
         box-sizing: border-box;
+        display: flex;
+        padding: 0.25em 1.25em 0;
         position: absolute;
         top: 1em;
-        z-index: 10;
-        display: flex;
         width: 100%;
-        padding: 0.25em 1.25em 0;
+        z-index: 10;
 
         button {
-            position: absolute;
-            z-index: 10;
+            background: transparent;
+            border: none;
             flex: 0 0 auto;
             margin: 0;
-            padding: 0;
-            border: none;
-            background: transparent;
             outline: none;
+            padding: 0;
+            position: absolute;
+            z-index: 10;
 
             &.previous {
                 right: 70px;
@@ -123,8 +123,8 @@ img.reload {
             &:hover svg .background,
             &:hover svg .border {
                 fill: #005a9c;
-                stroke: #005a9c;
                 opacity: 1;
+                stroke: #005a9c;
             }
 
             &:focus svg .border {
@@ -133,10 +133,10 @@ img.reload {
 
             svg {
                 .background {
-                    stroke: black;
                     fill: black;
-                    stroke-width: 1px;
                     opacity: 0.6;
+                    stroke: black;
+                    stroke-width: 1px;
                 }
 
                 .border {
@@ -146,15 +146,15 @@ img.reload {
                 }
 
                 .pause {
-                    stroke-width: 4;
                     fill: transparent;
                     stroke: transparent;
+                    stroke-width: 4;
                 }
 
                 .play {
-                    stroke-width: 1;
                     fill: transparent;
                     stroke: transparent;
+                    stroke-width: 1;
                 }
 
                 polygon {
@@ -179,21 +179,21 @@ img.reload {
 /* More like bootstrap, less accessible */
 
 .carousel-moreaccessible {
-    padding: 0;
-    margin: 0;
-    position: relative;
     border: #eee solid 4px;
     border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    position: relative;
 
     .controls {
-        position: relative;
-        top: 0;
         left: 0;
         padding: 0.25em 0.25em 0;
+        position: relative;
+        top: 0;
 
         &.carousel-moreaccessible {
-            position: static;
             height: 36px;
+            position: static;
 
             button.previous {
                 right: 60px;
@@ -207,57 +207,57 @@ img.reload {
 
     .carousel-items,
     .carousel-items.focus {
-        padding: 0;
         border: none;
+        padding: 0;
 
         &.focus .carousel-image a {
-            padding: 2px;
             border: 3px solid #005a9c;
+            padding: 2px;
         }
     }
 
     .carousel-item {
-        padding: 0;
         margin: 0;
         max-height: none;
+        padding: 0;
 
         .carousel-caption {
-            position: static;
-            padding: 0;
-            margin: 0;
-            height: 60px;
             color: black;
+            height: 60px;
+            margin: 0;
+            padding: 0;
+            position: static;
 
             p {
-                padding: 0;
                 margin: 0;
+                padding: 0;
             }
 
             h3 {
                 font-size: 1.1em;
-                padding: 0;
                 margin: 0;
+                padding: 0;
             }
 
             a {
-                display: inline-block;
-                margin: 0;
-                padding: 6px;
-                color: black;
                 background-color: transparent;
                 border: none;
                 border-radius: 5px;
+                color: black;
+                display: inline-block;
+                margin: 0;
+                padding: 6px;
 
                 &:hover {
-                    background-color: rgba(0, 0, 0, 0.2);
+                    background-color: rgba(0, 0, 0, 20%);
                 }
 
                 &:focus {
-                    padding: 4px;
-                    border: 2px solid #005a9c;
                     background-color: transparent;
+                    border: 2px solid #005a9c;
                     color: black;
                     outline: none;
+                    padding: 4px;
                 }
             }
 

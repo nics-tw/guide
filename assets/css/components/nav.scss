@@ -1,12 +1,12 @@
 .nav-link {
-  position: relative;
-  padding: 0.6em 1.4em;
   display: block;
+  padding: 0.6em 1.4em;
+  position: relative;
 
   &[aria-current="page"] {
-    text-decoration: none;
     background-color: var(--backgroundColorLayer1);
     color: inherit;
     font-weight: 700;
+    text-decoration: none;
   }
 }

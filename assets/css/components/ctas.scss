@@ -1,11 +1,11 @@
 a.link-block {
-  display: inline-block;
-  padding: 0.6em 1.2em;
+  border: 1px solid var(--backgroundColorLayer2);
   color: var(--linkColor);
+  display: inline-block;
   font-weight: 600;
+  padding: 0.6em 1.2em;
   text-decoration-thickness: 1px;
   text-underline-position: from-font;
-  border: 1px solid var(--backgroundColorLayer2);
   
   &:hover, &:focus {
     text-decoration-thickness: 2px;
@@ -16,32 +16,33 @@ button.button,
 summary.button {
   --buttonColor: var(--backgroundColor);
   --buttonBorderColor: var(--borderColor);
-  font-size: 0.9rem;
-  padding: 0.6rem 1.2rem;
+
+  background: var(--backgroundColor);
   border: 1px solid var(--buttonBorderColor);
   border-radius: 0.45rem;
   color: var(--textColor);
-  background: var(--backgroundColor);
   cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
   
-  &:hover:not(.button-disabled):not(:disabled), &:focus {
+  &:hover:not(.button-disabled, :disabled), &:focus {
+    border-color: var(--buttonBorderColor);
     box-shadow:
       inset 0 0 1000px var(--hoverOverlay),
       0 0 0 2px var(--hoverOverlay);
-    border-color: var(--buttonBorderColor);
   }                 
 
-  &:active:not(:disabled):not(.button-disabled) {
+  &:active:not(:disabled, .button-disabled) {
     transform: translateY(1px);
   }
   
   &.button-danger,
   &.button-primary {
-    color: var(--backgroundColor);
     background: var(--buttonColor);
     border-color: var(--buttonBorderColor);
+    color: var(--backgroundColor);
   
-    &:hover:not(:disabled):not(.button-disabled), &:focus {
+    &:hover:not(:disabled, .button-disabled), &:focus {
       box-shadow:
         inset 0 0 1000px var(--hoverOverlay),
         0 0 0 1px var(--backgroundColor),
@@ -61,12 +62,13 @@ summary.button {
 
   &[disabled], &.button-disabled {
     --buttonBorderColor: var(--borderColor);
-    cursor: not-allowed;
-    outline: 1px dashed var(--borderColor);
-    border-width: 2px;
+
     border-radius: 0.45rem;
-    opacity: 0.8;
+    border-width: 2px;
     box-shadow: inset 0 0 1000px var(--hoverOverlay);
+    cursor: not-allowed;
+    opacity: 0.8;
+    outline: 1px dashed var(--borderColor);
   }
   
   &.button-mini {
