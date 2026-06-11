@@ -5,8 +5,8 @@
       "startServerCommand": "hugo server --environment production",
       "url": [
         "http://localhost:1313/",
-        "http://localhost:1313/accessibility-statement/",
-        "http://localhost:1313/contact/",
+        "http://localhost:1313/accessibility-statement.html",
+        "http://localhost:1313/contact.html",
         "http://localhost:1313/components/",
         "http://localhost:1313/components/landmark/",
         "http://localhost:1313/components/checkable/",
