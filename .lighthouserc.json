@@ -2,32 +2,16 @@
   "ci": {
     "collect": {
       "numberOfRuns": 1,
-      "startServerCommand": "hugo server --environment production",
-      "url": [
-        "http://localhost:1313/",
-        "http://localhost:1313/accessibility-statement.html",
-        "http://localhost:1313/contact.html",
-        "http://localhost:1313/components/",
-        "http://localhost:1313/components/landmark/",
-        "http://localhost:1313/components/checkable/",
-        "http://localhost:1313/components/button-and-link/",
-        "http://localhost:1313/components/digital-info/",
-        "http://localhost:1313/components/form/",
-        "http://localhost:1313/components/official-document/",
-        "http://localhost:1313/components/skip-to/",
-        "http://localhost:1313/components/table/",
-        "http://localhost:1313/components/textarea/",
-        "http://localhost:1313/components/warning-text/",
-        "http://localhost:1313/components/accordion/",
-        "http://localhost:1313/components/tabs/",
-        "http://localhost:1313/technology/",
-        "http://localhost:1313/technology/anti_patterns/",
-        "http://localhost:1313/technology/internationalization/",
-        "http://localhost:1313/technology/progressive_enhancement/",
-        "http://localhost:1313/visual/",
-        "http://localhost:1313/visual/colors/",
-        "http://localhost:1313/visual/internationalization/",
-        "http://localhost:1313/visual/typography/"
+      "staticDistDir": "./public",
+      "maxAutodiscoverUrls": 0,
+      "autodiscoverUrlBlocklist": [
+        "http://localhost/categories/index.html",
+        "http://localhost/tags/index.html",
+        "http://localhost/components/landmark/blank.html",
+        "http://localhost/components/landmark/one-column.html",
+        "http://localhost/components/skip-to/skip-to.html",
+        "http://localhost/components/skip-to/skip-to-multiple.html",
+        "http://localhost/components/digital-info/digital-info.html"
       ],
       "settings": {
         "preset": "desktop"
@@ -43,7 +27,15 @@
         "meta-description": "warn",
         "unminified-css": "warn",
         "unused-css-rules": "warn",
-        "uses-text-compression": "warn"
+        "uses-text-compression": "warn",
+        "unused-javascript": "warn",
+        "unminified-javascript": "warn",
+        "unsized-images": "warn",
+        "errors-in-console": "warn",
+        "crawlable-anchors": "warn",
+        "inspector-issues": "warn",
+        "uses-optimized-images": "warn",
+        "uses-responsive-images": "warn"
       }
     },
     "upload": {
