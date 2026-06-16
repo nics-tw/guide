@@ -28,7 +28,7 @@
   <div class="ph2 tc w-100" style="flex: 1 1 calc(33.333% - 2rem)">
     <a class="db" {{ with $doc }}href="{{ .RelPermalink }}" {{ end }}>
       <div class="w-70 center">
-        <img src="{{ $svgPath | relURL }}" alt="{{ .Title }}" />
+        <img src="{{ $svgPath | relURL }}" alt="" />
       </div>
       <div class="mt3">{{ .Title }}</div>
     </a>

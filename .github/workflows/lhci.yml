@@ -6,6 +6,11 @@ on:
   # Triggers the workflow when pull request is opened or updated
   pull_request:
     types: [opened, synchronize, reopened]
+    paths:
+      - 'assets/**'
+      - 'content/**'
+      - 'layouts/**'
+      - 'static/js/**'
 
 # Cancel an in-progress run for the same PR/branch when a new commit arrives
 concurrency:
@@ -20,8 +25,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          # Fall back to the triggering ref/repo when not run from a pull request
+          # (e.g. manual workflow_dispatch), where github.event.pull_request is empty
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -35,7 +42,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install -g @lhci/cli@0.11.x
+      - run: npm install -g @lhci/cli@0.15.x
       # Collect Lighthouse results
       - run: lhci autorun
         env:
