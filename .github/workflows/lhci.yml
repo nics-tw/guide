@@ -11,6 +11,9 @@ on:
       - 'content/**'
       - 'layouts/**'
       - 'static/js/**'
+      - '.github/workflows/lhci.yml'
+      - '.lighthouserc.json'
+      - 'hugo.toml'
 
 # Cancel an in-progress run for the same PR/branch when a new commit arrives
 concurrency:
