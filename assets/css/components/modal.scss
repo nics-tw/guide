@@ -6,8 +6,8 @@
 $modal-bg: var(--backgroundColor);
 $modal-text: var(--textColor);
 $modal-border: var(--borderColor);
-$modal-backdrop-bg: rgba(0, 0, 0, 55%);
-$modal-shadow: 0 8px 32px rgba(0, 0, 0, 18%);
+$modal-backdrop-bg: rgba(0, 0, 0, 0.55);
+$modal-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 $modal-radius: 0.5rem;
 $modal-max-width: 640px;
 $modal-max-height: 90vh;

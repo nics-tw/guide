@@ -57,6 +57,12 @@
 
 ## 開發
 
+安裝前端開發工具與 Git hooks：
+```
+npm install
+```
+
+在本機啟動網站：
 ```
 hugo server
 ```

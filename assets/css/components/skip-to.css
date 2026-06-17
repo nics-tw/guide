@@ -4,7 +4,8 @@ body:has(skip-to:focus-within) {
 
 skip-to {
   left: 0;
-  position: absolute; right: 0;
+  position: absolute;
+  right: 0;
   top: 0;
 }
 

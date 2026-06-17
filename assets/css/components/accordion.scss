@@ -2,8 +2,8 @@
 $accordion-header-bg: var(--backgroundColor);  
 $accordion-header-active-bg: var(--primaryColor);  
 $accordion-body-bg: var(--backgroundColor);  
-$accordion-header-fontcolor: var(--textColor); 
-$accordion-header-active-fontcolor: var(--backgroundColor); 
+$accordion-header-font-color: var(--textColor); 
+$accordion-header-active-font-color: var(--backgroundColor); 
 $accordion-body-border: var(--borderColor); 
 $accordion-body-active-border: var(--secondaryTextColor);
 
@@ -21,7 +21,7 @@ $accordion-icon-active-url: url("svgs/uparrow.svg");
 
   label {
     background: $accordion-header-bg;
-    color: $accordion-header-fontcolor;
+    color: $accordion-header-font-color;
     cursor: pointer;
     display: block;
     font-size: 16px;
@@ -62,7 +62,7 @@ $accordion-icon-active-url: url("svgs/uparrow.svg");
 
   input[type="checkbox"]:checked + label {
     background: $accordion-header-active-bg;
-    color: $accordion-header-active-fontcolor;
+    color: $accordion-header-active-font-color;
 
     &::after {
       background-image: $accordion-icon-active-url;

@@ -10,8 +10,8 @@
   --primaryColor: #262927;
   --dangerColor: #CC3100;
   --warningColor: #f60;
-  --highlightColor: rgba(255, 255, 0, 80%);
-  --hoverOverlay: rgba(0, 0, 0, 5%);
+  --highlightColor: rgba(255, 255, 0, 0.8);
+  --hoverOverlay: rgba(0, 0, 0, 0.05);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,8 +27,8 @@
     --primaryColor: #fff;
     --dangerColor: #ff7f7f;
     --warningColor: #f60;
-    --highlightColor: rgba(168, 168, 0, 60%);
-    --hoverOverlay: rgba(255, 255, 255, 8%);
+    --highlightColor: rgba(168, 168, 0, 0.6);
+    --hoverOverlay: rgba(255, 255, 255, 0.08);
   }
 }
 

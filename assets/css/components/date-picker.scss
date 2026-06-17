@@ -136,7 +136,7 @@
     background: var(--backgroundColor, #fff); /* 專案 token: --backgroundColor（variables.scss） */
     border: 1px solid var(--borderColor);
     border-radius: var(--dp-panel-radius, 0.5rem);
-    box-shadow: var(--dp-panel-shadow, 0 4px 16px rgba(0, 0, 0, 18%));
+    box-shadow: var(--dp-panel-shadow, 0 4px 16px rgba(0, 0, 0, 0.18));
     inset-block-start: calc(100% + 0.25rem);
     inset-inline-start: 0;
     min-width: 20rem;
