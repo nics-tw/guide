@@ -2,35 +2,35 @@
 $accordion-header-bg: var(--backgroundColor);  
 $accordion-header-active-bg: var(--primaryColor);  
 $accordion-body-bg: var(--backgroundColor);  
-$accordion-header-fontColor: var(--textColor); 
-$accordion-header-active-fontColor: var(--backgroundColor); 
+$accordion-header-font-color: var(--textColor); 
+$accordion-header-active-font-color: var(--backgroundColor); 
 $accordion-body-border: var(--borderColor); 
-$accordion-body-active-border:var(--secondaryTextColor);
+$accordion-body-active-border: var(--secondaryTextColor);
+
 /* 相對路徑：部署時 baseURL 含路徑（如 GCS guide-dev/RUN_ID）時，絕對路徑 /svgs/* 會漏掉路徑導致 403 */
 $accordion-icon-url: url("svgs/downarrow.svg");
 $accordion-icon-active-url: url("svgs/uparrow.svg");
 
 .accordion {
-  width: 100%;
   margin: 0 auto;
+  width: 100%;
 
   input[type="checkbox"] {
     display: none;
   }
 
   label {
-    display: block;
-    padding: 16px 20px;
     background: $accordion-header-bg;
-    color: $accordion-header-fontColor;
+    color: $accordion-header-font-color;
     cursor: pointer;
-    margin-bottom: 0;
-    position: relative;
-
+    display: block;
     font-size: 16px;
     font-weight: 600;
-    line-height: 1.4;
     letter-spacing: 0.32px;
+    line-height: 1.4;
+    margin-bottom: 0;
+    padding: 16px 20px;
+    position: relative;
     text-align: left;
 
     .main-title {
@@ -47,22 +47,22 @@ $accordion-icon-active-url: url("svgs/uparrow.svg");
     }
 
     &::after {
-      content: '';
       background-image: $accordion-icon-url;
       background-repeat: no-repeat;
       background-size: 20px;
-      width: 20px;
+      content: '';
       height: 20px;
       position: absolute;
       right: 15px;
       top: 50%;
       transform: translateY(-50%);
+      width: 20px;
     }
   }
 
   input[type="checkbox"]:checked + label {
     background: $accordion-header-active-bg;
-    color: $accordion-header-active-fontColor;
+    color: $accordion-header-active-font-color;
 
     &::after {
       background-image: $accordion-icon-active-url;
@@ -70,13 +70,13 @@ $accordion-icon-active-url: url("svgs/uparrow.svg");
   }
 
   .accordion-body {
-    max-height: 0;
-    overflow: hidden;
     background: $accordion-body-bg;
     font-size: 14px;
     font-weight: normal;
-    line-height: 1.4;
     letter-spacing: 0.56px;
+    line-height: 1.4;
+    max-height: 0;
+    overflow: hidden;
     text-align: left;
 
     input[type="checkbox"]:checked ~ & {

@@ -51,11 +51,6 @@
   --gov-amber-700: #b85814;
   --gov-amber-800: #8a3c0f;
   --gov-amber-900: #62361c;
-
-  
-
-
-
   --gov-blue: #0d6efd;
   --gov-indigo: #6610f2;
   --gov-purple: #6f42c1;
@@ -109,8 +104,8 @@
   --gov-dark-border-subtle: #adb5bd;
   --gov-white-rgb: 255, 255, 255;
   --gov-black-rgb: 0, 0, 0;
-  --gov-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --gov-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --gov-font-sans-serif: system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "Liberation Sans", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --gov-font-monospace: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
   --gov-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --gov-body-font-family: var(--gov-font-sans-serif);
   --gov-body-font-size: 1rem;

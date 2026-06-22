@@ -78,7 +78,7 @@ function initToolbar(toolbarEl) {
   toolbarEl.addEventListener('keydown', function (event) {
     var key = event.key;
     var total = items.length;
-    var newIndex = activeIndex;
+    var newIndex;
 
     // 依 aria-orientation 決定方向鍵組合
     var prevKey = isHorizontal ? 'ArrowLeft' : 'ArrowUp';

@@ -1,9 +1,21 @@
 {
   "scripts": {
-    "lint:styles": "npx stylelint '**/*.css' --ignore-path .gitignore",
-    "lint:fix:styles": "npx stylelint '**/*.css' --ignore-path .gitignore --fix"
+    "lint:styles": "npx stylelint '**/*.{css,scss}' --ignore-path .gitignore",
+    "lint:fix:styles": "npx stylelint '**/*.{css,scss}' --ignore-path .gitignore --fix",
+    "lint:js": "eslint 'assets/js/**/*.js' 'static/js/**/*.js'",
+    "lint:fix:js": "eslint 'assets/js/**/*.js' 'static/js/**/*.js' --fix",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{css,scss}": "stylelint --fix",
+    "{assets/js,static/js}/**/*.js": "eslint"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
     "stylelint": "^16.12.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-order": "^6.0.4"

@@ -155,7 +155,7 @@ function initLiveFilterDemo(root) {
       return;
     }
 
-    var message = '';
+    var message;
     if (visibleCount > 0) {
       message = '篩選「' + q + '」，共找到 ' + visibleCount + ' 筆項目';
       updateStatus(statusEl, 'found', message);

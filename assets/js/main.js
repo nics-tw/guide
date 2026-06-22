@@ -103,7 +103,7 @@ function liveExampleInject () {
     try {
       const html = decodeURIComponent(escape(atob(encoded)))
       el.outerHTML = html
-    } catch (_) {}
+    } catch { /* 內容解碼失敗時略過注入 */ }
   })
 }
 if (document.readyState === 'loading') {

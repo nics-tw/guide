@@ -1,12 +1,12 @@
-@import "variables"; //背景黑底設定
+@import "variables"; // 背景黑底設定
 @import "reset";
 @import "tachyons";
 @import "color";
 @import "typography";
-@import "components/footer.scss";
-@import "components/header.scss";
+@import "components/footer";
+@import "components/header";
 @import "components/ctas";
-@import "components/skip-to"; //首頁 "跳至內容區字樣" 消失
+@import "components/skip-to"; // 首頁 "跳至內容區字樣" 消失
 @import "components/warning-text";
 @import "components/form";
 @import "components/table";
@@ -30,8 +30,8 @@ body,
 button,
 textarea,
 input {
-  font-weight: 400;
   color: var(--textColor);
+  font-weight: 400;
 }
 
 u {
@@ -39,8 +39,8 @@ u {
 }
 
 hr {
-  border-style: solid;
   border-bottom: 0;
+  border-style: solid;
 }
 
 input:not([type]),
@@ -50,29 +50,29 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
-  display: block;
-  width: 100%;
-  padding: 0.4em;
-  border: 1px solid var(--borderColor);
-  box-sizing: border-box;
-  border-radius: 0.45rem;
   background-color: var(--backgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.45rem;
+  box-sizing: border-box;
   color: var(--textColor);
+  display: block;
+  padding: 0.4em;
+  width: 100%;
 }
 
 select {
-  padding: 0.4em;
-  border: 1px solid var(--borderColor);
-  box-sizing: border-box;
-  border-radius: 0.45rem;
   background-color: var(--backgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.45rem;
+  box-sizing: border-box;
   color: var(--textColor);
+  padding: 0.4em;
 }
 
 code {
-  font-size: 0.9em;
-  border-radius: 1em;
   background-color: var(--backgroundColorLayer1);
+  border-radius: 1em;
+  font-size: 0.9em;
   padding: 0.1em 0.4em;
 }
 

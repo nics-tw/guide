@@ -1,26 +1,27 @@
-@import 'list.scss';
+@import 'list';
 
 .fields {
-  gap: 1.2rem;
   display: flex;
   flex-direction: column;
+  gap: 1.2rem;
 }
 
 .fieldset {
-  padding: 0;
+  align-items: start;
   border: none;
-  gap: 0.8rem;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  gap: 0.8rem;
+  padding: 0;
   position: relative;
   
   &.fieldset-has-error {
-    .field-label:before {
-      content: '⚹';
+    .field-label::before {
       color: var(--dangerColor);
+      content: '⚹';
       margin-right: 0.6em;
     }
+
     .field-description {
       color: var(--dangerColor);
     }
@@ -38,9 +39,11 @@
   .field-description {
     font-size: var(--description-font-size);
     letter-spacing: var(--description-letter-spacing);
-    margin-top: 0;
     margin-bottom: 0;
+    margin-top: 0;
     padding-left: 0;
+
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
     @extend .list;
   }
 
@@ -53,12 +56,12 @@
 }
 
 .field-input-fixes {
-  display: flex;
   align-items: center;
-  width: 100%;
   background-color: var(--backgroundColorLayer1);
   border-radius: 0.45rem;
+  display: flex;
   overflow: hidden;
+  width: 100%;
   
   .field-input {
     flex: 1 1 auto;
@@ -75,16 +78,16 @@
 
   .field-input-prefix,
   .field-input-suffix {
-    padding: 0 0.8rem;
     font-size: 0.95em;
+    padding: 0 0.8rem;
   }
 }
 
 .checkable-wrapper-v,
 .checkable-wrapper-h {
   display: flex;
-  gap: 1em;
   flex-wrap: wrap;
+  gap: 1em;
   width: 100%;
 }
 
@@ -100,14 +103,14 @@
 }
 
 .checkable-item {
-  display: flex;
   align-items: baseline;
-  justify-content: stretch;
   column-gap: 1em;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: stretch;
 
-  input[type=radio],
-  input[type=checkbox] {
+  input[type="radio"],
+  input[type="checkbox"] {
     flex: 0 1 auto;
   }
 
