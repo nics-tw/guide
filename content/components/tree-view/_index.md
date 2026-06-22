@@ -23,8 +23,8 @@ maturity: "new"
 | `role="tree"` | 最外層 `<ul>` | 標示此為樹狀檢視元件 |
 | `role="group"` | 巢狀 `<ul>` | 標示子節點群組 |
 | `role="treeitem"` | `<li>` | 標示每個節點 |
-| `aria-expanded` | 分支節點 `<li>` | `true` 已展開 / `false` 已收合；葉節點**不**加此屬性 |
-| `aria-selected` | `<li>` | 是否為·目前選取的節點 |
+| `aria-expanded` | 分支節點 `<li>` | `true` 已展開 / `false` 已收合；葉節點（無子節點者）**不**加此屬性 |
+| `aria-selected` | `<li>` | 是否為目前選取的節點 |
 | `aria-level` | 每個 `<li>` | 明確宣告層級，修正部分報讀器無法自動計算層級的問題 |
 | `aria-labelledby` | `<li>` | 指向內部文字的 `id`，解決 VoiceOver 對 `<li>` 內部複雜結構的相容性問題 |
 | `aria-current="true"` | `<li>` | 深連結（deep link）到此節點時使用 |
