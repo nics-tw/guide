@@ -277,7 +277,7 @@ window.addEventListener(
     // default setting of the checkboxes and the parameters in the URL
     // update checkboxes based on any corresponding URL parameters
     checkboxes.forEach(function (checkbox) {
-      var checked = checkbox.checked;
+      var checked;
 
       if (urlParams.has(checkbox.value)) {
         var urlParam = urlParams.get(checkbox.value);
