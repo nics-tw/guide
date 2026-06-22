@@ -1,0 +1,14 @@
+<div class="fieldset fieldset-has-error">
+  <label for="fu-error" class="field-label">附件上傳</label>
+  <p id="fu-error-hint" class="field-hint">支援 PDF、JPG、PNG 格式，單一檔案大小不得超過 10MB。</p>
+  <p id="fu-error-msg" class="field-error">
+    <span class="field-error__prefix">錯誤：</span>所選檔案大小超過 10MB，請選擇較小的檔案。
+  </p>
+  <div class="file-upload file-upload--error">
+    <input type="file" id="fu-error" class="file-upload__input" aria-describedby="fu-error-hint fu-error-msg" aria-invalid="true">
+    <div class="file-upload__dropzone" aria-hidden="true">
+      <span class="file-upload__button">選擇檔案</span>
+      <span class="file-upload__instruction">或將檔案拖曳至此處</span>
+    </div>
+  </div>
+</div>

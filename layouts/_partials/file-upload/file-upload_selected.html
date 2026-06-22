@@ -1,0 +1,25 @@
+<div class="fieldset">
+  <label for="fu-selected" class="field-label">證明文件（已選擇）</label>
+  <p id="fu-selected-hint" class="field-hint">支援 PDF、JPG、PNG 格式，每個檔案不得超過 10MB。</p>
+  <div class="file-upload file-upload--has-files">
+    <input type="file" id="fu-selected" class="file-upload__input" multiple aria-describedby="fu-selected-hint">
+    <div class="file-upload__dropzone" aria-hidden="true">
+      <span class="file-upload__button">變更檔案</span>
+      <span class="file-upload__instruction">或將檔案拖曳至此處</span>
+    </div>
+  </div>
+  <ul class="file-upload__file-list" aria-label="已選擇的檔案">
+    <li class="file-upload__file">
+      <span class="file-upload__file-icon" aria-hidden="true">📄</span>
+      <span class="file-upload__file-name">身分證正面.jpg</span>
+      <span class="file-upload__file-size">（256 KB）</span>
+      <button type="button" class="file-upload__file-remove" aria-label="移除檔案：身分證正面.jpg">移除</button>
+    </li>
+    <li class="file-upload__file">
+      <span class="file-upload__file-icon" aria-hidden="true">📄</span>
+      <span class="file-upload__file-name">身分證背面.jpg</span>
+      <span class="file-upload__file-size">（212 KB）</span>
+      <button type="button" class="file-upload__file-remove" aria-label="移除檔案：身分證背面.jpg">移除</button>
+    </li>
+  </ul>
+</div>

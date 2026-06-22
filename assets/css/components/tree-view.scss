@@ -1,0 +1,77 @@
+.tree-view {
+  list-style: none;
+  margin: 0;
+  padding: 0.5em;
+  border: 1px solid var(--borderColor);
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 1.25em;
+  }
+
+  [role="treeitem"] {
+    position: relative;
+  }
+
+  .tree-view__label {
+    display: inline-block;
+    width: 100%;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  // hover
+  [role="treeitem"] > .tree-view__label:hover {
+    background-color: var(--hoverOverlay);
+  }
+
+  // focus visible — only the rovingly-focused treeitem
+  [role="treeitem"]:focus {
+    outline: none;
+  }
+
+  [role="treeitem"]:focus > .tree-view__label {
+    outline: 2px solid var(--linkColor);
+    outline-offset: -2px;
+  }
+
+  // selected state — background contrast against the tree background ≥ 4.5:1
+  [role="treeitem"][aria-selected="true"] > .tree-view__label {
+    background-color: var(--textColor);
+    color: var(--backgroundColor);
+    font-weight: 700;
+  }
+
+  // expand / collapse chevron for parent nodes
+  [role="treeitem"][aria-expanded] > .tree-view__label::before {
+    content: "";
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    margin-right: 0.5em;
+    border-right: 2px solid currentcolor;
+    border-bottom: 2px solid currentcolor;
+    transform: rotate(-45deg);
+    transition: transform 0.15s ease;
+    vertical-align: middle;
+  }
+
+  [role="treeitem"][aria-expanded="true"] > .tree-view__label::before {
+    transform: rotate(45deg);
+  }
+
+  // indent for leaf nodes so they align with parent labels
+  [role="treeitem"]:not([aria-expanded]) > .tree-view__label {
+    padding-left: calc(0.5em + 0.4em + 0.5em);
+  }
+
+  // hide children when collapsed
+  [role="treeitem"][aria-expanded="false"] > [role="group"] {
+    display: none;
+  }
+}

@@ -65,7 +65,6 @@
     // 觸控裝置（pointer: coarse）：永遠顯示原生 input
     &--native {
       // 預設顯示（無 JS 或觸控裝置）
-
       // 桌面 JS 增強後，JS 會在 .dp 加上 data-js-enhanced 屬性，
       // 並隱藏 native input
       .dp[data-js-enhanced] & {

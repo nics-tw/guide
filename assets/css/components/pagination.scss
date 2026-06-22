@@ -1,0 +1,104 @@
+.pagination {
+  padding: 0.5em 0;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+  }
+
+  &__item--overflow {
+    color: var(--mutedTextColor, var(--textColor));
+    padding: 0 0.25em;
+    user-select: none;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding: 0.4em 0.75em;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+    color: var(--linkColor, var(--textColor));
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    background: transparent;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: var(--hoverOverlay, var(--backgroundColorLayer1));
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--textColor);
+      outline-offset: 2px;
+    }
+
+    &[aria-current="page"] {
+      color: var(--textColor);
+      font-weight: 700;
+      text-decoration: none;
+      border-color: var(--textColor);
+      background-color: var(--backgroundColorLayer1);
+    }
+  }
+
+  &__link--prev,
+  &__link--next {
+    text-decoration: underline;
+  }
+
+  // Chevron rendered with CSS (similar to breadcrumb arrow-separator)
+  // Size of chevron (excluding border)
+  $chevron-size: 0.4375em;
+  $chevron-border-width: 1px;
+
+  &__chevron {
+    display: inline-block;
+    width: $chevron-size;
+    height: $chevron-size;
+    border: solid;
+    border-color: currentcolor;
+    border-width: $chevron-border-width $chevron-border-width 0 0;
+  }
+
+  &__chevron--prev {
+    transform: translateX(25%) rotate(-135deg);
+  }
+
+  &__chevron--next {
+    transform: translateX(-25%) rotate(45deg);
+  }
+
+  // On narrow screens, hide the prev/next text labels but keep arrows
+  @media (max-width: 30em) {
+    &__link--prev span:last-child,
+    &__link--next span:first-child {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.side-navigation {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  // nested lists indentation
+  li > ul {
+    padding-left: 1em;
+    border-left: 1px solid var(--borderColor);
+  }
+
+  li {
+    margin: 0;
+  }
+
+  // shared styles for links and toggle buttons
+  a,
+  button[aria-expanded] {
+    display: block;
+    width: 100%;
+    padding: 0.5em 1em;
+    color: var(--linkColor);
+    text-decoration: none;
+    border: none;
+    border-left: 3px solid transparent;
+    background: none;
+    font: inherit;
+    text-align: start;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--hoverOverlay);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--linkColor);
+      outline-offset: -2px;
+    }
+  }
+
+  // current page indicator
+  a[aria-current="page"],
+  button[aria-current="page"] {
+    border-left: 3px solid var(--textColor);
+    font-weight: 700;
+    color: var(--textColor);
+  }
+
+  // expand / collapse chevron indicator
+  button[aria-expanded]::before {
+    content: "";
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    margin-right: 0.5em;
+    border-right: 2px solid currentcolor;
+    border-bottom: 2px solid currentcolor;
+    transform: rotate(-45deg);
+    transition: transform 0.15s ease;
+    vertical-align: middle;
+  }
+
+  button[aria-expanded="true"]::before {
+    transform: rotate(45deg);
+  }
+
+  // hide children when collapsed.
+  // Only applied once JS has enhanced the nav (data-js-enhanced). Without JS,
+  // submenus stay visible so the content is never permanently hidden
+  // (progressive enhancement).
+  &[data-js-enhanced] button[aria-expanded="false"] + ul {
+    display: none;
+  }
+}
