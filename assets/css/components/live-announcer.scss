@@ -1,0 +1,71 @@
+// Live Announcer 示範面板樣式（僅文件頁使用；元件本體無視覺輸出）
+// .visually-hidden 由 header.scss 提供，本檔不重複定義
+
+.live-announcer-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.live-announcer-demo__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.live-announcer-demo__title {
+  font-weight: 700;
+  margin: 0;
+}
+
+.live-announcer-demo__log {
+  background-color: var(--backgroundColorLayer1);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  min-height: 6rem;
+  padding: 1rem;
+}
+
+.live-announcer-demo__item {
+  animation: live-announcer-demo-fade-in 0.3s ease;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.live-announcer-demo__empty {
+  color: var(--secondaryTextColor);
+}
+
+.live-announcer-demo__level {
+  font-weight: 700;
+}
+
+// 播報全文為每列的主要內容，換行時獨立佔滿一行，不與 level/time 徽章擠在同列
+.live-announcer-demo__message {
+  flex: 1 1 100%;
+}
+
+.live-announcer-demo__time {
+  color: var(--secondaryTextColor);
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes live-announcer-demo-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
