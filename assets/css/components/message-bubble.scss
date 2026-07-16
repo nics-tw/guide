@@ -1,0 +1,81 @@
+// Message Bubble 元件樣式
+// 語意（article + aria-labelledby 可見角色標題）由結構提供；
+// 角色區分不靠視覺：左右對齊與配色僅為輔助
+// 操作列樣式沿用 toolbar.scss（.toolbar / .toolbar__button），本檔只補氣泡內定位
+// 無動畫設計：不做串流游標閃爍與進場動畫，reduced-motion 天然符合
+
+message-bubble {
+  display: block;
+}
+
+.message-bubble__inner {
+  border-radius: 0.75rem;
+  max-width: 85%;
+  padding: 0.75rem 1rem;
+  width: fit-content;
+}
+
+.message-bubble__inner--user {
+  background-color: var(--backgroundColorLayer1);
+  margin-inline-start: auto;
+}
+
+.message-bubble__inner--ai {
+  background-color: var(--backgroundColor);
+  border: 1px solid var(--borderColor);
+}
+
+// .message-bubble__slot-pre 刻意無樣式：保留給正文前置內容（如附件、引用來源）
+// 的擴充插槽，目前僅靠原生 hidden 屬性隱藏；實際內容尚未定義，版面應交由
+// 該內容自行決定，不預先套用固定樣式
+
+.message-bubble__role {
+  font-size: 0.9em;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.message-bubble__body {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.message-bubble__error {
+  border: 1px solid var(--warningColor);
+  border-radius: 0.375rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0.75rem;
+}
+
+// toolbar.scss 的 .toolbar 設了 display: inline-flex，會蓋過 hidden 屬性，需明確還原
+.message-bubble__toolbar {
+  margin-top: 0.5rem;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// 文件示範外框
+.message-bubble-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message-bubble-demo__stage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.message-bubble-demo__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
