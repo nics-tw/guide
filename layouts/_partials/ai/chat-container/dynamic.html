@@ -1,0 +1,38 @@
+<div class="chat-container-demo" data-chat-demo>
+  <h3 id="chat-demo-dynamic-heading" class="chat-container-demo__heading">與客服助理的對話</h3>
+  <div class="chat-container-demo__viewport">
+    <div
+      class="chat-container"
+      role="log"
+      aria-labelledby="chat-demo-dynamic-heading"
+      tabindex="0"
+      data-chat-container
+    >
+      <message-bubble variant="user">你好，想詢問地價稅的繳納期限。</message-bubble>
+      <message-bubble variant="ai">您好！地價稅開徵期間為每年 11 月 1 日至 11 月 30 日。</message-bubble>
+    </div>
+    <button type="button" class="chat-container__jump-latest" hidden data-jump-latest>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <polyline points="19 12 12 19 5 12"/>
+      </svg>
+      <span>捲到最新訊息</span>
+    </button>
+  </div>
+  <!-- 模擬按鈕僅供文件示範：實際應用中訊息由後端串流或使用者送出產生 -->
+  <div class="chat-container-demo__actions">
+    <button type="button" class="button button-primary" data-demo-add-message>模擬新訊息</button>
+  </div>
+</div>
