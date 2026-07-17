@@ -1,8 +1,13 @@
 <div class="fieldset">
-  <label for="fu-default" class="field-label">附件上傳</label>
+  <label for="fu-default" class="field-label">檔案上傳</label>
   <p id="fu-default-hint" class="field-hint">支援 PDF、JPG、PNG 格式，單一檔案大小不得超過 10MB。</p>
   <div class="file-upload">
-    <input type="file" id="fu-default" class="file-upload__input" aria-describedby="fu-default-hint">
+    <input 
+      type="file" id="fu-default" 
+      class="file-upload__input" 
+      accept=".pdf,.jpg,.jpeg,.png"
+      aria-describedby="fu-default-hint"
+    >
     <div class="file-upload__dropzone" aria-hidden="true">
       <span class="file-upload__button">選擇檔案</span>
       <span class="file-upload__instruction">或將檔案拖曳至此處</span>
