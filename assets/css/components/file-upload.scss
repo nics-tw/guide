@@ -1,0 +1,167 @@
+.file-upload {
+  background-color: var(--backgroundColorLayer1, var(--backgroundColor));
+  border: 2px dashed var(--borderColor);
+  border-radius: 0.45rem;
+  box-sizing: border-box;
+  display: block;
+  margin-top: 0.5em;
+  position: relative;
+  transition: background-color 0.15s, border-color 0.15s;
+  width: 100%;
+
+  // The native file input fills the entire drop zone so it can:
+  //  - receive clicks (open OS file dialog)
+  //  - receive drag & drop events natively, no JS required
+  //  - be announced by assistive technology with the associated <label>
+  &__input {
+    cursor: pointer;
+    height: 100%;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+
+    // The native input fills the whole drop zone, so its default focus ring
+    // would be drawn around the entire area and overlap/misalign with the
+    // outline drawn on &__button via :focus-within. Hide it here; the visible
+    // focus indicator is provided on the button instead.
+    outline: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+
+    // Ensure the input itself is the topmost interactive element
+    z-index: 1;
+  }
+
+  &__input:disabled {
+    cursor: not-allowed;
+  }
+
+  // Decorative content shown beneath the transparent input.
+  // aria-hidden in the markup so screen readers don't read it twice;
+  // the <label for> + <input> already provides the accessible name.
+  &__dropzone {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    justify-content: center;
+    min-height: 8rem;
+    padding: 1.5em 1em;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  &__button {
+    align-items: center;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--linkColor, var(--textColor));
+    border-radius: 0.3rem;
+    color: var(--linkColor, var(--textColor));
+    display: inline-flex;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0.4em 1.25em;
+  }
+
+  &__instruction {
+    color: var(--mutedTextColor, var(--textColor));
+    font-size: 0.95em;
+  }
+
+  // Hover / drag-over feedback. :hover triggers when the input (which fills
+  // the area) is hovered. We can't detect drag-over without JS, but :focus-within
+  // and :hover give clear interactive feedback.
+  &:hover,
+  &:focus-within {
+    background-color: var(--hoverOverlay, var(--backgroundColorLayer1));
+    border-color: var(--linkColor, var(--textColor));
+  }
+
+  &:focus-within &__button {
+    outline: 2px solid var(--textColor);
+    outline-offset: 2px;
+  }
+
+  // Error state mirrors form's .fieldset-has-error styling
+  &--error {
+    border-color: var(--dangerColor, #c00);
+    border-style: solid;
+  }
+
+  // Once a file is chosen, dim the dashed border (still keep visible)
+  &--has-files {
+    border-style: solid;
+  }
+
+  // File list (used after files have been chosen, requires JS to populate
+  // dynamically; the partial example shows the static markup)
+  &__file-list {
+    list-style: none;
+    margin: 0.75em 0 0;
+    padding: 0;
+  }
+
+  &__file {
+    align-items: center;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 0.3rem;
+    display: flex;
+    gap: 0.5em;
+    padding: 0.4em 0.6em;
+
+    & + & {
+      margin-top: 0.4em;
+    }
+  }
+
+  &__file-icon {
+    flex: 0 0 auto;
+    font-size: 1.2em;
+  }
+
+  &__file-name {
+    flex: 1 1 auto;
+    font-weight: 600;
+    word-break: break-all;
+  }
+
+  &__file-size {
+    color: var(--mutedTextColor, var(--textColor));
+    flex: 0 0 auto;
+    font-size: 0.9em;
+  }
+
+  &__file-remove {
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 0.3rem;
+    color: var(--linkColor, var(--textColor));
+    cursor: pointer;
+    flex: 0 0 auto;
+    min-height: 2.25rem;
+    min-width: 2.25rem;
+    padding: 0.3em 0.75em;
+
+    &:hover {
+      background-color: var(--hoverOverlay, var(--backgroundColorLayer1));
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--textColor);
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Visually-hidden error prefix style reused locally
+.field-error {
+  color: var(--dangerColor, #c00);
+  margin: 0.25em 0;
+
+  &__prefix {
+    font-weight: 700;
+  }
+}

@@ -135,7 +135,6 @@
     this.closeBtn    = container.querySelector('.dp__close-btn');
     this.feedback    = container.querySelector('.dp__feedback');
 
-
     // 支援 data-min / data-max
     this.minDate = container.dataset.min || null;
     this.maxDate = container.dataset.max || null;
