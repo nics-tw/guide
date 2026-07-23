@@ -52,6 +52,11 @@ function updateRovingTabindex(items, activeIndex) {
  * @param {HTMLElement} toolbarEl
  */
 function initToolbar(toolbarEl) {
+  // 冪等保護：同一節點可能同時被頁面載入時的自動初始化與消費端元件
+  // （如 message-bubble）主動呼叫覆蓋到，重複初始化會疊加事件監聽
+  if (toolbarEl.dataset.toolbarInitialized) return;
+  toolbarEl.dataset.toolbarInitialized = 'true';
+
   var items = getToolbarItems(toolbarEl);
 
   if (items.length === 0) return;
@@ -227,3 +232,6 @@ function initToolbar(toolbarEl) {
 document.querySelectorAll('[role="toolbar"]').forEach(function (toolbarEl) {
   initToolbar(toolbarEl);
 });
+
+// 供動態插入 toolbar 的元件（如 message-bubble）主動初始化
+export { initToolbar };

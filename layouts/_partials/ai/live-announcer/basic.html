@@ -1,0 +1,29 @@
+<live-announcer></live-announcer>
+
+<div class="live-announcer-demo">
+  <div class="live-announcer-demo__actions">
+    <button
+      type="button"
+      class="button button-primary"
+      data-demo-level="polite"
+      data-demo-message="已找到 12 筆結果"
+    >
+      送出 polite 測試訊息
+    </button>
+    <button
+      type="button"
+      class="button"
+      data-demo-level="assertive"
+      data-demo-message="連線中斷，請重新整理頁面"
+    >
+      送出 assertive 測試訊息
+    </button>
+  </div>
+
+  <!-- 可視化「已宣告內容」面板：僅供文件示範，正式產品不需要。
+       面板不掛任何 live 屬性，避免與元件本體雙重播報。 -->
+  <p class="live-announcer-demo__title">已宣告內容</p>
+  <ol class="live-announcer-demo__log" data-demo-log>
+    <li class="live-announcer-demo__empty" data-demo-empty>尚未有任何宣告</li>
+  </ol>
+</div>

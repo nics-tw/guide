@@ -1,0 +1,12 @@
+<!-- 即時宣告元件：全站僅需一個 -->
+<live-announcer></live-announcer>
+
+<!-- 等待回覆時顯示的輸入中提示，初始 hidden -->
+<div class="typing-indicator" data-typing-indicator aria-hidden="true" hidden>
+  <span class="typing-indicator__dot"></span>
+  <span class="typing-indicator__dot"></span>
+  <span class="typing-indicator__dot"></span>
+</div>
+
+<!-- AI 回覆的訊息氣泡以 streaming 狀態動態建立、appendToken()/complete() 逐步填入，
+     見下方「使用方式」；append 到任意容器（如對話容器）皆可 -->

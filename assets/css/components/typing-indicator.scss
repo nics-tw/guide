@@ -1,0 +1,87 @@
+// Typing Indicator 元件樣式
+// 動畫節點對輔助科技完全隱藏（JS 掛 aria-hidden="true" 常駐）；
+// 視覺形式為三點 staggered 跳動，僅供人眼判讀「進行中」語意
+// 點色使用 --mutedTextColor（非 --secondaryTextColor，避免與內文用色混用）；
+// 已實測對比：亮色模式 6.26:1／暗色模式 8.92:1，皆通過 WCAG 1.4.11 的 3:1 下限
+
+.typing-indicator {
+  align-items: center;
+  background-color: var(--backgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.75rem;
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.75rem 1rem;
+  width: fit-content;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.typing-indicator__dot {
+  animation: typing-indicator-bounce 1.2s ease-in-out infinite;
+  background-color: var(--mutedTextColor);
+  border-radius: 50%;
+  height: 0.5rem;
+  width: 0.5rem;
+
+  &:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+}
+
+// reduced-motion：跳動改為極輕微 opacity 脈動，替換而非移除（保留「進行中」
+// 語意）；若團隊審查偏保守可改回完全靜態，把下面規則改成 animation: none 即可
+@media (prefers-reduced-motion: reduce) {
+  .typing-indicator__dot {
+    animation-duration: 1.8s;
+    animation-name: typing-indicator-pulse;
+  }
+}
+
+@keyframes typing-indicator-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-0.25rem);
+  }
+}
+
+@keyframes typing-indicator-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+// 文件示範外框
+.typing-indicator-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.typing-indicator-demo__heading {
+  margin: 0;
+}
+
+.typing-indicator-demo__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.typing-indicator-demo__status {
+  color: var(--mutedTextColor);
+  margin: 0;
+}

@@ -1,0 +1,32 @@
+<live-announcer></live-announcer>
+
+<div class="typing-indicator-demo" data-ti-demo>
+  <h3 id="ti-demo-heading" class="typing-indicator-demo__heading">與客服助理的對話</h3>
+  <div
+    class="chat-container"
+    role="log"
+    aria-labelledby="ti-demo-heading"
+    tabindex="0"
+    data-chat-container
+  >
+    <message-bubble variant="user">請問今天客服時間到幾點？</message-bubble>
+    <div class="typing-indicator" data-typing-indicator aria-hidden="true" hidden>
+      <span class="typing-indicator__dot"></span>
+      <span class="typing-indicator__dot"></span>
+      <span class="typing-indicator__dot"></span>
+    </div>
+  </div>
+  <div class="typing-indicator-demo__actions">
+    <button type="button" class="button button-primary" data-ti-start>模擬等待回覆</button>
+  </div>
+
+  <!-- 純視覺狀態文字：只描述示範進度供人眼閱讀，不掛任何 live 屬性，
+       實際播報內容一律以下方「已宣告內容」面板為準，兩者不可混淆 -->
+  <p class="typing-indicator-demo__status" data-ti-status>尚未送出請求</p>
+
+  <!-- 可視化「已宣告內容」面板：僅供文件示範（沿用 live-announcer 示範面板機制） -->
+  <p class="live-announcer-demo__title">已宣告內容</p>
+  <ol class="live-announcer-demo__log" data-demo-log>
+    <li class="live-announcer-demo__empty" data-demo-empty>尚未有任何宣告</li>
+  </ol>
+</div>
