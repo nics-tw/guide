@@ -6,7 +6,9 @@
 
 ## CSS 元件使用方式
 
-可直接[下載](https://guide.nics.nat.gov.tw/assets/css.zip)，並使用下方程式碼匯入：
+### 一般使用
+
+直接以 `<link>` 引用或下載 [main.css](https://guide.nics.nat.gov.tw/main.css) 後置於專案靜態資源資料夾，並使用下方程式碼匯入：
 
 ```
 <link rel="stylesheet" href="../main.css">
@@ -17,42 +19,44 @@
 > [!WARNING]
 > 本檔案暫時包含 <a href="https://tachyons.io/">Tachyons</a>，作為 Atomic CSS 的第三方程式。
 
+### 進階使用（SCSS）
+
+若專案具備 SCSS build pipeline，可下載 [scss-source.zip](https://guide.nics.nat.gov.tw/zip/scss-source.zip)，解壓後內含：
+
+- `css/` — SCSS 元件原始碼
+- `svgs/` — 元件樣式所引用的 SVG 圖示（如 `accordion`）
+
+部分元件 CSS 透過相對 URL（例如 `url("svgs/downarrow.svg")`）引用圖示，部署時請將 `svgs/` 置於與編譯後 CSS 相同層級，確保路徑可正確解析。
+
+將進入點 `.scss` 置於 `css/` 目錄內（或以 `sass --load-path=css` 編譯），即可依需求 import 所需元件：
+
+```scss
+@import "variables";
+@import "color";
+@import "typography";
+@import "components/accordion";
+@import "components/modal";
+```
+
 ### 多國語系支援
 
 請依照[多國語系支援](https://guide.nics.nat.gov.tw/visual/internationalization/index.html)另外包含所需要的字體 CSS 檔案。
 
 ## JavaScript 元件使用方式
 
-### [文字輸入區塊](https://guide.nics.nat.gov.tw/components/textarea/index.html)
+各 JS 元件獨立分檔，每個元件的下載連結與詳細用法請參考 [共用元件](https://guide.nics.nat.gov.tw/components/index.html) 各元件頁面。如需一次取得全部，可下載 [js-components.zip](https://guide.nics.nat.gov.tw/zip/js-components.zip)。
 
-下載 [character-count.js](https://guide.nics.nat.gov.tw/js/components/character-count.js) 檔案並選擇性使用下方程式碼匯入：
-
-```
-<script src="../character-count.js" defer>
-```
-
-### [公文元件](https://guide.nics.nat.gov.tw/components/official-document/index.html)
-
-下載 [official-document-element.js](https://guide.nics.nat.gov.tw/js/components/official-document-element.js) 檔案並選擇性使用下方程式碼匯入：
+所有 JS 元件統一以 ES module 載入：
 
 ```
-<script src="../official-document-element.js" type="module">
+<script src="../{檔名}.js" type="module"></script>
 ```
 
-### [互動資料表格](https://guide.nics.nat.gov.tw/components/table/index.html)
-
-下載 [interactive-table-element.js](https://guide.nics.nat.gov.tw/js/components/interactive-table-element.js) 檔案並選擇性使用下方程式碼匯入：
+例如：
 
 ```
-<script src="../interactive-table-element.js" type="module">
-```
-
-### [互動資料表格](https://guide.nics.nat.gov.tw/components/skip-to/index.html)
-
-下載 [skip-to-element.js](https://guide.nics.nat.gov.tw/js/components/skip-to-element.js) 檔案並選擇性使用下方程式碼匯入：
-
-```
-<script src="../skip-to-element.js" type="module">
+<script src="../character-count.js" type="module"></script>
+<script src="../accordion.js" type="module"></script>
 ```
 
 ## 開發
