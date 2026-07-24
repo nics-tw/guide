@@ -7,6 +7,9 @@ on:
         required: true
         type: string
         default: "<RUN_ID>"
+    secrets:
+      GC_WORKLOAD_IDENTITY_PROVIDER:
+        required: true
 
 jobs:
   deploy-to-gcs:
@@ -16,18 +19,17 @@ jobs:
       id-token: "write"
 
     steps:
-      - name: Checkout
-        uses: "actions/checkout@v4"
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-      # ref: https://github.com/actions/download-artifact?tab=readme-ov-file#download-artifacts-from-other-workflow-runs-or-repositories
+      # SECURITY: no checkout here — this job only downloads a build artifact
+      # and uploads it to GCS. Checking out untrusted PR code added attack
+      # surface for no benefit.
+      #
+      # SECURITY: this workflow is only invoked via workflow_call from the same
+      # run, so the artifact can be downloaded with the default job token —
+      # no personal access token (GH_PAT) is needed.
       - name: Download artifacts from build
         uses: actions/download-artifact@v4
         with:
           name: hugo-site
-          github-token: ${{ secrets.GH_PAT }} # personal access token with actions:read permissions on target repo
-          run-id: ${{ inputs.RUN_ID }}
           path: ./${{ inputs.RUN_ID }}
 
       - name: Authenticate to Google Cloud

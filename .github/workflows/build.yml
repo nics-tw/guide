@@ -7,6 +7,10 @@ on:
   pull_request_target:
     types: [opened, synchronize, reopened, labeled]
 
+# Least-privilege default for all jobs; jobs elevate only what they need
+permissions:
+  contents: read
+
 jobs:
   build:
     # Run this job if the pull request is from the same repository or labeled with 'safe-to-deploy'
@@ -17,8 +21,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          # SECURITY: pin to the immutable commit SHA that was present when the
+          # event fired (e.g. when the 'safe-to-deploy' label was applied).
+          # Using head.ref (a mutable branch name) allows an attacker to push
+          # malicious commits after review/labeling (TOCTOU) that would then run
+          # under pull_request_target with access to secrets.
+          ref: ${{ github.event.pull_request.head.sha }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
+          # Don't leave the GITHUB_TOKEN in the git config while building
+          # untrusted PR content
+          persist-credentials: false
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -44,7 +56,10 @@ jobs:
       id-token: "write"
     with:
       RUN_ID: ${{ github.run_id }}
-    secrets: inherit
+    # SECURITY: pass only the secrets the reusable workflow needs instead of
+    # 'secrets: inherit', which would expose every repository secret
+    secrets:
+      GC_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GC_WORKLOAD_IDENTITY_PROVIDER }}
   comment: # Required by peter-evans/create-or-update-comment@v4
     needs: deploy
     runs-on: ubuntu-latest
