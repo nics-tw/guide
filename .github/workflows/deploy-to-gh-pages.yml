@@ -23,11 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # ref: https://github.com/actions/starter-workflows/tree/main/pages
+      # This workflow only runs on workflow_dispatch, so check out the
+      # triggering ref of this repository (the previous pull_request event
+      # fields were always empty here)
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Setup Hugo
