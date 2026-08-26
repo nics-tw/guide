@@ -1,0 +1,119 @@
+<div class="guide-demo-data-ownership" data-data-ownership-demo>
+  <section class="guide-demo-data-ownership__conversation" aria-labelledby="data-ownership-context-heading">
+    <header class="guide-demo-data-ownership__header">
+      <span class="guide-demo-data-ownership__avatar" aria-hidden="true">政</span>
+      <div>
+        <h4 id="data-ownership-context-heading">政府服務小幫手</h4>
+        <p>協助查找申辦資訊</p>
+      </div>
+    </header>
+
+    <ol class="guide-demo-data-ownership__messages" aria-label="對話示意">
+      <li class="guide-demo-data-ownership__message">
+        您好！請問想查詢哪一項服務？
+      </li>
+      <li class="guide-demo-data-ownership__message guide-demo-data-ownership__message--user">
+        我想了解育兒津貼的申請方式。
+      </li>
+      <li class="guide-demo-data-ownership__message">
+        我可以先整理申請資格、文件與辦理管道給你。
+      </li>
+    </ol>
+
+    <aside class="data-ownership-entry" aria-labelledby="data-ownership-entry-example-title">
+      <h5 id="data-ownership-entry-example-title" class="data-ownership-entry__title">資料使用設定</h5>
+      <button
+        class="button"
+        type="button"
+        aria-haspopup="dialog"
+        data-modal-trigger="data-ownership-context-modal"
+      >管理設定</button>
+    </aside>
+
+    <div class="guide-demo-data-ownership__composer-preview" aria-hidden="true">
+      <span>輸入訊息⋯</span>
+      <span>送出</span>
+    </div>
+    <p class="guide-demo-data-ownership__caption">位置示意：入口持續顯示在對話輸入區附近，不會自動開啟或阻擋送出。</p>
+  </section>
+
+  <details class="guide-demo-data-ownership__test-controls">
+    <summary>測試儲存失敗</summary>
+    <p id="data-ownership-context-fail-hint">開啟後，下一次儲存會失敗，畫面中的選擇仍會保留。</p>
+    <button
+      class="button"
+      type="button"
+      aria-describedby="data-ownership-context-fail-hint"
+      aria-pressed="false"
+      data-data-ownership-demo-fail
+    >模擬儲存失敗</button>
+  </details>
+
+  <dialog
+    id="data-ownership-context-modal"
+    class="modal"
+    tabindex="-1"
+    aria-modal="true"
+    aria-labelledby="data-ownership-context-form-title"
+    data-modal-no-backdrop-close
+  >
+    <form
+      class="data-ownership data-ownership--modal"
+      data-data-ownership
+      action="/preferences/data-use"
+      method="post"
+    >
+      <header class="modal-header">
+        <h4 id="data-ownership-context-form-title" class="modal-title">管理這段對話的資料用途</h4>
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="關閉"
+          data-modal-close
+          autofocus
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <line x1="3" y1="3" x2="17" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="17" y1="3" x2="3" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </header>
+
+      <div class="modal-body">
+        <p id="data-ownership-context-form-description" class="data-ownership__intro">
+          為了回覆訊息，服務會處理你送出的文字與附件。以下設定不影響你使用對話功能，可分別決定是否將這段對話用於改善服務或訓練模型。
+        </p>
+
+        <fieldset class="data-ownership__choices">
+          <legend>你可以決定的資料用途</legend>
+          <p class="data-ownership__choices-intro">以下選項預設關閉且彼此獨立，你可以分別調整。</p>
+
+          <div class="data-ownership__choice">
+            <input id="data-ownership-context-improvement" name="use_for_service_improvement" type="checkbox" value="yes" aria-describedby="data-ownership-context-improvement-description" data-data-ownership-option>
+            <div>
+              <label for="data-ownership-context-improvement">用於改善這項服務</label>
+              <p id="data-ownership-context-improvement-description">允許服務團隊分析這段對話，找出常見問題並改善服務流程與回覆品質。</p>
+            </div>
+          </div>
+
+          <div class="data-ownership__choice">
+            <input id="data-ownership-context-training" name="use_for_model_training" type="checkbox" value="yes" aria-describedby="data-ownership-context-training-description" data-data-ownership-option>
+            <div>
+              <label for="data-ownership-context-training">用於訓練模型</label>
+              <p id="data-ownership-context-training-description">允許將這段對話加入模型訓練資料。</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <p class="data-ownership__status" role="status" aria-live="polite" aria-atomic="true" data-data-ownership-status></p>
+        <p class="data-ownership__error" role="alert" data-data-ownership-error hidden></p>
+      </div>
+
+      <footer class="modal-footer">
+        <a href="{{ "components/ai/data-ownership/details/index.html" | relURL }}">完整資料使用說明</a>
+        <button class="button" type="button" data-modal-close>關閉</button>
+        <button class="button button-primary" type="submit" data-data-ownership-submit>儲存設定</button>
+      </footer>
+    </form>
+  </dialog>
+</div>
