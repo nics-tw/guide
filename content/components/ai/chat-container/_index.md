@@ -7,7 +7,7 @@ maturity: "new"
 
 {{< live-example partial="ai/chat-container/basic.html" source="ai/chat-container/basic-source.html" >}}
 
-- 容器使用 `role="log"`，新加入的訊息由螢幕閱讀器自動朗讀（polite），無需設定 `aria-live`。
+- 容器使用 `role="log"` 提供依序更新的 polite live region 語意，無需重複設定 `aria-live`；實際播報仍依瀏覽器與輔助科技支援而異。
 - 未使用螢幕閱讀器時，Tab 聚焦容器後可用方向鍵、PageUp／PageDown、Home／End 捲動；螢幕閱讀器使用者請以閱讀游標瀏覽訊息。
 - 本頁 demo 使用簡潔形式 `<message-bubble variant="…">文字</message-bubble>`（由 JS 建構完整結構）；正式使用建議伺服器渲染完整結構，以保留無 JS 降級與可見角色標題，寫法參照[訊息氣泡]({{< ref "components/ai/message-bubble/_index.md" >}})說明頁。
 
@@ -15,7 +15,8 @@ maturity: "new"
 
 {{< live-example partial="ai/chat-container/dynamic.html" source="ai/chat-container/dynamic-source.html" >}}
 
-- 捲動位置在底部時，新訊息自動捲到底；上捲閱讀歷史時不打斷，改顯示「捲到最新訊息」按鈕。
+- 初次載入會顯示最新訊息；接近底部時，新訊息及持續產生的回覆會自動保持在最新位置。上捲閱讀歷史時不打斷，改顯示「捲到最新訊息」按鈕。
+- 訊息中的圖片載入、字型替換或 CSS reflow 造成內容增高時，也沿用相同的跟隨與上捲保護策略。
 - 「模擬新訊息」按鈕僅供文件示範。
 
 #### 使用方式
@@ -32,7 +33,7 @@ container.chatContainer.appendMessage(node); // 將訊息節點加入末端並�
 
 - log 需有可及名稱：`aria-labelledby` 指向可見標題。
 - 新訊息永不搶焦點；視覺捲動與鍵盤焦點分離。
-- 容器 `tabindex="0"` 讓鍵盤使用者可聚焦捲動，聚焦時有可見 focus ring。
+- HTML 保留 `tabindex="0"` 作為無 JS 的鍵盤捲動基線；JS 啟用後，只有內容實際溢出時才讓容器進入 Tab 順序，聚焦時有可見 focus ring。
 - 訊息的角色標示（「你」「客服助理」）由訊息氣泡元件以可見文字提供，角色區分不僅依賴視覺。
 
 #### JavaScript
@@ -53,5 +54,5 @@ container.chatContainer.appendMessage(node); // 將訊息節點加入末端並�
 
 {{< asset-script "js/components/live-announcer.js" >}}
 {{< asset-script "js/components/message-bubble.js" >}}
-{{< asset-script "js/components/chat-container.js" >}}
+{{< asset-script "js/components/chat-container.js" "scroll-follow-v4" >}}
 {{< asset-script "js/demo/chat-container.demo.js" >}}
