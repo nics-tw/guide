@@ -64,8 +64,10 @@ npm install
 
 在本機啟動網站：
 ```
-hugo server
+hugo server --config hugo.toml --baseURL http://localhost:1313/ --bind 127.0.0.1 --port 1313
 ```
+
+本機需明確覆寫 `baseURL`，避免站內 `ref` 連結沿用 `hugo.toml` 的正式站網址。GCS 預覽環境會在 CI 以 `--baseURL "$TARGET_URL"` 覆寫為該次部署路徑。
 
 Run lighthouse locally:
 
