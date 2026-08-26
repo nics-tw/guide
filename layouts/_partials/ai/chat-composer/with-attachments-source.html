@@ -1,0 +1,46 @@
+<form class="chat-composer" data-chat-composer action="/messages" method="post" enctype="multipart/form-data">
+  <label class="chat-composer__label" for="chat-message-with-files">訊息</label>
+  <p id="chat-message-with-files-hint" class="chat-composer__hint">
+    Enter 換行，Ctrl+Enter 或 Command+Enter 送出。
+  </p>
+  <textarea
+    id="chat-message-with-files"
+    class="chat-composer__input"
+    name="message"
+    rows="3"
+    required
+    aria-describedby="chat-message-with-files-hint chat-message-with-files-error"
+    data-chat-composer-input
+  ></textarea>
+
+  <div class="chat-composer__selection" data-chat-composer-selection hidden>
+    <ul class="file-upload__file-list" aria-label="已選擇的檔案" data-chat-composer-attachment-list></ul>
+    <button class="button" type="button" data-chat-composer-clear-attachments>清除全部附件</button>
+  </div>
+
+  <p id="chat-message-with-files-error" class="chat-composer__error" data-chat-composer-error hidden></p>
+  <p class="chat-composer__status" data-chat-composer-status hidden></p>
+  <div class="chat-composer__actions">
+    <div class="chat-composer__attachments">
+      <label class="visually-hidden" for="chat-attachments">附加檔案</label>
+      <p id="chat-attachments-hint" class="visually-hidden">
+        可一次附加多個檔案。
+      </p>
+      <div class="file-upload file-upload--compact">
+        <input
+          id="chat-attachments"
+          class="file-upload__input"
+          type="file"
+          name="attachments"
+          multiple
+          aria-describedby="chat-attachments-hint"
+          data-chat-composer-attachments
+        >
+        <div class="file-upload__dropzone" aria-hidden="true">
+          <span class="file-upload__button">附加檔案</span>
+        </div>
+      </div>
+    </div>
+    <button class="button button-primary" type="submit" data-chat-composer-submit>送出訊息</button>
+  </div>
+</form>

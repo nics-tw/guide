@@ -33,6 +33,7 @@ maturity: "new"
 - `.file-upload__dropzone`：拖放區內視覺裝飾內容，以 `aria-hidden="true"` 隱藏避免重複朗讀。
 - `.file-upload__button`：仿造按鈕外觀的 `<span>`，僅供視覺呈現。
 - `.file-upload__instruction`：拖放說明文字。
+- `.file-upload--compact`：縮短拖放區，供訊息輸入區等空間有限的組合情境使用。
 - `.file-upload--error`：錯誤狀態，搭配 `.fieldset-has-error` 與 `.field-error` 使用。
 - `.file-upload--has-files`：已選擇檔案後的樣式。
 - `.file-upload__file-list`/`.file-upload__file`：已選檔案清單與單一項目。

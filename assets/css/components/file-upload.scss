@@ -52,6 +52,14 @@
     text-align: center;
   }
 
+  &--compact &__dropzone {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 0.75rem;
+    text-align: left;
+  }
+
   &__button {
     align-items: center;
     background-color: var(--backgroundColor);

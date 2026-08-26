@@ -1,0 +1,131 @@
+.chat-composer {
+  background-color: var(--backgroundColorLayer1);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.chat-composer__label {
+  display: block;
+  font-weight: 700;
+}
+
+.chat-composer__hint {
+  color: var(--mutedTextColor, var(--textColor));
+  margin-block: 0.25rem 0.75rem;
+}
+
+.chat-composer__input {
+  min-height: 5.5rem;
+  resize: vertical;
+}
+
+.chat-composer__error {
+  color: var(--dangerColor);
+  font-weight: 700;
+  margin-block: 0.75rem 0;
+}
+
+.chat-composer__status {
+  color: var(--mutedTextColor, var(--textColor));
+  margin-block: 0.75rem 0;
+}
+
+.chat-composer__attachments {
+  margin-inline-end: auto;
+
+  .file-upload {
+    border: 0;
+    margin: 0;
+    width: auto;
+  }
+
+  .file-upload__dropzone {
+    padding: 0;
+  }
+}
+
+.chat-composer__selection {
+  margin-top: 0.75rem;
+}
+
+.chat-composer__actions {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+}
+
+.chat-composer [aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.chat-composer-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-composer-demo__heading {
+  margin: 0;
+}
+
+.chat-composer-demo__surface {
+  border: 1px solid var(--borderColor);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .chat-container {
+    border: 0;
+    border-radius: 0;
+    min-height: 8rem;
+  }
+
+  .typing-indicator {
+    margin: 0 1rem 0.75rem;
+  }
+
+  .chat-composer {
+    border: 0;
+    border-radius: 0;
+    border-top: 1px solid var(--borderColor);
+  }
+}
+
+.chat-composer-demo__viewport {
+  position: relative;
+}
+
+.chat-composer-demo__response-actions {
+  background-color: var(--backgroundColorLayer1);
+  display: flex;
+  justify-content: center;
+
+  .button:not([hidden]) {
+    margin: 0 1rem 1rem;
+  }
+}
+
+.chat-composer-demo__test-controls {
+  border-top: 1px solid var(--borderColor);
+  padding-top: 0.75rem;
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+  }
+}
+
+.chat-composer-demo__test-hint {
+  color: var(--mutedTextColor, var(--textColor));
+  margin: 0.75rem 0 0;
+}
+
+.chat-composer-demo__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
