@@ -14,6 +14,8 @@
   {{- $url = $src | relURL -}}
 {{- end -}}
 {{- if $version -}}
-  {{- $url = printf "%s?v=%s" $url $version -}}
+  {{- $delimiter := "?" -}}
+  {{- if strings.Contains $url "?" -}}{{- $delimiter = "&" -}}{{- end -}}
+  {{- $url = printf "%s%sv=%s" $url $delimiter (urlquery $version) -}}
 {{- end -}}
 <script src="{{ $url | safeURL }}" type="module"></script>

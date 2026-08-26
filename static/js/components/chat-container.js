@@ -25,8 +25,9 @@
 // 「接近底部」判定閾值（px），可依實際使用情境調整。
 const NEAR_BOTTOM_THRESHOLD = 48;
 
-// 容器（tabindex="0"）聚焦時可觸發原生捲動的按鍵：視為使用者主動介入
+// 容器（tabindex="0"）聚焦時可觸發原生捲動的按鍵。
 const SCROLL_KEYS = ['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End'];
+const SCROLL_UP_KEYS = ['ArrowUp', 'PageUp', 'Home'];
 
 /**
  * 捲動位置是否接近底部
@@ -124,18 +125,23 @@ function initChatContainer(container) {
     }
   });
 
-  // 使用者主動介入（滾輪／觸控／鍵盤捲動／拖曳捲軸）即取消自動捲到底，尊重使用者的閱讀位置
-  ['wheel', 'touchstart', 'mousedown'].forEach(function (type) {
+  // 只有明確的向上滾輪意圖才先停止跟隨。觸控與滑鼠按下本身不代表
+  // 閱讀位置已改變，是否停止交由後續 scroll 的 near-bottom 判定處理。
+  container.addEventListener('wheel', function (event) {
+    autoScrolling = false;
+    if (event.deltaY < 0) followLatest = false;
+  }, { passive: true });
+
+  ['touchstart', 'mousedown'].forEach(function (type) {
     container.addEventListener(type, function () {
-      followLatest = false;
       autoScrolling = false;
     }, { passive: true });
   });
 
   container.addEventListener('keydown', function (event) {
     if (SCROLL_KEYS.includes(event.key)) {
-      followLatest = false;
       autoScrolling = false;
+      if (SCROLL_UP_KEYS.includes(event.key)) followLatest = false;
     }
   });
 

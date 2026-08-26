@@ -113,7 +113,11 @@ function initChatComposer(form) {
   input.addEventListener('keydown', function (event) {
     if ((event.ctrlKey || event.metaKey) && event.key === 'Enter' && !event.isComposing) {
       event.preventDefault();
-      form.requestSubmit(submitButton);
+      if (typeof form.requestSubmit === 'function') {
+        form.requestSubmit(submitButton);
+      } else {
+        submitButton.click();
+      }
     }
   });
 
@@ -135,13 +139,14 @@ function initChatComposer(form) {
   }
 
   form.addEventListener('reset', function () {
-    queueMicrotask(function () {
+    // 原生 reset 會在事件結束後套用初始值，下一個 task 再同步畫面狀態。
+    setTimeout(function () {
       attachmentsVersion += 1;
       clearError();
       renderAttachments();
       setStatus('');
       syncSubmitState();
-    });
+    }, 0);
   });
 
   form.chatComposer = {
