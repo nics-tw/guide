@@ -1,0 +1,123 @@
+/* Guide 文件頁展示樣式，不屬於可下載的 Data Ownership 元件 CSS。
+ * 打包元件資源時應排除 assets/css/demo/。
+ */
+.guide-demo-data-ownership__conversation {
+  background-color: var(--backgroundColorLayer1);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.guide-demo-data-ownership__header {
+  align-items: center;
+  background-color: var(--backgroundColor);
+  border-block-end: 1px solid var(--borderColor);
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+
+.guide-demo-data-ownership__header h4,
+.guide-demo-data-ownership__header p {
+  margin: 0;
+}
+
+.guide-demo-data-ownership__header p {
+  font-size: 0.875rem;
+  margin-block-start: 0.15rem;
+}
+
+.guide-demo-data-ownership__avatar {
+  align-items: center;
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+  color: var(--backgroundColor);
+  display: inline-flex;
+  flex: 0 0 2.5rem;
+  font-weight: 700;
+  justify-content: center;
+  min-block-size: 2.5rem;
+}
+
+.guide-demo-data-ownership__messages {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  min-block-size: 15rem;
+  padding: 1.25rem;
+}
+
+.guide-demo-data-ownership__message {
+  background-color: var(--backgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.75rem;
+  justify-self: start;
+  margin: 0;
+  max-inline-size: 78%;
+  padding: 0.75rem 1rem;
+}
+
+.guide-demo-data-ownership__message--user {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  justify-self: end;
+}
+
+.guide-demo-data-ownership__conversation .data-ownership-entry {
+  margin: 0 1rem;
+}
+
+.guide-demo-data-ownership__composer-preview {
+  align-items: center;
+  background-color: var(--backgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.5rem;
+  color: var(--textColor);
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin: 0.75rem 1rem 0;
+  padding: 0.75rem;
+}
+
+.guide-demo-data-ownership__composer-preview span:last-child {
+  background-color: var(--primaryColor);
+  border-radius: 0.35rem;
+  color: var(--backgroundColor);
+  font-weight: 700;
+  padding: 0.5rem 0.75rem;
+}
+
+.guide-demo-data-ownership__caption {
+  font-size: 0.875rem;
+  margin: 0;
+  padding: 0.75rem 1rem 1rem;
+}
+
+.guide-demo-data-ownership__test-controls {
+  margin-block-start: 1rem;
+}
+
+.guide-demo-data-ownership__test-controls p {
+  margin-block: 0.75rem;
+}
+
+@media (max-width: 35em) {
+  .guide-demo-data-ownership__messages {
+    min-block-size: 12rem;
+    padding: 1rem;
+  }
+
+  .guide-demo-data-ownership__message {
+    max-inline-size: 90%;
+  }
+
+  .guide-demo-data-ownership__conversation .data-ownership-entry {
+    margin-inline: 0.75rem;
+  }
+
+  .guide-demo-data-ownership__composer-preview {
+    margin-inline: 0.75rem;
+  }
+}

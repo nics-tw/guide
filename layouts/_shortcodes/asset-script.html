@@ -1,10 +1,21 @@
 {{- $src := .Get 0 -}}
+{{- $version := "" -}}
+{{- if gt (len .Params) 1 -}}
+  {{- $version = .Get 1 -}}
+{{- end -}}
 {{- if (hasPrefix $src "assets/") -}}
   {{- $src = strings.TrimPrefix "assets/" $src -}}
 {{- end -}}
 {{- $res := resources.Get $src -}}
+{{- $url := "" -}}
 {{- if $res -}}
-  <script src="{{ $res.RelPermalink }}" type="module"></script>
+  {{- $url = $res.RelPermalink -}}
 {{- else -}}
-  <script src="{{ $src | relURL }}" type="module"></script>
+  {{- $url = $src | relURL -}}
 {{- end -}}
+{{- if $version -}}
+  {{- $delimiter := "?" -}}
+  {{- if strings.Contains $url "?" -}}{{- $delimiter = "&" -}}{{- end -}}
+  {{- $url = printf "%s%sv=%s" $url $delimiter (urlquery $version) -}}
+{{- end -}}
+<script src="{{ $url | safeURL }}" type="module"></script>

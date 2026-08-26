@@ -1,0 +1,70 @@
+<div class="guide-demo-data-ownership" data-data-ownership-demo>
+  <form
+    class="data-ownership"
+    data-data-ownership
+    action="/preferences/data-use"
+    method="post"
+    aria-labelledby="data-ownership-example-title"
+  >
+    <header class="data-ownership__header">
+      <p class="data-ownership__eyebrow">資料使用權限</p>
+      <h3 id="data-ownership-example-title" class="data-ownership__title">管理這段對話的資料用途</h3>
+      <p class="data-ownership__intro">為了回覆訊息，服務會處理你送出的文字與附件。以下設定不影響你使用對話功能，可分別決定是否將這段對話用於改善服務或訓練模型。</p>
+    </header>
+
+    <fieldset class="data-ownership__choices">
+      <legend>你可以決定的資料用途</legend>
+      <p class="data-ownership__choices-intro">以下選項預設關閉且彼此獨立，你可以分別調整。</p>
+
+      <div class="data-ownership__choice">
+        <input
+          id="data-ownership-example-improvement"
+          name="use_for_service_improvement"
+          type="checkbox"
+          value="yes"
+          aria-describedby="data-ownership-example-improvement-description"
+          data-data-ownership-option
+        >
+        <div>
+          <label for="data-ownership-example-improvement">用於改善這項服務</label>
+          <p id="data-ownership-example-improvement-description">允許服務團隊分析這段對話，找出常見問題並改善服務流程與回覆品質。</p>
+        </div>
+      </div>
+
+      <div class="data-ownership__choice">
+        <input
+          id="data-ownership-example-training"
+          name="use_for_model_training"
+          type="checkbox"
+          value="yes"
+          aria-describedby="data-ownership-example-training-description"
+          data-data-ownership-option
+        >
+        <div>
+          <label for="data-ownership-example-training">用於訓練模型</label>
+          <p id="data-ownership-example-training-description">允許將這段對話加入模型訓練資料。</p>
+        </div>
+      </div>
+    </fieldset>
+
+    <p class="data-ownership__status" role="status" aria-live="polite" aria-atomic="true" data-data-ownership-status></p>
+    <p class="data-ownership__error" role="alert" data-data-ownership-error hidden></p>
+
+    <footer class="data-ownership__actions">
+      <button class="button button-primary" type="submit" data-data-ownership-submit>儲存設定</button>
+      <a href="{{ "components/ai/data-ownership/details/index.html" | relURL }}">查看完整資料使用說明</a>
+    </footer>
+  </form>
+
+  <details class="guide-demo-data-ownership__test-controls">
+    <summary>測試儲存狀態</summary>
+    <p id="data-ownership-demo-fail-hint">開啟後，下一次儲存會失敗並保留目前選擇。</p>
+    <button
+      class="button"
+      type="button"
+      aria-describedby="data-ownership-demo-fail-hint"
+      aria-pressed="false"
+      data-data-ownership-demo-fail
+    >模擬儲存失敗</button>
+  </details>
+</div>

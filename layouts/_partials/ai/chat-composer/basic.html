@@ -1,0 +1,65 @@
+<live-announcer></live-announcer>
+
+<div class="chat-composer-demo" data-chat-composer-demo>
+  <h3 id="chat-composer-demo-heading" class="chat-composer-demo__heading">與客服助理的對話</h3>
+  <div class="chat-composer-demo__surface">
+    <div class="chat-composer-demo__viewport">
+      <div
+        class="chat-container"
+        role="log"
+        aria-live="off"
+        aria-labelledby="chat-composer-demo-heading"
+        tabindex="0"
+        data-chat-container
+      >
+        <message-bubble variant="ai">您好，我可以協助查詢政府服務資訊。請輸入您的問題。</message-bubble>
+      </div>
+      <button type="button" class="chat-container__jump-latest" hidden data-jump-latest>捲到最新訊息</button>
+    </div>
+
+    <div class="typing-indicator" data-typing-indicator aria-hidden="true" hidden>
+      <span class="typing-indicator__dot"></span>
+      <span class="typing-indicator__dot"></span>
+      <span class="typing-indicator__dot"></span>
+    </div>
+
+    <form class="chat-composer" data-chat-composer action="/messages" method="post">
+      <label class="chat-composer__label" for="chat-composer-demo-message">訊息</label>
+      <p id="chat-composer-demo-hint" class="chat-composer__hint">Enter 換行，Ctrl+Enter 或 Command+Enter 送出。</p>
+      <textarea
+        id="chat-composer-demo-message"
+        class="chat-composer__input"
+        name="message"
+        rows="3"
+        required
+        aria-describedby="chat-composer-demo-hint chat-composer-demo-error"
+        data-chat-composer-input
+      ></textarea>
+      <p id="chat-composer-demo-error" class="chat-composer__error" data-chat-composer-error hidden></p>
+      <p class="chat-composer__status" data-chat-composer-status hidden></p>
+      <div class="chat-composer__actions">
+        <button class="button button-primary" type="submit" data-chat-composer-submit>送出訊息</button>
+      </div>
+    </form>
+
+    <div class="chat-composer-demo__response-actions">
+      <button type="button" class="button button-danger" data-chat-composer-demo-stop hidden>停止產生回覆</button>
+    </div>
+  </div>
+
+  <details class="chat-composer-demo__test-controls">
+    <summary>測試送出狀態</summary>
+    <p id="chat-composer-demo-fail-hint" class="chat-composer-demo__test-hint">
+      開啟後，此範例的每次送出都會失敗並保留輸入內容；再次按下可關閉。
+    </p>
+    <div class="chat-composer-demo__controls">
+      <button
+        type="button"
+        class="button"
+        aria-describedby="chat-composer-demo-fail-hint"
+        aria-pressed="false"
+        data-chat-composer-demo-fail
+      >模擬送出失敗</button>
+    </div>
+  </details>
+</div>

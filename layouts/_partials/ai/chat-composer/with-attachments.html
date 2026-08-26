@@ -1,0 +1,91 @@
+<div class="chat-composer-demo" data-chat-composer-demo>
+  <h3 id="chat-composer-files-heading" class="chat-composer-demo__heading">附加檔案給客服助理</h3>
+  <div class="chat-composer-demo__surface">
+    <div class="chat-composer-demo__viewport">
+      <div
+        class="chat-container"
+        role="log"
+        aria-live="off"
+        aria-labelledby="chat-composer-files-heading"
+        tabindex="0"
+        data-chat-container
+      >
+        <message-bubble variant="ai">您好，請輸入您的問題；如有需要，也可以附加檔案。</message-bubble>
+      </div>
+      <button type="button" class="chat-container__jump-latest" hidden data-jump-latest>捲到最新訊息</button>
+    </div>
+
+    <div class="typing-indicator" data-typing-indicator aria-hidden="true" hidden>
+      <span class="typing-indicator__dot"></span>
+      <span class="typing-indicator__dot"></span>
+      <span class="typing-indicator__dot"></span>
+    </div>
+
+    <form class="chat-composer" data-chat-composer action="/messages" method="post" enctype="multipart/form-data">
+      <label class="chat-composer__label" for="chat-composer-files-message">訊息</label>
+      <p id="chat-composer-files-hint" class="chat-composer__hint">
+        Enter 換行，Ctrl+Enter 或 Command+Enter 送出。
+      </p>
+      <textarea
+        id="chat-composer-files-message"
+        class="chat-composer__input"
+        name="message"
+        rows="3"
+        required
+        aria-describedby="chat-composer-files-hint chat-composer-files-error"
+        data-chat-composer-input
+      ></textarea>
+
+      <div class="chat-composer__selection" data-chat-composer-selection hidden>
+        <ul class="file-upload__file-list" aria-label="已選擇的檔案" data-chat-composer-attachment-list></ul>
+        <button class="button" type="button" data-chat-composer-clear-attachments>清除全部附件</button>
+      </div>
+
+      <p id="chat-composer-files-error" class="chat-composer__error" data-chat-composer-error hidden></p>
+      <p class="chat-composer__status" data-chat-composer-status hidden></p>
+      <div class="chat-composer__actions">
+        <div class="chat-composer__attachments">
+          <label class="visually-hidden" for="chat-composer-files-attachments">附加檔案</label>
+          <p id="chat-composer-files-attachments-hint" class="visually-hidden">
+            此範例可一次附加多個檔案。
+          </p>
+          <div class="file-upload file-upload--compact">
+            <input
+              id="chat-composer-files-attachments"
+              class="file-upload__input"
+              type="file"
+              name="attachments"
+              multiple
+              aria-describedby="chat-composer-files-attachments-hint"
+              data-chat-composer-attachments
+            >
+            <div class="file-upload__dropzone" aria-hidden="true">
+              <span class="file-upload__button">附加檔案</span>
+            </div>
+          </div>
+        </div>
+        <button class="button button-primary" type="submit" data-chat-composer-submit>送出訊息</button>
+      </div>
+    </form>
+
+    <div class="chat-composer-demo__response-actions">
+      <button type="button" class="button button-danger" data-chat-composer-demo-stop hidden>停止產生回覆</button>
+    </div>
+  </div>
+
+  <details class="chat-composer-demo__test-controls">
+    <summary>測試送出狀態</summary>
+    <p id="chat-composer-files-fail-hint" class="chat-composer-demo__test-hint">
+      開啟後，此範例的每次送出都會失敗並保留輸入內容；再次按下可關閉。
+    </p>
+    <div class="chat-composer-demo__controls">
+      <button
+        type="button"
+        class="button"
+        aria-describedby="chat-composer-files-fail-hint"
+        aria-pressed="false"
+        data-chat-composer-demo-fail
+      >模擬送出失敗</button>
+    </div>
+  </details>
+</div>

@@ -46,7 +46,7 @@ typing.typingIndicator.hide(); // 首段回覆內容抵達時呼叫` >}}
 - [prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) - MDN
 
 {{< asset-script "js/components/live-announcer.js" >}}
-{{< asset-script "js/components/chat-container.js" >}}
+{{< asset-script "js/components/chat-container.js" "scroll-follow-v3" >}}
 {{< asset-script "js/components/message-bubble.js" >}}
 {{< asset-script "js/components/typing-indicator.js" >}}
 {{< asset-script "js/demo/typing-indicator.demo.js" >}}
