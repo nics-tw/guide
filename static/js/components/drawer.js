@@ -90,6 +90,21 @@ function focusIfAvailable (element) {
   return document.activeElement === element
 }
 
+function prepareTrigger (trigger, fallback, activeElement) {
+  trigger.hidden = false
+
+  if (!isAvailableFocusTarget(trigger)) {
+    trigger.hidden = true
+    return false
+  }
+
+  if (activeElement !== fallback || focusIfAvailable(trigger)) return true
+
+  trigger.hidden = true
+  if (document.activeElement !== fallback) focusIfAvailable(fallback)
+  return false
+}
+
 function getDrawerParts (root) {
   if (
     root.querySelector(ROOT_SELECTOR) ||
@@ -183,6 +198,8 @@ function initDrawer (root) {
     title.focus()
   }
 
+  if (!prepareTrigger(trigger, fallback, activeElement)) return
+
   root.addEventListener('click', (event) => {
     if (!(event.target instanceof Element)) return
     if (event.target.closest(ROOT_SELECTOR) !== root) return
@@ -217,11 +234,8 @@ function initDrawer (root) {
     collapse()
   })
 
-  trigger.hidden = false
   close.hidden = false
   setExpanded(keepOpen)
-
-  if (activeElement === fallback) trigger.focus()
 
   fallback.hidden = true
   root.setAttribute('data-drawer-enhanced', '')
