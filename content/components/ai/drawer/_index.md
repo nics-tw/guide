@@ -1,11 +1,19 @@
 ---
 title: 抽屜式面板 (Drawer)
 maturity: "new"
+aliases:
+  - /components/drawer/index.html
 ---
 
-### 基本範例
+### AI 回答與參考資料
 
-{{< live-example partial="drawer/basic.html" >}}
+Drawer 歸在 AI 元件，是因為本頁示範 AI 回答的參考資料；底層元件仍可用於其他非模態補充內容。
+
+<div class="guide-demo-drawer">
+{{< live-example partial="ai/drawer/basic.html" >}}
+</div>
+
+- [開啟獨立寬版預覽]({{< ref "components/ai/drawer/demo.html" >}})
 
 #### 使用方式
 
@@ -17,7 +25,7 @@ maturity: "new"
 
 - `.drawer-layout`／`.drawer-layout__main`：負責主區與面板的並排、換行及局部焦點返回。
 - `.drawer`／`.drawer__header`／`.drawer__title`／`.drawer__body`／`.drawer__close`：面板區塊與內容樣式。
-- 使用編譯後的 [`main.css`]({{< relURL "main.css" >}}) 取得 Drawer 樣式。
+- 使用編譯後的 [`main.css`]({{< relURL "main.css" >}}) 取得 Drawer 樣式；本頁展示樣式不屬於元件採用需求。
 
 #### 親和力
 
@@ -40,3 +48,4 @@ maturity: "new"
 - [Understanding Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) - W3C
 
 {{< asset-script "js/components/drawer.js" >}}
+{{< asset-css "css/demo/drawer.css" >}}
