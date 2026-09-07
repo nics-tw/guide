@@ -1,0 +1,50 @@
+<div class="drawer-layout" data-drawer-layout>
+  <div class="drawer-layout__main" data-drawer-return tabindex="-1">
+    <label for="drawer-demo-note">申請備註</label>
+    <textarea id="drawer-demo-note" rows="3"></textarea>
+    <a data-drawer-fallback href="#drawer-demo-title">查看申請資料說明</a>
+    <button
+      class="button"
+      type="button"
+      data-drawer-trigger="drawer-demo"
+      aria-controls="drawer-demo"
+      aria-expanded="false"
+      hidden
+    >
+      查看申請資料說明
+    </button>
+  </div>
+  <section
+    class="drawer"
+    id="drawer-demo"
+    data-drawer
+    aria-labelledby="drawer-demo-title"
+  >
+    <div class="drawer__header">
+      <h4
+        class="drawer__title"
+        id="drawer-demo-title"
+        data-drawer-title
+        tabindex="-1"
+      >
+        申請資料說明
+      </h4>
+      <button
+        class="button drawer__close"
+        type="button"
+        data-drawer-close
+        hidden
+      >
+        關閉申請資料說明
+      </button>
+    </div>
+    <div class="drawer__body">
+      <p>填寫申請資料時，可參考這裡的補充說明。</p>
+      <ul>
+        <li>備註可填寫與申請案件相關的補充資訊。</li>
+        <li>請勿在備註中填寫不必要的個人資料。</li>
+      </ul>
+      <p><a href="#drawer-demo-note">返回申請備註</a></p>
+    </div>
+  </section>
+</div>
