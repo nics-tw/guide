@@ -2,7 +2,7 @@
 title: AI 元件 (AI Components)
 ---
 
-AI 對話介面的共用元件，可依服務需求單獨或組合使用。
+AI 服務介面的共用元件，涵蓋對話互動、資料告知與回覆使用提醒，可依服務需求單獨或組合使用。
 
 ### 元件清單
 
@@ -14,5 +14,5 @@ AI 對話介面的共用元件，可依服務需求單獨或組合使用。
 - [資料授權 (Data Ownership)]({{< ref "components/ai/data-ownership/_index.md" >}})
 - [抽屜式面板 (Drawer)]({{< ref "components/ai/drawer/_index.md" >}})
 - [思考區塊 (Thinking Block)]({{< ref "components/ai/thinking-block/_index.md" >}})
-- [知情同意 (Consent)]({{< ref "components/ai/consent/_index.md" >}})
-- [注意事項 (Caveat)]({{< ref "components/ai/caveat/_index.md" >}})
+- [知情同意 (Consent)]({{< ref "components/ai/consent/_index.md" >}})：在提供資料前，告知蒐集目的、使用範圍與相關權益。
+- [注意事項 (Caveat)]({{< ref "components/ai/caveat/_index.md" >}})：揭露 AI 服務限制與使用提醒，協助理解回覆的參考性質。
