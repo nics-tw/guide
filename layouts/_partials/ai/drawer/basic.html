@@ -1,0 +1,68 @@
+<div class="drawer-layout" data-drawer-layout>
+  <div class="drawer-layout__main" data-drawer-return tabindex="-1">
+    <ol aria-label="AI 對話" role="list">
+      <li>
+        <p><strong>使用者：</strong>使用線上服務前，我需要先準備哪些資料？</p>
+      </li>
+      <li id="drawer-demo-answer">
+        <p><strong>AI 助理：</strong>以下是虛構示意回答。建議先確認聯絡方式、申請目的及可用的證明文件，再依服務頁面的實際說明準備資料。</p>
+        <p>
+          <a data-drawer-fallback href="#drawer-demo-title">查看參考資料</a>
+          <button
+            class="button"
+            type="button"
+            data-drawer-trigger="drawer-demo"
+            aria-controls="drawer-demo"
+            aria-expanded="false"
+            hidden
+          >
+            查看參考資料
+          </button>
+        </p>
+      </li>
+    </ol>
+    <label for="drawer-demo-note">繼續追問（示意）</label>
+    <textarea id="drawer-demo-note" rows="3"></textarea>
+    <p>示意，不會送出訊息或呼叫 AI</p>
+  </div>
+  <section
+    class="drawer"
+    id="drawer-demo"
+    data-drawer
+    aria-labelledby="drawer-demo-title"
+  >
+    <div class="drawer__header">
+      <h4
+        class="drawer__title"
+        id="drawer-demo-title"
+        data-drawer-title
+        tabindex="-1"
+      >
+        回覆參考資料
+      </h4>
+      <button
+        class="button drawer__close"
+        type="button"
+        data-drawer-close
+        hidden
+      >
+        關閉參考資料
+      </button>
+    </div>
+    <div class="drawer__body">
+      <p>以下參考資料均為虛構示意文件，不代表任何機關政策或實際 AI 檢索結果。</p>
+      <p>頁內來源：<a href="#drawer-demo-source-1">示意文件一</a>、<a href="#drawer-demo-source-2">示意文件二</a></p>
+      <ol aria-label="參考資料">
+        <li id="drawer-demo-source-1">
+          <p><strong>示意文件一：線上服務準備指南</strong></p>
+          <p>節錄：「開始操作前，先確認可使用的聯絡方式及申請目的。」</p>
+        </li>
+        <li id="drawer-demo-source-2">
+          <p><strong>示意文件二：文件檢查清單</strong></p>
+          <p>節錄：「依服務頁面的實際說明，檢查證明文件是否完整。」</p>
+        </li>
+      </ol>
+      <p><a href="#drawer-demo-answer">返回 AI 回答</a></p>
+    </div>
+  </section>
+</div>
