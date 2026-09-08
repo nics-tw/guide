@@ -1,0 +1,34 @@
+<!-- 請由伺服器回填先前實際提交的值，並替換 action、服務條件及政策連結。 -->
+<form
+  class="consent"
+  method="post"
+  action="/meetings/example/consent"
+  aria-labelledby="consent-error-title"
+  aria-describedby="consent-error-save-error"
+>
+  <h3 id="consent-error-title" class="consent__title">本次會議的 AI 紀錄</h3>
+  <p class="consent__example-note">以下為示範服務條件，不是本網站的資料政策。採用前須換成實際用途、保存與撤回流程，並連接服務後端。</p>
+  <p class="consent__intro">這是每位會議參與者各自的選擇。你不能代替其他參與者同意。</p>
+  <p class="consent__description">範例服務會處理本次會議聲音，產生只供本次參與者閱讀的逐字稿，不會用於模型訓練。錄音會在逐字稿確認後刪除，逐字稿保存到本次會議紀錄工作結束。</p>
+  <p class="consent__alternative">不同意仍可參與會議；範例服務會改採人工紀錄，暫不啟用 AI 錄音。</p>
+  <p><a href="/meetings/example/recording-policy">查看本次紀錄的用途與撤回方式</a></p>
+
+  <fieldset class="consent__choices" aria-describedby="consent-error-hint">
+    <legend>是否同意本次 AI 紀錄？（必填）</legend>
+    <p id="consent-error-hint" class="consent__hint">請選擇一項，再送出選擇。選取本身不會啟用 AI 紀錄。</p>
+
+    <div class="consent__choice">
+      <input id="consent-error-agree" name="recording_consent" type="radio" value="agree" required>
+      <label for="consent-error-agree">同意本次 AI 紀錄</label>
+    </div>
+    <div class="consent__choice">
+      <input id="consent-error-decline" name="recording_consent" type="radio" value="decline" required checked>
+      <label for="consent-error-decline">不同意本次 AI 紀錄</label>
+    </div>
+  </fieldset>
+
+  <p id="consent-error-save-error" class="consent__error">選擇尚未保存，請稍後再送出。你仍可更改選擇。</p>
+  <div class="consent__actions">
+    <button class="button button-primary" type="submit">送出選擇</button>
+  </div>
+</form>

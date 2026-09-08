@@ -13,3 +13,4 @@ AI 對話介面的共用元件，可依服務需求單獨或組合使用。
 - [訊息輸入區 (Chat Composer)]({{< ref "components/ai/chat-composer/_index.md" >}})
 - [資料授權 (Data Ownership)]({{< ref "components/ai/data-ownership/_index.md" >}})
 - [抽屜式面板 (Drawer)]({{< ref "components/ai/drawer/_index.md" >}})
+- [知情同意 (Consent)]({{< ref "components/ai/consent/_index.md" >}})

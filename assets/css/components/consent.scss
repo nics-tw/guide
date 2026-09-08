@@ -1,0 +1,117 @@
+.consent {
+  background-color: var(--backgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.75rem;
+  color: var(--textColor);
+  padding: 1rem;
+}
+
+.consent__title {
+  font-size: 1.375rem;
+  margin-block: 0 0.75rem;
+}
+
+.consent__intro,
+.consent__description,
+.consent__alternative,
+.consent__example-note {
+  margin-block: 0.5rem;
+}
+
+.consent__example-note {
+  background-color: var(--backgroundColorLayer1);
+  border-inline-start: 0.25rem solid var(--borderColor);
+  padding: 0.75rem;
+}
+
+.consent__choices {
+  border: 1px solid var(--borderColor);
+  margin-block: 1rem 0;
+  min-inline-size: 0;
+  padding: 0.75rem;
+}
+
+.consent__choices legend {
+  font-weight: 700;
+  padding-inline: 0.25rem;
+}
+
+.consent__hint {
+  margin-block: 0 0.5rem;
+}
+
+.consent__choice {
+  align-items: center;
+  border-block-start: 1px solid var(--borderColor);
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.consent__choice input[type="radio"] {
+  accent-color: var(--linkColor);
+  block-size: 1.25rem;
+  inline-size: 1.25rem;
+  margin: 0;
+}
+
+.consent__choice label {
+  cursor: pointer;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  padding-block: 0.5rem;
+}
+
+.consent__error {
+  color: var(--dangerColor);
+  font-weight: 700;
+  margin-block: 0.75rem 0;
+}
+
+.consent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1rem;
+}
+
+.guide-demo-consent {
+  color: var(--textColor);
+}
+
+.guide-demo-consent__notice,
+.guide-demo-consent__controls,
+.guide-demo-consent__result {
+  background-color: var(--backgroundColorLayer1);
+  border: 1px solid var(--borderColor);
+  margin-block: 0 0.75rem;
+  padding: 0.75rem;
+}
+
+.guide-demo-consent__controls {
+  margin-block-start: 0.75rem;
+}
+
+.guide-demo-consent__controls label {
+  cursor: pointer;
+  display: inline-block;
+  padding-block: 0.5rem;
+}
+
+.guide-demo-consent__result:empty {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+@media (forced-colors: active) {
+  .consent__example-note,
+  .consent__choices,
+  .consent__choice,
+  .guide-demo-consent__notice,
+  .guide-demo-consent__controls,
+  .guide-demo-consent__result {
+    border-color: CanvasText;
+  }
+}
