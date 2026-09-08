@@ -94,10 +94,10 @@ function createCoordinator(demo, announcer) {
       const abandoned = coordinator.queue.splice(0);
       if (document.contains(demo)) {
         setFallback(demo, '即時宣告元件不可用，請閱讀畫面狀態。');
-        abandoned.forEach(function (item) {
-          if (typeof item.after === 'function') item.after(false);
-        });
       }
+      abandoned.forEach(function (item) {
+        if (typeof item.after === 'function') item.after(false);
+      });
       return;
     }
     const next = coordinator.queue.shift();
