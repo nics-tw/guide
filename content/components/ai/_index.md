@@ -12,3 +12,4 @@ AI 對話介面的共用元件，可依服務需求單獨或組合使用。
 - [輸入中提示 (Typing Indicator)]({{< ref "components/ai/typing-indicator/_index.md" >}})
 - [訊息輸入區 (Chat Composer)]({{< ref "components/ai/chat-composer/_index.md" >}})
 - [資料授權 (Data Ownership)]({{< ref "components/ai/data-ownership/_index.md" >}})
+- [注意事項 (Caveat)]({{< ref "components/ai/caveat/_index.md" >}})
