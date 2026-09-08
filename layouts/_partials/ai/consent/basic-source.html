@@ -2,27 +2,39 @@
 <form
   class="consent"
   method="post"
-  action="/meetings/example/consent"
+  action="/summaries/example/consent"
   aria-labelledby="consent-basic-title"
 >
-  <h3 id="consent-basic-title" class="consent__title">本次會議的 AI 紀錄</h3>
-  <p class="consent__example-note">以下為示範服務條件，不是本網站的資料政策。採用前須換成實際用途、保存與撤回流程，並連接服務後端。</p>
-  <p class="consent__intro">這是每位會議參與者各自的選擇。你不能代替其他參與者同意。</p>
-  <p class="consent__description">範例服務會處理本次會議聲音，產生只供本次參與者閱讀的逐字稿，不會用於模型訓練。錄音會在逐字稿確認後刪除，逐字稿保存到本次會議紀錄工作結束。</p>
-  <p class="consent__alternative">不同意仍可參與會議；範例服務會改採人工紀錄，暫不啟用 AI 錄音。</p>
-  <p><a href="/meetings/example/recording-policy">查看本次紀錄的用途與撤回方式</a></p>
+  <h3 id="consent-basic-title" class="consent__title">提供文字前的知情同意</h3>
+  <p class="consent__example-note">以下為虛構服務條件，不是本網站的資料政策。採用前須換成可履行的事實，並連接服務後端。</p>
+  <p class="consent__intro">請先閱讀告知、選擇並送出；服務確認本次同意已保存後，才進入提供文字的步驟。只選取「同意」不代表服務已取得可蒐集資料的許可。</p>
+  <p class="consent__description">本範例只需要您自行提供的非機敏文字，請勿貼上個人資料、機密內容或未經授權的他人文件。</p>
+
+  <dl class="consent__details">
+    <dt>蒐集目的</dt>
+    <dd>產生供您本人閱讀的本次摘要。</dd>
+    <dt>資料及使用範圍</dt>
+    <dd>只處理您在下一步主動提供的文字，由範例服務的 AI 摘要功能使用；不對外分享，也不用於模型訓練。</dd>
+    <dt>保存</dt>
+    <dd>本範例假設在本次摘要工作結束後刪除原文與摘要；正式服務必須改成實際可履行的保存方式。</dd>
+    <dt>相關權益</dt>
+    <dd>您可以不提供資料；提供前可更改選擇或離開；提供後可透過服務提出查詢、更正、刪除或停止後續處理的需求。實際處理範圍與結果依服務說明，停止後續處理不代表能消除先前已完成的處理。</dd>
+  </dl>
+
+  <p class="consent__alternative">不同意時，可以不提供文字並自行整理。</p>
+  <p><a href="/summaries/example/data-policy">查看資料使用與權益說明</a></p>
 
   <fieldset class="consent__choices" aria-describedby="consent-basic-hint">
-    <legend>是否同意本次 AI 紀錄？（必填）</legend>
-    <p id="consent-basic-hint" class="consent__hint">請選擇一項，再送出選擇。選取本身不會啟用 AI 紀錄。</p>
+    <legend>是否同意提供文字供本次 AI 摘要使用？（必填）</legend>
+    <p id="consent-basic-hint" class="consent__hint">請選擇一項，再送出選擇。選取本身不會傳送文字，仍須明確送出。</p>
 
     <div class="consent__choice">
-      <input id="consent-basic-agree" name="recording_consent" type="radio" value="agree" required>
-      <label for="consent-basic-agree">同意本次 AI 紀錄</label>
+      <input id="consent-basic-agree" name="data_consent" type="radio" value="agree" required>
+      <label for="consent-basic-agree">同意提供文字供本次 AI 摘要使用</label>
     </div>
     <div class="consent__choice">
-      <input id="consent-basic-decline" name="recording_consent" type="radio" value="decline" required>
-      <label for="consent-basic-decline">不同意本次 AI 紀錄</label>
+      <input id="consent-basic-decline" name="data_consent" type="radio" value="decline" required>
+      <label for="consent-basic-decline">不同意提供文字供本次 AI 摘要使用</label>
     </div>
   </fieldset>
 

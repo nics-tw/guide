@@ -24,14 +24,28 @@ document.querySelectorAll('[data-consent-demo]').forEach(function (demo) {
   const controls = demo.querySelector('[data-consent-demo-controls]');
   const failControl = demo.querySelector('[data-consent-demo-fail]');
   const result = demo.querySelector('[data-consent-demo-result]');
-  if (!form || !controls || !failControl || !result) return;
+  const agreeNext = demo.querySelector('[data-consent-demo-next="agree"]');
+  const declineNext = demo.querySelector('[data-consent-demo-next="decline"]');
+  if (!form || !controls || !failControl || !result || !agreeNext || !declineNext) return;
+
+  function clearOutcome() {
+    result.textContent = '';
+    agreeNext.hidden = true;
+    declineNext.hidden = true;
+  }
 
   form.addEventListener('submit', function (event) {
-    if (!form.checkValidity()) return;
     event.preventDefault();
+    if (!form.checkValidity()) {
+      clearOutcome();
+      return;
+    }
 
-    const choice = new FormData(form).get('recording_consent');
-    if (choice !== 'agree' && choice !== 'decline') return;
+    const choice = new FormData(form).get('data_consent');
+    if (choice !== 'agree' && choice !== 'decline') {
+      clearOutcome();
+      return;
+    }
 
     const staleError = form.querySelector('.consent__error:not([hidden])');
     if (staleError) {
@@ -41,13 +55,24 @@ document.querySelectorAll('[data-consent-demo]').forEach(function (demo) {
     }
 
     if (failControl.checked) {
-      result.textContent = '示範：選擇尚未保存。請保留或更改選擇後重試；本頁沒有傳送資料。';
+      clearOutcome();
+      result.textContent = '示範：選擇尚未保存，未進入下一步。請保留或更改選擇後重試；本頁沒有傳送資料。';
       return;
     }
 
-    const choiceLabel = choice === 'agree' ? '同意' : '不同意';
-    result.textContent = '示範：本次送出的選擇為' + choiceLabel + '本次 AI 紀錄。這個選擇沒有傳送或保存。';
+    clearOutcome();
+    if (choice === 'agree') {
+      agreeNext.hidden = false;
+      result.textContent = '示範：進入提供文字步驟的流程示意；沒有傳送文字或保存選擇。';
+    } else {
+      declineNext.hidden = false;
+      result.textContent = '示範：不提供資料並離開 AI 摘要流程；沒有傳送資料或保存選擇。';
+    }
   });
+
+  form.addEventListener('change', clearOutcome);
+  form.addEventListener('reset', clearOutcome);
+  failControl.addEventListener('change', clearOutcome);
 
   controls.hidden = false;
   demo.dataset.consentDemoReady = 'true';

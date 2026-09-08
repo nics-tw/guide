@@ -1,15 +1,31 @@
 <div class="guide-demo-consent" data-consent-demo>
-  <p class="guide-demo-consent__notice">這是示範，沒有真實會議、不會錄音或建立同意紀錄。停用 JavaScript 時，送出會以網址參數把示範選項傳回本頁。</p>
+  <p class="guide-demo-consent__notice">這是流程示範，沒有真實摘要工作、不會蒐集文字或保存選擇。停用 JavaScript 時，送出只會以網址參數把示範選項傳回本頁。</p>
   {{- $source := partial "ai/consent/error-source.html" . -}}
   {{- $action := printf "%s#consent-demo-fallback" ("components/ai/consent/index.html" | relURL) -}}
   {{- $source = replace $source "consent-error-" "consent-demo-error-" -}}
-  {{- $source = replace $source `本次會議的 AI 紀錄</h3>` `本次會議的 AI 紀錄（保存失敗範例）</h3>` -}}
+  {{- $source = replace $source `提供文字前的知情同意</h3>` `提供文字前的知情同意（提交失敗範例）</h3>` -}}
   {{- $source = replace $source `method="post"` `method="get"` -}}
-  {{- $source = replace $source `action="/meetings/example/consent"` (printf `action="%s"` $action) -}}
-  {{- $source = replace $source `href="/meetings/example/recording-policy"` `href="#consent-demo-policy"` -}}
+  {{- $source = replace $source `action="/summaries/example/consent"` (printf `action="%s"` $action) -}}
+  {{- $source = replace $source `href="/summaries/example/data-policy"` `href="#consent-demo-policy"` -}}
   {{- $source | safeHTML -}}
   <div class="guide-demo-consent__controls" data-consent-demo-controls hidden>
     <label><input type="checkbox" data-consent-demo-fail> 模擬送出失敗</label>
   </div>
   <p class="guide-demo-consent__result" role="status" aria-atomic="true" data-consent-demo-result></p>
+  <section class="guide-demo-consent__next" data-consent-demo-next="agree" hidden>
+    <h4>下一步：提供文字（流程示意）</h4>
+    <ul>
+      <li>正式服務確認本次同意已保存後，才開放資料輸入。</li>
+      <li>使用者仍須在下一步自行提供文字。</li>
+      <li>不得只因選取「同意」就蒐集或處理資料。</li>
+    </ul>
+  </section>
+  <section class="guide-demo-consent__next" data-consent-demo-next="decline" hidden>
+    <h4>下一步：不提供資料（流程示意）</h4>
+    <ul>
+      <li>不進入 AI 摘要，也不要求提供文字。</li>
+      <li>使用者可在自己的文件中自行整理。</li>
+      <li>不必改選同意，也能離開這個流程。</li>
+    </ul>
+  </section>
 </div>

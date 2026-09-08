@@ -24,6 +24,25 @@
   padding: 0.75rem;
 }
 
+.consent__details {
+  background-color: var(--backgroundColorLayer1);
+  border: 1px solid var(--borderColor);
+  margin-block: 1rem;
+  padding: 0.75rem;
+}
+
+.consent__details dt {
+  font-weight: 700;
+}
+
+.consent__details dt:not(:first-child) {
+  margin-block-start: 0.75rem;
+}
+
+.consent__details dd {
+  margin: 0.25rem 0 0;
+}
+
 .consent__choices {
   border: 1px solid var(--borderColor);
   margin-block: 1rem 0;
@@ -81,7 +100,8 @@
 
 .guide-demo-consent__notice,
 .guide-demo-consent__controls,
-.guide-demo-consent__result {
+.guide-demo-consent__result,
+.guide-demo-consent__next {
   background-color: var(--backgroundColorLayer1);
   border: 1px solid var(--borderColor);
   margin-block: 0 0.75rem;
@@ -105,13 +125,23 @@
   padding: 0;
 }
 
+.guide-demo-consent__next h4 {
+  margin-block: 0 0.5rem;
+}
+
+.guide-demo-consent__next ul {
+  margin-block: 0;
+}
+
 @media (forced-colors: active) {
   .consent__example-note,
+  .consent__details,
   .consent__choices,
   .consent__choice,
   .guide-demo-consent__notice,
   .guide-demo-consent__controls,
-  .guide-demo-consent__result {
+  .guide-demo-consent__result,
+  .guide-demo-consent__next {
     border-color: CanvasText;
   }
 }
