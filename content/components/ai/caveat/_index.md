@@ -5,45 +5,42 @@ maturity: "new"
 
 ### 用途與邊界
 
-注意事項 (Caveat) 用來揭露 AI 服務限制與使用提醒，協助使用者理解回覆內容之參考性質。請將具體限制、可能後果與核對行動放在相關輸入或輸出旁。
+注意事項 (Caveat) 用來揭露 AI 服務限制與使用提醒，協助使用者理解回覆內容之參考性質。此變體只用在 AI 回覆後已有一個**正式服務行動群組**時，讓使用者在開始申辦、查詢進度、預約、繳費或下載正式表件前，知道必須回到正式服務頁面核對。
+
+這不是所有可能有誤回答的萬用警語，也不是讓採用端判讀模型品質的工具。FAQ、一般公告、純參考連結與 AI 自行產生的網址，不是此變體的採用對象。沒有可追溯的正式服務行動群組時，不渲染 Caveat。
 
 提示應直接可見，不提供關閉或「已讀」控制。使用者讀過提示不代表風險已消除，此模式也不能代替知情同意、服務驗證或人工判斷。
 
-### 回覆旁的注意事項
+### 正式服務行動前的注意事項
 
 {{< live-example partial="ai/caveat/output.html" >}}
 
-- 在 AI 回覆旁說明內容僅供參考、不是正式公告，並指出 AI 無法查證後續異動、可能省略暫定條件。
-- 核對清單將日期、地點與報名方式逐項對應到示範原始資料。
-
-### 輸入前範例
-
-{{< live-example partial="ai/caveat/input.html" >}}
-
-- 短限制說明放在控制之前，並以 `aria-describedby` 關聯對應 textarea。
-- 這是可編輯的原生輸入示範，不會送出、儲存或產生 AI 回答。
+- 同一則回覆固定依序放置：**回答 → Caveat → 正式服務行動群組 → 下一輪輸入**。
+- 一個正式服務行動群組可以有多個連結或按鈕，但群組前只放一則 Caveat；不要為每個連結重複提示。
+- 範例中的服務連結均為虛構示範，不代表可使用的服務。採用服務必須自行提供並維護真正的正式服務頁面。
 
 ### 採用方式
 
-兩份 partial 都是可直接採用的原生 HTML，內容結構使用原生元素，視覺提示沿用既有的 Warning Text 樣式。不需要另外下載 demo 或 runtime 腳本。採用端必須：
+這份 partial 使用原生 HTML，視覺提示沿用既有的 Warning Text 樣式。不需要另外下載 demo、runtime 腳本或 JavaScript。採用端只需確認：
 
-- 把虛構內容換成實際流程的能力範圍、資料缺口、可能後果與核對方法。
-- 讓來源資料可追溯，不以 AI 自行產生的文字冒充原始來源。
-- 同頁重複使用時，為每組標題、控制、說明與 fragment target 建立唯一 `id`，並同步 `for`、`aria-labelledby`、`aria-describedby` 及 `href`。
-- 載入既有 Warning Text 樣式；不要只靠框線或警示色傳達限制。
+1. 連結或按鈕是服務機關定義的正式服務行動，而非 AI 的建議或未驗證外部網址。
+2. 它們被放在同一個正式服務行動群組，且群組前有固定 Caveat。
+3. 正式服務頁面本身由內容所有者維護；Caveat 只引導核對，不替資格、連結或受理結果背書。
+
+固定提示為：「AI 回覆不代表官方資格、受理狀態或最新規定。開始下一步前，請以正式服務頁面為準。」服務可補充具體事實，但不得只留下「AI 可能有誤」等泛用句。
 
 ### 內容與位置檢核
 
-提示至少應回答：這次 AI 處理涵蓋什麼、可能缺少或誤解什麼、直接使用會有什麼後果，以及使用者如何核對。這是撰寫檢核，不要求介面固定拆成四個欄位。
-
-限制應放在相關控制之前或輸出答案旁，避免使用者完成操作後才看見。若同一頁同時有輸入與輸出提示，應各自只說明所屬情境，不重複堆疊通用警語。
+- 不判斷 AI 回覆是否正確、完整、過期或「風險高」，也不建立偵測規則、信心分數、後端欄位、事件或通知邏輯。
+- Caveat 隨同該則完整回覆一次插入，不在回覆後非同步補加。若對話容器使用 `role="log"`，其既有新增內容播報是唯一可能的通知來源；Caveat 不另建 announcer。
+- 不把 Caveat 用於 Consent、資料處理告知、模型訓練或長期資料偏好；這些是其他元件或服務流程的責任。
+- 同頁重複使用時，為標題與行動群組建立唯一 `id`，並同步 `aria-labelledby`。不要只靠框線或警示色傳達限制。
 
 #### 親和力
 
-- 使用原生 `section`／`article`、標題、label、textarea、段落、清單與同頁連結，沒有新增 `alert`、live region 或自訂鍵盤操作。
-- 輸入欄位只關聯短限制段落，不把長篇來源資料重複當成 description。
-- 靜態內容在無 JavaScript 時相同可讀；若採用端動態加入內容，通知與焦點策略由該流程負責，Caveat 不另建 announcer。
-- 螢幕閱讀器、Safari、語音控制、fragment 閱讀位置及 200%／400% 真實縮放仍須在整批發布前人工驗證；本頁不宣稱已通過 WCAG AA。
+- 使用原生 `article`、`section`、標題、段落、清單與連結，沒有新增 `alert`、live region 或自訂鍵盤操作。
+- 靜態內容在無 JavaScript 時相同可讀；若採用端動態加入完整回覆，通知與焦點策略由該流程負責，Caveat 不另建 announcer。
+- 螢幕閱讀器、Safari、語音控制與 200%／400% 真實縮放仍須在整批發布前人工驗證；本頁不宣稱已通過 WCAG AA。
 
 #### CSS
 
@@ -51,12 +48,11 @@ maturity: "new"
 
 #### JavaScript
 
-不需要 JavaScript。textarea 保留原生編輯與調整大小；同頁連結使用瀏覽器原生 fragment 行為。
+不需要 JavaScript。正式服務行動使用服務既有的連結或按鈕結構；Caveat 不建立 API、狀態或模型品質偵測。
 
 #### 參考
 
 - [Caveat](https://www.shapeof.ai/patterns/caveat) - Shape of AI
 - [Explainability + Trust](https://pair.withgoogle.com/guidebook-v2/chapter/explainability-trust/) - People + AI Research
-- [ARIA1: Using the aria-describedby property to provide a descriptive label for user interface controls](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA1.html) - W3C WAI
 - [Understanding Success Criterion 4.1.3: Status Messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html) - W3C WAI
 - [警告文字 (Warning Text)]({{< ref "components/warning-text/_index.md" >}})
