@@ -63,10 +63,10 @@ document.querySelectorAll('[data-consent-demo]').forEach(function (demo) {
     clearOutcome();
     if (choice === 'agree') {
       agreeNext.hidden = false;
-      result.textContent = '示範：進入提供文字步驟的流程示意；沒有傳送文字或保存選擇。';
+      result.textContent = '示範：進入開始對話的流程示意；沒有傳送訊息或保存選擇。';
     } else {
       declineNext.hidden = false;
-      result.textContent = '示範：不提供資料並離開 AI 摘要流程；沒有傳送資料或保存選擇。';
+      result.textContent = '示範：不提供對話資料並改用其他服務管道；沒有傳送資料或保存選擇。';
     }
   });
 
