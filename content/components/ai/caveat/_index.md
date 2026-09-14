@@ -13,10 +13,11 @@ maturity: "new"
 
 ### 正式服務行動前的注意事項
 
-{{< live-example partial="ai/caveat/output.html" >}}
+{{< live-example partial="ai/caveat/output.html" source="ai/caveat/formal-service-actions.html" >}}
 
 - 同一則回覆固定依序放置：**回答 → Caveat → 正式服務行動群組 → 下一輪輸入**。
 - 範例以既有的訊息氣泡樣式呈現使用者提問與 AI 回覆；它是靜態情境，不建立 `role="log"`、訊息操作或任何對話執行期行為。
+- 「HTML」區只列採用端放入同一則 AI 回覆的內容骨架，不包含使用者提問、訊息氣泡或下一輪輸入。
 - 一個正式服務行動群組可以有多個連結或按鈕，但群組前只放一則 Caveat；不要為每個連結重複提示。
 - 範例中的服務連結均為虛構示範，不代表可使用的服務。採用服務必須自行提供並維護真正的正式服務頁面。
 
