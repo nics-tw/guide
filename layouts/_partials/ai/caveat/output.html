@@ -1,5 +1,5 @@
 <section class="message-bubble-demo__stage" aria-labelledby="caveat-conversation-heading">
-  <h3 id="caveat-conversation-heading">對話中的正式服務行動（虛構範例）</h3>
+  <h3 id="caveat-conversation-heading">對話輸入區下方的注意事項（虛構範例）</h3>
 
   <article class="message-bubble__inner message-bubble__inner--user" aria-labelledby="caveat-user-role">
     <p class="message-bubble__role" id="caveat-user-role">您</p>
@@ -9,21 +9,13 @@
   <article class="message-bubble__inner message-bubble__inner--ai" aria-labelledby="caveat-assistant-role" id="caveat-assistant-message">
     <p class="message-bubble__role" id="caveat-assistant-role">AI 客服助理</p>
     <div class="message-bubble__body">
-      <p id="caveat-answer">您可以先查看申辦資格與應備文件；實際資格和受理狀態仍須由正式服務流程確認。</p>
-
-      <div class="warning-text" id="caveat-note">
-        <p>AI 回覆不代表官方資格、受理狀態或最新規定。開始下一步前，請以正式服務頁面為準。</p>
-      </div>
-
-      <section id="caveat-service-actions" aria-labelledby="caveat-service-actions-heading">
-        <h4 id="caveat-service-actions-heading">正式服務行動（虛構示範）</h4>
-        <ul>
-          <li><a href="/services/example/application/">開始申辦（虛構示範）</a></li>
-          <li><a href="/services/example/application-status/">查詢申辦進度（虛構示範）</a></li>
-        </ul>
-      </section>
+      <p id="caveat-answer">您可以先查看申辦資格與應備文件。若要進一步確認，請使用服務提供的正式管道。</p>
     </div>
   </article>
 
-  <p id="caveat-next-turn">您可繼續提出下一個問題。</p>
+  <section class="chat-composer" aria-labelledby="caveat-composer-heading">
+    <h4 class="chat-composer__label" id="caveat-composer-heading">訊息輸入區（靜態示範）</h4>
+    <p class="chat-composer__input ba br2 pa2 fg-subtle">輸入您的問題</p>
+    <p class="chat-composer__hint" id="caveat-composer-footer">AI 回覆僅供參考，可能不完整或有誤，請以正式資訊為準。</p>
+  </section>
 </section>
