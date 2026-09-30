@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>{{ .Title }} | 政府網站設計原則</title>
+    {{ $mainCSS := resources.Get "css/main.scss" | toCSS (dict "targetPath" "main.css") }}
+    {{ $demoCSS := resources.Get "css/demo/drawer.css" }}
+    <link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $demoCSS.RelPermalink }}">
+  </head>
+  <body class="guide-demo-drawer">
+    <main class="guide-demo-drawer__page">
+      <a href="{{ .Parent.RelPermalink }}">返回 Drawer 文件</a>
+      <article>
+        <h1>{{ .Title }}</h1>
+        <h2>AI 回答與參考資料</h2>
+        <h3>基本範例</h3>
+        {{ partial "ai/drawer/basic.html" . }}
+      </article>
+    </main>
+    <script src="{{ "js/components/drawer.js" | relURL }}" type="module"></script>
+  </body>
+</html>

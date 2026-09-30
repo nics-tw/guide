@@ -1,0 +1,74 @@
+.drawer-layout {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.drawer-layout,
+.drawer-layout__main,
+.drawer,
+.drawer__header {
+  box-sizing: border-box;
+  min-inline-size: 0;
+}
+
+.drawer-layout__main {
+  flex: 2 1 24rem;
+}
+
+.drawer {
+  background-color: var(--backgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 0.45rem;
+  color: var(--textColor);
+  flex: 1 1 20rem;
+  padding: 1rem;
+}
+
+.drawer__header {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.drawer__title {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.drawer__body {
+  overflow-wrap: anywhere;
+}
+
+.drawer__body pre {
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.drawer__close {
+  --buttonBorderColor: var(--textColor);
+}
+
+.drawer-layout__main:focus,
+.drawer__title:focus {
+  outline: 2px solid var(--textColor);
+  outline-offset: 2px;
+}
+
+.drawer-layout [data-drawer-trigger]:focus-visible,
+.drawer-layout [data-drawer-close]:focus-visible,
+.drawer-layout .drawer a:focus-visible {
+  outline: 2px solid var(--textColor);
+  outline-offset: 2px;
+}
+
+.drawer-layout [data-drawer][hidden],
+.drawer-layout [data-drawer-trigger][hidden],
+.drawer-layout [data-drawer-close][hidden],
+.drawer-layout [data-drawer-fallback][hidden] {
+  display: none;
+}
