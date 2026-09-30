@@ -1,0 +1,19 @@
+<live-announcer></live-announcer>
+
+<div class="thinking-block-demo" data-thinking-block-demo>
+  <p class="thinking-block-demo__description">此示範只產生可公開的純文字摘要，不會呼叫模型或任何外部 API。</p>
+  <div class="thinking-block-demo__stage" data-thinking-block-stage>
+    <p class="thinking-block-demo__status" data-thinking-block-status>尚未開始示範。</p>
+  </div>
+  <div class="thinking-block-demo__actions" data-thinking-block-actions hidden>
+    <button type="button" class="button button-primary" data-thinking-block-start="complete">模擬完成</button>
+    <button type="button" class="button" data-thinking-block-start="abort">模擬停止</button>
+    <button type="button" class="button" data-thinking-block-start="error">模擬摘要失敗</button>
+  </div>
+  <p class="thinking-block-demo__fallback" data-thinking-block-fallback hidden></p>
+
+  <p class="live-announcer-demo__title">已寫入宣告區域</p>
+  <ol class="live-announcer-demo__log" data-thinking-block-log>
+    <li class="live-announcer-demo__empty" data-thinking-block-log-empty>尚未有任何已確認寫入。</li>
+  </ol>
+</div>
