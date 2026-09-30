@@ -11,22 +11,27 @@
  *   使用者；hide() 一律立即移除視覺，防閃爍完全由延遲出現承擔
  * - 送達確認：show() 的宣告監聽一次 live-announcer:announced（比對訊息
  *   全文），確認實際寫入 region 後才 dispatch typing-indicator:announced。
- *   多個播報來源共用同一個 polite 頻道時，時間相近的呼叫，後者會覆蓋
- *   前者，串接方以此事件為「可以開始送出回覆內容」的訊號，避免
- *   「正在輸入」被後續播報覆蓋
+ * - 每輪 show() 最多 dispatch 一次 typing-indicator:settled，detail.announced
+ *   表示是否確認寫入。共用的 polite 頻道可能被其他來源覆蓋，或頁面沒有
+ *   <live-announcer>；此時在期限到達或無法播報時以 announced: false 結算，
+ *   讓串接方可以繼續流程，但不發出 typing-indicator:announced
  * - show() 冪等：等待中或已顯示時重複呼叫不重啟計時、不重複宣告
  * - hide() 在延遲等待期間呼叫：計時器直接取消，什麼都不發生、不宣告；
- *   已顯示時呼叫：立即隱藏，不宣告任何結束訊息。隱藏後若再次 show()，
+ *   已顯示時呼叫：立即隱藏，不宣告任何結束訊息。hide() 也會取消本輪
+ *   尚未結算的確認，之後不再 dispatch 任何事件。隱藏後若再次 show()，
  *   視為新的一輪等待（例如使用者又送出一則新訊息），重新走一次完整的
  *   延遲出現流程並重新宣告
- * - 找不到 <live-announcer>：console.warn、視覺照常（與 message-bubble
- *   同慣例）
+ * - 找不到 <live-announcer>：console.warn、視覺照常，並以 announced: false
+ *   結算（與 message-bubble 同慣例）
  */
 
 'use strict';
 
 // 等待期短於此值即被 hide() 取消則不顯示、不宣告，避免極快回覆時的閃爍
 const SHOW_DELAY = 300;
+
+// 等待宣告寫入確認的期限；涵蓋 live-announcer 保留前一則訊息的時間
+const ANNOUNCE_TIMEOUT = 3000;
 
 let warnedNoAnnouncer = false;
 
@@ -57,29 +62,48 @@ function initTypingIndicator(el) {
   // 都會先把它移除，避免前一輪的送達確認遲到才觸發，在 hide() 之後或
   // 新一輪播報開始後才 dispatch 一個屬於舊一輪的 typing-indicator:announced
   let pendingOnAnnounced = null;
+  let confirmTimer = null;
 
   function clearPendingAnnounced() {
     if (pendingOnAnnounced) {
       document.removeEventListener('live-announcer:announced', pendingOnAnnounced);
       pendingOnAnnounced = null;
     }
+    clearTimeout(confirmTimer);
+    confirmTimer = null;
+  }
+
+  function settle(announced) {
+    clearPendingAnnounced();
+    if (announced) {
+      el.dispatchEvent(new CustomEvent('typing-indicator:announced', { bubbles: true }));
+    }
+    el.dispatchEvent(new CustomEvent('typing-indicator:settled', {
+      bubbles: true,
+      detail: { announced: announced },
+    }));
   }
 
   function announce() {
-    const announcer = getAnnouncer();
-    if (!announcer) return;
-
     clearPendingAnnounced();
+
+    const announcer = getAnnouncer();
+    if (!announcer) {
+      settle(false);
+      return;
+    }
 
     const onAnnounced = function (event) {
       const detail = event.detail;
       if (detail && detail.level === 'polite' && detail.message === text) {
-        clearPendingAnnounced();
-        el.dispatchEvent(new CustomEvent('typing-indicator:announced', { bubbles: true }));
+        settle(true);
       }
     };
     pendingOnAnnounced = onAnnounced;
     document.addEventListener('live-announcer:announced', onAnnounced);
+    confirmTimer = setTimeout(function () {
+      settle(false);
+    }, ANNOUNCE_TIMEOUT);
     announcer.announce(text);
   }
 

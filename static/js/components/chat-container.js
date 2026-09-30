@@ -15,7 +15,7 @@
  *   會造成焦點無聲消失（各瀏覽器行為不一致，不可依賴）；因此先標記
  *   待隱藏，等使用者離開按鈕（blur）後才真正隱藏
  * - 新訊息永不搶焦點；視覺捲動與鍵盤焦點分開處理
- * - 平滑捲動由 CSS scroll-behavior 控制（reduced-motion 由 SCSS 覆蓋為瞬時）
+ * - 自動跟隨使用即時定位；手動跳至最新訊息時依減少動態偏好決定是否平滑捲動
  * - 對外 API：element.chatContainer.appendMessage(node)
  *   只負責 append 與捲動，不產生節點內容（節點內容是 message-bubble 的職責）
  */
@@ -62,6 +62,16 @@ function initChatContainer(container) {
   // 平滑捲動進行中的暫時狀態：捲動尚未到底時 nearBottom 會短暫為 false，
   // 以此旗標避免連續新增訊息時誤判為「使用者上捲中」
   let autoScrolling = false;
+  let userScrollUntil = 0;
+
+  function focusedContent() {
+    return document.activeElement !== container && container.contains(document.activeElement);
+  }
+
+  function markUserScroll() {
+    userScrollUntil = Date.now() + 750;
+    autoScrolling = false;
+  }
 
   // 按鈕聚焦時直接隱藏會造成焦點無聲消失（見檔頭說明），
   // 因此先標記待隱藏，等 blur 後才實際隱藏。
@@ -102,11 +112,9 @@ function initChatContainer(container) {
   function scrollToBottom(smooth) {
     followLatest = true;
     autoScrolling = true;
-    if (smooth) {
+    if (smooth && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
     } else {
-      // 串流內容可能在短時間內連續增高；每次重啟平滑捲動會讓實際位置
-      // 持續落後新目標，因此自動跟隨使用即時定位。
       container.scrollTop = container.scrollHeight;
       nearBottom = isNearBottom(container);
       if (nearBottom) autoScrolling = false;
@@ -117,31 +125,44 @@ function initChatContainer(container) {
   container.addEventListener('scroll', function () {
     nearBottom = isNearBottom(container);
     if (nearBottom) {
-      followLatest = true;
+      if (!focusedContent()) followLatest = true;
       autoScrolling = false;
       hideJumpButton();
     } else if (!autoScrolling) {
-      followLatest = false;
+      if (Date.now() < userScrollUntil) followLatest = false;
+      if (!followLatest) showJumpButton();
     }
   });
 
-  // 只有明確的向上滾輪意圖才先停止跟隨。觸控與滑鼠按下本身不代表
-  // 閱讀位置已改變，是否停止交由後續 scroll 的 near-bottom 判定處理。
   container.addEventListener('wheel', function (event) {
-    autoScrolling = false;
+    markUserScroll();
     if (event.deltaY < 0) followLatest = false;
   }, { passive: true });
 
-  ['touchstart', 'mousedown'].forEach(function (type) {
-    container.addEventListener(type, function () {
-      autoScrolling = false;
-    }, { passive: true });
+  container.addEventListener('touchmove', markUserScroll, { passive: true });
+
+  container.addEventListener('mousedown', function (event) {
+    if (event.target === container) markUserScroll();
   });
 
   container.addEventListener('keydown', function (event) {
     if (SCROLL_KEYS.includes(event.key)) {
-      autoScrolling = false;
+      markUserScroll();
       if (SCROLL_UP_KEYS.includes(event.key)) followLatest = false;
+    }
+  });
+
+  container.addEventListener('focusin', function (event) {
+    if (event.target !== container) {
+      followLatest = false;
+      autoScrolling = false;
+    }
+  });
+
+  container.addEventListener('click', function (event) {
+    if (event.target.closest('summary')) {
+      followLatest = false;
+      autoScrolling = false;
     }
   });
 
@@ -158,8 +179,10 @@ function initChatContainer(container) {
       syncScrollTabStop();
       if (followLatest || autoScrolling) {
         scrollToBottom();
-      } else {
+      } else if (!isNearBottom(container)) {
         showJumpButton();
+      } else {
+        hideJumpButton();
       }
     });
   }
@@ -229,9 +252,9 @@ function initChatContainer(container) {
      */
     appendMessage: function (node) {
       container.append(node);
-      if (nearBottom || followLatest || autoScrolling) {
+      if (followLatest || autoScrolling) {
         scrollToBottom();
-      } else {
+      } else if (!isNearBottom(container)) {
         showJumpButton();
       }
     },

@@ -14,7 +14,7 @@ maturity: "new"
 
 {{< live-example partial="ai/message-bubble/streaming.html" source="ai/message-bubble/streaming-source.html" >}}
 
-- 送出訊息後先由[輸入中提示]({{< ref "components/ai/typing-indicator/_index.md" >}})元件顯示等待動畫並播報「AI 正在輸入」；等其 `typing-indicator:announced` 事件確認播報已送達，才開始串流。
+- 送出訊息後先由[輸入中提示]({{< ref "components/ai/typing-indicator/_index.md" >}})元件顯示等待動畫並播報「AI 正在輸入」；等其 `typing-indicator:settled` 事件（已確認播報或已逾時）後，才開始串流。
 - 串流期間正文掛 `aria-hidden="true"`，由本元件依句末標點分句、以至少 1100ms 間隔交由即時宣告代播（節流原因詳見[即時宣告]({{< ref "components/ai/live-announcer/_index.md" >}})頁）；完成時播「回覆完成」並顯示操作列。
 - 「模擬 AI 回覆」按鈕與「已宣告內容」面板僅供文件示範。
 
@@ -81,6 +81,7 @@ bubble.setAttribute('data-abort-message', '已取消生成');    // 覆寫 abort
 #### 多格式文字段落
 
 - 氣泡正文可放入語意化 HTML（如表格、清單）：由伺服器或產品層渲染完成後置入，螢幕閱讀器以原生語意閱讀。
+- 放入段落、清單或區塊時，正文加上 `.message-bubble__body--structured`，讓 HTML 縮排以一般空白規則處理；純文字正文仍保留換行。
 - `appendToken()` 僅支援純文字；含結構化內容的回覆，建議串流階段以純文字呈現，`complete()` 後由產品層替換正文內容。
 - 即時宣告僅播純文字，表格與清單內容不會透過 live region 朗讀；建議完成時以文字摘要宣告（如「回覆包含表格」），內容由使用者於對話紀錄中瀏覽。
 - 元件不會解析 Markdown；若由呼叫端自行轉換為 HTML 後傳入，該 HTML 須先經過淨化（sanitize）以避免 XSS 風險。
@@ -93,6 +94,6 @@ bubble.setAttribute('data-abort-message', '已取消生成');    // 覆寫 abort
 
 {{< asset-script "js/components/live-announcer.js" >}}
 {{< asset-script "js/components/message-bubble.js" >}}
-{{< asset-script "js/components/typing-indicator.js" >}}
-{{< asset-script "js/demo/message-bubble.demo.js" >}}
+{{< asset-script "js/components/typing-indicator.js" "settle-timeout-v1" >}}
+{{< asset-script "js/demo/message-bubble.demo.js" "settle-timeout-v1" >}}
 {{< asset-script "js/demo/live-announcer.demo.js" >}}

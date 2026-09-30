@@ -18,7 +18,14 @@ typing.typingIndicator.hide(); // 首段回覆內容抵達時呼叫` >}}
 
 - 播報文案可用 `data-typing-text` 屬性覆寫，預設「AI 正在輸入」。
 - `show()` 有 300ms 延遲出現的防閃爍機制：回應在此窗口內抵達則不顯示、不播報（設計行為，非故障）；`hide()` 一律立即移除視覺，避免與已抵達的回覆內容並存。
-- 若回覆內容也會經由即時宣告播報，建議等本元件發出 `typing-indicator:announced` 事件後再開始傳送內容，避免「正在輸入」被內容播報蓋掉（本頁示範即採此作法）。
+- 若回覆內容也會經由即時宣告播報，請等本元件發出 `typing-indicator:settled` 後再開始傳送內容，避免「正在輸入」被內容播報蓋掉。每輪 `show()` 最多發出一次；`detail.announced` 為 `true` 表示已確認寫入宣告區域，為 `false` 表示 3 秒內未確認（例如被其他播報覆蓋）或頁面沒有 `<live-announcer>`，流程仍可繼續。只有確認寫入時才會另外發出 `typing-indicator:announced`。
+- 使用者在等待期間停止時，移除 `typing-indicator:settled` 監聽並呼叫 `hide()`；`hide()` 會取消本輪確認，之後不再發出事件。已交給即時宣告元件的「AI 正在輸入」無法撤回。
+
+{{< code-example content=`typing.addEventListener('typing-indicator:settled', () => {
+  typing.typingIndicator.hide();
+  startReply(); // 開始串流回覆
+}, { once: true });
+typing.typingIndicator.show();` >}}
 
 #### CSS
 
@@ -46,8 +53,8 @@ typing.typingIndicator.hide(); // 首段回覆內容抵達時呼叫` >}}
 - [prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) - MDN
 
 {{< asset-script "js/components/live-announcer.js" >}}
-{{< asset-script "js/components/chat-container.js" "scroll-follow-v3" >}}
+{{< asset-script "js/components/chat-container.js" "scroll-follow-v5" >}}
 {{< asset-script "js/components/message-bubble.js" >}}
-{{< asset-script "js/components/typing-indicator.js" >}}
+{{< asset-script "js/components/typing-indicator.js" "settle-timeout-v1" >}}
 {{< asset-script "js/demo/typing-indicator.demo.js" >}}
 {{< asset-script "js/demo/live-announcer.demo.js" >}}

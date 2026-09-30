@@ -22,7 +22,7 @@ document.querySelectorAll('[data-chat-composer-demo]').forEach(function (demo) {
   function clearTimers() {
     clearTimeout(requestTimer);
     clearInterval(streamTimer);
-    if (indicator) indicator.removeEventListener('typing-indicator:announced', beginReply);
+    if (indicator) indicator.removeEventListener('typing-indicator:settled', beginReply);
     requestTimer = null;
     streamTimer = null;
   }
@@ -96,7 +96,7 @@ document.querySelectorAll('[data-chat-composer-demo]').forEach(function (demo) {
         return;
       }
 
-      indicator.addEventListener('typing-indicator:announced', beginReply, { once: true });
+      indicator.addEventListener('typing-indicator:settled', beginReply, { once: true });
       indicator.typingIndicator.show();
     }, 400);
   });

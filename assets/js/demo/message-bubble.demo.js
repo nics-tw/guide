@@ -2,7 +2,7 @@
  * message-bubble.demo.js — 文件頁示範程式（非元件本體）
  *
  * 「模擬 AI 回覆」：先加入一則使用者訊息，顯示 typing-indicator 等待動畫；
- * 等其 typing-indicator:announced 事件確認「AI 正在輸入」已實際送達，
+ * 等其 typing-indicator:settled 事件（已確認送達或已逾時）後，
  * 才動態建立 streaming 狀態的 AI 氣泡，以 setInterval 逐段
  * appendToken() → complete()，展示逐字渲染、分句播報與完成後操作列
  * 出現的完整流程。
@@ -57,11 +57,9 @@ document.addEventListener('click', function (event) {
     }, CHUNK_INTERVAL);
   }
 
-  const onAnnounced = function () {
-    indicator.removeEventListener('typing-indicator:announced', onAnnounced);
+  indicator.addEventListener('typing-indicator:settled', function () {
     indicator.typingIndicator.hide();
     streamReply();
-  };
-  indicator.addEventListener('typing-indicator:announced', onAnnounced);
+  }, { once: true });
   indicator.typingIndicator.show();
 });

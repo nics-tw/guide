@@ -52,8 +52,10 @@ function initChatComposer(form) {
 
   function syncSubmitState() {
     if (isBlocked()) {
-      submitButton.setAttribute('aria-disabled', 'true');
-    } else {
+      if (submitButton.getAttribute('aria-disabled') !== 'true') {
+        submitButton.setAttribute('aria-disabled', 'true');
+      }
+    } else if (submitButton.hasAttribute('aria-disabled')) {
       submitButton.removeAttribute('aria-disabled');
     }
   }
@@ -94,9 +96,18 @@ function initChatComposer(form) {
 
   function clearAttachments() {
     if (!attachments || !attachments.files || attachments.files.length === 0) return;
+    const returnFocus = document.activeElement === clearAttachmentsButton;
     attachments.value = '';
     attachmentsVersion += 1;
     renderAttachments();
+    if (returnFocus) {
+      // 隱藏已聚焦的清除按鈕後，瀏覽器可能把焦點重設到頁面本體。
+      requestAnimationFrame(function () {
+        if (document.activeElement === document.body || document.activeElement === clearAttachmentsButton) {
+          attachments.focus({ preventScroll: true });
+        }
+      });
+    }
   }
 
   submitButton.addEventListener('click', function (event) {
@@ -114,7 +125,7 @@ function initChatComposer(form) {
     if ((event.ctrlKey || event.metaKey) && event.key === 'Enter' && !event.isComposing) {
       event.preventDefault();
       if (typeof form.requestSubmit === 'function') {
-        form.requestSubmit(submitButton);
+        form.requestSubmit();
       } else {
         submitButton.click();
       }

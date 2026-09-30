@@ -19,30 +19,83 @@ maturity: "new"
 
 #### 使用方式
 
-採用端監聽原生 `submit`，取得送出當下的提交快照（snapshot），並在後端結果確定後呼叫控制器：
+採用端監聽原生 `submit`，取得送出當下的提交快照（snapshot），並在後端結果確定後呼叫控制器。以下範例假設 `sendMessage()` 在伺服器**接受請求**時即完成，並回傳可逐段讀取的回覆；回覆要到串流結束才算完成。`sendMessage()`、回覆格式與停止按鈕皆為示意，請依實際 API 調整。
 
 {{< code-example content=`const form = document.querySelector('[data-chat-composer]');
+const container = document.querySelector('[data-chat-container]');
+const stopButton = document.querySelector('#stop-reply');
+let controller = null;
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   const submission = form.chatComposer.captureSubmission();
   form.chatComposer.setBusy(true);
+  controller = new AbortController();
+
+  let reply;
+  try {
+    reply = await sendMessage(formData, { signal: controller.signal });
+  } catch (error) {
+    if (controller.signal.aborted) {
+      endReply('已取消送出。');
+    } else {
+      form.chatComposer.fail('訊息未送出，輸入內容已保留，請稍後再試。');
+      controller = null;
+    }
+    return;
+  }
+
+  form.chatComposer.accept(submission);
+
+  const bubble = document.createElement('message-bubble');
+  bubble.setAttribute('variant', 'ai');
+  bubble.setAttribute('streaming', '');
+  container.chatContainer.appendMessage(bubble);
 
   try {
-    await sendMessage(formData);
-    form.chatComposer.accept(submission);
+    for await (const token of reply) bubble.appendToken(token);
+    bubble.complete();
+    endReply('');
   } catch (error) {
-    form.chatComposer.fail('訊息未送出，輸入內容已保留，請稍後再試。');
+    if (controller.signal.aborted) {
+      bubble.abort();
+      endReply('已停止產生回覆。');
+    } else {
+      bubble.error('回覆中斷，請稍後再試。');
+      endReply('');
+    }
   }
-});` class="mb3" >}}
+});
+
+stopButton.addEventListener('click', () => {
+  if (controller) controller.abort();
+});
+
+function endReply(statusMessage) {
+  controller = null;
+  form.chatComposer.setBusy(false);
+  form.chatComposer.setStatus(statusMessage);
+}` class="mb3" >}}
+
+`accept()` 之後元件維持忙碌，送出按鈕保持不可用，直到採用端解除。各情境在範例中的對應位置如下：
+
+| 情境 | 處理方式 |
+|---|---|
+| 送出失敗，回覆尚未開始 | 呼叫 `fail(message)`；會解除忙碌並保留草稿與附件，不需另外呼叫 `setBusy(false)` |
+| 請求尚未被接受時停止 | 不呼叫 `accept()`，草稿與附件保留；呼叫 `setBusy(false)` 並更新狀態文字 |
+| 回覆完成 | 訊息氣泡 `complete()` 後呼叫 `setBusy(false)` |
+| 回覆期間停止 | 訊息氣泡 `abort()` 後呼叫 `setBusy(false)` |
+| 串流中出錯 | 訊息氣泡 `error()` 後呼叫 `setBusy(false)`；不要呼叫 Composer 的 `fail()` |
+
+`setBusy(false)` 不會變更狀態文字；範例的 `endReply()` 同時以 `setStatus()` 更新或清除「訊息已送出，正在等待回覆」。若同時使用[輸入中提示]({{< ref "components/ai/typing-indicator/_index.md" >}})，請在建立訊息氣泡前等它發出 `typing-indicator:settled`，停止時也要移除該監聽並呼叫 `hide()`。
 
 | 方法 | 用途 |
 |---|---|
 | `captureSubmission()` | 記錄送出當下的狀態；資料仍由 `FormData` 取得 |
-| `accept(submission)` | 接受請求、進入忙碌；若有狀態節點則顯示「訊息已送出，正在等待回覆」，並清除未被修改的草稿與附件 |
+| `accept(submission)` | 接受請求並維持忙碌；若有狀態節點則顯示「訊息已送出，正在等待回覆」，並清除未被修改的草稿與附件 |
 | `fail(message)` | 送出失敗時保留內容、顯示錯誤，並依焦點位置提供一次回饋 |
-| `setBusy(isBusy)` | 控制是否允許再次送出 |
+| `setBusy(isBusy)` | 控制是否允許再次送出；回覆結束後以 `setBusy(false)` 解除忙碌 |
 | `setStatus(message)` | 更新可見操作狀態；傳入空字串時隱藏 |
 | `clearError()` | 清除錯誤，不改變草稿或焦點 |
 
@@ -80,7 +133,7 @@ form.addEventListener('submit', async (event) => {
 
 {{< asset-script "js/components/live-announcer.js" >}}
 {{< asset-script "js/components/message-bubble.js" >}}
-{{< asset-script "js/components/chat-container.js" "scroll-follow-v4" >}}
-{{< asset-script "js/components/typing-indicator.js" >}}
-{{< asset-script "js/components/chat-composer.js" >}}
-{{< asset-script "js/demo/chat-composer.demo.js" "focus-return-v1" >}}
+{{< asset-script "js/components/chat-container.js" "scroll-follow-v5" >}}
+{{< asset-script "js/components/typing-indicator.js" "settle-timeout-v1" >}}
+{{< asset-script "js/components/chat-composer.js" "form-submit-focus-v1" >}}
+{{< asset-script "js/demo/chat-composer.demo.js" "settle-timeout-v1" >}}

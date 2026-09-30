@@ -33,6 +33,7 @@ container.chatContainer.appendMessage(node); // 將訊息節點加入末端並�
 
 - log 需有可及名稱：`aria-labelledby` 指向可見標題。
 - 新訊息永不搶焦點；視覺捲動與鍵盤焦點分離。
+- 自動跟隨立即定位；使用「捲到最新訊息」時，依系統減少動態效果偏好決定是否平滑捲動。
 - HTML 保留 `tabindex="0"` 作為無 JS 的鍵盤捲動基線；JS 啟用後，只有內容實際溢出時才讓容器進入 Tab 順序，聚焦時有可見 focus ring。
 - 訊息的角色標示（「你」「客服助理」）由訊息氣泡元件以可見文字提供，角色區分不僅依賴視覺。
 
@@ -54,5 +55,5 @@ container.chatContainer.appendMessage(node); // 將訊息節點加入末端並�
 
 {{< asset-script "js/components/live-announcer.js" >}}
 {{< asset-script "js/components/message-bubble.js" >}}
-{{< asset-script "js/components/chat-container.js" "scroll-follow-v4" >}}
+{{< asset-script "js/components/chat-container.js" "scroll-follow-v5" >}}
 {{< asset-script "js/demo/chat-container.demo.js" >}}

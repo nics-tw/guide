@@ -40,6 +40,10 @@ message-bubble {
   white-space: pre-wrap;
 }
 
+.message-bubble__body--structured {
+  white-space: normal;
+}
+
 .message-bubble__error {
   border: 1px solid var(--warningColor);
   border-radius: 0.375rem;
