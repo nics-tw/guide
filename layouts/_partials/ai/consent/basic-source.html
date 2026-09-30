@@ -1,0 +1,45 @@
+<!-- 請將 action、服務條件及政策連結換成實際服務內容。 -->
+<form
+  class="consent"
+  method="post"
+  action="/conversations/example/consent"
+  aria-labelledby="consent-basic-title"
+>
+  <h3 id="consent-basic-title" class="consent__title">開始對話前的知情同意</h3>
+  <p class="consent__example-note">以下為虛構服務條件，不是本網站的資料政策。採用前須換成可履行的事實，並連接服務後端。</p>
+  <p class="consent__intro">請先閱讀告知、選擇並送出；服務確認本次同意已保存後，才開放訊息輸入區。只選取「同意」不代表服務已取得可處理對話資料的許可。</p>
+  <p class="consent__description">本範例只處理您主動送出的對話資料。請勿提供個人資料、機密內容或未經授權的他人資料。</p>
+
+  <dl class="consent__details">
+    <dt>蒐集目的</dt>
+    <dd>處理您接下來主動送出的訊息，產生回覆並維持本次對話脈絡。</dd>
+    <dt>資料及使用範圍</dt>
+    <dd>只處理您在對話中主動送出的資料，由範例服務與受託 AI 供應商用於回覆；不對外分享，也不用於模型訓練。</dd>
+    <dt>保存</dt>
+    <dd>本範例假設在本次對話結束後刪除對話資料；正式服務必須改成實際可履行的保存方式。</dd>
+    <dt>相關權益</dt>
+    <dd>您可以不提供資料；提供前可更改選擇或離開；提供後可透過服務提出查詢、更正、刪除或停止後續處理的需求。實際處理範圍與結果依服務說明，停止後續處理不代表能消除先前已完成的處理。</dd>
+  </dl>
+
+  <p class="consent__alternative">不同意時，不提供對話資料；可改用服務說明、客服或臨櫃等其他服務管道。</p>
+  <p><a href="/conversations/example/data-policy">查看資料使用與權益說明</a></p>
+
+  <fieldset class="consent__choices" aria-describedby="consent-basic-hint">
+    <legend>是否同意提供對話資料供本次 AI 服務使用？（必填）</legend>
+    <p id="consent-basic-hint" class="consent__hint">請選擇一項，再送出選擇。選取本身不會傳送訊息，仍須明確送出。</p>
+
+    <div class="consent__choice">
+      <input id="consent-basic-agree" name="data_consent" type="radio" value="agree" required>
+      <label for="consent-basic-agree">同意並開始對話</label>
+    </div>
+    <div class="consent__choice">
+      <input id="consent-basic-decline" name="data_consent" type="radio" value="decline" required>
+      <label for="consent-basic-decline">不同意，改用其他服務管道</label>
+    </div>
+  </fieldset>
+
+  <p id="consent-basic-save-error" class="consent__error" hidden></p>
+  <div class="consent__actions">
+    <button class="button button-primary" type="submit">送出選擇</button>
+  </div>
+</form>

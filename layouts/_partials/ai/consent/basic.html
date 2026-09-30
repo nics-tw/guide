@@ -1,0 +1,52 @@
+<div class="guide-demo-consent" data-consent-demo>
+  <section class="guide-demo-consent__conversation" aria-labelledby="consent-demo-basic-context-heading">
+    <header class="guide-demo-consent__header">
+      <span class="guide-demo-consent__avatar" aria-hidden="true">政</span>
+      <div>
+        <h3 id="consent-demo-basic-context-heading">政府服務小幫手</h3>
+        <p>協助查找申辦資訊</p>
+      </div>
+    </header>
+    <p class="guide-demo-consent__welcome">您好，有什麼可以協助您的？開始對話前，請先了解對話資料的使用方式。</p>
+    <p class="guide-demo-consent__notice">這是流程示範，沒有真實對話服務，也不會保存選擇。</p>
+  {{- $source := partial "ai/consent/basic-source.html" . -}}
+  {{- range slice "consent-basic-" `開始對話前的知情同意</h3>` `method="post"` `action="/conversations/example/consent"` `href="/conversations/example/data-policy"` `>查看資料使用與權益說明</a>` -}}
+    {{- if not (strings.Contains $source .) -}}
+      {{- errorf "ai/consent/basic.html：basic-source.html 缺少示範替換所需的字串 %q" . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $action := printf "%s#consent-demo-fallback" ("components/ai/consent/index.html" | relURL) -}}
+  {{- $source = replace $source "consent-basic-" "consent-demo-basic-" -}}
+  {{- $source = replace $source `開始對話前的知情同意</h3>` `開始對話前的知情同意（基本範例）</h3>` -}}
+  {{- $source = replace $source `method="post"` `method="get"` -}}
+  {{- $source = replace $source `action="/conversations/example/consent"` (printf `action="%s"` $action) -}}
+  {{- $source = replace $source `href="/conversations/example/data-policy"` `href="#consent-demo-policy"` -}}
+  {{- $source = replace $source `>查看資料使用與權益說明</a>` `>查看範例資料說明</a>` -}}
+  {{- $source | safeHTML -}}
+    <p class="guide-demo-consent__result" tabindex="-1" data-consent-demo-result></p>
+    <section class="guide-demo-consent__next" data-consent-demo-next="agree" hidden>
+      <h4 tabindex="-1">下一步：開始對話（流程示意）</h4>
+      <ul>
+        <li>正式服務確認本次同意已保存後，才開放訊息輸入區。</li>
+        <li>使用者仍須在對話中自行送出訊息。</li>
+        <li>不得只因選取「同意」就蒐集或處理對話資料。</li>
+      </ul>
+    </section>
+    <section class="guide-demo-consent__next" data-consent-demo-next="decline" hidden>
+      <h4 tabindex="-1">下一步：改用其他服務管道（流程示意）</h4>
+      <ul>
+        <li>不進入 AI 對話，也不要求提供訊息。</li>
+        <li>使用者可改用服務說明、客服或臨櫃等管道。</li>
+        <li>不必改選同意，也能離開這個流程。</li>
+      </ul>
+    </section>
+    <div class="guide-demo-consent__composer-preview" aria-hidden="true">
+      <span>本頁僅示範流程，沒有可輸入的對話服務。</span>
+      <span>送出訊息</span>
+    </div>
+  </section>
+  <div class="guide-demo-consent__controls" data-consent-demo-controls hidden>
+    <p class="guide-demo-consent__controls-title">示範設定（僅供測試）</p>
+    <label><input type="checkbox" data-consent-demo-fail> 模擬送出失敗</label>
+  </div>
+</div>
